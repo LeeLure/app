@@ -1,0 +1,494 @@
+<template>
+	<view  >
+		<view class="bar">
+		</view>
+		<!-- 导航栏 -->
+		<navigation :title="title"></navigation>
+
+		<view class="classification">
+			<view class="icon" v-for="(item ,index) in  headline" :key="index">
+				<image :src="item.ima" class="image"></image>
+				<view class="icontext">
+					{{item.text}}
+				</view>
+			</view>
+
+		</view>
+		
+		<view class="shopkeeper" v-for="(item ,index) in  prices" :key="index">
+			<view class="introduce" @tap="details">
+				<view class="introduceleft">
+					<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="introduceimg"></image>
+
+				</view>
+				<view class="introduceright">
+					<view class="name">
+						{{item.text}}
+					</view>
+					<view class="details">
+						搭配I7显卡 高配置主机 畅玩无限
+					</view>
+					<view class="position">
+						<view class="position1">
+							游戏/电竞
+						</view>
+						<view class="position1">
+							滨江路 1.4km
+						</view>
+					</view>
+				</view>
+
+			</view>
+			<view class="controlled">
+				<view :class="flag==true? 'active': 'control' ">
+					<view class="coupon" v-for="(item ,index) in  price" :key="index">
+						<view class="couponleft">
+							<view class="couponcolor">
+								{{item.text}}
+							</view>
+							<view class="coupontext">
+								行情价: ￥599
+							</view>
+
+
+						</view>
+						<view class="couponright">
+							<view class="price">
+								<view class="price1">
+									优惠卷
+								</view>
+								<view class="price2">
+
+									仅售329，价值599元高等配置 无仅售329，价值599元高等配置 无
+								</view>
+							</view>
+							<view class="number">
+								销量：3644
+							</view>
+						</view>
+
+					</view>
+				</view>
+
+				<view class="show" @tap="showTag(index)">
+					<view class="triangle">{{flag?"收起":"展开其他优惠项目"}}</view>
+
+					<view class="triangle1" v-if="!flag"></view>
+					<view class="triangle2" v-if="flag"></view>
+				</view>
+			</view>
+
+
+		</view>
+		
+		
+		
+		<!-- <view class="three">
+			<view class="get" @tap="getCheckNum()">
+				<text>{{!codeTime&#63;'获取验证码':codeTime+'s'}}</text>
+			</view>
+			<view class="all">
+				<view class="left">验证码</view>
+				<input placeholder="请输入验证码" />
+			</view>
+			<button class="btn">确认</button>
+		</view> -->
+		<button @tap="a">ggg</button>
+	</view>
+</template>
+
+<script>
+	import navigation from "@/components/navigation.vue"
+	export default {
+		data() {
+			return {
+				headline: [{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					}, {
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					},
+					{
+						ima: "../../static/home/a.pic.jpg",
+						text: "按摩/足疗"
+					}
+				],
+				prices: [{
+						text: "好来玩电竞网咖"
+					},
+					{
+						text: "好来玩电竞网咖"
+					}, {
+						text: "¥546"
+					}, 
+				
+				],
+				price: [{
+						text: "¥546"
+					},
+					{
+						text: "¥546"
+					}, {
+						text: "¥546"
+					}, {
+						text: "¥546"
+					},
+
+				],
+				index:0,
+				flag: 0,
+				title: "商家优惠福利",
+				codeTime: 0,
+				code: "",
+				phone: "15236245675",
+				vrifyCode: ""
+			}
+		},
+		components: {
+			navigation
+		},
+		methods: {
+			showTag(index) {
+				this.index=index
+				console.log(this.index);
+				this.flag = !this.flag;
+			},
+			details(){
+				uni.navigateTo({
+					url: "/pages/business/details"
+				})
+			},
+			a() {
+				// 也可以直接通过uni.$u.post发出请求，注意此处需要写上接口地址
+				uni.$u.http.post('/code/sms', {
+						
+						phone: this.phone,
+						
+					}).then(res => {
+						console.log(res)
+					})
+					.catch(() => {
+
+					})
+
+			},
+			// getCheckNum() {
+			// 	if (this.codeTime > 0) {
+			// 		uni.showToast({
+			// 			title: '不能重复获取',
+			// 			icon: "none"
+			// 		});
+			// 		return;
+			// 	} else {
+			// 		this.codeTime = 60
+			// 		let timer = setInterval(() => {
+			// 			this.codeTime--;
+			// 			if (this.codeTime < 1) {
+			// 				clearInterval(timer);
+			// 				this.codeTime = 0
+			// 			}
+			// 		}, 1000)
+			// 	}
+			// }
+		}
+	}
+</script>
+
+<style>
+	
+	.classification {
+		
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 15rpx;
+		width: 730rpx;
+	}
+
+	.icon {
+		/* border: 1px  solid red; */
+		width: 140rpx;
+		margin-top: 38rpx;
+	}
+
+	.image {
+		width: 84rpx;
+		height: 84rpx;
+		border-radius: 42rpx;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.icontext {
+		color: white;
+		font-size: 22rpx;
+		font-family: PingFang SC-Medium, PingFang SC;
+		font-weight: 500;
+		text-align: center;
+		margin-top: 16rpx;
+	}
+
+	.all {
+		margin: 30rpx;
+		border-bottom: 2rpx solid #EEEEEE;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.left {
+		margin-bottom: 30rpx;
+		margin-right: 40rpx;
+		width: 150rpx;
+	}
+
+	.three {
+		background-color: white;
+		width: 92%;
+		border-radius: 10rpx;
+		padding: 20rpx 0;
+		margin: 20rpx auto;
+		position: relative;
+	}
+
+	.btn {
+		background-color: orange;
+		font-size: 28rpx;
+		width: 160rpx;
+		height: 70rpx;
+		line-height: 70rpx;
+		margin-top: 40rpx;
+		color: white;
+		font-weight: 600;
+	}
+
+	.get {
+		position: absolute;
+		top: 40rpx;
+		right: 30rpx;
+		background-color: orange;
+		height: 70rpx;
+		line-height: 70rpx;
+		color: white;
+		border-radius: 10rpx;
+		padding: 0 20rpx;
+	}
+
+	.shopkeeper {
+		background-color: #29253C;
+		color: white;
+		margin-top: 20rpx;
+		width: 750rpx;
+	}
+
+	.introduce {
+		border-bottom: 1rpx solid rgba(255, 255, 255, 0.103);
+		margin-left: 20rpx;
+		height: 250rpx;
+		width: 710rpx;
+		display: flex;
+	}
+
+	.introduceleft {
+		margin: auto 0;
+		margin-left: 16rpx;
+	}
+
+	.introduceimg {
+		width: 160rpx;
+		height: 160rpx;
+		border-radius: 20rpx;
+	}
+
+	.introduceright {
+		width: 530rpx;
+
+		margin: auto 0 auto 24rpx;
+	}
+
+	.name {
+		font-size: 28rpx;
+		font-family: PingFang SC-Medium, PingFang SC;
+		font-weight: 500;
+		color: #FFFFFF;
+	}
+
+	.details {
+		color: #ffffffcc;
+		font-size: 24rpx;
+		margin-top: 26rpx;
+	}
+
+	.position {
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	.position1 {
+		color: #ffffff81;
+		font-size: 24rpx;
+		margin-top: 26rpx;
+
+
+	}
+
+	.control {
+		width: 750rpx;
+		height: 306rpx;
+		overflow: hidden;
+	}
+
+	.active {
+		height: auto;
+		overflow: visible;
+	}
+
+	.coupon {
+		width: 100%;
+		height: 153rpx;
+		display: flex;
+
+	}
+
+	.couponleft {
+		margin: auto 0;
+		width: 200rpx;
+
+	}
+
+	.couponcolor {
+
+		color: #ffee8cda;
+		font-size: 32rpx;
+		font-family: PingFang SC-Medium, PingFang SC;
+		font-weight: 500;
+		float: right;
+		
+	}
+
+	.coupontext {
+		font-size: 24rpx;
+		float: right;
+	
+		height: 50rpx;
+		line-height: 50rpx;
+
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.couponright {
+		margin: auto 0 auto 22rpx;
+
+	}
+
+	.price {
+		display: flex;
+		margin-top: 10rpx;
+
+	}
+
+	.price1 {
+		width: 78rpx;
+		height: 32rpx;
+		line-height: 32rpx;
+		text-align: center;
+		background-color: #EB8E5D;
+		border-radius: 4rpx;
+
+		font-size: 20rpx;
+	}
+
+	.price2 {
+		width: 378rpx;
+		height: 34rpx;
+		/* overflow: hidden; */
+		font-size: 24rpx;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		margin-left: 20rpx;
+
+
+	}
+
+	.number {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 24rpx;
+		height: 50rpx;
+		line-height: 50rpx;
+		
+	}
+
+	.controlled {}
+
+	.show {
+		border-top: 2rpx solid rgba(255, 255, 255, 0.1);
+		font-size: 24rpx;
+		font-family: PingFang SC-Regular, PingFang SC;
+		color: #999999;
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		display: flex;
+		justify-content: center;		
+		margin-left: 20rpx;		
+		width: 710rpx;
+	}
+
+	
+
+	.triangle1 {
+		margin-left: 10rpx;
+		margin-top: 37rpx;
+		width: 0;
+		height: 0;
+		border: 10rpx solid #999999;
+		border-top-color: #999999;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		border-right-color: transparent;
+
+	}
+
+	.triangle2 {
+		margin-left: 10rpx;
+		margin-top: 22rpx;
+		width: 0;
+		height: 0;
+		border: 10rpx solid #999999;
+		border-top-color: transparent;
+		border-bottom-color: #999999;
+		border-left-color: transparent;
+		border-right-color: transparent;
+
+	}
+	
+</style>
