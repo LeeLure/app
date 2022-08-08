@@ -1,5 +1,5 @@
 <template>
-	<view  >
+	<view>
 		<view class="bar">
 		</view>
 		<!-- 导航栏 -->
@@ -14,7 +14,7 @@
 			</view>
 
 		</view>
-		
+
 		<view class="shopkeeper" v-for="(item ,index) in  prices" :key="index">
 			<view class="introduce" @tap="details">
 				<view class="introduceleft">
@@ -40,7 +40,7 @@
 
 			</view>
 			<view class="controlled">
-				<view :class="flag==true? 'active': 'control' ">
+				<!-- <view :class="flag==true? 'active': 'control' ">
 					<view class="coupon" v-for="(item ,index) in  price" :key="index">
 						<view class="couponleft">
 							<view class="couponcolor">
@@ -68,21 +68,56 @@
 						</view>
 
 					</view>
+				</view> -->
+				<view class="active">
+					<view v-for="(item ,activeIndex) in  price" :key="activeIndex">
+						<view class="coupon" v-if="activeIndex<(activeArr.includes(index)? price.length : 2)? true : false">
+							<view class="couponleft">
+								<view class="couponcolor">
+									{{item.text}}
+								</view>
+								<view class="coupontext">
+									行情价: ￥599
+								</view>
+
+
+							</view>
+							<view class="couponright">
+								<view class="price">
+									<view class="price1">
+										优惠卷
+									</view>
+									<view class="price2">
+
+										仅售329，价值599元高等配置 无仅售329，价值599元高等配置 无
+									</view>
+								</view>
+								<view class="number">
+									销量：3644
+								</view>
+							</view>
+
+						</view>
+					</view>
+					<view v-if="price.length>2? true : false" class="show" @tap="showTag(index)">
+						<view class="triangle">{{activeArr.includes(index)? "收起":"展开其他优惠项目"}}</view>
+						<view class="triangle1" v-if="activeArr.indexOf(index)"></view>
+						<view class="triangle2" v-else></view>
+					</view>
 				</view>
 
-				<view class="show" @tap="showTag(index)">
+				<!-- <view class="show" @tap="showTag(index)">
 					<view class="triangle">{{flag?"收起":"展开其他优惠项目"}}</view>
-
 					<view class="triangle1" v-if="!flag"></view>
 					<view class="triangle2" v-if="flag"></view>
-				</view>
+				</view> -->
 			</view>
 
 
 		</view>
-		
-		
-		
+
+
+
 		<!-- <view class="three">
 			<view class="get" @tap="getCheckNum()">
 				<text>{{!codeTime&#63;'获取验证码':codeTime+'s'}}</text>
@@ -149,8 +184,8 @@
 						text: "好来玩电竞网咖"
 					}, {
 						text: "¥546"
-					}, 
-				
+					},
+
 				],
 				price: [{
 						text: "¥546"
@@ -164,8 +199,9 @@
 					},
 
 				],
-				index:0,
+				index: 0,
 				flag: 0,
+				activeArr: [],
 				title: "商家优惠福利",
 				codeTime: 0,
 				code: "",
@@ -177,12 +213,23 @@
 			navigation
 		},
 		methods: {
-			showTag(index) {
-				this.index=index
-				console.log(this.index);
-				this.flag = !this.flag;
+			remove(arr, val) {
+				var index = arr.indexOf(val);
+				if (index > -1) {
+					arr.splice(index, 1);
+				}
 			},
-			details(){
+			showTag(index) {
+				const activeArr = this.activeArr
+				if (activeArr.includes(index)) {
+					this.remove(activeArr,index)
+				} else {
+					activeArr.push(index)
+				}
+				this.activeArr = activeArr
+
+			},
+			details() {
 				uni.navigateTo({
 					url: "/pages/business/details"
 				})
@@ -190,9 +237,9 @@
 			a() {
 				// 也可以直接通过uni.$u.post发出请求，注意此处需要写上接口地址
 				uni.$u.http.post('/code/sms', {
-						
+
 						phone: this.phone,
-						
+
 					}).then(res => {
 						console.log(res)
 					})
@@ -224,9 +271,8 @@
 </script>
 
 <style>
-	
 	.classification {
-		
+
 		display: flex;
 		flex-wrap: wrap;
 		margin-left: 15rpx;
@@ -391,13 +437,13 @@
 		font-family: PingFang SC-Medium, PingFang SC;
 		font-weight: 500;
 		float: right;
-		
+
 	}
 
 	.coupontext {
 		font-size: 24rpx;
 		float: right;
-	
+
 		height: 50rpx;
 		line-height: 50rpx;
 
@@ -444,7 +490,7 @@
 		font-size: 24rpx;
 		height: 50rpx;
 		line-height: 50rpx;
-		
+
 	}
 
 	.controlled {}
@@ -458,12 +504,12 @@
 		line-height: 80rpx;
 		text-align: center;
 		display: flex;
-		justify-content: center;		
-		margin-left: 20rpx;		
+		justify-content: center;
+		margin-left: 20rpx;
 		width: 710rpx;
 	}
 
-	
+
 
 	.triangle1 {
 		margin-left: 10rpx;
@@ -490,5 +536,4 @@
 		border-right-color: transparent;
 
 	}
-	
 </style>

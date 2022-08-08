@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="login">
 		<view class="bar">
 		</view>
 
@@ -98,51 +98,60 @@
 							this.codeTime = 0
 						}
 					}, 1000)
-					
+
 				}
 				uni.$u.http.post('/code/sms', {
-				
+
 						phone: this.phone,
-				
+
 					}).then(res => {
 						console.log(vhtgrf);
 					})
 					.catch(() => {
-				
+
 					})
 
-				
+
 
 			},
 
 
 			btn() {
-				console.log(111);
-				// uni.$u.http.post('/code/validate', {
-				//         code:this.code,
-				// 		phone: this.phone
-				
-				// 	}).then(res => {
-				// 		console.log("11",res)
-				// 	}).catch(() => {
-				
-				// 	})
-				
-				
-				
 				uni.navigateTo({
 					url: "/pages/information/information"
 				})
+				return false
+				uni.$u.http.post('/code/validate', {
+					code: this.code,
+					phone: this.phone
+
+				}).then(res => {
+					this.login()
+				}).catch(() => {
+
+				})
+			},
+			login() {
+				uni.$u.http.post('/login/mobile/login', {
+					code: this.code,
+					phone: this.phone
+			
+				}).then(res => {
+					uni.navigateTo({
+						url: "/pages/information/information"
+					})
+				}).catch(() => {
+			
+				})
 			}
+			
 		}
 	}
 </script>
 
 <style>
 	page {
-		background: linear-gradient(180deg, #1E1A32 0%, #0E0C17 100%);
-		margin: 0;
-		padding: 0;
+		height: 100%;
 	}
 
 	.color {
