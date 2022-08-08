@@ -20,7 +20,7 @@
 		<view class="name">
 			昵称
 		</view>
-		<input type="text" class="nickname">
+		<input type="text" class="nickname" maxlength="9">
 		<view class="name">
 			生日
 		</view>
@@ -114,16 +114,18 @@
 		font-weight: 500;
 		color: #FFFFFF;
 		margin-left: 40rpx;
+		margin-top: 20rpx;
 	}
 
 	.nickname {
 		
 		background-color: white;
-		width: 670rpx;
+		width: 630rpx;
 		height: 108rpx;
 		border-radius: 48rpx;
 		margin-left: 40rpx;
 		margin-top: 22rpx;
+		padding-left: 40rpx;
 	}
 
 	.sex1 {
