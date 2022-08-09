@@ -117,34 +117,33 @@
 
 
 			btn() {
-				uni.navigateTo({
-					url: "/pages/information/information"
-				})
-				return false
-				uni.$u.http.post('/code/validate', {
-					code: this.code,
-					phone: this.phone
-
-				}).then(res => {
-					this.login()
-				}).catch(() => {
-
-				})
+				this.login()
 			},
 			login() {
 				uni.$u.http.post('/login/mobile/login', {
 					code: this.code,
 					phone: this.phone
-			
+
 				}).then(res => {
-					uni.navigateTo({
-						url: "/pages/information/information"
-					})
+					console.log(res)
+					uni.setStorageSync('token', res.token)
+					if (res.isNewUser) {
+						uni.navigateTo({
+							url: "/pages/information/information"
+						})
+					} else {
+						uni.reLaunch({
+							url: "/pages/tabpage/home",
+							success: function(res) {
+								console.log(res);
+							}
+						})
+					}
 				}).catch(() => {
-			
+
 				})
 			}
-			
+
 		}
 	}
 </script>
