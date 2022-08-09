@@ -118,17 +118,7 @@
 
 
 
-		<!-- <view class="three">
-			<view class="get" @tap="getCheckNum()">
-				<text>{{!codeTime&#63;'获取验证码':codeTime+'s'}}</text>
-			</view>
-			<view class="all">
-				<view class="left">验证码</view>
-				<input placeholder="请输入验证码" />
-			</view>
-			<button class="btn">确认</button>
-		</view> -->
-		<button @tap="a">ggg</button>
+	
 	</view>
 </template>
 
@@ -234,38 +224,8 @@
 					url: "/pages/business/details"
 				})
 			},
-			a() {
-				// 也可以直接通过uni.$u.post发出请求，注意此处需要写上接口地址
-				uni.$u.http.post('/code/sms', {
-
-						phone: this.phone,
-
-					}).then(res => {
-						console.log(res)
-					})
-					.catch(() => {
-
-					})
-
-			},
-			// getCheckNum() {
-			// 	if (this.codeTime > 0) {
-			// 		uni.showToast({
-			// 			title: '不能重复获取',
-			// 			icon: "none"
-			// 		});
-			// 		return;
-			// 	} else {
-			// 		this.codeTime = 60
-			// 		let timer = setInterval(() => {
-			// 			this.codeTime--;
-			// 			if (this.codeTime < 1) {
-			// 				clearInterval(timer);
-			// 				this.codeTime = 0
-			// 			}
-			// 		}, 1000)
-			// 	}
-			// }
+		
+			
 		}
 	}
 </script>
