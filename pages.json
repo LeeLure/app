@@ -158,6 +158,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/tidings/index/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
