@@ -33,24 +33,24 @@
 				containerHeight: 400,
 				//公共的tabbar
 				tabbar: [{
-						"pagePath": "/pages/tabpage/home",
+						"pagePath": "/pages/home/home",
 						"iconPath": "/static/index.png",
 						"selectedIconPath": "/static/indexSelected.png",
 						"text": "首页"
 					},
 					{
-						"pagePath": "/pages/tabpage/square",
+						"pagePath": "/pages/square/square",
 						"iconPath": "/static/all.png",
 						"selectedIconPath": "/static/allSelected.png",
 						"text": "广场"
 					},{
-						"pagePath": "/pages/tabpage/tidings",
+						"pagePath": "/pages/tidings/tidings",
 						"iconPath": "/static/me.png",
 						"selectedIconPath": "/static/meSelected.png",
 						"text": "消息"
 					},
 					{
-						"pagePath": "/pages/tabpage/my",
+						"pagePath": "/pages/user/my",
 						"iconPath": "/static/me.png",
 						"selectedIconPath": "/static/meSelected.png",
 						"text": "我的"

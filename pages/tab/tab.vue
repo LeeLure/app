@@ -22,10 +22,10 @@
 </template>
 
 <script>
-	import home from  "@/pages/tabpage/home.vue"
-	import square from  "@/pages/tabpage/square.vue"
-	import my from  "@/pages/tabpage/my.vue"
-	import tidings from  "@/pages/tabpage/tidings.vue"
+	import home from  "@/pages/home/home.vue"
+	import square from  "@/pages/square/square.vue"
+	import my from  "@/pages/user/my.vue"
+	import tidings from  "@/pages/tidings/tidings.vue"
 	export default {
 		components:{
 			home,

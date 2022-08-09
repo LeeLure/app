@@ -133,7 +133,7 @@
 						})
 					} else {
 						uni.reLaunch({
-							url: "/pages/tabpage/home",
+							url: "/pages/home/home",
 							success: function(res) {
 								console.log(res);
 							}

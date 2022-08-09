@@ -36,7 +36,7 @@
 
 		},
 		{
-			"path": "pages/tabpage/home",
+			"path": "pages/home/home",
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
@@ -48,7 +48,7 @@
 
 		},
 		{
-			"path": "pages/tabpage/my",
+			"path": "pages/user/my",
 			"style": {
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": true,
@@ -61,7 +61,7 @@
 
 		},
 		{
-			"path": "pages/tabpage/square",
+			"path": "pages/square/square",
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
@@ -73,7 +73,7 @@
 
 		},
 		{
-			"path": "pages/tabpage/tidings",
+			"path": "pages/tidings/tidings",
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
@@ -156,13 +156,13 @@
 		"backgroundColor": "#343146 ",
 		
 		"list": [{
-				"pagePath": "pages/tabpage/home",
+				"pagePath": "pages/home/home",
 				"text": "首页",
 				"iconPath": "/static/tab/homes.png",
 				"selectedIconPath": "/static/tab/home.png"
 			},
 			{
-				"pagePath": "pages/tabpage/square",
+				"pagePath": "pages/square/square",
 				"text": "广场",
 				"iconPath": "/static/tab/squares.png",
 				"selectedIconPath": "/static/tab/square.png"
@@ -170,14 +170,14 @@
 
 			},
 			{
-				"pagePath": "pages/tabpage/tidings",
+				"pagePath": "pages/tidings/tidings",
 				"text": "消息",
 				"iconPath": "/static/tab/tidingss.png",
 				"selectedIconPath": "/static/tab/tidings.png"
 
 			},
 			{
-				"pagePath": "pages/tabpage/my",
+				"pagePath": "pages/user/my",
 				"text": "我的",
 				"iconPath": "/static/tab/mys.png",
 				"selectedIconPath": "/static/tab/my.png"
