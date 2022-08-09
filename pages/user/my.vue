@@ -6,7 +6,7 @@
 				<view class="install">
 					<image src="" class="installimg"></image>
 				</view>
-				<view class="install">
+				<view class="install" @tap="release">
 					<image src="" class="installimg"></image>
 				</view>
 			</view>
@@ -39,7 +39,11 @@
 		},
 		
 		methods: {
-			
+			release(){
+				uni.navigateTo({
+					url:'/pages/settings/settings'
+				})
+			}
 		}
 	}
 </script>
