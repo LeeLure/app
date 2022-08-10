@@ -3,7 +3,7 @@
 		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="0">
 			<view v-for="item in list" class="user">
 				<view class="user-img">
-					<img src="../../../../static/home/a.pic.jpg" alt="">
+					<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
 				</view>
 				<view class="user-name">{{item}}</view>
 			</view>
@@ -46,8 +46,9 @@
 		width: 100%;
 	}
 
-	.user-img img {
+	.user-img .img {
 		width: 108rpx;
+		height: 108rpx;
 		border-radius: 108rpx;
 	}
 	.user-name{

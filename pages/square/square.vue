@@ -4,7 +4,7 @@
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
 		<!-- 赛事活动的图片 -->
-		<img src="../../static/square/saishi.jpg" alt="" />
+		<image src="../../static/square/saishi.jpg" alt="" />
 
 		<!-- 发现圈子 -->
 		<view class="Interesting">

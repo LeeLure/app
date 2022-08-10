@@ -202,6 +202,7 @@
 			}
 
 		}
+<<<<<<< HEAD
 	    ,{
             "path" : "pages/settings/security/modify",
            "style": {
@@ -238,13 +239,22 @@
         }
         ,{
             "path" : "pages/settings/security/popup/popup",
+=======
+	    ,{
+            "path" : "pages/tidings/chat-details/chat-details",
+>>>>>>> 2ba47536c5cbb88f1f00c39d21d091e4b3a65880
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
+<<<<<<< HEAD
             
         }
+=======
+            
+        }
+>>>>>>> 2ba47536c5cbb88f1f00c39d21d091e4b3a65880
     ],
 
 
