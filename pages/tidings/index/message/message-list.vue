@@ -45,7 +45,6 @@
 			}
 		},
 		mounted() {
-			console.log(1111111)
 			for (var i = 0; i < 10; i++) {
 				this.list.push({
 					title: '通知' + i,

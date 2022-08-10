@@ -9,15 +9,21 @@
 				<view class="action" @tap="action">...</view>
 			</template>
 		</navigation>
+		<chat-content-box />
 	</view>
 </template>
 
 <script>
+	import chatContentBox from './chat-box.vue'
 	export default {
+		name: "chat-details",
 		data() {
 			return {
 				title: ''
 			}
+		},
+		components: {
+			chatContentBox
 		},
 		onLoad: function(option) {
 			console.log(option)
@@ -27,7 +33,7 @@
 			this.title = key
 		},
 		methods: {
-			action(){
+			action() {
 				console.log('action')
 			}
 		}
@@ -35,18 +41,19 @@
 </script>
 
 <style>
-.account{
-	padding: 0 20rpx;
-	line-height: 48rpx;
-	border-radius: 26rpx;
-	font-size: 24rpx;
-	background-color: #39344E;
-}
-.action{
-	color: #fff;
-	letter-spacing: 2rpx;
-	font-size: 50rpx;
-	line-height: 56rpx;
-	margin-right: 10rpx;
-}
+	.account {
+		padding: 0 20rpx;
+		line-height: 48rpx;
+		border-radius: 26rpx;
+		font-size: 24rpx;
+		background-color: #39344E;
+	}
+
+	.action {
+		color: #fff;
+		letter-spacing: 2rpx;
+		font-size: 50rpx;
+		line-height: 56rpx;
+		margin-right: 10rpx;
+	}
 </style>
