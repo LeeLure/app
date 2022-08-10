@@ -4,8 +4,10 @@
 
 			<u-swipe-action class="swipe" v-for="(item,index) in list" :key='index'>
 				<u-swipe-action-item :options="options1">
-					<view class="message">
-						<view class="left"><img src="../../../../static/home/a.pic.jpg" alt=""></view>
+					<view @tap="toDetails(item.title)" class="message">
+						<view class="left">
+							<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
+						</view>
 						<view class="center">
 							<view>
 								{{item.title}}
@@ -36,7 +38,7 @@
 					icon: 'trash-fill',
 					iconSize: '50rpx',
 					style: {
-						
+
 						backgroundColor: 'transparent'
 					}
 				}]
@@ -45,7 +47,6 @@
 		mounted() {
 			console.log(1111111)
 			for (var i = 0; i < 10; i++) {
-				console.log(i)
 				this.list.push({
 					title: '通知' + i,
 					content: '内容' + i
@@ -55,8 +56,13 @@
 		},
 		methods: {
 			scroll(e) {
-				console.log(e)
+				// console.log(e)
 			},
+			toDetails(key) {
+				uni.navigateTo({
+					url: "/pages/tidings/chat-details/chat-details?key="+key
+				})
+			}
 		}
 	}
 </script>
@@ -93,7 +99,7 @@
 		margin-left: 24rpx;
 	}
 
-	.message .left img {
+	.message .left image {
 		width: 108rpx;
 		height: 108rpx;
 		border-radius: 108rpx;
@@ -106,7 +112,8 @@
 		font-size: 28rpx;
 		line-height: 58rpx;
 	}
-	.message .center .content{
+
+	.message .center .content {
 		color: rgba(255, 255, 255, 0.5);
 	}
 
@@ -147,7 +154,7 @@
 		width: 100%;
 	}
 
-	.user-img img {
+	.user-img .img {
 		width: 108rpx;
 		border-radius: 108rpx;
 	}

@@ -202,7 +202,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/tidings/chat-details/chat-details",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 
 
 	"globalStyle": {
