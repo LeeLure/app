@@ -1,7 +1,7 @@
 <template>
 	<!-- 广场圈子组件 -->
 	<view class="circle">
-		<view class="img"><img class="img-img" src="../../../static/square/circle-1.jpg" alt="" /></view>
+		<view class="img"><image class="img-img" src="../../../static/square/circle-1.jpg" alt="" /></view>
 		<view class="text">
 			<view class="title">1196</view>
 			<view class="info">给你不一样音乐音乐的音乐</view>
