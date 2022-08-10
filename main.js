@@ -4,7 +4,9 @@ import App from './App'
 import Vue from 'vue'
 Vue.config.productionTip = false
 import uView from "uview-ui";
+import navigation from "@/components/navigation.vue"
 Vue.use(uView);
+Vue.component('navigation', navigation);
 App.mpType = 'app'
 const app = new Vue({
     ...App

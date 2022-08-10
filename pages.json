@@ -200,6 +200,238 @@
 				},
 				"navigationBarTextStyle": "white"
 			}
+
+		}
+
+		, {
+			"path": "pages/settings/security/modify",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+
+		}, {
+			"path": "pages/settings/security/cellphone",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/security/replace",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/security/popup/popup",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+<<<<<<< HEAD
+			}
+		}
+
+		, {
+			"path": "pages/information/information",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/label/label",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+		{
+			"path": "pages/user/my",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+		{
+			"path": "pages/square/square",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+		{
+			"path": "pages/tidings/tidings",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+
+
+		, {
+			"path": "pages/tab/tab",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+
+
+		, {
+			"path": "pages/business/business",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+
+		, {
+			"path": "pages/business/details",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/business/purchase",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/business/success",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/release/release",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/notice/notice",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/tidings/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+
+		, {
+			"path": "pages/settings/notice/election/election",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/security/security",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
 		},
 		{
 			// 圈子
@@ -274,4 +506,75 @@
 			"iconWidth": "101px"
 		}
 	}
+=======
+			}
+		},
+
+		{
+			"path": "pages/tidings/chat-details/chat-details",
+
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+
+		}
+
+
+	
+
+],
+
+
+"globalStyle": {
+	"navigationBarTextStyle": "black",
+	"navigationBarTitleText": "uni-app",
+	"navigationBarBackgroundColor": "#F8F8F8",
+	"backgroundColor": "#F8F8F8",
+	"rpxCalcMaxDeviceWidth": 2000
+},
+"uniIdRouter": {},
+"tabBar": {
+	"selectedColor": "#FFFFFF ",
+	"color": "rgba(255, 255, 255, 0.2)",
+	"backgroundColor": "#343146 ",
+
+	"list": [{
+			"pagePath": "pages/home/home",
+			"text": "首页",
+			"iconPath": "/static/tab/homes.png",
+			"selectedIconPath": "/static/tab/home.png"
+		},
+		{
+			"pagePath": "pages/square/square",
+			"text": "广场",
+			"iconPath": "/static/tab/squares.png",
+			"selectedIconPath": "/static/tab/square.png"
+
+
+		},
+		{
+			"pagePath": "pages/tidings/index/index",
+			"text": "消息",
+			"iconPath": "/static/tab/tidingss.png",
+			"selectedIconPath": "/static/tab/tidings.png"
+
+		},
+		{
+			"pagePath": "pages/user/my",
+			"text": "我的",
+			"iconPath": "/static/tab/mys.png",
+			"selectedIconPath": "/static/tab/my.png"
+
+
+		}
+	],
+	"midButton": {
+		"height": "93px",
+		"iconPath": "/static/tab/abc.png",
+		"iconWidth": "101px"
+	}
+}
+>>>>>>> eb2929fad488af21803c0aacbf42ca22cc91187d
 }

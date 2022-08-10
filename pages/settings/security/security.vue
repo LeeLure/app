@@ -4,7 +4,7 @@
 		</view>
 		<!-- 导航栏 -->
 		<navigation :title="title"></navigation>
-		<view class="fit">
+		<view class="fit" @tap="modify">
 			<view class="fitlist  border">
 				<view class="kind">
 					<image src="@/static/settings/dianhhua.png" class="kindimg"></image>
@@ -18,7 +18,7 @@
 					</view>
 				</view>
 				<view class="goto">
-				
+
 					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
 				</view>
 			</view>
@@ -33,14 +33,19 @@
 	export default {
 		data() {
 			return {
-				title: "设置",
+				title: "安全中心",
 			}
 		},
 		components: {
 			navigation
 		},
 		methods: {
+			modify() {
+				uni.navigateTo({
+					url:'/pages/settings/security/modify'
+				})
 
+			}
 		}
 	}
 </script>
@@ -57,7 +62,7 @@
 		display: flex;
 		justify-content: space-between;
 		height: 148rpx;
-		
+
 		width: 708rpx;
 		margin-left: 24rpx;
 
@@ -66,31 +71,34 @@
 
 	.kind {
 		font-size: 28rpx;
-		display: flex;		
+		display: flex;
 		margin-top: 40rpx;
 		margin-left: 40rpx;
-	
+
 	}
-	.kindimg{
+
+	.kindimg {
 		width: 60rpx;
 		height: 60rpx;
 		vertical-align: middle;
 	}
-	.kinds{
+
+	.kinds {
 		margin-left: 20rpx;
 		vertical-align: middle;
 	}
 
-	.kind2{
+	.kind2 {
 		margin-top: 10rpx;
-		
+
 	}
 
-.goto{
-	margin-top: 50rpx;
-}
+	.goto {
+		margin-top: 50rpx;
+	}
+
 	.gotoimage {
-		
+
 		width: 25rpx;
 		height: 25rpx;
 		vertical-align: middle;

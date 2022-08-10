@@ -2,8 +2,8 @@
 	<view>
 		<!-- 导航栏 -->
 		<view class="background">
-			<image src="../../static/home/b.pic.jpg" mode="aspectFill" class="backgroundimg"></image>
-		<navigation :title="title" class="a"></navigation>
+			<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="backgroundimg"></image>
+		<navigation :title="title" id="a"></navigation>
 		</view>
 		
 		<view class="box">
@@ -232,9 +232,11 @@
 		width: 100%;
 		height: 100%;
 	}
-.a{
+#a{
 	position: absolute;
+	
 	top: var(--status-bar-height);
+	
 }
 .box{
 	background-color:#29253C ;

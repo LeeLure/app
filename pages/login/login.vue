@@ -22,14 +22,14 @@
 				<view class="checking">
 					<image src="../../static/login/protect.png" class="checkingimg"></image>
 				</view>
-				<view class="obtain" @click="getcode()">
+				<view class="obtain" @tap="getcode()">
 					{{!codeTime&#63;'获取验证码':codeTime+'s'}}
 				</view>
 
 
 
 			</view>
-			<button class="btn" @click="btn">登陆</button>
+			<button class="btn" @tap="btn">登陆</button>
 
 		</view>
 
