@@ -1,4 +1,5 @@
-{"easycom": {
+{
+	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
@@ -29,7 +30,7 @@
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-					 
+
 				},
 				"navigationBarTextStyle": "white"
 			}
@@ -41,7 +42,7 @@
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false, //去掉app+h5顶部导航
-					"background":"#1E1A32"
+					"background": "#1E1A32"
 				},
 				"navigationBarTextStyle": "white"
 			}
@@ -53,8 +54,8 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": true,
 				"app-plus": {
-					"titleNView": false ,//去掉app+h5顶部导航
-					"background":"#1E1A32"
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
 				},
 				"navigationBarTextStyle": "white"
 			}
@@ -65,8 +66,8 @@
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
-					"titleNView": false,//去掉app+h5顶部导航
-					"background":"#1E1A32"
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
 				},
 				"navigationBarTextStyle": "white"
 			}
@@ -78,7 +79,7 @@
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false, //去掉app+h5顶部导航
-					"background":"#1E1A32"
+					"background": "#1E1A32"
 				},
 				"navigationBarTextStyle": "white"
 			}
@@ -95,118 +96,115 @@
 
 		}
 
-	   
-        ,{
-            "path" : "pages/business/business",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-       
-        ,{
-            "path" : "pages/business/details",
-            "style": {
-            	"navigationStyle": "custom",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	},
-            	"navigationBarTextStyle": "white"
-            }
-            
-        }
-        ,{
-            "path" : "pages/business/purchase",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/business/success",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/settings",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        },{
-            "path" : "pages/release/release",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        },{
-            "path" : "pages/settings/notice/notice",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/tidings/index/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-       
-        ,{
-            "path" : "pages/settings/notice/election/election",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/security/security",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-    ],
-	
-	
+
+		, {
+			"path": "pages/business/business",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+
+		, {
+			"path": "pages/business/details",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/business/purchase",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/business/success",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/release/release",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/notice/notice",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/tidings/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+
+		, {
+			"path": "pages/settings/notice/election/election",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/security/security",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}
+	],
+
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -219,7 +217,7 @@
 		"selectedColor": "#FFFFFF ",
 		"color": "rgba(255, 255, 255, 0.2)",
 		"backgroundColor": "#343146 ",
-		
+
 		"list": [{
 				"pagePath": "pages/home/home",
 				"text": "首页",
@@ -235,7 +233,7 @@
 
 			},
 			{
-				"pagePath": "pages/tidings/tidings",
+				"pagePath": "pages/tidings/index/index",
 				"text": "消息",
 				"iconPath": "/static/tab/tidingss.png",
 				"selectedIconPath": "/static/tab/tidings.png"
