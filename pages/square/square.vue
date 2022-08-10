@@ -14,31 +14,39 @@
 		</view>
 
 		<!-- 圈子 -->
-		<view class="cir1">
-			<CirItem class="item1" />
-			<CirItem class="item2" />
+		<view class="cirTop">
+			<CirItem class="itemTop" />
+			<CirItem class="itemBot" />
 		</view>
-		<view class="cir2">
-			<CirItem class="item1" />
-			<CirItem class="item2" />
+		<view class="cirBot">
+			<CirItem class="itemTop" />
+			<CirItem class="itemBot" />
 		</view>
 
 		<!-- Tab 栏 -->
 		<view class="tab">
-			<view class="changeTab">
-				<view class="begin active">即将开始</view>
-				<view class="begin">比赛房间</view>
-				<view class="begin">活动房间</view>
+			<view class="tab_nav">
+				<view class="navTitle" v-for="(item, index) in tabList" :key="index">
+					<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.title }}</view>
+				</view>
 			</view>
-			<!-- 小三角 -->
-			<view class="triangle">
-				<view class="triangle2"></view>
-				<view class="triangle2"></view>
-				<view class="triangle2"></view>
+			<!-- 即将开始 -->
+			<view class="nav_item" v-if="isActive === 0">
+				<view class="itemname"><item v-for="item in 4" /></view>
 			</view>
+			<!-- 比赛房间 -->
+			<view class="nav_item" v-if="isActive === 1">比赛房间</view>
+			<!-- 活动房间 -->
+			<view class="nav_item" v-if="isActive === 2">活动房间</view>
 
+			<!-- 小三角 -->
+			<!-- 	<view class="triangle">
+				<view class="triangle2"></view>
+				<view class="triangle2"></view>
+				<view class="triangle2"></view>
+			</view> -->
 			<!-- item -->
-			<view class="itemname"><item v-for="item in 4" /></view>
+			<!-- <view class="itemname"><item v-for="item in 4" /></view> -->
 		</view>
 	</view>
 </template>
@@ -51,7 +59,9 @@ export default {
 	data() {
 		return {
 			// 控制小三角的变量
-			isTriangle2: false
+			isTriangle2: false,
+			isActive: 0,
+			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '比赛房间' }, { index: 2, title: '活动房间' }]
 		};
 	},
 	components: {
@@ -65,6 +75,10 @@ export default {
 			uni.navigateTo({
 				url: '/pages/square/circle/MoreCircles'
 			});
+		},
+
+		checked(index) {
+			this.isActive = index;
 		}
 	}
 };
@@ -109,67 +123,77 @@ export default {
 }
 
 /* 圈子 */
-.cir1,
-.cir2 {
+.cirTop,
+.cirBot {
 	display: flex;
 }
 
-.cir1 {
+.cirTop {
 	margin-top: 40rpx;
 }
 
-.cir2 {
+.cirBot {
 	margin-top: 12rpx;
 }
 
-.item1 {
+.itemTop {
 	margin-right: 8rpx;
 }
 
-.item2 {
+.itemBot {
 	background-color: #feeceb;
+}
+
+.cirTop .itemTop {
+	background-color: #fceced;
+}
+
+.cirBot .itemBot {
+	background-color: #fceced;
 }
 
 /* Tab */
 .tab {
 	margin-top: 40rpx;
-	/* border: 1px solid red; */
 	background-color: #29253c;
 	border-radius: 30rpx 30rpx 0 0;
+	/* border: 1px solid red; */
 }
 
-.changeTab {
+.tab_nav {
 	display: flex;
-	justify-content: space-around;
-	font-size: 28rpx;
-	color: #fff;
-	/* border: 1px solid red; */
-	margin-top: 36rpx;
+	justify-content: space-evenly;
+	/* padding: 12rpx 0; */
+	/* border: 1rpx solid lawngreen; */
 }
 
-.begin {
-	margin-top: 36rpx;
-	/* border: 1px solid red; */
-	width: 164rpx;
-	height: 58rpx;
+.tab_nav .navTitle {
 	line-height: 58rpx;
 	text-align: center;
-	border-radius: 30rpx;
+	font-size: 28rpx;
+	width: 164rpx;
+	height: 58rpx;
+	margin-bottom: 25rpx;
+	margin-top: 36rpx;
+	border-radius: 30rpx 30rpx 30rpx 30rpx;
+	color: #ffffff;
+	/* border: 1rpx solid lawngreen; */
 }
 
 .active {
+	position: relative;
+	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	background: #b043fa;
 }
 
-.triangle {
-	display: flex;
-	justify-content: space-around;
-}
-
-.triangle2 {
+.active::after {
+	content: '';
+	position: absolute;
 	width: 0;
 	height: 0;
-	border: 20rpx solid #999999;
+	bottom: -25rpx;
+	left: 42%;
+	border: 15rpx solid #999999;
 	border-top-color: transparent;
 	border-bottom-color: #b043fa;
 	border-left-color: transparent;
@@ -179,7 +203,8 @@ export default {
 /* item */
 .itemname {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
+	margin-top: 28rpx;
 }
 </style>
