@@ -17,17 +17,62 @@
 			<image src="../../../static/home/sousuo.png" class="img1"></image>
 			<text class="text1">搜索您想搜索的人~</text>
 		</view>
+
+		<!-- 菜单 -->
+		<view class="list">
+			<!-- 左侧菜单栏 -->
+			<view class="leftCategory">
+				<view class="category" v-for="item in categoryList" :key="item.index">
+					<!-- 背景色 -->
+					<view :class="{ bgColor: isColor === item.index }"></view>
+					<view class="text">{{ item.title }}</view>
+				</view>
+			</view>
+
+			<!-- 右侧卡片 -->
+			<view class="rightCategory">
+				<view class="card">
+					<view class="cardItem">
+						<Card title="英雄联盟">
+							<template #data>
+								<view class="">12345条动态 丨 12345浏览过</view>
+							</template>
+							<template #desc>
+								<view class="">我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述</view>
+							</template>
+						</Card>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- ------- -->
 	</view>
 </template>
 
 <script>
+import Card from './Card.vue';
 export default {
-	// components: {
-	// 	navigation
-	// },
+	components: {
+		// navigation
+		Card
+	},
 	data() {
 		return {
-			title: '发现圈子'
+			title: '发现圈子',
+			isColor: 0 || 2,
+			categoryList: [
+				{ title: '推荐圈子', index: 0 },
+				{ title: '推荐圈子', index: 1 },
+				{ title: '推荐圈子', index: 2 },
+				{ title: '推荐圈子', index: 3 },
+				{ title: '推荐圈子', index: 4 },
+				{ title: '推荐圈子', index: 5 },
+				{ title: '推荐圈子', index: 6 },
+				{ title: '推荐圈子', index: 7 },
+				{ title: '推荐圈子', index: 8 },
+				{ title: '推荐圈子', index: 9 },
+				{ title: '推荐圈子', index: 10 }
+			]
 		};
 	},
 
@@ -120,4 +165,47 @@ export default {
 	margin-right: 15rpx;
 	margin-left: 36rpx;
 }
+
+/* 菜单 */
+.list {
+	display: flexbox;
+	margin-top: 20rpx;
+	border: 1rpx solid #ffffff;
+}
+/* 左侧菜单 */
+
+.leftCategory {
+	width: 176rpx;
+	border: 1rpx solid #ffffff;
+}
+
+.category {
+	display: flex;
+	position: relative;
+	height: 100rpx;
+	/* margin-right: 16rpx; */
+	border-radius: 0 20rpx 20rpx 0;
+	border: 1rpx solid #ffffff;
+}
+
+.category .bgColor {
+	width: 58rpx;
+	height: 100rpx;
+	/* background-color: #fff; */
+	/* background-image: linear-gradient(to right, rgba(114, 34, 232,0),rgba(33, 27, 61,0); */
+	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
+}
+
+.category .text {
+	width: 96rpx;
+	height: 34rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+	font-size: 24rpx;
+}
+
+/* 右侧菜单 */
 </style>

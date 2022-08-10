@@ -38,15 +38,6 @@
 			<view class="nav_item" v-if="isActive === 1">比赛房间</view>
 			<!-- 活动房间 -->
 			<view class="nav_item" v-if="isActive === 2">活动房间</view>
-
-			<!-- 小三角 -->
-			<!-- 	<view class="triangle">
-				<view class="triangle2"></view>
-				<view class="triangle2"></view>
-				<view class="triangle2"></view>
-			</view> -->
-			<!-- item -->
-			<!-- <view class="itemname"><item v-for="item in 4" /></view> -->
 		</view>
 	</view>
 </template>

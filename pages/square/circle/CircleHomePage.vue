@@ -1,12 +1,16 @@
 <template>
 	<view>
 		<!-- 话题圈主页 -->
-		话题圈
+		<Card></Card>
 	</view>
 </template>
 
 <script>
+import Card from './Card.vue';
 export default {
+	components: {
+		Card
+	},
 	data() {
 		return {};
 	},
