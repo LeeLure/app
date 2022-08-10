@@ -242,7 +242,6 @@
 					"titleNView": false //去掉app+h5顶部导航
 				},
 				"navigationBarTextStyle": "white"
-<<<<<<< HEAD
 			}
 		}
 
@@ -445,16 +444,24 @@
 			}
 		}
 
-	    ,{
-            "path" : "pages/square/circle/CircleHomePage",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+		, {
+			"path": "pages/square/circle/CircleHomePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tidings/chat-details/chat-details",
+
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+
+		}
+	],
 
 
 	"globalStyle": {
@@ -496,8 +503,6 @@
 				"text": "我的",
 				"iconPath": "/static/tab/mys.png",
 				"selectedIconPath": "/static/tab/my.png"
-
-
 			}
 		],
 		"midButton": {
@@ -506,75 +511,4 @@
 			"iconWidth": "101px"
 		}
 	}
-=======
-			}
-		},
-
-		{
-			"path": "pages/tidings/chat-details/chat-details",
-
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-
-		}
-
-
-	
-
-],
-
-
-"globalStyle": {
-	"navigationBarTextStyle": "black",
-	"navigationBarTitleText": "uni-app",
-	"navigationBarBackgroundColor": "#F8F8F8",
-	"backgroundColor": "#F8F8F8",
-	"rpxCalcMaxDeviceWidth": 2000
-},
-"uniIdRouter": {},
-"tabBar": {
-	"selectedColor": "#FFFFFF ",
-	"color": "rgba(255, 255, 255, 0.2)",
-	"backgroundColor": "#343146 ",
-
-	"list": [{
-			"pagePath": "pages/home/home",
-			"text": "首页",
-			"iconPath": "/static/tab/homes.png",
-			"selectedIconPath": "/static/tab/home.png"
-		},
-		{
-			"pagePath": "pages/square/square",
-			"text": "广场",
-			"iconPath": "/static/tab/squares.png",
-			"selectedIconPath": "/static/tab/square.png"
-
-
-		},
-		{
-			"pagePath": "pages/tidings/index/index",
-			"text": "消息",
-			"iconPath": "/static/tab/tidingss.png",
-			"selectedIconPath": "/static/tab/tidings.png"
-
-		},
-		{
-			"pagePath": "pages/user/my",
-			"text": "我的",
-			"iconPath": "/static/tab/mys.png",
-			"selectedIconPath": "/static/tab/my.png"
-
-
-		}
-	],
-	"midButton": {
-		"height": "93px",
-		"iconPath": "/static/tab/abc.png",
-		"iconWidth": "101px"
-	}
-}
->>>>>>> eb2929fad488af21803c0aacbf42ca22cc91187d
 }
