@@ -4,39 +4,18 @@
 			<image src="../static/home/fanhui.png" mode="aspectFill" class="fanhui"></image>
 			<slot name="account"></slot>
 		</view>
-<<<<<<< HEAD
-		<view class="navigation2">{{ title }}</view>
-		<view class="navigation3"></view>
-=======
 		<view class="navigation2">
 			{{title}}
 		</view>
 		<view class="action">
 			<slot name="action"></slot>
 		</view>
->>>>>>> eb2929fad488af21803c0aacbf42ca22cc91187d
 	</view>
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {
-	name: 'navigation',
-	props: {
-		title: String
-	},
-
-	data() {
-		return {
-			// title:"crhfdbfgj"
-		};
-	},
-	methods: {
-		revert() {
-			uni.navigateBack({});
-=======
 	export default {
-		name: "navigation",
+		name: 'navigation',
 		props: {
 			title: String
 		},
@@ -48,42 +27,31 @@ export default {
 		},
 		methods: {
 			revert() {
-				uni.navigateBack({})
+				uni.navigateBack({});
 			}
->>>>>>> eb2929fad488af21803c0aacbf42ca22cc91187d
-		}
+		},
 	}
-};
 </script>
 
 <style>
-<<<<<<< HEAD
-.navigation {
-	width: 750rpx;
-	height: 100rpx;
-	line-height: 100rpx;
-	text-align: center;
-	display: flex;
-}
-.navigation1 {
-	margin-left: 20rpx;
-	color: #ffffff;
-}
-.fanhui {
-	width: 40rpx;
-	height: 40rpx;
-}
-.navigation2 {
-	width: 620rpx;
-	height: 100rpx;
-	line-height: 100rpx;
-	text-align: center;
-	font-size: 32rpx;
-	font-family: PingFang SC-Medium, PingFang SC;
-	font-weight: 500;
-	color: #ffffff;
-}
-=======
+	.navigation {
+		width: 750rpx;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		display: flex;
+	}
+
+	.navigation1 {
+		margin-left: 20rpx;
+		color: #ffffff;
+	}
+
+	.fanhui {
+		width: 40rpx;
+		height: 40rpx;
+	}
+
 	.navigation {
 		width: 750rpx;
 		height: 100rpx;
@@ -125,5 +93,4 @@ export default {
 	.action {
 		z-index: 10;
 	}
->>>>>>> eb2929fad488af21803c0aacbf42ca22cc91187d
 </style>
