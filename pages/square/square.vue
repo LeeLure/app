@@ -1,25 +1,26 @@
 <template>
 	<!-- 广场页面 -->
 	<view class="square">
+		<view class="bar"></view>
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
 		<!-- 赛事活动的图片 -->
-		<image src="../../static/square/saishi.jpg" alt="" />
+		<view class="img"><image src="../../static/square/saishi.jpg" alt="" /></view>
 
 		<!-- 发现圈子 -->
 		<view class="Interesting">
 			<view class="people">发现圈子</view>
-			<view class="more">更多圈子 ></view>
+			<view class="more" @tap="toMoreCircles">更多圈子 ></view>
 		</view>
 
 		<!-- 圈子 -->
-		<view class="cir" style="margin-top: 40rpx;">
-			<CirItem style="margin-right: 8rpx;" />
-			<CirItem style="background-color: #feeceb;" />
+		<view class="cir1">
+			<CirItem class="item1" />
+			<CirItem class="item2" />
 		</view>
-		<view class="cir" style="margin-top: 12rpx;">
-			<CirItem style="margin-right: 8rpx;" />
-			<CirItem style="background-color: #feeceb;" />
+		<view class="cir2">
+			<CirItem class="item1" />
+			<CirItem class="item2" />
 		</view>
 
 		<!-- Tab 栏 -->
@@ -58,7 +59,14 @@ export default {
 		CirItem,
 		item
 	},
-	methods: {}
+	methods: {
+		// 跳转到更多圈子
+		toMoreCircles() {
+			uni.navigateTo({
+				url: '/pages/square/circle/MoreCircles'
+			});
+		}
+	}
 };
 </script>
 
@@ -89,9 +97,37 @@ export default {
 	margin-top: 10rpx;
 }
 
+.img {
+	width: 710rpx;
+	height: 178rpx;
+	/* margin: 18rpx 20rpx 0 20rpx; */
+}
+
+.img image {
+	width: 100%;
+	height: 100%;
+}
+
 /* 圈子 */
-.cir {
+.cir1,
+.cir2 {
 	display: flex;
+}
+
+.cir1 {
+	margin-top: 40rpx;
+}
+
+.cir2 {
+	margin-top: 12rpx;
+}
+
+.item1 {
+	margin-right: 8rpx;
+}
+
+.item2 {
+	background-color: #feeceb;
 }
 
 /* Tab */
@@ -140,8 +176,10 @@ export default {
 	border-right-color: transparent;
 }
 
+/* item */
 .itemname {
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 </style>

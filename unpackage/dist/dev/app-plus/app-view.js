@@ -179,6 +179,25 @@ __definePage('pages/settings/security/modify', function () {return Vue.extend(__
 __definePage('pages/settings/security/cellphone', function () {return Vue.extend(__webpack_require__(/*! pages/settings/security/cellphone.vue?mpType=page */ 271).default);});
 __definePage('pages/settings/security/replace', function () {return Vue.extend(__webpack_require__(/*! pages/settings/security/replace.vue?mpType=page */ 279).default);});
 __definePage('pages/settings/security/popup/popup', function () {return Vue.extend(__webpack_require__(/*! pages/settings/security/popup/popup.vue?mpType=page */ 295).default);});
+__definePage('pages/information/information', function () {return Vue.extend(__webpack_require__(/*! pages/information/information.vue?mpType=page */ 14).default);});
+__definePage('pages/label/label', function () {return Vue.extend(__webpack_require__(/*! pages/label/label.vue?mpType=page */ 22).default);});
+__definePage('pages/home/home', function () {return Vue.extend(__webpack_require__(/*! pages/home/home.vue?mpType=page */ 30).default);});
+__definePage('pages/user/my', function () {return Vue.extend(__webpack_require__(/*! pages/user/my.vue?mpType=page */ 38).default);});
+__definePage('pages/square/square', function () {return Vue.extend(__webpack_require__(/*! pages/square/square.vue?mpType=page */ 46).default);});
+__definePage('pages/tidings/tidings', function () {return Vue.extend(__webpack_require__(/*! pages/tidings/tidings.vue?mpType=page */ 70).default);});
+__definePage('pages/tab/tab', function () {return Vue.extend(__webpack_require__(/*! pages/tab/tab.vue?mpType=page */ 78).default);});
+__definePage('pages/business/business', function () {return Vue.extend(__webpack_require__(/*! pages/business/business.vue?mpType=page */ 118).default);});
+__definePage('pages/business/details', function () {return Vue.extend(__webpack_require__(/*! pages/business/details.vue?mpType=page */ 134).default);});
+__definePage('pages/business/purchase', function () {return Vue.extend(__webpack_require__(/*! pages/business/purchase.vue?mpType=page */ 142).default);});
+__definePage('pages/business/success', function () {return Vue.extend(__webpack_require__(/*! pages/business/success.vue?mpType=page */ 150).default);});
+__definePage('pages/settings/settings', function () {return Vue.extend(__webpack_require__(/*! pages/settings/settings.vue?mpType=page */ 158).default);});
+__definePage('pages/release/release', function () {return Vue.extend(__webpack_require__(/*! pages/release/release.vue?mpType=page */ 166).default);});
+__definePage('pages/settings/notice/notice', function () {return Vue.extend(__webpack_require__(/*! pages/settings/notice/notice.vue?mpType=page */ 171).default);});
+__definePage('pages/tidings/index/index', function () {return Vue.extend(__webpack_require__(/*! pages/tidings/index/index.vue?mpType=page */ 195).default);});
+__definePage('pages/settings/notice/election/election', function () {return Vue.extend(__webpack_require__(/*! pages/settings/notice/election/election.vue?mpType=page */ 247).default);});
+__definePage('pages/settings/security/security', function () {return Vue.extend(__webpack_require__(/*! pages/settings/security/security.vue?mpType=page */ 255).default);});
+__definePage('pages/square/circle/MoreCircles', function () {return Vue.extend(__webpack_require__(/*! pages/square/circle/MoreCircles.vue?mpType=page */ 314).default);});
+__definePage('pages/square/circle/CircleHomePage', function () {return Vue.extend(__webpack_require__(/*! pages/square/circle/CircleHomePage.vue?mpType=page */ 322).default);});
 __definePage('pages/tidings/chat-details/chat-details', function () {return Vue.extend(__webpack_require__(/*! pages/tidings/chat-details/chat-details.vue?mpType=page */ 303).default);});
 
 /***/ }),
@@ -2507,7 +2526,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.a {\n\t\tcolor: white;\n}\n.head {\n\t\tdisplay: flex;\n\t\t/* margin-top: 10rpx;s */\n}\n.headleft {\n\t\twidth: 108rpx;\n\t\theight: 68rpx;\n\t\tline-height: 68rpx;\n\t\tborder-radius: 30rpx;\n\t\tmargin-left: 22rpx;\n\t\tbackground-color: #29253C;\n\t\ttext-align: center;\n}\n.text {\n\t\tcolor: white;\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tvertical-align: middle;\n}\n.img {\n\t\twidth: 25rpx;\n\t\theight: 25rpx;\n\t\tvertical-align: middle;\n}\n.input {\n\t\twidth: 584rpx;\n\t\theight: 68rpx;\n\t\tline-height: 68rpx;\n\t\tmargin-left: 14rpx;\n\t\tborder-radius: 30rpx;\n\t\tbackground-color: #29253C;\n}\n.text1 {\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tvertical-align: middle;\n}\n.img1 {\n\t\twidth: 25rpx;\n\t\theight: 25rpx;\n\t\tvertical-align: middle;\n\t\tmargin-right: 15rpx;\n\t\tmargin-left: 36rpx;\n}\n.swiper-box {\t\n\t\theight: 400rpx;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 30rpx;\n\t\tborder-radius: 20rpx;\n\t\toverflow: hidden;\n}\n.swiper-box-item{\n\t\twidth: 706rpx;\n}\n.swiper-box .uni-swiper-dots .uni-swiper-dots-horizontal{\n\t\t   margin-bottom: 1rpx;\n\t\t   margin-top: 30rpx;\n}\n.swiper-box  .uni-swiper-dot{\n\t\t\n\t\tdisplay: inline-flex;\n\t\theight: 6rpx;\n\t\tjustify-content: space-between;\n}\n.swiper-box .uni-swiper-dot::before{\n\t\tcontent: '';\n\t\tflex-grow: 1;\n\t\twidth: 22rpx;\n\t\tbackground: rgba(255, 255, 255, 0.2);\n\t\tborder-radius: 8rpx;\n}\n.swiper-box .uni-swiper-dot-active {\n\t\t \t\t\t\n\t\t \t\t\twidth: 32upx !important;\n\t\t \t\t\theight: 8upx !important;\n\t\t \t\t\tbackground: rgba(255, 255, 255,1);\n\t\t \t\t\tborder-radius: 4rpx;\n}\n.swiper-item-image {\n\t\twidth: 706rpx;\n\t\theight: 350rpx;\n\t\tborder-radius: 20rpx;\n}\n.favourable {\n\t\tfont-size: 36rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 30rpx;\n}\n.favourableimage {\n\t\twidth: 706rpx;\n\t\theight: 176rpx;\n\t\tmargin-left: 22rpx;\n\t\t/* margin-top: 22rpx; */\n}\n.Interesting {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\tmargin-left: 22rpx;\n\t\tmargin-right: 22rpx;\n\t\tmargin-top: 34rpx;\n}\n.people {\n\t\tfont-size: 36rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n}\n.more {\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tmargin-top: 10rpx;\n}\n.swiperbox {\n\t\t/* border: 1px  solid red; */\n\n\t\theight: 650rpx !important;\n\n\t\twidth: 100%;\n\t\tmargin-top: 20rpx;\n}\n.swiperitem {\n\t\twidth: 620rpx !important;\n\t\theight: 650rpx !important;\n\t\tmargin-left: 22rpx;\n\t\t/* border: 1px  solid red; */\n\t\tborder-radius: 30rpx;\n}\n.swiperview {\n\t\twidth: 582rpx;\n\t\tborder-radius: 30rpx;\n\t\toverflow: hidden;\n}\n.swiperitemtop {\n\t\theight: 460rpx;\n\t\tdisplay: flex;\n}\n.synopsis1 {\n\t\t/* border: 1px solid red; */\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n}\n.synopsis2 {\n\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n\t\tmargin-left: 8rpx;\n}\n.image1 {\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n}\n.image2 {\n\t\twidth: 246rpx;\n\t\theight: 226rpx;\n\n\t\tmargin-bottom: -2rpx;\n}\n.swiperitembottom {\n\t\theight: 190rpx;\n\t\twidth: 582rpx;\n\t\tdisplay: flex;\n\t\tbackground-color: #29253C;\n}\n.details {\n\t\tmargin-left: 18rpx;\n\n\t\twidth: 328rpx;\n}\n.detailstop {\n\t\tmargin-top: 40rpx;\n}\n.detailstext1 {\n\t\tfont-size: 32rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n}\n.detailstext2 {\n\t\tfont-size: 20rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\tfont-weight: 400;\n\t\tcolor: #FFEE70;\n\t\tmargin-left: 20rpx;\n}\n.detailsbottom {\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tfont-size: 28rpx;\n\t\tmargin-top: 26rpx;\n\t\tdisplay: flex;\n}\n.detailstext4 {\n\t\tmargin-top: 10rpx;\n\t\twidth: 8rpx;\n\t\theight: 8rpx;\n\t\tborder-radius: 1rpx;\n\t\tbackground-color: rgba(255, 255, 255, 0.5);\n\t\tmargin-left: 15rpx;\n\t\tmargin-right: 15rpx;\n}\n.collect {\n\t\twidth: 126rpx;\n\t\theight: 126rpx;\n\t\tbackground: linear-gradient(180deg, #B043FA 0%, #7222EB 100%);\n\t\tborder-radius: 65rpx;\n\t\tmargin-top: 30rpx;\n\t\tmargin-left: 70rpx;\n}\n.particulars {\n\t\twidth: 706rpx;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 28rpx;\n}\n.batten {\n\t\tdisplay: flex;\n}\n.sculpture {\n\t\twidth: 84rpx;\n\t\theight: 84rpx;\n\t\tborder-radius: 41rpx;\n\t\toverflow: hidden;\n}\n.sculptureimage {\n\t\twidth: 84rpx;\n\t\theight: 84rpx;\n}\n.nickname {\n\t\tmargin-top: 10rpx;\n\t\tmargin-left: 20rpx;\n}\n.nicknamename {\n\t\tfont-size: 28rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.nicknametime {\n\t\tfont-size: 24rpx;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n}\n.copywriting {\n\t\tmargin-top: 22rpx;\n\t\tfont-size: 32rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.flash {\n\t\t/* width:706rpx; */\n\t\theight: 412rpx;\n\t\tmargin-top: 22rpx;\n\t\tborder-radius: 30rpx;\n}\n.flashimage {\n\t\twidth: 706rpx;\n\t\theight: 412rpx;\n\t\tborder-radius: 30rpx;\n}\n.crumbs {\n\t\tmargin-top: 34rpx;\n}\n.crumbsview {\n\t\tdisplay: inline-block;\n\t\tpadding: 10rpx 25rpx;\n\t\theight: 30rpx;\n\t\tline-height: 30rpx;\n\t\tborder-radius: 20rpx;\n\t\tbackground-color: #403B5B;\n\t\tfont-size: 28rpx;\n\t\tmargin-right: 20rpx;\n}\n.partake {\n\t\tdisplay: flex;\n\t\tposition: relative;\n\t\tmargin-top: 20rpx;\n}\n.partake1 {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tborder: 1rpx solid white;\n}\n.partake2 {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tposition: absolute;\n\t\tleft: 25rpx;\n\t\tborder: 1rpx solid white;\n}\n.partake3 {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tposition: absolute;\n\t\tleft: 45rpx;\n\t\tborder: 1rpx solid white;\n}\n.partakeimage {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n}\n.conversation {\n\t\tfont-size: 22rpx;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tmargin-left: 60rpx;\n\t\tmargin-top: 10rpx;\n}\n.praise {\n\t\tmargin-left: 90rpx;\n\t\twidth: 100rpx;\n}\n.fabulous {\n\t\twidth: 32rpx;\n\t\theight: 30rpx;\n\t\tvertical-align: middle;\n}\n.praisetext {\n\t\tfont-size: 22rpx;\n\t\tvertical-align: middle;\n\t\tmargin-left: 10rpx;\n}\n.kongbai {\n\t\theight: 50rpx;\n}\n.jurisdiction{\n\t\twidth: 706rpx;\n\t\theight: 650rpx;\n\t\tborder: 1px solid  rgba(255, 255, 255, 0);\n\t\tmargin-left: 22rpx;\n\t\tborder-radius: 30rpx;\n\t\tmargin-top: 30rpx;\n\t\tbackground-color: #29253C ;\n}\n.jurisdictionimg{\n\t\twidth: 160rpx;\n\t\theight: 160rpx;\n\t\tmargin: 78rpx auto 50rpx  auto;\n\t\tdisplay: block;\n}\n.jurisdiction1{\n\t\tfont-size: 28rpx;\n\t\tcolor: rgba(255, 255, 255, 0.6);\n\t\t\n\t\twidth: 100%;\n\t\theight: 60rpx;\n\t\tline-height: 60rpx;\n\t\ttext-align: center;\n}\n.jurisdiction2{\n\t\twidth: 428rpx;\n\t\theight: 106rpx;\n\t\tline-height: 106rpx;\n\t\tfont-size: 28rpx;\n\t\ttext-align: center;\n\t\tbackground-color: #D53EDA;\n\t\tborder-radius: 54rpx;\n\t\tmargin-left: 140rpx;\n\t\tmargin-top: 64rpx;\n}\n", ""]);
+exports.push([module.i, "\n.a {\n\tcolor: white;\n}\n.head {\n\tdisplay: flex;\n\t/* margin-top: 10rpx;s */\n}\n.headleft {\n\twidth: 108rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tborder-radius: 30rpx;\n\tmargin-left: 22rpx;\n\tbackground-color: #29253c;\n\ttext-align: center;\n}\n.text {\n\tcolor: white;\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tvertical-align: middle;\n}\n.img {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n}\n.input {\n\twidth: 584rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tmargin-left: 14rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253c;\n}\n.text1 {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tvertical-align: middle;\n}\n.img1 {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n\tmargin-right: 15rpx;\n\tmargin-left: 36rpx;\n}\n.swiper-box {\n\theight: 400rpx;\n\tmargin-left: 22rpx;\n\tmargin-top: 30rpx;\n\tborder-radius: 20rpx;\n\toverflow: hidden;\n}\n.swiper-box-item {\n\twidth: 706rpx;\n}\n.swiper-box .uni-swiper-dots .uni-swiper-dots-horizontal {\n\tmargin-bottom: 1rpx;\n\tmargin-top: 30rpx;\n}\n.swiper-box .uni-swiper-dot {\n\tdisplay: inline-flex;\n\theight: 6rpx;\n\tjustify-content: space-between;\n}\n.swiper-box .uni-swiper-dot::before {\n\tcontent: '';\n\tflex-grow: 1;\n\twidth: 22rpx;\n\tbackground: rgba(255, 255, 255, 0.2);\n\tborder-radius: 8rpx;\n}\n.swiper-box .uni-swiper-dot-active {\n\twidth: 32upx !important;\n\theight: 8upx !important;\n\tbackground: rgba(255, 255, 255, 1);\n\tborder-radius: 4rpx;\n}\n.swiper-item-image {\n\twidth: 706rpx;\n\theight: 350rpx;\n\tborder-radius: 20rpx;\n}\n.favourable {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n\tmargin-left: 22rpx;\n\tmargin-top: 30rpx;\n}\n.favourableimage {\n\twidth: 706rpx;\n\theight: 176rpx;\n\tmargin-left: 22rpx;\n\t/* margin-top: 22rpx; */\n}\n.Interesting {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.swiperbox {\n\t/* border: 1px  solid red; */\n\n\theight: 650rpx !important;\n\n\twidth: 100%;\n\tmargin-top: 20rpx;\n}\n.swiperitem {\n\twidth: 620rpx !important;\n\theight: 650rpx !important;\n\tmargin-left: 22rpx;\n\t/* border: 1px  solid red; */\n\tborder-radius: 30rpx;\n}\n.swiperview {\n\twidth: 582rpx;\n\tborder-radius: 30rpx;\n\toverflow: hidden;\n}\n.swiperitemtop {\n\theight: 460rpx;\n\tdisplay: flex;\n}\n.synopsis1 {\n\t/* border: 1px solid red; */\n\twidth: 328rpx;\n\theight: 460rpx;\n}\n.synopsis2 {\n\twidth: 328rpx;\n\theight: 460rpx;\n\tmargin-left: 8rpx;\n}\n.image1 {\n\twidth: 328rpx;\n\theight: 460rpx;\n}\n.image2 {\n\twidth: 246rpx;\n\theight: 226rpx;\n\n\tmargin-bottom: -2rpx;\n}\n.swiperitembottom {\n\theight: 190rpx;\n\twidth: 582rpx;\n\tdisplay: flex;\n\tbackground-color: #29253c;\n}\n.details {\n\tmargin-left: 18rpx;\n\n\twidth: 328rpx;\n}\n.detailstop {\n\tmargin-top: 40rpx;\n}\n.detailstext1 {\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.detailstext2 {\n\tfont-size: 20rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tfont-weight: 400;\n\tcolor: #ffee70;\n\tmargin-left: 20rpx;\n}\n.detailsbottom {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 28rpx;\n\tmargin-top: 26rpx;\n\tdisplay: flex;\n}\n.detailstext4 {\n\tmargin-top: 10rpx;\n\twidth: 8rpx;\n\theight: 8rpx;\n\tborder-radius: 1rpx;\n\tbackground-color: rgba(255, 255, 255, 0.5);\n\tmargin-left: 15rpx;\n\tmargin-right: 15rpx;\n}\n.collect {\n\twidth: 126rpx;\n\theight: 126rpx;\n\tbackground: linear-gradient(180deg, #b043fa 0%, #7222eb 100%);\n\tborder-radius: 65rpx;\n\tmargin-top: 30rpx;\n\tmargin-left: 70rpx;\n}\n.particulars {\n\twidth: 706rpx;\n\tmargin-left: 22rpx;\n\tmargin-top: 28rpx;\n}\n.batten {\n\tdisplay: flex;\n}\n.sculpture {\n\twidth: 84rpx;\n\theight: 84rpx;\n\tborder-radius: 41rpx;\n\toverflow: hidden;\n}\n.sculptureimage {\n\twidth: 84rpx;\n\theight: 84rpx;\n}\n.nickname {\n\tmargin-top: 10rpx;\n\tmargin-left: 20rpx;\n}\n.nicknamename {\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.nicknametime {\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.copywriting {\n\tmargin-top: 22rpx;\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.flash {\n\t/* width:706rpx; */\n\theight: 412rpx;\n\tmargin-top: 22rpx;\n\tborder-radius: 30rpx;\n}\n.flashimage {\n\twidth: 706rpx;\n\theight: 412rpx;\n\tborder-radius: 30rpx;\n}\n.crumbs {\n\tmargin-top: 34rpx;\n}\n.crumbsview {\n\tdisplay: inline-block;\n\tpadding: 10rpx 25rpx;\n\theight: 30rpx;\n\tline-height: 30rpx;\n\tborder-radius: 20rpx;\n\tbackground-color: #403b5b;\n\tfont-size: 28rpx;\n\tmargin-right: 20rpx;\n}\n.partake {\n\tdisplay: flex;\n\tposition: relative;\n\tmargin-top: 20rpx;\n}\n.partake1 {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tborder: 1rpx solid white;\n}\n.partake2 {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tposition: absolute;\n\tleft: 25rpx;\n\tborder: 1rpx solid white;\n}\n.partake3 {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tposition: absolute;\n\tleft: 45rpx;\n\tborder: 1rpx solid white;\n}\n.partakeimage {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n}\n.conversation {\n\tfont-size: 22rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-left: 60rpx;\n\tmargin-top: 10rpx;\n}\n.praise {\n\tmargin-left: 90rpx;\n\twidth: 100rpx;\n}\n.fabulous {\n\twidth: 32rpx;\n\theight: 30rpx;\n\tvertical-align: middle;\n}\n.praisetext {\n\tfont-size: 22rpx;\n\tvertical-align: middle;\n\tmargin-left: 10rpx;\n}\n.kongbai {\n\theight: 50rpx;\n}\n.jurisdiction {\n\twidth: 706rpx;\n\theight: 650rpx;\n\tborder: 1px solid rgba(255, 255, 255, 0);\n\tmargin-left: 22rpx;\n\tborder-radius: 30rpx;\n\tmargin-top: 30rpx;\n\tbackground-color: #29253c;\n}\n.jurisdictionimg {\n\twidth: 160rpx;\n\theight: 160rpx;\n\tmargin: 78rpx auto 50rpx auto;\n\tdisplay: block;\n}\n.jurisdiction1 {\n\tfont-size: 28rpx;\n\tcolor: rgba(255, 255, 255, 0.6);\n\n\twidth: 100%;\n\theight: 60rpx;\n\tline-height: 60rpx;\n\ttext-align: center;\n}\n.jurisdiction2 {\n\twidth: 428rpx;\n\theight: 106rpx;\n\tline-height: 106rpx;\n\tfont-size: 28rpx;\n\ttext-align: center;\n\tbackground-color: #d53eda;\n\tborder-radius: 54rpx;\n\tmargin-left: 140rpx;\n\tmargin-top: 64rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2826,91 +2845,89 @@ var render = function() {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
-          _c("uni-view", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }, [
+          _c("uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }, [
             _vm._v("赛事活动")
           ])
         ],
         1
       ),
-      _c("v-uni-image", {
-        attrs: { src: _vm._$g(3, "a-src"), alt: "", _i: 3 }
-      }),
       _c(
         "uni-view",
         { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
         [
-          _c("uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
+          _c("v-uni-image", {
+            attrs: { src: _vm._$g(5, "a-src"), alt: "", _i: 5 }
+          })
+        ],
+        1
+      ),
+      _c(
+        "uni-view",
+        { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+        [
+          _c("uni-view", { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } }, [
             _vm._v("发现圈子")
           ]),
-          _c("uni-view", { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } }, [
-            _vm._v("更多圈子 >")
-          ])
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(8, "sc"),
+              attrs: { _i: 8 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
+            [_vm._v("更多圈子 >")]
+          )
         ],
         1
       ),
       _c(
         "uni-view",
-        {
-          staticClass: _vm._$g(7, "sc"),
-          staticStyle: { "margin-top": "40rpx" },
-          attrs: { _i: 7 }
-        },
+        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
         [
-          _c("CirItem", {
-            staticStyle: { "margin-right": "8rpx" },
-            attrs: { _i: 8 }
-          }),
-          _c("CirItem", {
-            staticStyle: { "background-color": "#feeceb" },
-            attrs: { _i: 9 }
-          })
+          _c("CirItem", { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } }),
+          _c("CirItem", { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } })
         ],
         1
       ),
       _c(
         "uni-view",
-        {
-          staticClass: _vm._$g(10, "sc"),
-          staticStyle: { "margin-top": "12rpx" },
-          attrs: { _i: 10 }
-        },
+        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
         [
-          _c("CirItem", {
-            staticStyle: { "margin-right": "8rpx" },
-            attrs: { _i: 11 }
-          }),
-          _c("CirItem", {
-            staticStyle: { "background-color": "#feeceb" },
-            attrs: { _i: 12 }
-          })
+          _c("CirItem", { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } }),
+          _c("CirItem", { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } })
         ],
         1
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+        { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
                 [_vm._v("即将开始")]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
                 [_vm._v("比赛房间")]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                 [_vm._v("活动房间")]
               )
             ],
@@ -2918,28 +2935,28 @@ var render = function() {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
             [
-              _c("uni-view", {
-                staticClass: _vm._$g(19, "sc"),
-                attrs: { _i: 19 }
-              }),
-              _c("uni-view", {
-                staticClass: _vm._$g(20, "sc"),
-                attrs: { _i: 20 }
-              }),
               _c("uni-view", {
                 staticClass: _vm._$g(21, "sc"),
                 attrs: { _i: 21 }
+              }),
+              _c("uni-view", {
+                staticClass: _vm._$g(22, "sc"),
+                attrs: { _i: 22 }
+              }),
+              _c("uni-view", {
+                staticClass: _vm._$g(23, "sc"),
+                attrs: { _i: 23 }
               })
             ],
             1
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+            { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
             _vm._l(4, function(item, $10, $20, $30) {
-              return _c("item", { attrs: { _i: "23-" + $30 } })
+              return _c("item", { attrs: { _i: "25-" + $30 } })
             }),
             1
           )
@@ -3194,7 +3211,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.circle[data-v-5501cb29] {\n\tdisplay: flex;\n\twidth: 348rpx;\n\theight: 104rpx;\n\tbackground: #e8efff;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\topacity: 1;\n\t/* margin-top: 40rpx; */\n\tpadding: 2rpx 0 2rpx 16rpx;\n}\n.img[data-v-5501cb29] {\n\twidth: 84rpx;\n\theight: 78rpx;\n\tpadding: 15rpx 10rpx 15rpx 15rpx;\n}\n.img-img[data-v-5501cb29] {\n\twidth: 100%;\n\theight: 100%;\n}\n.text[data-v-5501cb29] {\n\tpadding-top: 14rpx;\n}\n.title[data-v-5501cb29] {\n\twidth: 178rpx;\n\theight: 42rpx;\n\tfont-size: 28rpx;\n\tfont-weight: 700;\n}\n.info[data-v-5501cb29] {\n\twidth: 214rpx;\n\theight: 36rpx;\n\tfont-size: 24rpx;\n\tcolor: #444444;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n", ""]);
+exports.push([module.i, "\n.circle[data-v-5501cb29] {\n\tdisplay: flex;\n\twidth: 348rpx;\n\theight: 104rpx;\n\tbackground: #e8efff;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\topacity: 1;\n\t/* margin-top: 40rpx; */\n\tpadding: 2rpx 0 2rpx 16rpx;\n}\n.img[data-v-5501cb29] {\n\twidth: 84rpx;\n\theight: 78rpx;\n\tpadding: 15rpx 10rpx 10rpx 10rpx;\n}\n.img-img[data-v-5501cb29] {\n\twidth: 100%;\n\theight: 100%;\n}\n.text[data-v-5501cb29] {\n\tpadding-top: 14rpx;\n}\n.title[data-v-5501cb29] {\n\twidth: 178rpx;\n\theight: 42rpx;\n\tfont-size: 28rpx;\n\tfont-weight: 700;\n}\n.info[data-v-5501cb29] {\n\twidth: 214rpx;\n\theight: 36rpx;\n\tfont-size: 24rpx;\n\tcolor: #444444;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -3291,7 +3308,7 @@ var render = function() {
             "uni-view",
             { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
             [
-              _c("img", {
+              _c("v-uni-image", {
                 staticClass: _vm._$g(3, "sc"),
                 attrs: { src: _vm._$g(3, "a-src"), alt: "", _i: 3 }
               })
@@ -3423,7 +3440,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.item[data-v-697b0816] {\n\tdisplay: flex;\n\twidth: 340rpx;\n\theight: 479rpx;\n\tmargin: 28rpx 10rpx 0 10rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\toverflow: hidden;\n}\n.img[data-v-697b0816] {\n\twidth: 100%;\n\theight: 284rpx;\n}\n.img-image[data-v-697b0816] {\n\twidth: 100%;\n\theight: 100%;\n\t/* border-radius: 30rpx 30rpx 0 0; */\n}\n.info[data-v-697b0816] {\n\theight: 170rpx;\n\tpadding: 10rpx;\n\tbackground-color: #fff;\n}\n.title[data-v-697b0816] {\n\theight: 94rpx;\n\tfont-size: 28rpx;\n}\n.time[data-v-697b0816] {\n\tfont-size: 24rpx;\n\tcolor: #999999;\n}\n.add[data-v-697b0816] {\n\tfont-size: 24rpx;\n\tcolor: #999999;\n\tmargin-top: 12rpx;\n}\n.text[data-v-697b0816] {\n\tcolor: #b043fa;\n}\n", ""]);
+exports.push([module.i, "\n.item[data-v-697b0816] {\n\tdisplay: flex;\n\twidth: 340rpx;\n\theight: 479rpx;\n\tmargin: 28rpx 20rpx 0 20rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\toverflow: hidden;\n\t/* border: 1rpx solid white; */\n}\n.img[data-v-697b0816] {\n\twidth: 100%;\n\theight: 284rpx;\n}\n.img-image[data-v-697b0816] {\n\twidth: 100%;\n\theight: 100%;\n\tborder-radius: 30rpx 30rpx 0 0;\n}\n.info[data-v-697b0816] {\n\theight: 194rpx;\n\t/* box-sizing: border-box; */\n\tpadding: 10rpx;\n\tbackground-color: #fff;\n\tborder-radius: 0 0 30rpx 30rpx;\n}\n.title[data-v-697b0816] {\n\theight: 94rpx;\n\tfont-size: 28rpx;\n}\n.time[data-v-697b0816] {\n\tfont-size: 24rpx;\n\tcolor: #999999;\n}\n.add[data-v-697b0816] {\n\tfont-size: 24rpx;\n\tcolor: #999999;\n\tmargin-top: 12rpx;\n}\n.text[data-v-697b0816] {\n\tcolor: #b043fa;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -3475,7 +3492,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.square {\n\tpadding-bottom: 20rpx;\n}\n.Interesting {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n\n/* 圈子 */\n.cir {\n\tdisplay: flex;\n}\n\n/* Tab */\n.tab {\n\tmargin-top: 40rpx;\n\t/* border: 1px solid red; */\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n}\n.changeTab {\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfont-size: 28rpx;\n\tcolor: #fff;\n\t/* border: 1px solid red; */\n\tmargin-top: 36rpx;\n}\n.begin {\n\tmargin-top: 36rpx;\n\t/* border: 1px solid red; */\n\twidth: 164rpx;\n\theight: 58rpx;\n\tline-height: 58rpx;\n\ttext-align: center;\n\tborder-radius: 30rpx;\n}\n.active {\n\tbackground: #b043fa;\n}\n.triangle {\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n.triangle2 {\n\twidth: 0;\n\theight: 0;\n\tborder: 20rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n.itemname {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n}\n", ""]);
+exports.push([module.i, "\n.square {\n\tpadding-bottom: 20rpx;\n}\n.Interesting {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.img {\n\twidth: 710rpx;\n\theight: 178rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.img uni-image {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cir1,\n.cir2 {\n\tdisplay: flex;\n}\n.cir1 {\n\tmargin-top: 40rpx;\n}\n.cir2 {\n\tmargin-top: 12rpx;\n}\n.item1 {\n\tmargin-right: 8rpx;\n}\n.item2 {\n\tbackground-color: #feeceb;\n}\n\n/* Tab */\n.tab {\n\tmargin-top: 40rpx;\n\t/* border: 1px solid red; */\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n}\n.changeTab {\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfont-size: 28rpx;\n\tcolor: #fff;\n\t/* border: 1px solid red; */\n\tmargin-top: 36rpx;\n}\n.begin {\n\tmargin-top: 36rpx;\n\t/* border: 1px solid red; */\n\twidth: 164rpx;\n\theight: 58rpx;\n\tline-height: 58rpx;\n\ttext-align: center;\n\tborder-radius: 30rpx;\n}\n.active {\n\tbackground: #b043fa;\n}\n.triangle {\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n.triangle2 {\n\twidth: 0;\n\theight: 0;\n\tborder: 20rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tflex-wrap: wrap;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -4695,7 +4712,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.a[data-v-92bb8f34] {\n\t\tcolor: white;\n}\n.head[data-v-92bb8f34] {\n\t\tdisplay: flex;\n\t\t/* margin-top: 10rpx;s */\n}\n.headleft[data-v-92bb8f34] {\n\t\twidth: 108rpx;\n\t\theight: 68rpx;\n\t\tline-height: 68rpx;\n\t\tborder-radius: 30rpx;\n\t\tmargin-left: 22rpx;\n\t\tbackground-color: #29253C;\n\t\ttext-align: center;\n}\n.text[data-v-92bb8f34] {\n\t\tcolor: white;\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tvertical-align: middle;\n}\n.img[data-v-92bb8f34] {\n\t\twidth: 25rpx;\n\t\theight: 25rpx;\n\t\tvertical-align: middle;\n}\n.input[data-v-92bb8f34] {\n\t\twidth: 584rpx;\n\t\theight: 68rpx;\n\t\tline-height: 68rpx;\n\t\tmargin-left: 14rpx;\n\t\tborder-radius: 30rpx;\n\t\tbackground-color: #29253C;\n}\n.text1[data-v-92bb8f34] {\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tvertical-align: middle;\n}\n.img1[data-v-92bb8f34] {\n\t\twidth: 25rpx;\n\t\theight: 25rpx;\n\t\tvertical-align: middle;\n\t\tmargin-right: 15rpx;\n\t\tmargin-left: 36rpx;\n}\n.swiper-box[data-v-92bb8f34] {\t\n\t\theight: 400rpx;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 30rpx;\n\t\tborder-radius: 20rpx;\n\t\toverflow: hidden;\n}\n.swiper-box-item[data-v-92bb8f34]{\n\t\twidth: 706rpx;\n}\n.swiper-box .uni-swiper-dots .uni-swiper-dots-horizontal[data-v-92bb8f34]{\n\t\t   margin-bottom: 1rpx;\n\t\t   margin-top: 30rpx;\n}\n.swiper-box  .uni-swiper-dot[data-v-92bb8f34]{\n\t\t\n\t\tdisplay: inline-flex;\n\t\theight: 6rpx;\n\t\tjustify-content: space-between;\n}\n.swiper-box .uni-swiper-dot[data-v-92bb8f34]::before{\n\t\tcontent: '';\n\t\tflex-grow: 1;\n\t\twidth: 22rpx;\n\t\tbackground: rgba(255, 255, 255, 0.2);\n\t\tborder-radius: 8rpx;\n}\n.swiper-box .uni-swiper-dot-active[data-v-92bb8f34] {\n\t\t \t\t\t\n\t\t \t\t\twidth: 32upx !important;\n\t\t \t\t\theight: 8upx !important;\n\t\t \t\t\tbackground: rgba(255, 255, 255,1);\n\t\t \t\t\tborder-radius: 4rpx;\n}\n.swiper-item-image[data-v-92bb8f34] {\n\t\twidth: 706rpx;\n\t\theight: 350rpx;\n\t\tborder-radius: 20rpx;\n}\n.favourable[data-v-92bb8f34] {\n\t\tfont-size: 36rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 30rpx;\n}\n.favourableimage[data-v-92bb8f34] {\n\t\twidth: 706rpx;\n\t\theight: 176rpx;\n\t\tmargin-left: 22rpx;\n\t\t/* margin-top: 22rpx; */\n}\n.Interesting[data-v-92bb8f34] {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\tmargin-left: 22rpx;\n\t\tmargin-right: 22rpx;\n\t\tmargin-top: 34rpx;\n}\n.people[data-v-92bb8f34] {\n\t\tfont-size: 36rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n}\n.more[data-v-92bb8f34] {\n\t\tfont-size: 22rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tmargin-top: 10rpx;\n}\n.swiperbox[data-v-92bb8f34] {\n\t\t/* border: 1px  solid red; */\n\n\t\theight: 650rpx !important;\n\n\t\twidth: 100%;\n\t\tmargin-top: 20rpx;\n}\n.swiperitem[data-v-92bb8f34] {\n\t\twidth: 620rpx !important;\n\t\theight: 650rpx !important;\n\t\tmargin-left: 22rpx;\n\t\t/* border: 1px  solid red; */\n\t\tborder-radius: 30rpx;\n}\n.swiperview[data-v-92bb8f34] {\n\t\twidth: 582rpx;\n\t\tborder-radius: 30rpx;\n\t\toverflow: hidden;\n}\n.swiperitemtop[data-v-92bb8f34] {\n\t\theight: 460rpx;\n\t\tdisplay: flex;\n}\n.synopsis1[data-v-92bb8f34] {\n\t\t/* border: 1px solid red; */\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n}\n.synopsis2[data-v-92bb8f34] {\n\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n\t\tmargin-left: 8rpx;\n}\n.image1[data-v-92bb8f34] {\n\t\twidth: 328rpx;\n\t\theight: 460rpx;\n}\n.image2[data-v-92bb8f34] {\n\t\twidth: 246rpx;\n\t\theight: 226rpx;\n\n\t\tmargin-bottom: -2rpx;\n}\n.swiperitembottom[data-v-92bb8f34] {\n\t\theight: 190rpx;\n\t\twidth: 582rpx;\n\t\tdisplay: flex;\n\t\tbackground-color: #29253C;\n}\n.details[data-v-92bb8f34] {\n\t\tmargin-left: 18rpx;\n\n\t\twidth: 328rpx;\n}\n.detailstop[data-v-92bb8f34] {\n\t\tmargin-top: 40rpx;\n}\n.detailstext1[data-v-92bb8f34] {\n\t\tfont-size: 32rpx;\n\t\tfont-family: PingFang SC-Medium, PingFang SC;\n\t\tfont-weight: 500;\n\t\tcolor: #FFFFFF;\n}\n.detailstext2[data-v-92bb8f34] {\n\t\tfont-size: 20rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\tfont-weight: 400;\n\t\tcolor: #FFEE70;\n\t\tmargin-left: 20rpx;\n}\n.detailsbottom[data-v-92bb8f34] {\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tfont-size: 28rpx;\n\t\tmargin-top: 26rpx;\n\t\tdisplay: flex;\n}\n.detailstext4[data-v-92bb8f34] {\n\t\tmargin-top: 10rpx;\n\t\twidth: 8rpx;\n\t\theight: 8rpx;\n\t\tborder-radius: 1rpx;\n\t\tbackground-color: rgba(255, 255, 255, 0.5);\n\t\tmargin-left: 15rpx;\n\t\tmargin-right: 15rpx;\n}\n.collect[data-v-92bb8f34] {\n\t\twidth: 126rpx;\n\t\theight: 126rpx;\n\t\tbackground: linear-gradient(180deg, #B043FA 0%, #7222EB 100%);\n\t\tborder-radius: 65rpx;\n\t\tmargin-top: 30rpx;\n\t\tmargin-left: 70rpx;\n}\n.particulars[data-v-92bb8f34] {\n\t\twidth: 706rpx;\n\t\tmargin-left: 22rpx;\n\t\tmargin-top: 28rpx;\n}\n.batten[data-v-92bb8f34] {\n\t\tdisplay: flex;\n}\n.sculpture[data-v-92bb8f34] {\n\t\twidth: 84rpx;\n\t\theight: 84rpx;\n\t\tborder-radius: 41rpx;\n\t\toverflow: hidden;\n}\n.sculptureimage[data-v-92bb8f34] {\n\t\twidth: 84rpx;\n\t\theight: 84rpx;\n}\n.nickname[data-v-92bb8f34] {\n\t\tmargin-top: 10rpx;\n\t\tmargin-left: 20rpx;\n}\n.nicknamename[data-v-92bb8f34] {\n\t\tfont-size: 28rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.nicknametime[data-v-92bb8f34] {\n\t\tfont-size: 24rpx;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n}\n.copywriting[data-v-92bb8f34] {\n\t\tmargin-top: 22rpx;\n\t\tfont-size: 32rpx;\n\t\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.flash[data-v-92bb8f34] {\n\t\t/* width:706rpx; */\n\t\theight: 412rpx;\n\t\tmargin-top: 22rpx;\n\t\tborder-radius: 30rpx;\n}\n.flashimage[data-v-92bb8f34] {\n\t\twidth: 706rpx;\n\t\theight: 412rpx;\n\t\tborder-radius: 30rpx;\n}\n.crumbs[data-v-92bb8f34] {\n\t\tmargin-top: 34rpx;\n}\n.crumbsview[data-v-92bb8f34] {\n\t\tdisplay: inline-block;\n\t\tpadding: 10rpx 25rpx;\n\t\theight: 30rpx;\n\t\tline-height: 30rpx;\n\t\tborder-radius: 20rpx;\n\t\tbackground-color: #403B5B;\n\t\tfont-size: 28rpx;\n\t\tmargin-right: 20rpx;\n}\n.partake[data-v-92bb8f34] {\n\t\tdisplay: flex;\n\t\tposition: relative;\n\t\tmargin-top: 20rpx;\n}\n.partake1[data-v-92bb8f34] {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tborder: 1rpx solid white;\n}\n.partake2[data-v-92bb8f34] {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tposition: absolute;\n\t\tleft: 25rpx;\n\t\tborder: 1rpx solid white;\n}\n.partake3[data-v-92bb8f34] {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n\t\tposition: absolute;\n\t\tleft: 45rpx;\n\t\tborder: 1rpx solid white;\n}\n.partakeimage[data-v-92bb8f34] {\n\t\twidth: 40rpx;\n\t\theight: 40rpx;\n\t\tborder-radius: 30rpx;\n}\n.conversation[data-v-92bb8f34] {\n\t\tfont-size: 22rpx;\n\t\tcolor: rgba(255, 255, 255, 0.5);\n\t\tmargin-left: 60rpx;\n\t\tmargin-top: 10rpx;\n}\n.praise[data-v-92bb8f34] {\n\t\tmargin-left: 90rpx;\n\t\twidth: 100rpx;\n}\n.fabulous[data-v-92bb8f34] {\n\t\twidth: 32rpx;\n\t\theight: 30rpx;\n\t\tvertical-align: middle;\n}\n.praisetext[data-v-92bb8f34] {\n\t\tfont-size: 22rpx;\n\t\tvertical-align: middle;\n\t\tmargin-left: 10rpx;\n}\n.kongbai[data-v-92bb8f34] {\n\t\theight: 50rpx;\n}\n.jurisdiction[data-v-92bb8f34]{\n\t\twidth: 706rpx;\n\t\theight: 650rpx;\n\t\tborder: 1px solid  rgba(255, 255, 255, 0);\n\t\tmargin-left: 22rpx;\n\t\tborder-radius: 30rpx;\n\t\tmargin-top: 30rpx;\n\t\tbackground-color: #29253C ;\n}\n.jurisdictionimg[data-v-92bb8f34]{\n\t\twidth: 160rpx;\n\t\theight: 160rpx;\n\t\tmargin: 78rpx auto 50rpx  auto;\n\t\tdisplay: block;\n}\n.jurisdiction1[data-v-92bb8f34]{\n\t\tfont-size: 28rpx;\n\t\tcolor: rgba(255, 255, 255, 0.6);\n\t\t\n\t\twidth: 100%;\n\t\theight: 60rpx;\n\t\tline-height: 60rpx;\n\t\ttext-align: center;\n}\n.jurisdiction2[data-v-92bb8f34]{\n\t\twidth: 428rpx;\n\t\theight: 106rpx;\n\t\tline-height: 106rpx;\n\t\tfont-size: 28rpx;\n\t\ttext-align: center;\n\t\tbackground-color: #D53EDA;\n\t\tborder-radius: 54rpx;\n\t\tmargin-left: 140rpx;\n\t\tmargin-top: 64rpx;\n}\n", ""]);
+exports.push([module.i, "\n.a[data-v-92bb8f34] {\n\tcolor: white;\n}\n.head[data-v-92bb8f34] {\n\tdisplay: flex;\n\t/* margin-top: 10rpx;s */\n}\n.headleft[data-v-92bb8f34] {\n\twidth: 108rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tborder-radius: 30rpx;\n\tmargin-left: 22rpx;\n\tbackground-color: #29253c;\n\ttext-align: center;\n}\n.text[data-v-92bb8f34] {\n\tcolor: white;\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tvertical-align: middle;\n}\n.img[data-v-92bb8f34] {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n}\n.input[data-v-92bb8f34] {\n\twidth: 584rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tmargin-left: 14rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253c;\n}\n.text1[data-v-92bb8f34] {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tvertical-align: middle;\n}\n.img1[data-v-92bb8f34] {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n\tmargin-right: 15rpx;\n\tmargin-left: 36rpx;\n}\n.swiper-box[data-v-92bb8f34] {\n\theight: 400rpx;\n\tmargin-left: 22rpx;\n\tmargin-top: 30rpx;\n\tborder-radius: 20rpx;\n\toverflow: hidden;\n}\n.swiper-box-item[data-v-92bb8f34] {\n\twidth: 706rpx;\n}\n.swiper-box .uni-swiper-dots .uni-swiper-dots-horizontal[data-v-92bb8f34] {\n\tmargin-bottom: 1rpx;\n\tmargin-top: 30rpx;\n}\n.swiper-box .uni-swiper-dot[data-v-92bb8f34] {\n\tdisplay: inline-flex;\n\theight: 6rpx;\n\tjustify-content: space-between;\n}\n.swiper-box .uni-swiper-dot[data-v-92bb8f34]::before {\n\tcontent: '';\n\tflex-grow: 1;\n\twidth: 22rpx;\n\tbackground: rgba(255, 255, 255, 0.2);\n\tborder-radius: 8rpx;\n}\n.swiper-box .uni-swiper-dot-active[data-v-92bb8f34] {\n\twidth: 32upx !important;\n\theight: 8upx !important;\n\tbackground: rgba(255, 255, 255, 1);\n\tborder-radius: 4rpx;\n}\n.swiper-item-image[data-v-92bb8f34] {\n\twidth: 706rpx;\n\theight: 350rpx;\n\tborder-radius: 20rpx;\n}\n.favourable[data-v-92bb8f34] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n\tmargin-left: 22rpx;\n\tmargin-top: 30rpx;\n}\n.favourableimage[data-v-92bb8f34] {\n\twidth: 706rpx;\n\theight: 176rpx;\n\tmargin-left: 22rpx;\n\t/* margin-top: 22rpx; */\n}\n.Interesting[data-v-92bb8f34] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people[data-v-92bb8f34] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more[data-v-92bb8f34] {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.swiperbox[data-v-92bb8f34] {\n\t/* border: 1px  solid red; */\n\n\theight: 650rpx !important;\n\n\twidth: 100%;\n\tmargin-top: 20rpx;\n}\n.swiperitem[data-v-92bb8f34] {\n\twidth: 620rpx !important;\n\theight: 650rpx !important;\n\tmargin-left: 22rpx;\n\t/* border: 1px  solid red; */\n\tborder-radius: 30rpx;\n}\n.swiperview[data-v-92bb8f34] {\n\twidth: 582rpx;\n\tborder-radius: 30rpx;\n\toverflow: hidden;\n}\n.swiperitemtop[data-v-92bb8f34] {\n\theight: 460rpx;\n\tdisplay: flex;\n}\n.synopsis1[data-v-92bb8f34] {\n\t/* border: 1px solid red; */\n\twidth: 328rpx;\n\theight: 460rpx;\n}\n.synopsis2[data-v-92bb8f34] {\n\twidth: 328rpx;\n\theight: 460rpx;\n\tmargin-left: 8rpx;\n}\n.image1[data-v-92bb8f34] {\n\twidth: 328rpx;\n\theight: 460rpx;\n}\n.image2[data-v-92bb8f34] {\n\twidth: 246rpx;\n\theight: 226rpx;\n\n\tmargin-bottom: -2rpx;\n}\n.swiperitembottom[data-v-92bb8f34] {\n\theight: 190rpx;\n\twidth: 582rpx;\n\tdisplay: flex;\n\tbackground-color: #29253c;\n}\n.details[data-v-92bb8f34] {\n\tmargin-left: 18rpx;\n\n\twidth: 328rpx;\n}\n.detailstop[data-v-92bb8f34] {\n\tmargin-top: 40rpx;\n}\n.detailstext1[data-v-92bb8f34] {\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.detailstext2[data-v-92bb8f34] {\n\tfont-size: 20rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tfont-weight: 400;\n\tcolor: #ffee70;\n\tmargin-left: 20rpx;\n}\n.detailsbottom[data-v-92bb8f34] {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 28rpx;\n\tmargin-top: 26rpx;\n\tdisplay: flex;\n}\n.detailstext4[data-v-92bb8f34] {\n\tmargin-top: 10rpx;\n\twidth: 8rpx;\n\theight: 8rpx;\n\tborder-radius: 1rpx;\n\tbackground-color: rgba(255, 255, 255, 0.5);\n\tmargin-left: 15rpx;\n\tmargin-right: 15rpx;\n}\n.collect[data-v-92bb8f34] {\n\twidth: 126rpx;\n\theight: 126rpx;\n\tbackground: linear-gradient(180deg, #b043fa 0%, #7222eb 100%);\n\tborder-radius: 65rpx;\n\tmargin-top: 30rpx;\n\tmargin-left: 70rpx;\n}\n.particulars[data-v-92bb8f34] {\n\twidth: 706rpx;\n\tmargin-left: 22rpx;\n\tmargin-top: 28rpx;\n}\n.batten[data-v-92bb8f34] {\n\tdisplay: flex;\n}\n.sculpture[data-v-92bb8f34] {\n\twidth: 84rpx;\n\theight: 84rpx;\n\tborder-radius: 41rpx;\n\toverflow: hidden;\n}\n.sculptureimage[data-v-92bb8f34] {\n\twidth: 84rpx;\n\theight: 84rpx;\n}\n.nickname[data-v-92bb8f34] {\n\tmargin-top: 10rpx;\n\tmargin-left: 20rpx;\n}\n.nicknamename[data-v-92bb8f34] {\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.nicknametime[data-v-92bb8f34] {\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.copywriting[data-v-92bb8f34] {\n\tmargin-top: 22rpx;\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n}\n.flash[data-v-92bb8f34] {\n\t/* width:706rpx; */\n\theight: 412rpx;\n\tmargin-top: 22rpx;\n\tborder-radius: 30rpx;\n}\n.flashimage[data-v-92bb8f34] {\n\twidth: 706rpx;\n\theight: 412rpx;\n\tborder-radius: 30rpx;\n}\n.crumbs[data-v-92bb8f34] {\n\tmargin-top: 34rpx;\n}\n.crumbsview[data-v-92bb8f34] {\n\tdisplay: inline-block;\n\tpadding: 10rpx 25rpx;\n\theight: 30rpx;\n\tline-height: 30rpx;\n\tborder-radius: 20rpx;\n\tbackground-color: #403b5b;\n\tfont-size: 28rpx;\n\tmargin-right: 20rpx;\n}\n.partake[data-v-92bb8f34] {\n\tdisplay: flex;\n\tposition: relative;\n\tmargin-top: 20rpx;\n}\n.partake1[data-v-92bb8f34] {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tborder: 1rpx solid white;\n}\n.partake2[data-v-92bb8f34] {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tposition: absolute;\n\tleft: 25rpx;\n\tborder: 1rpx solid white;\n}\n.partake3[data-v-92bb8f34] {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n\tposition: absolute;\n\tleft: 45rpx;\n\tborder: 1rpx solid white;\n}\n.partakeimage[data-v-92bb8f34] {\n\twidth: 40rpx;\n\theight: 40rpx;\n\tborder-radius: 30rpx;\n}\n.conversation[data-v-92bb8f34] {\n\tfont-size: 22rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-left: 60rpx;\n\tmargin-top: 10rpx;\n}\n.praise[data-v-92bb8f34] {\n\tmargin-left: 90rpx;\n\twidth: 100rpx;\n}\n.fabulous[data-v-92bb8f34] {\n\twidth: 32rpx;\n\theight: 30rpx;\n\tvertical-align: middle;\n}\n.praisetext[data-v-92bb8f34] {\n\tfont-size: 22rpx;\n\tvertical-align: middle;\n\tmargin-left: 10rpx;\n}\n.kongbai[data-v-92bb8f34] {\n\theight: 50rpx;\n}\n.jurisdiction[data-v-92bb8f34] {\n\twidth: 706rpx;\n\theight: 650rpx;\n\tborder: 1px solid rgba(255, 255, 255, 0);\n\tmargin-left: 22rpx;\n\tborder-radius: 30rpx;\n\tmargin-top: 30rpx;\n\tbackground-color: #29253c;\n}\n.jurisdictionimg[data-v-92bb8f34] {\n\twidth: 160rpx;\n\theight: 160rpx;\n\tmargin: 78rpx auto 50rpx auto;\n\tdisplay: block;\n}\n.jurisdiction1[data-v-92bb8f34] {\n\tfont-size: 28rpx;\n\tcolor: rgba(255, 255, 255, 0.6);\n\n\twidth: 100%;\n\theight: 60rpx;\n\tline-height: 60rpx;\n\ttext-align: center;\n}\n.jurisdiction2[data-v-92bb8f34] {\n\twidth: 428rpx;\n\theight: 106rpx;\n\tline-height: 106rpx;\n\tfont-size: 28rpx;\n\ttext-align: center;\n\tbackground-color: #d53eda;\n\tborder-radius: 54rpx;\n\tmargin-left: 140rpx;\n\tmargin-top: 64rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -4784,91 +4801,89 @@ var render = function() {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
-          _c("uni-view", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }, [
+          _c("uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }, [
             _vm._v("赛事活动")
           ])
         ],
         1
       ),
-      _c("v-uni-image", {
-        attrs: { src: _vm._$g(3, "a-src"), alt: "", _i: 3 }
-      }),
       _c(
         "uni-view",
         { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
         [
-          _c("uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
+          _c("v-uni-image", {
+            attrs: { src: _vm._$g(5, "a-src"), alt: "", _i: 5 }
+          })
+        ],
+        1
+      ),
+      _c(
+        "uni-view",
+        { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+        [
+          _c("uni-view", { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } }, [
             _vm._v("发现圈子")
           ]),
-          _c("uni-view", { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } }, [
-            _vm._v("更多圈子 >")
-          ])
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(8, "sc"),
+              attrs: { _i: 8 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
+            [_vm._v("更多圈子 >")]
+          )
         ],
         1
       ),
       _c(
         "uni-view",
-        {
-          staticClass: _vm._$g(7, "sc"),
-          staticStyle: { "margin-top": "40rpx" },
-          attrs: { _i: 7 }
-        },
+        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
         [
-          _c("CirItem", {
-            staticStyle: { "margin-right": "8rpx" },
-            attrs: { _i: 8 }
-          }),
-          _c("CirItem", {
-            staticStyle: { "background-color": "#feeceb" },
-            attrs: { _i: 9 }
-          })
+          _c("CirItem", { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } }),
+          _c("CirItem", { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } })
         ],
         1
       ),
       _c(
         "uni-view",
-        {
-          staticClass: _vm._$g(10, "sc"),
-          staticStyle: { "margin-top": "12rpx" },
-          attrs: { _i: 10 }
-        },
+        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
         [
-          _c("CirItem", {
-            staticStyle: { "margin-right": "8rpx" },
-            attrs: { _i: 11 }
-          }),
-          _c("CirItem", {
-            staticStyle: { "background-color": "#feeceb" },
-            attrs: { _i: 12 }
-          })
+          _c("CirItem", { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } }),
+          _c("CirItem", { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } })
         ],
         1
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+        { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
                 [_vm._v("即将开始")]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
                 [_vm._v("比赛房间")]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                 [_vm._v("活动房间")]
               )
             ],
@@ -4876,28 +4891,28 @@ var render = function() {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
             [
-              _c("uni-view", {
-                staticClass: _vm._$g(19, "sc"),
-                attrs: { _i: 19 }
-              }),
-              _c("uni-view", {
-                staticClass: _vm._$g(20, "sc"),
-                attrs: { _i: 20 }
-              }),
               _c("uni-view", {
                 staticClass: _vm._$g(21, "sc"),
                 attrs: { _i: 21 }
+              }),
+              _c("uni-view", {
+                staticClass: _vm._$g(22, "sc"),
+                attrs: { _i: 22 }
+              }),
+              _c("uni-view", {
+                staticClass: _vm._$g(23, "sc"),
+                attrs: { _i: 23 }
               })
             ],
             1
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+            { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
             _vm._l(4, function(item, $10, $20, $30) {
-              return _c("item", { attrs: { _i: "23-" + $30 } })
+              return _c("item", { attrs: { _i: "25-" + $30 } })
             }),
             1
           )
@@ -4999,7 +5014,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.square[data-v-6eb7b326] {\n\tpadding-bottom: 20rpx;\n}\n.Interesting[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people[data-v-6eb7b326] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more[data-v-6eb7b326] {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n\n/* 圈子 */\n.cir[data-v-6eb7b326] {\n\tdisplay: flex;\n}\n\n/* Tab */\n.tab[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n\t/* border: 1px solid red; */\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n}\n.changeTab[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfont-size: 28rpx;\n\tcolor: #fff;\n\t/* border: 1px solid red; */\n\tmargin-top: 36rpx;\n}\n.begin[data-v-6eb7b326] {\n\tmargin-top: 36rpx;\n\t/* border: 1px solid red; */\n\twidth: 164rpx;\n\theight: 58rpx;\n\tline-height: 58rpx;\n\ttext-align: center;\n\tborder-radius: 30rpx;\n}\n.active[data-v-6eb7b326] {\n\tbackground: #b043fa;\n}\n.triangle[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n.triangle2[data-v-6eb7b326] {\n\twidth: 0;\n\theight: 0;\n\tborder: 20rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n.itemname[data-v-6eb7b326] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n}\n", ""]);
+exports.push([module.i, "\n.square[data-v-6eb7b326] {\n\tpadding-bottom: 20rpx;\n}\n.Interesting[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people[data-v-6eb7b326] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more[data-v-6eb7b326] {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.img[data-v-6eb7b326] {\n\twidth: 710rpx;\n\theight: 178rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.img uni-image[data-v-6eb7b326] {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cir1[data-v-6eb7b326],\n.cir2[data-v-6eb7b326] {\n\tdisplay: flex;\n}\n.cir1[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n}\n.cir2[data-v-6eb7b326] {\n\tmargin-top: 12rpx;\n}\n.item1[data-v-6eb7b326] {\n\tmargin-right: 8rpx;\n}\n.item2[data-v-6eb7b326] {\n\tbackground-color: #feeceb;\n}\n\n/* Tab */\n.tab[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n\t/* border: 1px solid red; */\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n}\n.changeTab[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfont-size: 28rpx;\n\tcolor: #fff;\n\t/* border: 1px solid red; */\n\tmargin-top: 36rpx;\n}\n.begin[data-v-6eb7b326] {\n\tmargin-top: 36rpx;\n\t/* border: 1px solid red; */\n\twidth: 164rpx;\n\theight: 58rpx;\n\tline-height: 58rpx;\n\ttext-align: center;\n\tborder-radius: 30rpx;\n}\n.active[data-v-6eb7b326] {\n\tbackground: #b043fa;\n}\n.triangle[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n.triangle2[data-v-6eb7b326] {\n\twidth: 0;\n\theight: 0;\n\tborder: 20rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tflex-wrap: wrap;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -6126,7 +6141,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.navigation[data-v-2ab9f78f] {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n\tposition: relative;\n\tjustify-content: space-between;\n}\n.navigation1[data-v-2ab9f78f] {\n\tdisplay: flex;\n\talign-items: center;\n\tmargin-left: 20rpx;\n\tcolor: #FFFFFF;\n\tz-index: 10;\n}\n.fanhui[data-v-2ab9f78f] {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation2[data-v-2ab9f78f] {\n\twidth: 100%;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #FFFFFF;\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\tz-index: 1;\n}\n.action[data-v-2ab9f78f] {\n\tz-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.navigation[data-v-2ab9f78f] {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n}\n.navigation1[data-v-2ab9f78f] {\n\tmargin-left: 20rpx;\n\tcolor: #ffffff;\n}\n.fanhui[data-v-2ab9f78f] {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation[data-v-2ab9f78f] {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n\tposition: relative;\n\tjustify-content: space-between;\n}\n.navigation1[data-v-2ab9f78f] {\n\tdisplay: flex;\n\talign-items: center;\n\tmargin-left: 20rpx;\n\tcolor: #FFFFFF;\n\tz-index: 10;\n}\n.fanhui[data-v-2ab9f78f] {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation2[data-v-2ab9f78f] {\n\twidth: 100%;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #FFFFFF;\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\tz-index: 1;\n}\n.action[data-v-2ab9f78f] {\n\tz-index: 10;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12710,6 +12725,379 @@ exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的�
 // Exports
 module.exports = exports;
 
+
+/***/ }),
+/* 314 */
+/*!***************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?mpType=page ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MoreCircles.vue?vue&type=template&id=3d1f3af0&mpType=page */ 315);
+/* harmony import */ var _MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MoreCircles.vue?vue&type=script&lang=js&mpType=page */ 317);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page */ 319);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 13);
+
+var renderjs
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null,
+  false,
+  _MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"],
+  renderjs
+)
+
+component.options.__file = "pages/square/circle/MoreCircles.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+/* 315 */
+/*!*********************************************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=template&id=3d1f3af0&mpType=page ***!
+  \*********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./MoreCircles.vue?vue&type=template&id=3d1f3af0&mpType=page */ 316);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_template_id_3d1f3af0_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"]; });
+
+
+
+/***/ }),
+/* 316 */
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=template&id=3d1f3af0&mpType=page ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
+var components
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "uni-view",
+    { attrs: { _i: 0 } },
+    [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
+      _c(
+        "uni-view",
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+        [
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticClass: _vm._$g(4, "sc"),
+                  attrs: { _i: 4 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [
+                  _c("v-uni-image", {
+                    staticClass: _vm._$g(5, "sc"),
+                    attrs: {
+                      src: _vm._$g(5, "a-src"),
+                      mode: "aspectFill",
+                      _i: 5
+                    }
+                  })
+                ],
+                1
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                [_vm._v(_vm._$g(6, "t0-0"))]
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+                [
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                    [_vm._v("创建圈子")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _c(
+        "uni-view",
+        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+        [
+          _c("v-uni-image", {
+            staticClass: _vm._$g(10, "sc"),
+            attrs: { src: _vm._$g(10, "a-src"), _i: 10 }
+          }),
+          _c(
+            "v-uni-text",
+            { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+            [_vm._v("搜索您想搜索的人~")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var recyclableRender = false
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+/* 317 */
+/*!***************************************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=script&lang=js&mpType=page ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./MoreCircles.vue?vue&type=script&lang=js&mpType=page */ 318);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 318 */
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=script&lang=js&mpType=page ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+
+{
+
+  data: function data() {
+    return {
+      wxsProps: {} };
+
+  },
+  components: {} };exports.default = _default;
+
+/***/ }),
+/* 319 */
+/*!***********************************************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--6-oneOf-1-0!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page */ 320);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_6_oneOf_1_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_MoreCircles_vue_vue_type_style_index_0_lang_css_mpType_page__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 320 */
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page */ 321);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader/lib/addStylesClient.js */ 11).default
+var update = add("742cb892", content, false, {"sourceMap":false,"shadowMode":false});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+/* 321 */
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/MoreCircles.vue?vue&type=style&index=0&lang=css&mpType=page ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 导航栏 */\n.navigation {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\t/* border: 1rpx solid azure; */\n}\n.navigation1 {\n\tmargin-left: 20rpx;\n\tmargin-top: 8rpx;\n\tcolor: #ffffff;\n}\n.fanhui {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation2 {\n\twidth: 620rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tfont-size: 32rpx;\n\tmargin-left: 110rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.navigation3 {\n\twidth: 300rpx;\n\theight: 70rpx;\n\tline-height: 70rpx;\n\tmargin-top: 15rpx;\n\tmargin-right: 20rpx;\n\tcolor: #ffffff;\n\tfont-size: 24rpx;\n\t/* border: 1rpx solid white; */\n\tborder-radius: 25rpx;\n\tbackground-color: #343147;\n}\n/* 搜索框 */\n.input {\n\twidth: 710rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tmargin-left: 20rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253c;\n}\n.text1 {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tvertical-align: middle;\n}\n.img1 {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n\tmargin-right: 15rpx;\n\tmargin-left: 36rpx;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+/* 322 */
+/*!******************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/CircleHomePage.vue?mpType=page ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CircleHomePage.vue?vue&type=template&id=55fa0194&mpType=page */ 323);
+/* harmony import */ var _CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CircleHomePage.vue?vue&type=script&lang=js&mpType=page */ 325);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 13);
+
+var renderjs
+
+
+
+
+/* normalize component */
+
+var component = Object(_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null,
+  false,
+  _CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"],
+  renderjs
+)
+
+component.options.__file = "pages/square/circle/CircleHomePage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+/* 323 */
+/*!************************************************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/CircleHomePage.vue?vue&type=template&id=55fa0194&mpType=page ***!
+  \************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./CircleHomePage.vue?vue&type=template&id=55fa0194&mpType=page */ 324);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_template_id_55fa0194_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"]; });
+
+
+
+/***/ }),
+/* 324 */
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/CircleHomePage.vue?vue&type=template&id=55fa0194&mpType=page ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
+var components
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("uni-view", { attrs: { _i: 0 } }, [_vm._v("话题圈")])
+}
+var recyclableRender = false
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+/* 325 */
+/*!******************************************************************************************************************!*\
+  !*** /Users/mac/Desktop/make_friends/pages/square/circle/CircleHomePage.vue?vue&type=script&lang=js&mpType=page ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./CircleHomePage.vue?vue&type=script&lang=js&mpType=page */ 326);
+/* harmony import */ var _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_CircleHomePage_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 326 */
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!/Users/mac/Desktop/make_friends/pages/square/circle/CircleHomePage.vue?vue&type=script&lang=js&mpType=page ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+
+{
+
+  data: function data() {
+    return {
+      wxsProps: {} };
+
+  },
+  components: {} };exports.default = _default;
 
 /***/ })
 /******/ ]);
