@@ -202,7 +202,50 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/settings/security/modify",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
+           
+            
+        }
+        ,{
+            "path" : "pages/settings/security/cellphone",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
+            
+        }
+        ,{
+            "path" : "pages/settings/security/replace",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
+            
+        }
+        ,{
+            "path" : "pages/settings/security/popup/popup",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 
 
 	"globalStyle": {

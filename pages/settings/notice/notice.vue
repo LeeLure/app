@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<!-- 推送通知设置 -->
 		<view class="bar">
 		</view>
 		<!-- 导航栏 -->
