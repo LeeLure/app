@@ -30,8 +30,8 @@
 			</view>
 			<button class="btn"  @tap="btn">确认修改</button>
 		</view>
-      <popup  v-if="flag"></popup>
-	  <view  :class="flag==true? 'active': 'shelter' ">
+      <popup  v-if="flag"  @flag="complete"></popup>
+	  <view  :class="flag==true? 'active': 'shelter' " @flag="complete">
 	  	
 	  </view>
 	</view>
@@ -86,7 +86,12 @@
 			},
 			btn(){			
 				this.flag=true
-				console.log(this.flag);
+				
+			},
+			// 接收子组件传递的参数
+			complete(e){
+				
+				this.flag=e
 			}
 			
 		}

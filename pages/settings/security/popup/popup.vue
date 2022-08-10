@@ -25,6 +25,8 @@
 		methods: {
 			complete() {
 				this.flag=false
+				this.$emit("flag",this.flag)
+			
 
 			}
 		}
