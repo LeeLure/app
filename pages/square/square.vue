@@ -14,12 +14,12 @@
 
 		<!-- 圈子 -->
 		<view class="cir" style="margin-top: 40rpx;">
-			<cir style="margin-right: 8rpx;" />
-			<cir style="background-color: #feeceb;" />
+			<CirItem style="margin-right: 8rpx;" />
+			<CirItem style="background-color: #feeceb;" />
 		</view>
 		<view class="cir" style="margin-top: 12rpx;">
-			<cir style="margin-right: 8rpx;" />
-			<cir style="background-color: #feeceb;" />
+			<CirItem style="margin-right: 8rpx;" />
+			<CirItem style="background-color: #feeceb;" />
 		</view>
 
 		<!-- Tab 栏 -->
@@ -44,7 +44,7 @@
 
 <script>
 // import tab from "@/components/tab.vue"
-import cir from './circle/index.vue';
+import CirItem from './circle/CirItem.vue';
 import item from './item/item.vue';
 export default {
 	data() {
@@ -55,7 +55,7 @@ export default {
 	},
 	components: {
 		// tab
-		cir,
+		CirItem,
 		item
 	},
 	methods: {}
