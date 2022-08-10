@@ -1,5 +1,7 @@
 <template>
 	<view>
+		<view class="bar">
+		</view>
 		<view class="tab_nav">
 			<view class="navTitle" v-for="(item,index) in navList" :key="index">
 				<view :class="{'active':isActive === index}" @click="checked(index)">
@@ -23,7 +25,9 @@
 <script>
 	import message from './message/message.vue'
 	export default {
-		components: { message },
+		components: {
+			message
+		},
 		data() {
 			return {
 				isActive: 0,
@@ -77,7 +81,7 @@
 		height: 4rpx;
 		left: 0px;
 		right: 0px;
-		bottom:-6rpx;
+		bottom: -6rpx;
 		border-radius: 4rpx;
 		background: #FFEE8C;
 		margin: auto;
