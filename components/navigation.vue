@@ -7,9 +7,9 @@
 		<view class="navigation2">
 			{{title}}
 		</view>
-		<vie class="action">
+		<view class="action">
 			<slot name="action"></slot>
-		</vie>
+		</view>
 	</view>
 </template>
 
