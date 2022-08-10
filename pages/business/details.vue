@@ -233,8 +233,7 @@
 		height: 100%;
 	}
 #a{
-	position: absolute;
-	
+	position: absolute;	
 	top: var(--status-bar-height);
 	
 }
