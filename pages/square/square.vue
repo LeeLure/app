@@ -37,7 +37,7 @@
 			</view>
 
 			<!-- item -->
-			<view class="itemname"><item v-for="i in 4" key="i" /></view>
+			<view class="itemname"><item v-for="item in 4" /></view>
 		</view>
 	</view>
 </template>
