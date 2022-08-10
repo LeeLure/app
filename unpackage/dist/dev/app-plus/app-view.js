@@ -6941,7 +6941,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.background{\n\t\theight: 482rpx;\n\t\twidth: 750rpx;\n}\n.backgroundimg{\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n#a{\n\tposition: absolute;\n\t\n\ttop: var(--status-bar-height);\n}\n.box{\n\tbackground-color:#29253C ;\n\twidth: 100%;\n\tborder-radius: 20rpx 20rpx 0  0 ;\n\tcolor: white;\n\tposition: absolute;\n\ttop: 450rpx;\n}\n.mark{\n\tdisplay: flex;\n\theight: 120rpx;\n\tmargin-top: 62rpx;\n}\n.score{\n\tmargin-left: 20rpx;\n}\n.score1{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tmargin-top: 16rpx;\n}\n.scoreimg{\n\twidth: 30rpx;\n\theight: 30rpx;\n}\n.scoretext{\n\tmargin-left:40rpx ;\n\tfont-size: 24rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\n\tcolor: #FFEE8C;\n}\n.collect{\n\tdisplay: flex;\n\tmargin-left: 260rpx;\n}\n.share{\n\n\twidth: 100rpx;\n\theight: 120rpx;\n\tmargin-left: 10rpx;\n}\n.shareimg{\n\tdisplay: block;\n\twidth: 50rpx;\n\theight: 50rpx;\n\tmargin:15rpx auto;\n}\n.sharetext{\n\twidth: 100rpx;\n\theight: 80rpx;\n\ttext-align: center;\n\tfont-size: 24rpx;\n}\n.percapita{\n\tdisplay: flex;\n\theight: 126rpx;\n\tline-height: 126rpx;\n\t\n\twidth: 710rpx;\n\tborder-bottom: 2rpx solid rgba(255, 255, 255, 0.1);\n\tmargin-left: 20rpx;\n}\n.percapita1{\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.8);\n\tfont-size: 24rpx;\n}\n.percapita2{\n\tmargin-right: 30rpx;\n\tcolor: #FFEE8C;\n\tfont-size: 24rpx;\n\tmargin-left: 20rpx;\n}\n.percapitaimg{\n\twidth: 40rpx;\n\theight: 40rpx;\n\tdisplay: block;\n\tmargin: auto 0;\n}\n.percapitatext{\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tmargin-left: 10rpx;\n\tcolor: #FFEE8C;\n\t\n\twidth: 620rpx;\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.welfare{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\n\tcolor: #FFFFFF;\n\tmargin-left: 20rpx;\n\tmargin-top: 46rpx;\n\tmargin-bottom: 20rpx;\n}\n.coupon{\n}\n.couponlist{\n\tdisplay: flex;\n\theight: 204rpx;\n}\n.couponleft{\n\tmargin-left: 20rpx;\n\t\n\theight: 168rpx;\n\tmargin: auto 20rpx;\n\twidth: 160rpx;\n}\n.couponimg{\n\twidth: 160rpx;\n\theight: 168rpx;\n\tborder-radius:20rpx ;\n}\n.couponright{\n\n\t\n\theight: 168rpx;\n\tmargin: auto 6px;\n}\n.coupontext{\n\tcolor: rgba(255, 255, 255, 0.8);\n\tfont-size: 24rpx;\n\t\n\theight: 80rpx;\n}\n.couponprice{\n\tdisplay: flex;\n}\n.couponprice1{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #FFEE8C;\n}\n.couponprice2{\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n\tmargin-left: 30rpx;\n}\n.volume{\n\tmargin-top: 10rpx;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.comment{\n}\n.headportrait{\n\tdisplay: flex;\n\t\n\theight: 80rpx;\n\tmargin-top: 30rpx;\n}\n.headportraitimg{\n\twidth: 76rpx;\n\theight: 76rpx;\n\tborder-radius: 38rpx;\n\tmargin-left:  20rpx;\n}\n.headportrait1{\n\twidth: 200rpx;\n\tfont-size: 28rpx;\n\n\tmargin: auto 20rpx;\n}\n.headportrait2{\n\tmargin: auto 0rpx auto  260rpx;\n\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.grade{\n\tdisplay: flex;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.8);\n\tmargin-top: 20rpx;\n}\n.grade1{\n\tmargin-left: 20rpx;\n}\n.grade2{\n\tmargin-left: 20rpx;\n}\n.gradeimg{\n\twidth: 25rpx;\n\theight: 25rpx;\n}\n.grade3{\n\tmargin-left: 20rpx;\n}\n.grade4{\n\tmargin-left: 20rpx;\n}\n.content{\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tmargin-top: 20rpx;\n\tmargin-left: 20rpx;\n\tcolor: #FFFFFF;\n}\n.scroll{\n\tmargin-left: 20rpx;\n\twidth: 700rpx;\n}\n.scrollview{\n\tmargin-top: 20rpx;\n\tdisplay: flex;\n}\n.scrollview1{\n\twidth: 266rpx;\n\tmargin-right: 20rpx;\n\theight: 274rpx;\n\tborder-radius: 10rpx;\n}\n.scrollviewimg{\n\twidth: 266rpx;\n\theight: 274rpx;\n\tborder-radius: 10rpx;\n}\n.text{\n\tmargin-top: 20rpx;\n\twidth: 705rpx;\n\tmargin-left: 20rpx;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.8);\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\toverflow: hidden;\n\tmargin-bottom: 40rpx;\n}\n", ""]);
+exports.push([module.i, "\n.background{\n\t\theight: 482rpx;\n\t\twidth: 750rpx;\n}\n.backgroundimg{\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n#a{\n\tposition: absolute;\t\n\ttop: var(--status-bar-height);\n}\n.box{\n\tbackground-color:#29253C ;\n\twidth: 100%;\n\tborder-radius: 20rpx 20rpx 0  0 ;\n\tcolor: white;\n\tposition: absolute;\n\ttop: 450rpx;\n}\n.mark{\n\tdisplay: flex;\n\theight: 120rpx;\n\tmargin-top: 62rpx;\n}\n.score{\n\tmargin-left: 20rpx;\n}\n.score1{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tmargin-top: 16rpx;\n}\n.scoreimg{\n\twidth: 30rpx;\n\theight: 30rpx;\n}\n.scoretext{\n\tmargin-left:40rpx ;\n\tfont-size: 24rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\n\tcolor: #FFEE8C;\n}\n.collect{\n\tdisplay: flex;\n\tmargin-left: 260rpx;\n}\n.share{\n\n\twidth: 100rpx;\n\theight: 120rpx;\n\tmargin-left: 10rpx;\n}\n.shareimg{\n\tdisplay: block;\n\twidth: 50rpx;\n\theight: 50rpx;\n\tmargin:15rpx auto;\n}\n.sharetext{\n\twidth: 100rpx;\n\theight: 80rpx;\n\ttext-align: center;\n\tfont-size: 24rpx;\n}\n.percapita{\n\tdisplay: flex;\n\theight: 126rpx;\n\tline-height: 126rpx;\n\t\n\twidth: 710rpx;\n\tborder-bottom: 2rpx solid rgba(255, 255, 255, 0.1);\n\tmargin-left: 20rpx;\n}\n.percapita1{\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.8);\n\tfont-size: 24rpx;\n}\n.percapita2{\n\tmargin-right: 30rpx;\n\tcolor: #FFEE8C;\n\tfont-size: 24rpx;\n\tmargin-left: 20rpx;\n}\n.percapitaimg{\n\twidth: 40rpx;\n\theight: 40rpx;\n\tdisplay: block;\n\tmargin: auto 0;\n}\n.percapitatext{\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tmargin-left: 10rpx;\n\tcolor: #FFEE8C;\n\t\n\twidth: 620rpx;\n\toverflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n}\n.welfare{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\t\n\tcolor: #FFFFFF;\n\tmargin-left: 20rpx;\n\tmargin-top: 46rpx;\n\tmargin-bottom: 20rpx;\n}\n.coupon{\n}\n.couponlist{\n\tdisplay: flex;\n\theight: 204rpx;\n}\n.couponleft{\n\tmargin-left: 20rpx;\n\t\n\theight: 168rpx;\n\tmargin: auto 20rpx;\n\twidth: 160rpx;\n}\n.couponimg{\n\twidth: 160rpx;\n\theight: 168rpx;\n\tborder-radius:20rpx ;\n}\n.couponright{\n\n\t\n\theight: 168rpx;\n\tmargin: auto 6px;\n}\n.coupontext{\n\tcolor: rgba(255, 255, 255, 0.8);\n\tfont-size: 24rpx;\n\t\n\theight: 80rpx;\n}\n.couponprice{\n\tdisplay: flex;\n}\n.couponprice1{\n\tfont-size: 32rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #FFEE8C;\n}\n.couponprice2{\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n\tmargin-left: 30rpx;\n}\n.volume{\n\tmargin-top: 10rpx;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.comment{\n}\n.headportrait{\n\tdisplay: flex;\n\t\n\theight: 80rpx;\n\tmargin-top: 30rpx;\n}\n.headportraitimg{\n\twidth: 76rpx;\n\theight: 76rpx;\n\tborder-radius: 38rpx;\n\tmargin-left:  20rpx;\n}\n.headportrait1{\n\twidth: 200rpx;\n\tfont-size: 28rpx;\n\n\tmargin: auto 20rpx;\n}\n.headportrait2{\n\tmargin: auto 0rpx auto  260rpx;\n\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.5);\n}\n.grade{\n\tdisplay: flex;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.8);\n\tmargin-top: 20rpx;\n}\n.grade1{\n\tmargin-left: 20rpx;\n}\n.grade2{\n\tmargin-left: 20rpx;\n}\n.gradeimg{\n\twidth: 25rpx;\n\theight: 25rpx;\n}\n.grade3{\n\tmargin-left: 20rpx;\n}\n.grade4{\n\tmargin-left: 20rpx;\n}\n.content{\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tmargin-top: 20rpx;\n\tmargin-left: 20rpx;\n\tcolor: #FFFFFF;\n}\n.scroll{\n\tmargin-left: 20rpx;\n\twidth: 700rpx;\n}\n.scrollview{\n\tmargin-top: 20rpx;\n\tdisplay: flex;\n}\n.scrollview1{\n\twidth: 266rpx;\n\tmargin-right: 20rpx;\n\theight: 274rpx;\n\tborder-radius: 10rpx;\n}\n.scrollviewimg{\n\twidth: 266rpx;\n\theight: 274rpx;\n\tborder-radius: 10rpx;\n}\n.text{\n\tmargin-top: 20rpx;\n\twidth: 705rpx;\n\tmargin-left: 20rpx;\n\tfont-size: 24rpx;\n\tcolor: rgba(255, 255, 255, 0.8);\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\toverflow: hidden;\n\tmargin-bottom: 40rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -11955,7 +11955,25 @@ var render = function() {
         ],
         1
       ),
-      _c("popup", { attrs: { _i: 14 } })
+      _vm._$g(14, "i")
+        ? _c("popup", {
+            attrs: { _i: 14 },
+            on: {
+              flag: function($event) {
+                return _vm.$handleViewEvent($event)
+              }
+            }
+          })
+        : _vm._e(),
+      _c("uni-view", {
+        class: _vm._$g(15, "c"),
+        attrs: { _i: 15 },
+        on: {
+          flag: function($event) {
+            return _vm.$handleViewEvent($event)
+          }
+        }
+      })
     ],
     1
   )
@@ -12097,13 +12115,26 @@ var render = function() {
         { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c("uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }, [
-            _vm._v("手机验证码")
+            _vm._v("手机号修改成功")
           ]),
           _c("uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
-            _vm._v("输入您想使用的手机号")
+            _vm._v("您修改的手机号为： 186****0846")
           ])
         ],
         1
+      ),
+      _c(
+        "uni-view",
+        {
+          staticClass: _vm._$g(5, "sc"),
+          attrs: { _i: 5 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_vm._v("完成")]
       )
     ],
     1
@@ -12197,7 +12228,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.box[data-v-0458befd] {\n\twidth: 704rpx;\n\tmargin-left: 20rpx;\n\theight: 600rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253C;\n}\n.img[data-v-0458befd] {}\n.list[data-v-0458befd] {\n\tfont-size: 28rpx;\n\tmargin-top: 60rpx;\n}\n.phones[data-v-0458befd] {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.text[data-v-0458befd] {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 24rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n", ""]);
+exports.push([module.i, "\n.box[data-v-0458befd] {\n\twidth: 704rpx;\n\tmargin-left: 22rpx;\n\theight: 600rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253C;\n\tborder: 1rpx solid rgba(255, 255, 255, 0);\n\tposition: absolute;\n\ttop: 400rpx;\n\tz-index: 5;\n}\n.img[data-v-0458befd] {\n\twidth: 160rpx;\n\theight: 160rpx;\n\tdisplay: block;\n\tmargin-top: 80rpx;\n\tmargin-left: 272rpx;\n}\n.list[data-v-0458befd] {\n\tfont-size: 32rpx;\n\tmargin-top: 40rpx;\n}\n.phones[data-v-0458befd] {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.text[data-v-0458befd] {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 28rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n.btn[data-v-0458befd] {\n\twidth: 200rpx;\n\theight: 90rpx;\n\tline-height: 90rpx;\n\ttext-align: center;\n\tbackground-color: #B043FA;\n\tborder-radius: 50rpx;\n\tcolor: white;\n\tmargin: 60rpx auto;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12249,7 +12280,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.list {\n\tfont-size: 28rpx;\n\tmargin-top: 60rpx;\n}\n.phones {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.form {\n\tmargin-top: 40rpx;\n\n\n\twidth: 100%;\n}\n.code {\n\tborder-radius: 48rpx;\n\twidth: 670rpx;\n\theight: 108rpx;\n\tmargin-top: 34rpx;\n\tposition: relative;\n\tmargin-left: 40rpx;\n}\n.phone {\n\tborder-radius: 48rpx;\n\twidth: 320rpx;\n\theight: 108rpx;\n\tpadding-left: 160rpx;\n\tpadding-right: 190rpx;\n\tfont-size: 32rpx;\n\tbackground-color: white;\n}\n.checking {\n\n\tbackground-color: white;\n\twidth: 60rpx;\n\theight: 50rpx;\n\tposition: absolute;\n\ttop: 26rpx;\n\tleft: 40rpx;\n\ttext-align: center;\n\tfont-size: 36rpx;\n\tfont-weight: 500;\n\tcolor: #222222;\n}\n.phone1 {\n\tfont-size: 28rpx;\n}\n.obtain {\n\tposition: absolute;\n\ttop: 36rpx;\n\tright: 32rpx;\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #B043FA;\n}\n.btn {\n\tbackground: linear-gradient(180deg, #D53EDA  0%, #D53EDA  100%);\n\twidth: 250rpx;\n\t\n\theight: 80rpx;\n\tline-height: 80rpx;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffff;\n\tborder-radius: 48rpx;\n}\n.text {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 24rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n", ""]);
+exports.push([module.i, "\n.list {\n\tfont-size: 28rpx;\n\tmargin-top: 60rpx;\n}\n.phones {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.form {\n\tmargin-top: 40rpx;\n\n\n\twidth: 100%;\n}\n.code {\n\tborder-radius: 48rpx;\n\twidth: 670rpx;\n\theight: 108rpx;\n\tmargin-top: 34rpx;\n\tposition: relative;\n\tmargin-left: 40rpx;\n}\n.phone {\n\tborder-radius: 48rpx;\n\twidth: 320rpx;\n\theight: 108rpx;\n\tpadding-left: 160rpx;\n\tpadding-right: 190rpx;\n\tfont-size: 32rpx;\n\tbackground-color: white;\n}\n.checking {\n\n\tbackground-color: white;\n\twidth: 60rpx;\n\theight: 50rpx;\n\tposition: absolute;\n\ttop: 26rpx;\n\tleft: 40rpx;\n\ttext-align: center;\n\tfont-size: 36rpx;\n\tfont-weight: 500;\n\tcolor: #222222;\n}\n.phone1 {\n\tfont-size: 28rpx;\n}\n.obtain {\n\tposition: absolute;\n\ttop: 36rpx;\n\tright: 32rpx;\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #B043FA;\n}\n.btn {\n\tbackground: linear-gradient(180deg, #D53EDA  0%, #D53EDA  100%);\n\twidth: 250rpx;\n\t\n\theight: 80rpx;\n\tline-height: 80rpx;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n\tfont-size: 28rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffff;\n\tborder-radius: 48rpx;\n}\n.text {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 24rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n.active{\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 2;\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\ttop: 0;\n}\n.shelter{\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\ttop: 0;\n\tz-index: -2;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12347,13 +12378,26 @@ var render = function() {
         { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c("uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }, [
-            _vm._v("手机验证码")
+            _vm._v("手机号修改成功")
           ]),
           _c("uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
-            _vm._v("输入您想使用的手机号")
+            _vm._v("您修改的手机号为： 186****0846")
           ])
         ],
         1
+      ),
+      _c(
+        "uni-view",
+        {
+          staticClass: _vm._$g(5, "sc"),
+          attrs: { _i: 5 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_vm._v("完成")]
       )
     ],
     1
@@ -12447,7 +12491,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.box {\n\twidth: 704rpx;\n\tmargin-left: 20rpx;\n\theight: 600rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253C;\n}\n.img {}\n.list {\n\tfont-size: 28rpx;\n\tmargin-top: 60rpx;\n}\n.phones {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.text {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 24rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n", ""]);
+exports.push([module.i, "\n.box {\n\twidth: 704rpx;\n\tmargin-left: 22rpx;\n\theight: 600rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253C;\n\tborder: 1rpx solid rgba(255, 255, 255, 0);\n\tposition: absolute;\n\ttop: 400rpx;\n\tz-index: 5;\n}\n.img {\n\twidth: 160rpx;\n\theight: 160rpx;\n\tdisplay: block;\n\tmargin-top: 80rpx;\n\tmargin-left: 272rpx;\n}\n.list {\n\tfont-size: 32rpx;\n\tmargin-top: 40rpx;\n}\n.phones {\n\tcolor: white;\n\ttext-align: center;\n\tmargin-top: 40rpx;\n}\n.text {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 28rpx;\n\ttext-align: center;\n\tmargin-top: 20rpx;\n}\n.btn {\n\twidth: 200rpx;\n\theight: 90rpx;\n\tline-height: 90rpx;\n\ttext-align: center;\n\tbackground-color: #B043FA;\n\tborder-radius: 50rpx;\n\tcolor: white;\n\tmargin: 60rpx auto;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

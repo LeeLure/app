@@ -28,9 +28,12 @@
 				<input type="number" placeholder="请输入验证码" v-model="code" maxlength="6" class="phone">
 
 			</view>
-			<button class="btn" @tap="btn">确认修改</button>
+			<button class="btn"  @tap="btn">确认修改</button>
 		</view>
-      <popup></popup>
+      <popup  v-if="flag"  @flag="complete"></popup>
+	  <view  :class="flag==true? 'active': 'shelter' " @flag="complete">
+	  	
+	  </view>
 	</view>
 </template>
 
@@ -43,7 +46,8 @@
 				title: "安全中心",
 				codeTime: 0,
 				phone: '',
-				code: ''
+				code: '',
+				flag:false
 			}
 		},
 		components: {
@@ -80,8 +84,14 @@
 
 				}
 			},
-			btn(e){
-				console.log(e);
+			btn(){			
+				this.flag=true
+				
+			},
+			// 接收子组件传递的参数
+			complete(e){
+				
+				this.flag=e
 			}
 			
 		}
@@ -177,5 +187,21 @@
 		font-size: 24rpx;
 		text-align: center;
 		margin-top: 20rpx;
+	}
+	.active{
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+	.shelter{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -2;
+		
 	}
 </style>
