@@ -2,7 +2,7 @@
 	<!-- 广场列表组件 -->
 	<view class="item">
 		<view class="">
-			<view class="img"><img class="img-image" src="../../../static/square/item-1.jpg" alt="" /></view>
+			<view class="img"><image class="img-image" src="../../../static/square/item-1.jpg" alt="" /></view>
 			<view class="info">
 				<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
 				<view class="time">11-8 星期六 14:30</view>
@@ -29,9 +29,10 @@ export default {
 	display: flex;
 	width: 340rpx;
 	height: 479rpx;
-	margin: 28rpx 10rpx 0 10rpx;
+	margin: 28rpx 20rpx 0 20rpx;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
+	/* border: 1rpx solid white; */
 }
 
 .img {
@@ -42,13 +43,15 @@ export default {
 .img-image {
 	width: 100%;
 	height: 100%;
-	/* border-radius: 30rpx 30rpx 0 0; */
+	border-radius: 30rpx 30rpx 0 0;
 }
 
 .info {
-	height: 170rpx;
+	height: 194rpx;
+	/* box-sizing: border-box; */
 	padding: 10rpx;
 	background-color: #fff;
+	border-radius: 0 0 30rpx 30rpx;
 }
 
 .title {

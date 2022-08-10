@@ -33,7 +33,7 @@ export default {
 .img {
 	width: 84rpx;
 	height: 78rpx;
-	padding: 15rpx 10rpx 15rpx 15rpx;
+	padding: 15rpx 10rpx 10rpx 10rpx;
 }
 
 .img-img {
