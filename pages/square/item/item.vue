@@ -1,5 +1,5 @@
 <template>
-	<!-- item -->
+	<!-- 广场列表组件 -->
 	<view class="item">
 		<view class="">
 			<view class="img"><img class="img-image" src="../../../static/square/item-1.jpg" alt="" /></view>
