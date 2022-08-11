@@ -56,7 +56,7 @@
 	}
 
 	.list {
-		font-size: 32rpx;
+		font-size: 36rpx;
 		margin-top: 40rpx;
 	}
 
@@ -74,13 +74,13 @@
 	}
 
 	.btn {
-		width: 200rpx;
-		height: 90rpx;
-		line-height: 90rpx;
+		width: 168rpx;
+		height: 70rpx;
+		line-height: 70rpx;
 		text-align: center;
-		background-color: #B043FA;
-		border-radius: 50rpx;
+		background-color: #D53EDA;
+		border-radius: 36rpx;
 		color: white;
-		margin: 60rpx auto;
+		margin: 80rpx auto;
 	}
 </style>
