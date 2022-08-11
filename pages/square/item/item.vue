@@ -29,7 +29,7 @@ export default {
 	display: flex;
 	width: 340rpx;
 	height: 479rpx;
-	margin: 28rpx 20rpx 0 20rpx;
+	margin: 0 15rpx 0 15rpx;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
 	/* border: 1rpx solid white; */
