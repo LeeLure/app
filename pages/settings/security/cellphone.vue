@@ -33,7 +33,7 @@
 			<view class="nextstep">
 				上一步
 			</view>
-			<view class="nextstep" @tap="replace">
+			<view class="nextsteps" @tap="replace">
 				下一步
 			</view>
 		</view>
@@ -141,9 +141,31 @@
 	}
 
 	.next {
-		display: flex;
-		color: white;
+		display: flex;		
+		justify-content: space-evenly;
+		margin-top: 66rpx;
+		font-size: 28rpx;
 	}
 
-	.nextstep {}
+	.nextstep {
+		width: 300rpx;
+		height: 70rpx;
+		line-height: 70rpx;
+		text-align: center;
+		background-color: #FFEE8C ;
+		border-radius: 36rpx;
+		color: #A28F21 ;
+		/* margin-left: 56rpx; */
+		
+		
+	}
+	.nextsteps {
+		line-height: 70rpx;
+		text-align: center;
+		width: 300rpx;
+		height: 70rpx;
+		color: white;
+		background-color: #D53EDA ;
+		border-radius: 36rpx;
+	}
 </style>

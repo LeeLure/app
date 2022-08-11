@@ -32,7 +32,7 @@
 					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
 				</view>
 			</view>
-			<view class="fitlist">
+			<view class="fitlist" @tap="cancellation">
 				<view class="kind">
 					注销账号
 				</view>
@@ -113,6 +113,11 @@
 			security(){
 				uni.navigateTo({
 					url:'/pages/settings/security/security'
+				})
+			},
+			cancellation(){
+				uni.navigateTo({
+					url:'/pages/settings/cancellation/cancellation'
 				})
 			}
 		}
