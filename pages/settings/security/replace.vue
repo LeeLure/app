@@ -86,6 +86,10 @@
 			},
 			btn(){			
 				this.flag=true
+				if(this.flag=true){
+					this.phone=''
+					this.code= ''
+				}
 				
 			},
 			// 接收子组件传递的参数
@@ -168,18 +172,17 @@
 	}
 
 	.btn {
-		background: linear-gradient(180deg, #D53EDA  0%, #D53EDA  100%);
-		width: 250rpx;
-		
-		height: 80rpx;
-		line-height: 80rpx;
+		background-color: #D53EDA ;
+		width: 214rpx;
+		height: 70rpx;
+		line-height: 70rpx;
 		text-align: center;
-		margin-top: 40rpx;
+		margin-top: 60rpx;
 		font-size: 28rpx;
 		font-family: PingFang SC-Medium, PingFang SC;
 		font-weight: 500;
 		color: #ffff;
-		border-radius: 48rpx;
+		border-radius: 36rpx;
 	}
 
 	.text {
