@@ -3629,7 +3629,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.square {\n\tpadding-bottom: 20rpx;\n}\n.Interesting {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.img {\n\twidth: 710rpx;\n\theight: 178rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.img uni-image {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cirTop,\n.cirBot {\n\tdisplay: flex;\n}\n.cirTop {\n\tmargin-top: 40rpx;\n}\n.cirBot {\n\tmargin-top: 12rpx;\n}\n.itemTop {\n\tmargin-right: 8rpx;\n}\n.itemBot {\n\tbackground-color: #feeceb;\n}\n.cirTop .itemTop {\n\tbackground-color: #fceced;\n}\n.cirBot .itemBot {\n\tbackground-color: #fceced;\n}\n\n/* Tab */\n.tab {\n\tmargin-top: 40rpx;\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n\t/* border: 1px solid red; */\n}\n.tab_nav {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\t/* padding: 12rpx 0; */\n\t/* border: 1rpx solid lawngreen; */\n}\n.tab_nav .navTitle {\n\tline-height: 58rpx;\n\ttext-align: center;\n\tfont-size: 28rpx;\n\twidth: 164rpx;\n\theight: 58rpx;\n\tmargin-bottom: 25rpx;\n\tmargin-top: 36rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tcolor: #ffffff;\n\t/* border: 1rpx solid lawngreen; */\n}\n.active {\n\tposition: relative;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tbackground: #b043fa;\n}\n.active::after {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 0;\n\theight: 0;\n\tbottom: -25rpx;\n\tleft: 42%;\n\tborder: 15rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\tflex-wrap: wrap;\n\tmargin-top: 28rpx;\n}\n", ""]);
+exports.push([module.i, "\n.square {\n\tpadding-bottom: 20rpx;\n}\n.Interesting {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.gameImg {\n\twidth: 710rpx;\n\theight: 178rpx;\n\tmargin-left: 20rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.gameImg uni-image {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cirTop,\n.cirBot {\n\tdisplay: flex;\n}\n.cirTop {\n\tmargin-top: 40rpx;\n}\n.cirBot {\n\tmargin-top: 12rpx;\n}\n.itemTop {\n\tmargin-right: 8rpx;\n}\n.itemBot {\n\tbackground-color: #feeceb;\n}\n.cirTop .itemTop {\n\tbackground-color: #fceced;\n}\n.cirBot .itemBot {\n\tbackground-color: #fceced;\n}\n\n/* Tab */\n.tab {\n\tmargin-top: 40rpx;\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n\t/* border: 1px solid red; */\n}\n.tab_nav {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\t/* padding: 12rpx 0; */\n\t/* border: 1rpx solid lawngreen; */\n}\n.tab_nav .navTitle {\n\tline-height: 58rpx;\n\ttext-align: center;\n\tfont-size: 28rpx;\n\twidth: 164rpx;\n\theight: 58rpx;\n\tmargin-bottom: 25rpx;\n\tmargin-top: 36rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tcolor: #ffffff;\n\t/* border: 1rpx solid lawngreen; */\n}\n.active {\n\tposition: relative;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tbackground: #b043fa;\n}\n.active::after {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 0;\n\theight: 0;\n\tbottom: -25rpx;\n\tleft: 42%;\n\tborder: 15rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\tflex-wrap: wrap;\n\tmargin-top: 28rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -5164,7 +5164,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.square[data-v-6eb7b326] {\n\tpadding-bottom: 20rpx;\n}\n.Interesting[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people[data-v-6eb7b326] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more[data-v-6eb7b326] {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.img[data-v-6eb7b326] {\n\twidth: 710rpx;\n\theight: 178rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.img uni-image[data-v-6eb7b326] {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cirTop[data-v-6eb7b326],\n.cirBot[data-v-6eb7b326] {\n\tdisplay: flex;\n}\n.cirTop[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n}\n.cirBot[data-v-6eb7b326] {\n\tmargin-top: 12rpx;\n}\n.itemTop[data-v-6eb7b326] {\n\tmargin-right: 8rpx;\n}\n.itemBot[data-v-6eb7b326] {\n\tbackground-color: #feeceb;\n}\n.cirTop .itemTop[data-v-6eb7b326] {\n\tbackground-color: #fceced;\n}\n.cirBot .itemBot[data-v-6eb7b326] {\n\tbackground-color: #fceced;\n}\n\n/* Tab */\n.tab[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n\t/* border: 1px solid red; */\n}\n.tab_nav[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\t/* padding: 12rpx 0; */\n\t/* border: 1rpx solid lawngreen; */\n}\n.tab_nav .navTitle[data-v-6eb7b326] {\n\tline-height: 58rpx;\n\ttext-align: center;\n\tfont-size: 28rpx;\n\twidth: 164rpx;\n\theight: 58rpx;\n\tmargin-bottom: 25rpx;\n\tmargin-top: 36rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tcolor: #ffffff;\n\t/* border: 1rpx solid lawngreen; */\n}\n.active[data-v-6eb7b326] {\n\tposition: relative;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tbackground: #b043fa;\n}\n.active[data-v-6eb7b326]::after {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 0;\n\theight: 0;\n\tbottom: -25rpx;\n\tleft: 42%;\n\tborder: 15rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\tflex-wrap: wrap;\n\tmargin-top: 28rpx;\n}\n", ""]);
+exports.push([module.i, "\n.square[data-v-6eb7b326] {\n\tpadding-bottom: 20rpx;\n}\n.Interesting[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-left: 22rpx;\n\tmargin-right: 22rpx;\n\tmargin-top: 34rpx;\n}\n.people[data-v-6eb7b326] {\n\tfont-size: 36rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.more[data-v-6eb7b326] {\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Regular, PingFang SC;\n\tcolor: rgba(255, 255, 255, 0.5);\n\tmargin-top: 10rpx;\n}\n.gameImg[data-v-6eb7b326] {\n\twidth: 710rpx;\n\theight: 178rpx;\n\tmargin-left: 20rpx;\n\t/* margin: 18rpx 20rpx 0 20rpx; */\n}\n.gameImg uni-image[data-v-6eb7b326] {\n\twidth: 100%;\n\theight: 100%;\n}\n\n/* 圈子 */\n.cirTop[data-v-6eb7b326],\n.cirBot[data-v-6eb7b326] {\n\tdisplay: flex;\n}\n.cirTop[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n}\n.cirBot[data-v-6eb7b326] {\n\tmargin-top: 12rpx;\n}\n.itemTop[data-v-6eb7b326] {\n\tmargin-right: 8rpx;\n}\n.itemBot[data-v-6eb7b326] {\n\tbackground-color: #feeceb;\n}\n.cirTop .itemTop[data-v-6eb7b326] {\n\tbackground-color: #fceced;\n}\n.cirBot .itemBot[data-v-6eb7b326] {\n\tbackground-color: #fceced;\n}\n\n/* Tab */\n.tab[data-v-6eb7b326] {\n\tmargin-top: 40rpx;\n\tbackground-color: #29253c;\n\tborder-radius: 30rpx 30rpx 0 0;\n\t/* border: 1px solid red; */\n}\n.tab_nav[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\t/* padding: 12rpx 0; */\n\t/* border: 1rpx solid lawngreen; */\n}\n.tab_nav .navTitle[data-v-6eb7b326] {\n\tline-height: 58rpx;\n\ttext-align: center;\n\tfont-size: 28rpx;\n\twidth: 164rpx;\n\theight: 58rpx;\n\tmargin-bottom: 25rpx;\n\tmargin-top: 36rpx;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tcolor: #ffffff;\n\t/* border: 1rpx solid lawngreen; */\n}\n.active[data-v-6eb7b326] {\n\tposition: relative;\n\tborder-radius: 30rpx 30rpx 30rpx 30rpx;\n\tbackground: #b043fa;\n}\n.active[data-v-6eb7b326]::after {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 0;\n\theight: 0;\n\tbottom: -25rpx;\n\tleft: 42%;\n\tborder: 15rpx solid #999999;\n\tborder-top-color: transparent;\n\tborder-bottom-color: #b043fa;\n\tborder-left-color: transparent;\n\tborder-right-color: transparent;\n}\n\n/* item */\n.itemname[data-v-6eb7b326] {\n\tdisplay: flex;\n\tjustify-content: space-evenly;\n\tflex-wrap: wrap;\n\tmargin-top: 28rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12937,49 +12937,95 @@ var render = function() {
           _c(
             "uni-view",
             { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
-            [
-              _c(
+            _vm._l(10, function(item, $11, $21, $31) {
+              return _c(
                 "uni-view",
-                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                {
+                  staticClass: _vm._$g("18-" + $31, "sc"),
+                  attrs: { _i: "18-" + $31 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+                    {
+                      staticClass: _vm._$g("19-" + $31, "sc"),
+                      attrs: { _i: "19-" + $31 }
+                    },
                     [
-                      _c("Card", {
-                        attrs: { _i: 20 },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "data",
-                            fn: function(_empty_, _svm, _si) {
-                              return [
-                                _c("uni-view", { attrs: { _i: "22-" + _si } }, [
-                                  _vm._v("12345条动态 丨 12345浏览过")
-                                ])
-                              ]
-                            }
-                          },
-                          {
-                            key: "desc",
-                            fn: function(_empty_, _svm, _si) {
-                              return [
-                                _c("uni-view", { attrs: { _i: "24-" + _si } }, [
-                                  _vm._v(
-                                    "我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述"
-                                  )
-                                ])
-                              ]
-                            }
-                          }
-                        ])
+                      _c("v-uni-image", {
+                        attrs: {
+                          src: _vm._$g("20-" + $31, "a-src"),
+                          mode: "",
+                          _i: "20-" + $31
+                        }
                       })
                     ],
                     1
+                  ),
+                  _c(
+                    "uni-view",
+                    {
+                      staticClass: _vm._$g("21-" + $31, "sc"),
+                      attrs: { _i: "21-" + $31 }
+                    },
+                    [
+                      _c(
+                        "uni-view",
+                        {
+                          staticClass: _vm._$g("22-" + $31, "sc"),
+                          attrs: { _i: "22-" + $31 }
+                        },
+                        [
+                          _vm._v(
+                            "英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟"
+                          )
+                        ]
+                      ),
+                      _c(
+                        "uni-view",
+                        {
+                          staticClass: _vm._$g("23-" + $31, "sc"),
+                          attrs: { _i: "23-" + $31 }
+                        },
+                        [_vm._v("12345W圈友")]
+                      ),
+                      _c(
+                        "uni-view",
+                        {
+                          staticClass: _vm._$g("24-" + $31, "sc"),
+                          attrs: { _i: "24-" + $31 }
+                        },
+                        [
+                          _vm._v(
+                            "英雄联盟英雄联盟英雄联盟英雄联盟雄联盟英雄联盟英雄联盟英"
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-uni-button",
+                    {
+                      staticClass: _vm._$g("25-" + $31, "sc"),
+                      attrs: { _i: "25-" + $31 },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [_vm._v("加入")]
                   )
                 ],
                 1
               )
-            ],
+            }),
             1
           )
         ],
@@ -13019,8 +13065,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _Card = _interopRequireDefault(__webpack_require__(/*! ./Card.vue */ 308));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+
 {
 
   data: function data() {
@@ -13028,8 +13074,7 @@ var _Card = _interopRequireDefault(__webpack_require__(/*! ./Card.vue */ 308));f
       wxsProps: {} };
 
   },
-  components: {
-    'Card': _Card.default } };exports.default = _default;
+  components: {} };exports.default = _default;
 
 /***/ }),
 /* 308 */
@@ -13157,30 +13202,37 @@ var render = function() {
               _c(
                 "uni-view",
                 { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-                [_vm._v(_vm._$g(5, "t0-0"))]
+                [
+                  _vm._v(
+                    "英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟"
+                  )
+                ]
               ),
+              _vm._v("<"),
               _c(
                 "uni-view",
                 { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                [_vm._t("data", null, { _i: 7 })],
-                2
+                [
+                  _vm._v(
+                    "英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟"
+                  )
+                ]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-                [_vm._t("desc", null, { _i: 9 })],
-                2
+                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+                [_vm._v("英雄联盟英雄联盟英雄联盟英雄联盟")]
               )
             ],
             1
           ),
-          _c("u-button", { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } }),
+          _c("u-button", { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } }),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
             [
               _c("v-uni-image", {
-                attrs: { src: _vm._$g(12, "a-src"), mode: "", _i: 12 }
+                attrs: { src: _vm._$g(10, "a-src"), mode: "", _i: 10 }
               })
             ],
             1
@@ -13501,7 +13553,7 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
 {
-  props: ["title"],
+  props: ["title", "botText"],
   data: function data() {
     return {
       wxsProps: {} };
@@ -13556,7 +13608,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.card[data-v-53f7ae54] {\n\tdisplay: flex;\n\t/* width: 330rpx; */\n\tposition: relative;\n\theight: 160rpx;\n\tborder: 1rpx solid #fffff;\n}\n.card-img[data-v-53f7ae54] {\n\twidth: 174rpx;\n\theight: 174rpx;\n\tmargin-right: 16rpx;\n}\n.card-img uni-image[data-v-53f7ae54] {\n\twidth: 95%;\n\theight: 95%;\n\tborder-radius: 20rpx;\n}\n.card-text[data-v-53f7ae54] {\n\twidth: 500rpx;\n\tbackground-color: transparent;\n\tborder: 1rpx solid white;\n}\n.card-title[data-v-53f7ae54] {\n\t/* margin-top: 8rpx; */\n\tcolor: #fff;\n\tfont-size: 32rpx;\n}\n.card-data[data-v-53f7ae54] {\n\theight: 34rpx;\n\tmargin-top: 14rpx;\n\tfont-size: 24rpx;\n\tcolor: #c9c4d5;\n}\n.card-desc[data-v-53f7ae54] {\n\twidth: 470rpx;\n\theight: 34rpx;\n\tline-height: 34rpx;\n\tmargin-top: 22rpx;\n\tcolor: white;\n\tfont-size: 24rpx;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.card-button[data-v-53f7ae54] {\n\tposition: absolute;\n\twidth: 174rpx;\n\theight: 68rpx;\n\tright: 20rpx;\n\tborder-radius: 20rpx;\n\tbackground-color: #848098;\n}\n.card-desc-img[data-v-53f7ae54] {\n\twidth: 20rpx;\n\theight: 20rpx;\n\tposition: absolute;\n\tbottom: 30rpx;\n\tright: 20rpx;\n}\n.card-desc-img uni-image[data-v-53f7ae54] {\n\twidth: 100%;\n\theight: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.card[data-v-53f7ae54] {\n\tdisplay: flex;\n\t/* width: 330rpx; */\n\tposition: relative;\n\theight: 160rpx;\n\tborder: 1rpx solid #fffff;\n}\n.card-small[data-v-53f7ae54] {\n\tdisplay: flex;\n\t/* width: 330rpx; */\n\tposition: relative;\n\theight: 136rpx;\n\tborder: 1rpx solid #ff0;\n}\n.card-img[data-v-53f7ae54] {\n\twidth: 174rpx;\n\theight: 174rpx;\n\tmargin-right: 16rpx;\n}\n.card-img uni-image[data-v-53f7ae54] {\n\twidth: 95%;\n\theight: 95%;\n\tborder-radius: 20rpx;\n}\n.card-text[data-v-53f7ae54] {\n\twidth: 500rpx;\n\tbackground-color: transparent;\n\tborder: 1rpx solid white;\n}\n.card-title[data-v-53f7ae54] {\n\t/* margin-top: 8rpx; */\n\twidth: 348rpx;\n\tcolor: #fff;\n\tfont-size: 32rpx;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.card-button[data-v-53f7ae54] {\n\tposition: absolute;\n\twidth: 174rpx;\n\theight: 68rpx;\n\tright: 20rpx;\n\tborder-radius: 20rpx;\n\tbackground-color: #848098;\n}\n.card-desc-img[data-v-53f7ae54] {\n\twidth: 34rpx;\n\theight: 34rpx;\n\tposition: absolute;\n\tbottom: 15rpx;\n\tright: 20rpx;\n}\n.card-desc-img uni-image[data-v-53f7ae54] {\n\twidth: 100%;\n\theight: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -13608,7 +13660,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 导航栏 */\n.navigation {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\t/* border: 1rpx solid azure; */\n}\n.navigation1 {\n\tmargin-left: 20rpx;\n\tmargin-top: 8rpx;\n\tcolor: #ffffff;\n}\n.fanhui {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation2 {\n\twidth: 620rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tfont-size: 32rpx;\n\tmargin-left: 110rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.navigation3 {\n\twidth: 300rpx;\n\theight: 70rpx;\n\tline-height: 70rpx;\n\tmargin-top: 15rpx;\n\tmargin-right: 20rpx;\n\tcolor: #ffffff;\n\tfont-size: 24rpx;\n\t/* border: 1rpx solid white; */\n\tborder-radius: 25rpx;\n\tbackground-color: #343147;\n}\n/* 搜索框 */\n.input {\n\twidth: 710rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tmargin-left: 20rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253c;\n}\n.text1 {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tvertical-align: middle;\n}\n.img1 {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n\tmargin-right: 15rpx;\n\tmargin-left: 36rpx;\n}\n/* 菜单 */\n.list {\n\tdisplay: flexbox;\n\tmargin-top: 20rpx;\n\tborder: 1rpx solid #ffffff;\n}\n/* 左侧菜单 */\n.leftCategory {\n\twidth: 176rpx;\n\tborder: 1rpx solid #ffffff;\n}\n.category {\n\tdisplay: flex;\n\tposition: relative;\n\theight: 100rpx;\n\t/* margin-right: 16rpx; */\n\tborder-radius: 0 20rpx 20rpx 0;\n\tborder: 1rpx solid #ffffff;\n}\n.category .bgColor {\n\twidth: 58rpx;\n\theight: 100rpx;\n\t/* background-color: #fff; */\n\t/* background-image: linear-gradient(to right, rgba(114, 34, 232,0),rgba(33, 27, 61,0); */\n\tbackground-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);\n}\n.category .text {\n\twidth: 96rpx;\n\theight: 34rpx;\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\t-webkit-transform: translate(-50%, -50%);\n\t        transform: translate(-50%, -50%);\n\tcolor: #ffffff;\n\tfont-size: 24rpx;\n}\n/* 右侧菜单 */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 导航栏 */\n.navigation {\n\twidth: 750rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\t/* border: 1rpx solid azure; */\n}\n.navigation1 {\n\tmargin-left: 20rpx;\n\tmargin-top: 8rpx;\n\tcolor: #ffffff;\n}\n.fanhui {\n\twidth: 40rpx;\n\theight: 40rpx;\n}\n.navigation2 {\n\twidth: 620rpx;\n\theight: 100rpx;\n\tline-height: 100rpx;\n\ttext-align: center;\n\tfont-size: 32rpx;\n\tmargin-left: 110rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tfont-weight: 500;\n\tcolor: #ffffff;\n}\n.navigation3 {\n\twidth: 300rpx;\n\theight: 70rpx;\n\tline-height: 70rpx;\n\tmargin-top: 15rpx;\n\tmargin-right: 20rpx;\n\tcolor: #ffffff;\n\tfont-size: 24rpx;\n\t/* border: 1rpx solid white; */\n\tborder-radius: 25rpx;\n\tbackground-color: #343147;\n}\n/* 搜索框 */\n.input {\n\twidth: 710rpx;\n\theight: 68rpx;\n\tline-height: 68rpx;\n\tmargin-left: 20rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: #29253c;\n}\n.text1 {\n\tcolor: rgba(255, 255, 255, 0.5);\n\tfont-size: 22rpx;\n\tfont-family: PingFang SC-Medium, PingFang SC;\n\tvertical-align: middle;\n}\n.img1 {\n\twidth: 25rpx;\n\theight: 25rpx;\n\tvertical-align: middle;\n\tmargin-right: 15rpx;\n\tmargin-left: 36rpx;\n}\n/* 菜单 */\n.list {\n\tdisplay: flex;\n\tmargin-top: 20rpx;\n\t/* border: 1rpx solid #ffffff; */\n}\n/* 左侧菜单 */\n.leftCategory {\n\twidth: 176rpx;\n\t/* border: 1rpx solid #ffffff; */\n}\n.category {\n\tdisplay: flex;\n\tposition: relative;\n\theight: 100rpx;\n\t/* margin-right: 16rpx; */\n\tborder-radius: 0 20rpx 20rpx 0;\n\t/* border: 1rpx solid #ffffff; */\n}\n.bgColor {\n\twidth: 58rpx;\n\theight: 100rpx;\n\tbackground-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);\n}\n.category .text {\n\twidth: 96rpx;\n\theight: 34rpx;\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\t-webkit-transform: translate(-50%, -50%);\n\t        transform: translate(-50%, -50%);\n\tcolor: #ffffff;\n\tfont-size: 24rpx;\n}\n/* 右侧菜单 */\n.rightCategory {\n\twidth: 554rpx;\n\tmargin-left: 20rpx;\n}\n.card {\n\tdisplay: flex;\n\twidth: 100%;\n\tposition: relative;\n\theight: 136rpx;\n\t/* border: 1rpx solid #fffff; */\n}\n.card-img {\n\twidth: 136rpx;\n\theight: 136rpx;\n\tmargin-right: 16rpx;\n}\n.card-img uni-image {\n\twidth: 95%;\n\theight: 95%;\n\tborder-radius: 20rpx;\n}\n.card-text {\n\twidth: 396rpx;\n\tbackground-color: transparent;\n\t/* border: 1rpx solid white; */\n}\n.card-title {\n\t/* margin-top: 8rpx; */\n\twidth: 262rpx;\n\tcolor: #fff;\n\tfont-size: 28rpx;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.card-data {\n\twidth: 272rpx;\n\theight: 32rpx;\n\tmargin-top: 8rpx;\n\tfont-size: 22rpx;\n\tcolor: #c9c4d5;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.card-desc {\n\twidth: 396rpx;\n\t/* height: 34rpx; */\n\t/* line-height: 34rpx; */\n\tmargin-top: 12rpx;\n\tcolor: white;\n\tfont-size: 20rpx;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n}\n.card-button {\n\tposition: absolute;\n\twidth: 108rpx;\n\theight: 46rpx;\n\tline-height: 46rpx;\n\tright: 20rpx;\n\tfont-size: 22rpx;\n\ttext-align: center;\n\tborder-radius: 30rpx;\n\tbackground-color: #ffee8c;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -13694,7 +13746,10 @@ var render = function() {
   return _c(
     "uni-view",
     { attrs: { _i: 0 } },
-    [_c("Card", { attrs: { _i: 1 } })],
+    [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
+      _c("Card", { attrs: { _i: 2 } })
+    ],
     1
   )
 }

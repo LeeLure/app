@@ -445,12 +445,15 @@
 		}
 
 		, {
+			// 圈子主页
 			"path": "pages/square/circle/CircleHomePage",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
 			}
-
 		}, {
 			"path": "pages/tidings/chat-details/chat-details",
 

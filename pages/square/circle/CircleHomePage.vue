@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<view class="bar"></view>
 		<!-- 话题圈主页 -->
 		<Card></Card>
 	</view>

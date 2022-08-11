@@ -31,17 +31,19 @@
 
 			<!-- 右侧卡片 -->
 			<view class="rightCategory">
-				<view class="card">
-					<view class="cardItem">
-						<Card title="英雄联盟">
-							<template #data>
-								<view class="">12345条动态 丨 12345浏览过</view>
-							</template>
-							<template #desc>
-								<view class="">我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述</view>
-							</template>
-						</Card>
+				<view class="card" v-for="item in 10" @tap="toCircleHomePage(item)">
+					<view class="card-img"><image src="../../../static/home/a.pic.jpg" mode=""></image></view>
+					<view class="card-text">
+						<!-- 文字标题 -->
+						<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
+						<!-- 中间数据 -->
+						<view class="card-data">12345W圈友</view>
+						<!-- 下方文字 -->
+						<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联盟雄联盟英雄联盟英雄联盟英</view>
 					</view>
+					<!-- 按钮 -->
+					<button class="card-button" @tap="joinCircle">加入</button>
+					<!-- <u-button size="small" class="card-button" text="+申请加入" ></u-button> -->
 				</view>
 			</view>
 		</view>
@@ -50,12 +52,10 @@
 </template>
 
 <script>
-import Card from './Card.vue';
 export default {
-	components: {
-		// navigation
-		Card
-	},
+	// components: {
+	// 	// navigation
+	// },
 	data() {
 		return {
 			title: '发现圈子',
@@ -82,11 +82,15 @@ export default {
 			uni.navigateBack();
 		},
 
-		// 搜索
-		search(res) {
-			uni.showToast({
-				title: '搜索：' + res.value,
-				icon: 'none'
+		// 加入圈子
+		joinCircle() {
+			uni.showToast({});
+		},
+
+		// 圈子主页
+		toCircleHomePage() {
+			uni.navigateTo({
+				url: '/pages/square/circle/CircleHomePage'
 			});
 		}
 	}
@@ -168,15 +172,15 @@ export default {
 
 /* 菜单 */
 .list {
-	display: flexbox;
+	display: flex;
 	margin-top: 20rpx;
-	border: 1rpx solid #ffffff;
+	/* border: 1rpx solid #ffffff; */
 }
 /* 左侧菜单 */
 
 .leftCategory {
 	width: 176rpx;
-	border: 1rpx solid #ffffff;
+	/* border: 1rpx solid #ffffff; */
 }
 
 .category {
@@ -185,14 +189,12 @@ export default {
 	height: 100rpx;
 	/* margin-right: 16rpx; */
 	border-radius: 0 20rpx 20rpx 0;
-	border: 1rpx solid #ffffff;
+	/* border: 1rpx solid #ffffff; */
 }
 
-.category .bgColor {
+.bgColor {
 	width: 58rpx;
 	height: 100rpx;
-	/* background-color: #fff; */
-	/* background-image: linear-gradient(to right, rgba(114, 34, 232,0),rgba(33, 27, 61,0); */
 	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
 }
 
@@ -208,4 +210,79 @@ export default {
 }
 
 /* 右侧菜单 */
+.rightCategory {
+	width: 554rpx;
+	margin-left: 20rpx;
+}
+
+.card {
+	display: flex;
+	width: 100%;
+	position: relative;
+	height: 136rpx;
+	/* border: 1rpx solid #fffff; */
+}
+
+.card-img {
+	width: 136rpx;
+	height: 136rpx;
+	margin-right: 16rpx;
+}
+
+.card-img image {
+	width: 95%;
+	height: 95%;
+	border-radius: 20rpx;
+}
+
+.card-text {
+	width: 396rpx;
+	background-color: transparent;
+	/* border: 1rpx solid white; */
+}
+
+.card-title {
+	/* margin-top: 8rpx; */
+	width: 262rpx;
+	color: #fff;
+	font-size: 28rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-data {
+	width: 272rpx;
+	height: 32rpx;
+	margin-top: 8rpx;
+	font-size: 22rpx;
+	color: #c9c4d5;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-desc {
+	width: 396rpx;
+	/* height: 34rpx; */
+	/* line-height: 34rpx; */
+	margin-top: 12rpx;
+	color: white;
+	font-size: 20rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-button {
+	position: absolute;
+	width: 108rpx;
+	height: 46rpx;
+	line-height: 46rpx;
+	right: 20rpx;
+	font-size: 22rpx;
+	text-align: center;
+	border-radius: 30rpx;
+	background-color: #ffee8c;
+}
 </style>
