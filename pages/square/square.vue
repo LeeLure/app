@@ -5,7 +5,7 @@
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
 		<!-- 赛事活动的图片 -->
-		<view class="gameImg"><image src="../../static/square/saishi.jpg" alt="" /></view>
+		<view class="gameImg"><image src="../../../make_friends/static/square/saishi.jpg.jpg" alt="" /></view>
 
 		<!-- 发现圈子 -->
 		<view class="Interesting">
@@ -32,7 +32,7 @@
 			</view>
 			<!-- 即将开始 -->
 			<view class="nav_item" v-if="isActive === 0">
-				<view class="itemname"><item v-for="item in 4" /></view>
+				<view class="itemnames"><item v-for="item in 4" /></view>
 			</view>
 			<!-- 比赛房间 -->
 			<view class="nav_item" v-if="isActive === 1">比赛房间</view>
@@ -193,7 +193,7 @@ export default {
 }
 
 /* item */
-.itemname {
+.itemnames {
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
