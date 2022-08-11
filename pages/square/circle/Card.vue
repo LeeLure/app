@@ -4,18 +4,15 @@
 			<view class="card-img"><image src="../../../static/home/a.pic.jpg" mode=""></image></view>
 			<view class="card-text">
 				<!-- 文字标题 -->
-				<view class="card-title">{{ title }}</view>
-
-				<!-- 中间数据的插槽 -->
-				<view class="card-data"><slot name="data"></slot></view>
-
-				<!-- 下方文字的插槽 -->
-				<view class="card-desc"><slot name="desc"></slot></view>
+				<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
+				<!-- 中间数据 -->
+				<
+				<view class="card-data">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
+				<!-- 下方文字 -->
+				<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联盟</view>
 			</view>
-
 			<!-- 按钮 -->
-			<u-button class="card-button" text="+ 申请加入"></u-button>
-
+			<u-button class="card-button" text="+申请加入"></u-button>
 			<!-- 小箭头 -->
 			<view class="card-desc-img"><image src="../../../static/square/youjiaotou.jpg" mode=""></image></view>
 		</view>
@@ -25,7 +22,8 @@
 <script>
 export default {
 	props: {
-		title: String
+		title: String,
+		botText: String
 	},
 
 	data() {
@@ -45,6 +43,14 @@ export default {
 	position: relative;
 	height: 160rpx;
 	border: 1rpx solid #fffff;
+}
+
+.card-small {
+	display: flex;
+	/* width: 330rpx; */
+	position: relative;
+	height: 136rpx;
+	border: 1rpx solid #ff0;
 }
 
 .card-img {
@@ -67,24 +73,9 @@ export default {
 
 .card-title {
 	/* margin-top: 8rpx; */
+	width: 348rpx;
 	color: #fff;
 	font-size: 32rpx;
-}
-
-.card-data {
-	height: 34rpx;
-	margin-top: 14rpx;
-	font-size: 24rpx;
-	color: #c9c4d5;
-}
-
-.card-desc {
-	width: 470rpx;
-	height: 34rpx;
-	line-height: 34rpx;
-	margin-top: 22rpx;
-	color: white;
-	font-size: 24rpx;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -100,10 +91,10 @@ export default {
 }
 
 .card-desc-img {
-	width: 20rpx;
-	height: 20rpx;
+	width: 34rpx;
+	height: 34rpx;
 	position: absolute;
-	bottom: 30rpx;
+	bottom: 15rpx;
 	right: 20rpx;
 }
 

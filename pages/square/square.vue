@@ -5,7 +5,7 @@
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
 		<!-- 赛事活动的图片 -->
-		<view class="img"><image src="../../static/square/saishi.jpg" alt="" /></view>
+		<view class="gameImg"><image src="../../static/square/saishi.jpg" alt="" /></view>
 
 		<!-- 发现圈子 -->
 		<view class="Interesting">
@@ -102,13 +102,14 @@ export default {
 	margin-top: 10rpx;
 }
 
-.img {
+.gameImg {
 	width: 710rpx;
 	height: 178rpx;
+	margin-left: 20rpx;
 	/* margin: 18rpx 20rpx 0 20rpx; */
 }
 
-.img image {
+.gameImg image {
 	width: 100%;
 	height: 100%;
 }
