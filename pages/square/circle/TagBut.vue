@@ -1,6 +1,6 @@
 <template>
 	<view class="tagButBox">
-		<button class="tagBut">
+		<button class="tagBut" @tap="toListActive">
 			<view class="partake">
 				<image src="../../../static/home/lbt.png" class="partakeimage1"></image>
 				<image src="../../../static/home/lbt.png" class="partakeimage2"></image>
@@ -33,6 +33,12 @@ export default {
 			toTopicMain() {
 				uni.navigateTo({
 					url: '/pages/square/circle/TopicMain'
+				});
+			},
+
+			toListActive() {
+				uni.navigateTo({
+					url: '/pages/square/circle/ListActive'
 				});
 			}
 		};

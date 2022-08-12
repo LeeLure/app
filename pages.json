@@ -540,8 +540,22 @@
 				},
 				"navigationBarTextStyle": "white"
 			}
+		},
+		{
+			// 活跃榜
+			"path": "pages/square/circle/ListActive",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
 
 		}
+
+
 	],
 
 
