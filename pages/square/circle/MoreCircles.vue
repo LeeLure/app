@@ -42,7 +42,7 @@
 						<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联盟雄联盟英雄联盟英雄联盟英</view>
 					</view>
 					<!-- 按钮 -->
-					<button class="card-button" @tap="joinCircle">加入</button>
+					<button class="card-button" @tap.stop="joinCircle">加入</button>
 					<!-- <u-button size="small" class="card-button" text="+申请加入" ></u-button> -->
 				</view>
 			</view>
@@ -219,6 +219,7 @@ export default {
 	display: flex;
 	width: 100%;
 	position: relative;
+	margin-top: 30rpx;
 	height: 136rpx;
 	/* border: 1rpx solid #fffff; */
 }
