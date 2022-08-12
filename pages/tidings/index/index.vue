@@ -5,6 +5,7 @@
 			<view class="navTitle" v-for="(item, index) in navList" :key="index">
 				<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.name }}</view>
 			</view>
+			<view class="search"><image src="@/static/home/sousuo.png" class="img"></image></view>
 		</view>
 		<!-- <u-tabs :list="navList"></u-tabs> -->
 		<view class="nav_item" v-if="isActive == 0"><message /></view>
@@ -80,5 +81,14 @@ export default {
 	border-radius: 4rpx;
 	background: #ffee8c;
 	margin: auto;
+}
+.tab_nav .search{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 40rpx;
+}
+.tab_nav .search .img{
+	width: 100%;
+	height: 100%;
 }
 </style>

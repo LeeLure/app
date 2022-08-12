@@ -5,6 +5,7 @@
 			<view v-for="item in list" class="user">
 				<view class="user-img">
 					<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
+						<view class="status"></view>
 				</view>
 				<view class="user-name">{{item}}</view>
 			</view>
@@ -41,6 +42,7 @@
 		height: auto;
 		text-align: center;
 		margin: 0 20rpx 0 14rpx;
+		position: relative;
 	}
 
 	.user-img {
@@ -52,8 +54,19 @@
 		height: 108rpx;
 		border-radius: 108rpx;
 	}
-	.user-name{
+
+	.user-name {
 		font-size: 28rpx;
 		color: #FFF;
+	}
+
+	.user .status {
+		position: absolute;
+		background-color: #FFEE8C;
+		width: 12rpx;
+		height: 12rpx;
+		border-radius: 12rpx;
+		right: 12rpx;
+		bottom: 50rpx;
 	}
 </style>

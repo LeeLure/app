@@ -1,22 +1,10 @@
 <template>
 	<view class="main">
 		<view class="message-list">
-
-			<view class="content-1">
-				<view class="container-1" @touchstart="touchS" @touchmove="touchM" @touchend="touchE"
-					:style="{'left':act_touch==index?leftStyle + 'upx':0}" :data-index="index" v-for="(i, index) in 3">
-					<view>
-						左滑删除左滑删除左滑删除左滑删除
-					</view>
-					<view class="delete-1" @click="delData">
-						删除
-					</view>
-				</view>
-			</view>
-
-			<uni-swipe-action class="swipe">
-				<!-- <uni-swipe-action> -->
-				<uni-swipe-action-item :threshold="0" :right-options="options1">
+			<view class="swipe">
+				<view class="container" @touchstart="touchS" @touchmove="touchM" @touchend="touchE"
+					:style="{'left':act_touch==index?leftStyle + 'upx':0}" :data-index="index"
+					v-for="(item,index) in list" :key='index'>
 					<view class="message-box">
 						<view @tap="toDetails(item)" class="message">
 							<view class="left">
@@ -24,10 +12,10 @@
 							</view>
 							<view class="center">
 								<view>
-									通知
+									{{item.title}}
 								</view>
 								<view class="content">
-									内容
+									{{item.content}}
 								</view>
 							</view>
 							<view class="right">
@@ -36,15 +24,14 @@
 							</view>
 						</view>
 					</view>
-					<template v-slot:right>
-						<view class="slot-button" @tap="bindClick({position:'right',content:{text:'删除'}})">
-							<view class="slot-button-text">
-								<image class="img" src="@/static/tidings/del.png"></image>
-							</view>
+					<view class="slot-button" @tap="bindClick({position:'right',content:{text:'删除'}})">
+						<view class="slot-button-text">
+							<image class="img" src="@/static/tidings/del.png"></image>
 						</view>
-					</template>
-				</uni-swipe-action-item>
-				<!-- <uni-swipe-action-item :options="options1">
+					</view>
+				</view>
+			</view>
+			<!-- <uni-swipe-action-item :options="options1">
 					<view @tap="toDetails(item)" class="message">
 						<view class="left">
 							<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
@@ -142,7 +129,6 @@
 				})
 			},
 			bindClick(e) {
-				console.log(e);
 				uni.showToast({
 					title: `点击了${e.position === 'left' ? '左侧' : '右侧'} ${e.content.text}按钮`,
 					icon: 'none'
@@ -152,6 +138,18 @@
 			touchS({
 				touches
 			}) {
+				const {
+					leftStyle,
+					startX,
+					hiddenFlag,
+					delBtnWidth,
+					act_touch
+				} = this
+				console.log(leftStyle,
+					startX,
+					hiddenFlag,
+					delBtnWidth,
+					act_touch)
 				// startX记录开始移动的位置
 				if (touches.length === 1) {
 					this.startX = touches[0].clientX;
@@ -169,7 +167,7 @@
 					const moveX = e.touches[0].clientX;
 					this.moveFunc(moveX);
 					//获取手指触摸的是哪一项
-					console.log(e.currentTarget.dataset.index)
+					// console.log(e.currentTarget.dataset.index)
 					var index = e.currentTarget.dataset.index;
 					this.act_touch = index;
 				}
@@ -200,7 +198,7 @@
 				if (-disX >= delBtnWidth && this.leftStyle === -delBtnWidth) {
 					return;
 				}
-				console.log(disX, this.hiddenFlag);
+				// console.log(disX, this.hiddenFlag);
 				// this.hiddenFlag为true则是从左到右，则应该将container向左移动
 				// this.hiddenFlag为false则是从右向左，则应该将container向右移动
 				if (this.hiddenFlag) {
@@ -233,7 +231,7 @@
 			},
 			//删除方法
 			delData() {
-				console.log("删除")
+				// console.log("删除")
 				uni.showModal({
 					title: '提示',
 					content: "确认删除该职位？",
@@ -262,6 +260,11 @@
 		width: 750rpx;
 		/* padding: 20rpx 0; */
 		margin: 20rpx 0;
+	}
+
+	.swipe .container {
+		position: relative;
+		margin-top: 26rpx;
 	}
 
 	.swipe /deep/ .u-swipe-action-item__content {
@@ -378,38 +381,12 @@
 		width: 50rpx;
 		height: 50rpx;
 	}
-	
-	.content-1 {
-			width: 100%;
-			overflow-x: hidden;
-			background-color: #f4f4f4;
-			border-radius: none;
-		}
-	
-		.container-1 {
-			position: relative;
-			margin-top: 26rpx;
-			margin-bottom: 20upx;
-			background-color: #fff;
-			// padding: 20upx;
-			height: 120rpx;
-			line-height: 120rpx;
-		}
-	
-		.delete-1 {
-			position: absolute;
-			top: 50%;
-			-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-			right: -107px;
-			width: 65px;
-			height: 120rpx;
-			line-height: 120rpx;
-			font-weight: 500;
-			font-size: 16px;
-			text-align: center;
-			color: #FFFFFF;
-			background: #FF1C1C;
-			width: 106px;
-		}
+
+	.slot-button {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		right: -214rpx;
+	}
 </style>
