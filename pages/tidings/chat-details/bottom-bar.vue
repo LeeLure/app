@@ -31,7 +31,7 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
-		height: 160rpx;
+		height: 140rpx;
 		background-color: #1E1A32;
 		width: 100%;
 		display: flex;

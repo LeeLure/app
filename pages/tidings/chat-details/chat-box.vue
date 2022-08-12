@@ -53,21 +53,17 @@
 	.chat-content-box {
 		display: flex;
 		flex-direction: column;
-		padding-bottom: 160rpx;
 		background-color: #1E1A32;
 	}
 
-	.scroll-view-box {
-		flex: 1;
-	}
-
 	.scroll-view_H {
-		height:  calc(100vh - var(--status-bar-height) - 260rpx);
-		padding: 20rpx 0;
+		height:  calc(100vh - var(--status-bar-height) - 240rpx);
+		/* padding: 20rpx 0; */
 		box-sizing: border-box;
 	}
 
 	.chat-box {
+		margin-top: 20rpx;
 		padding: 0 28rpx;
 	}
 

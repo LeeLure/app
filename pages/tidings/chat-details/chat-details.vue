@@ -1,5 +1,6 @@
 <template>
 	<view class="chat-details">
+		<view class="bar"></view>
 		<!-- 导航栏 -->
 		<navigation :title="title" class="navigation">
 			<template v-slot:account>
@@ -52,8 +53,8 @@
 		background-color: #29253C;
 	}
 	.chat-details .navigation{
-		top: var(--status-bar-height);
-		z-index: 10;
+		/* top: var(--status-bar-height); */
+		/* z-index: 10; */
 	}
 	.account {
 		padding: 0 20rpx;
