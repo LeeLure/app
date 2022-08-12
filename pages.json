@@ -405,6 +405,7 @@
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
+					"bounce":"none",
 					"titleNView": false //去掉app+h5顶部导航
 				},
 				"navigationBarTextStyle": "white"
@@ -455,13 +456,38 @@
 			"path": "pages/tidings/chat-details/chat-details",
 
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
 			}
 
 
 		}
-	],
+	    ,{
+            "path" : "pages/tidings/circle-details/index/index",
+            "style": {
+            	"navigationStyle": "custom",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	},
+            	"navigationBarTextStyle": "white"
+            }
+            
+        }
+        ,{
+            "path" : "pages/tidings/circle-details/edit/index",
+            "style": {
+            	"navigationStyle": "custom",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	},
+            	"navigationBarTextStyle": "white"
+            }
+            
+        }
+    ],
 
 
 	"globalStyle": {

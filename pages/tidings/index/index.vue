@@ -71,10 +71,10 @@ export default {
 	content: '';
 	position: absolute;
 	width: 100%;
-	height: 4rpx;
+	height: 8rpx;
 	left: 0px;
 	right: 0px;
-	bottom: -6rpx;
+	bottom: -12rpx;
 	border-radius: 4rpx;
 	background: #ffee8c;
 	margin: auto;
