@@ -536,22 +536,26 @@
 			}
 
 		}
-	    ,{
-            "path" : "pages/user/conceal",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
+	    
+        ,{
+            "path" : "pages/user/Interesting/Interesting",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
         }
         ,{
-            "path" : "pages/user/personal",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+            "path" : "pages/user/Interesting/open",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
             
         }
     ],

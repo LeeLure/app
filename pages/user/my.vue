@@ -4,15 +4,16 @@
 			<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="backgroundimg"></image>
 			<view class="fod">
 				<view class="install">
-					<image src="" class="installimg"></image>
+					<image src="@/static/user/zuji.png" class="installimg"></image>
 				</view>
 				<view class="install" @tap="release">
-					<image src="" class="installimg"></image>
+					<image src="@/static/user/shhezhih.png" class="installimg"></image>
 				</view>
 			</view>
 
 			<view class="information">
 				<personal></personal>
+				<roll></roll>
 				<conceal></conceal>
 			</view>
 
@@ -24,6 +25,7 @@
 <script>
 	import personal from "@/pages/user/personal.vue"
 	import conceal from "@/pages/user/conceal.vue"
+	import roll from "@/pages/user/roll.vue"
 	export default {
 
 		data() {
@@ -33,7 +35,8 @@
 		},
 		components: {
 			personal,
-			conceal
+			conceal,
+			roll
 		},
 		methods: {
 			release() {
@@ -71,13 +74,17 @@
 	.install {
 		width: 64rpx;
 		height: 64rpx;
+	
 		border-radius: 32rpx;
 		background-color: #00000081;
 	}
 
 	.installimg {
-		width: 28rpx;
-		height: 28rpx;
+		width: 40rpx;
+		height: 40rpx;
+		display:block;
+		margin: 12rpx;
+		
 	}
 
 	.information {

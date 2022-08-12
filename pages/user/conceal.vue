@@ -51,7 +51,10 @@
 </script>
 
 <style>
-.list {		width: 670rpx;}
+.list {		
+	margin-top: 20rpx;
+	width: 670rpx;
+	}
 
 	.line {
 		width: 670rpx;
