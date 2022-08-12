@@ -533,11 +533,8 @@
 			// 话题主
 			"path": "pages/square/circle/TopicMain",
 			"style": {
-				"navigationStyle": "custom",
-				"app-plus": {
-					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 
 		}

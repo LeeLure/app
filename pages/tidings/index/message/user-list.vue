@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<slot name="top"></slot>
 		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="0">
 			<view v-for="item in list" class="user">
 				<view class="user-img">

@@ -10,19 +10,19 @@
 					<image src="" class="installimg"></image>
 				</view>
 			</view>
-					
+
 			<view class="information">
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
 			</view>
-			
+
 		</view>
-		
+
 		<view class="list">
 			<view class="line">
 				<view class="column">
@@ -48,35 +48,34 @@
 					<text class="columntext">希艾奇遇客服</text>
 				</view>
 				<view class="row">
-					<image src="@/static/settings/jinnru.png" class="rowimg"></image>
+					4000-588-2145
 				</view>
 			</view>
-			
+
 		</view>
-		
+
 	</view>
 </template>
 
 <script>
-	
 	export default {
-		
+
 		data() {
 			return {
-				
+
 			}
 		},
-		
+
 		methods: {
-			release(){
+			release() {
 				uni.navigateTo({
-					url:'/pages/settings/settings'
+					url: '/pages/settings/settings'
 				})
 			},
 			// 前往帮助与反馈
-			help(){
+			help() {
 				uni.navigateTo({
-					url:'/pages/settings/help/help'
+					url: '/pages/settings/help/help'
 				})
 			}
 		}
@@ -84,18 +83,19 @@
 </script>
 
 <style>
-	
-	.background{
+	.background {
 		width: 750rpx;
-		height:316rpx;
+		height: 316rpx;
 		position: relative;
 	}
-	.backgroundimg{
+
+	.backgroundimg {
 		width: 100%;
 		height: 100%;
 	}
-	.fod{
-		border: 1px  solid  red;
+
+	.fod {
+		border: 1px solid red;
 		display: flex;
 		width: 168rpx;
 		justify-content: space-between;
@@ -103,34 +103,36 @@
 		top: 100rpx;
 		right: 18rpx;
 	}
-	.install{
+
+	.install {
 		width: 64rpx;
 		height: 64rpx;
 		border-radius: 32rpx;
 		background-color: #00000081;
 	}
-	.installimg{
+
+	.installimg {
 		width: 28rpx;
 		height: 28rpx;
 	}
-	.information{
+
+	.information {
 		background: #1E1A32;
 		border-radius: 60rpx 60rpx 0rpx 0rpx;
 		position: absolute;
 		width: 100%;
 		top: 270rpx;
 		color: white;
-		border: 1px  solid  red;
-		
+		border: 1px solid red;
+
 	}
-	
-	
-	
-	
-	.list{
-		
-	}
-	.line{
+
+
+
+
+	.list {}
+
+	.line {
 		width: 670rpx;
 		height: 100rpx;
 		line-height: 100rpx;
@@ -139,25 +141,30 @@
 		justify-content: space-between;
 		margin-left: 20rpx;
 	}
-	.column{
+
+	.column {
 		color: white;
 		font-size: 24rpx;
 		vertical-align: middle;
 	}
-	.columnimg{
+
+	.columnimg {
 		width: 40rpx;
 		height: 40rpx;
 		vertical-align: middle;
 	}
-	.columntext{
+
+	.columntext {
 		margin-left: 20rpx;
 	}
-	.row{
-		
+
+	.row {
+		color: #B043FA;
+		font-size: 24rpx;
 	}
-	.rowimg{
+
+	.rowimg {
 		width: 20rpx;
 		height: 20rpx;
 	}
-	
 </style>
