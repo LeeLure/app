@@ -60,7 +60,7 @@ export default {
 
 <style>
 .circleHotItem {
-	height: 1500rpx;
+	/* height: 1500rpx; */
 	background-color: #2a243d;
 	border-radius: 30rpx 30rpx 0 0;
 	padding-top: 40rpx;
@@ -93,6 +93,7 @@ export default {
 
 .tab {
 	margin: 30rpx 20rpx 0 20rpx;
+	/* padding-bottom: 34rpx; */
 }
 
 .tabNav {

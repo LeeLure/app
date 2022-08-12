@@ -41,7 +41,7 @@
 		</view>
 		<!-- 悬浮按钮 -->
 		<view class="suspensionBut">
-			<view class="suspensionButImg"><image src="../../../static/square/jiahao.jpg" mode=""></image></view>
+			<image class="butImg" src="../../../static/square/xuanfuanniu.jpg" mode=""></image>
 		</view>
 	</view>
 </template>
@@ -67,6 +67,7 @@ export default {
 <style>
 .navHotItem {
 	position: relative;
+	padding-bottom: 34rpx;
 }
 
 .itemUser {
@@ -233,23 +234,14 @@ export default {
 	right: 20rpx;
 	width: 100rpx;
 	height: 100rpx;
-	border: 1rpx solid #fff;
+	/* border: 1rpx solid #fff; */
 	border-radius: 50%;
 	background-color: #433c59;
+	overflow: hidden;
 }
 
-.suspensionButImg {
-	position: relative;
-	width: 40rpx;
-	height: 40rpx;
-}
-
-.suspensionButImg image {
-	position: absolute;
+.butImg {
 	width: 100%;
 	height: 100%;
-	top: 120%;
-	left: 120%;
-	transform: translate(-50%, -50%);
 }
 </style>
