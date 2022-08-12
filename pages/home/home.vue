@@ -4,10 +4,10 @@
 		<view class="head">
 			<view class="headleft">
 				<text class="text">余姚</text>
-				<image src="../../static/home/weizhi.png" class="img"></image>
+				<image src="@/static/home/weizhi.png" class="img"></image>
 			</view>
 			<view class="input">
-				<image src="../../static/home/sousuo.png" class="img1"></image>
+				<image src="@/static/home/sousuo.png" class="img1"></image>
 				<text class="text1">搜索您想搜索的人~</text>
 			</view>
 		</view>
@@ -19,14 +19,14 @@
 		</swiper>
 
 		<view class="favourable">商家优惠福利</view>
-		<image src="../../static/home/youhui.png" class="favourableimage" @tap="business"></image>
+		<image src="@/static/home/youhui.png" class="favourableimage" @tap="business"></image>
 		<view class="Interesting">
 			<view class="people">有趣的人</view>
 			<view class="more">寻找更多有趣的人 ></view>
 		</view>
 
 		<view class="jurisdiction" v-if="flag">
-			<image src="../../static/home/kaiqidingwei.png" class="jurisdictionimg"></image>
+			<image src="@/static/home/kaiqidingwei.png" class="jurisdictionimg"></image>
 			<view class="jurisdiction1">您未开启定位权限，部分功能无法正常使用</view>
 			<view class="jurisdiction1">开通定位后，将为您推荐附近有趣的人</view>
 			<view class="jurisdiction2" @tap="state">开启定位</view>
@@ -37,11 +37,11 @@
 				<view class="swiperview">
 					<view class="swiperitemtop">
 						<view class="synopsis1">
-							<image src="../../static/home/a.pic.jpg" class="image1" mode="aspectFill"></image>
+							<image src="@/static/home/a.pic.jpg" class="image1" mode="aspectFill"></image>
 						</view>
 						<view class="synopsis2">
-							<image src="../../static/home/b.pic.jpg" class="image2"></image>
-							<image src="../../static/home/c.pic.jpg" class="image2"></image>
+							<image src="@/static/home/b.pic.jpg" class="image2"></image>
+							<image src="@/static/home/c.pic.jpg" class="image2"></image>
 						</view>
 					</view>
 					<view class="swiperitembottom">
@@ -70,55 +70,55 @@
 		</view>
 		<view class="particulars">
 			<view class="batten">
-				<view class="sculpture"><image src="../../static/home/lbt.png" class="sculptureimage"></image></view>
+				<view class="sculpture"><image src="@/static/home/lbt.png" class="sculptureimage"></image></view>
 				<view class="nickname">
 					<view class="nicknamename">想咋想</view>
 					<view class="nicknametime">3分钟前发布</view>
 				</view>
 			</view>
 			<view class="copywriting">海浪肯随山俯仰，风帆长共客飘摇</view>
-			<view class="flash"><image src="../../static/home/lbt.png" class="flashimage"></image></view>
+			<view class="flash"><image src="@/static/home/lbt.png" class="flashimage"></image></view>
 			<view class="crumbs"><view class="crumbsview">#治愈系风景</view></view>
 
 			<view class="partake">
-				<view class="partake1"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake2"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake3"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake1"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake2"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake3"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
 				<view class="conversation">1539人等参与了此话题</view>
 				<view class="praise" @tap="click">
-					<image src="../../static/home/dianzan.png" class="fabulous" v-if="!show"></image>
-					<image src="../../static/home/dianjishow.png" class="fabulous" v-if="show"></image>
+					<image src="@/static/home/dianzan.png" class="fabulous" v-if="!show"></image>
+					<image src="@/static/home/dianjishow.png" class="fabulous" v-if="show"></image>
 					<text class="praisetext">999</text>
 				</view>
 				<view class="praise">
-					<image src="../../static/home/pinglun.png" class="fabulous"></image>
+					<image src="@/static/home/pinglun.png" class="fabulous"></image>
 					<text class="praisetext">999</text>
 				</view>
 			</view>
 		</view>
 		<view class="particulars">
 			<view class="batten">
-				<view class="sculpture"><image src="../../static/home/lbt.png" class="sculptureimage"></image></view>
+				<view class="sculpture"><image src="@/static/home/lbt.png" class="sculptureimage"></image></view>
 				<view class="nickname">
 					<view class="nicknamename">想咋想</view>
 					<view class="nicknametime">3分钟前发布</view>
 				</view>
 			</view>
 			<view class="copywriting">海浪肯随山俯仰，风帆长共客飘摇</view>
-			<view class="flash"><image src="../../static/home/lbt.png" class="flashimage"></image></view>
+			<view class="flash"><image src="@/static/home/lbt.png" class="flashimage"></image></view>
 			<view class="crumbs"><view class="crumbsview">#治愈系风景</view></view>
 
 			<view class="partake">
-				<view class="partake1"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake2"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake3"><image src="../../static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake1"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake2"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
+				<view class="partake3"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
 				<view class="conversation">1539人等参与了此话题</view>
 				<view class="praise">
-					<image src="../../static/login/qq.png" class="fabulous"></image>
+					<image src="@/static/login/qq.png" class="fabulous"></image>
 					<text class="praisetext">999</text>
 				</view>
 				<view class="praise">
-					<image src="../../static/login/qq.png" class="fabulous"></image>
+					<image src="@/static/login/qq.png" class="fabulous"></image>
 					<text class="praisetext">999</text>
 				</view>
 			</view>

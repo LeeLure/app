@@ -7,8 +7,8 @@
 			<template #top>
 				<view class="member-top">
 					<view class="member-top-title">圈子成员</view>
-					<view class="member-all">查看365群成员<u-icon name="arrow-right" color='rgba(255,255,255,0.5)'
-							size="26rpx"></u-icon>
+					<view class="member-all" @tap="toMembersAllList">查看365群成员<u-icon name="arrow-right"
+							color='rgba(255,255,255,0.5)' size="26rpx"></u-icon>
 					</view>
 				</view>
 			</template>
@@ -52,7 +52,11 @@
 			this.type = type
 		},
 		methods: {
-
+			toMembersAllList() {
+				uni.navigateTo({
+					url: "/pages/tidings/circle-details/member-all-list/index?title=" + this.title + '&type=' + this.type
+				})
+			}
 		}
 	}
 </script>
