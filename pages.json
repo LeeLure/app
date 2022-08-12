@@ -50,7 +50,6 @@
 			"path": "pages/user/my",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": true,
 				"app-plus": {
 					"titleNView": false, //去掉app+h5顶部导航
 					"background": "#1E1A32"
@@ -345,7 +344,11 @@
 			"path": "pages/square/circle/TopicMain",
 			"style": {
 				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
 			}
 		}, {
 			"path": "pages/tidings/circle-details/member-all-list/index",
@@ -357,7 +360,29 @@
 			}
 
 		}
-	],
+	    
+        ,{
+            "path" : "pages/user/Interesting/Interesting",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
+        }
+        ,{
+            "path" : "pages/user/Interesting/open",
+           "style": {
+           	"navigationStyle": "custom",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	},
+           	"navigationBarTextStyle": "white"
+           }
+            
+        }
+    ],
 
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
