@@ -1,9 +1,4 @@
 {
-  "dependencies": {
-    "uview-ui": "^2.0.33"
-  }
-},
-{
     "id": "International-sortPickerList",
     "name": "国际区号和国旗索引列表",
     "version": "1.1.0",
@@ -16,5 +11,8 @@
             "前端组件",
             "通用组件"
         ]
-    }
+    },
+	"dependencies": {
+	  "uview-ui": "^2.0.33"
+	}
 }
