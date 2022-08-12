@@ -1,7 +1,20 @@
 <template>
 	<view class="main">
 		<view class="message-list">
-			<uni-swipe-action class="swipe" v-for="(item,index) in list" :key='index'>
+
+			<view class="content-1">
+				<view class="container-1" @touchstart="touchS" @touchmove="touchM" @touchend="touchE"
+					:style="{'left':act_touch==index?leftStyle + 'upx':0}" :data-index="index" v-for="(i, index) in 3">
+					<view>
+						左滑删除左滑删除左滑删除左滑删除
+					</view>
+					<view class="delete-1" @click="delData">
+						删除
+					</view>
+				</view>
+			</view>
+
+			<uni-swipe-action class="swipe">
 				<!-- <uni-swipe-action> -->
 				<uni-swipe-action-item :threshold="0" :right-options="options1">
 					<view class="message-box">
@@ -11,10 +24,10 @@
 							</view>
 							<view class="center">
 								<view>
-									{{item.title}}
+									通知
 								</view>
 								<view class="content">
-									{{item.content}}
+									内容
 								</view>
 							</view>
 							<view class="right">
@@ -51,6 +64,36 @@
 					</view>
 				</uni-swipe-action-item> -->
 			</uni-swipe-action>
+			<!-- <uni-swipe-action class="swipe" v-for="(item,index) in list" :key='index'>
+				<uni-swipe-action-item :threshold="0" :right-options="options1">
+					<view class="message-box">
+						<view @tap="toDetails(item)" class="message">
+							<view class="left">
+								<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
+							</view>
+							<view class="center">
+								<view>
+									{{item.title}}
+								</view>
+								<view class="content">
+									{{item.content}}
+								</view>
+							</view>
+							<view class="right">
+								<view class="time">22:36</view>
+								<view class="account">3</view>
+							</view>
+						</view>
+					</view>
+					<template v-slot:right>
+						<view class="slot-button" @tap="bindClick({position:'right',content:{text:'删除'}})">
+							<view class="slot-button-text">
+								<image class="img" src="@/static/tidings/del.png"></image>
+							</view>
+						</view>
+					</template>
+				</uni-swipe-action-item>
+			</uni-swipe-action> -->
 		</view>
 	</view>
 </template>
@@ -60,6 +103,13 @@
 		name: 'message-list',
 		data() {
 			return {
+				//  滑动模块参数
+				leftStyle: 0,
+				startX: 0,
+				hiddenFlag: true,
+				delBtnWidth: 220,
+				act_touch: null,
+
 				list: [],
 				options1: [{
 					text: '',
@@ -72,7 +122,7 @@
 				}]
 			}
 		},
-		created() {
+		mounted() {
 			for (var i = 0; i < 10; i++) {
 				this.list.push({
 					title: '通知' + i,
@@ -80,9 +130,6 @@
 					id: i
 				})
 			}
-		},
-		mounted() {
-
 
 		},
 		methods: {
@@ -101,6 +148,104 @@
 					icon: 'none'
 				});
 			},
+
+			touchS({
+				touches
+			}) {
+				// startX记录开始移动的位置
+				if (touches.length === 1) {
+					this.startX = touches[0].clientX;
+				}
+				// hiddenFlag为true则是从右向左，为false则是从左向右
+				if (this.leftStyle === 0) {
+					this.hiddenFlag = true;
+				} else {
+					this.hiddenFlag = false;
+				}
+			},
+			touchM(e) {
+				if (e.touches.length === 1) {
+					//手指移动时水平方向位置
+					const moveX = e.touches[0].clientX;
+					this.moveFunc(moveX);
+					//获取手指触摸的是哪一项
+					console.log(e.currentTarget.dataset.index)
+					var index = e.currentTarget.dataset.index;
+					this.act_touch = index;
+				}
+			},
+			touchE({
+				touches
+			}) {
+				const {
+					leftStyle
+				} = this;
+				const {
+					delBtnWidth
+				} = this;
+				// 如果停止滑动的距离大于二分之一则直接弹出删除按钮，不然则left为0
+				if (-leftStyle > delBtnWidth / 2) {
+					this.leftStyle = -delBtnWidth;
+				} else {
+					this.leftStyle = 0;
+				}
+			},
+			moveFunc(moveX) {
+				// 原始位置向左，leftStyle为小于0；原始位置向右，leftStyle为大于0
+				// disX为相对最初位置的左右距离
+				// 大于0为向右，小于0为向左
+				const disX = moveX - this.startX;
+				const delBtnWidth = this.delBtnWidth;
+				let offsetNum = 0;
+				if (-disX >= delBtnWidth && this.leftStyle === -delBtnWidth) {
+					return;
+				}
+				console.log(disX, this.hiddenFlag);
+				// this.hiddenFlag为true则是从左到右，则应该将container向左移动
+				// this.hiddenFlag为false则是从右向左，则应该将container向右移动
+				if (this.hiddenFlag) {
+					// 此时container为最右边，则应该将container向左移动
+					// disX大于0为相对原始位置的向右移动，则直接将offsetNum置为0
+					// 否则为向左移动，offsetNum为disX相反的值，判断是否超过设置的最大位置
+					if (disX == 0 || disX > 0) {
+						offsetNum = 0;
+					} else {
+						offsetNum = disX;
+						if (disX <= -delBtnWidth) {
+							//控制手指移动距离最大值为删除按钮的宽度
+							offsetNum = -delBtnWidth;
+						}
+					}
+				} else {
+					// 此时container为最左边，应该向右移动
+					// disX小于0为相对原始位置的向左移动，则直接将offsetNum置为-this.delBtnWidth
+					// 否则为相对原始位置的向右移动，此时应该将最大位置与向右位置的差值为此刻位置，判断是否为大于0
+					if (disX < 0) {
+						offsetNum = -this.delBtnWidth;
+					} else {
+						offsetNum = -this.delBtnWidth + disX;
+						if (offsetNum > 0) {
+							offsetNum = 0;
+						}
+					}
+				}
+				this.leftStyle = offsetNum;
+			},
+			//删除方法
+			delData() {
+				console.log("删除")
+				uni.showModal({
+					title: '提示',
+					content: "确认删除该职位？",
+					success: function(res) {
+						if (res.confirm) {
+							console.log('用户点击确定');
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
 		}
 	}
 </script>
@@ -110,6 +255,7 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 24rpx;
+		height: 800rpx;
 	}
 
 	.swipe {
@@ -176,7 +322,7 @@
 		color: rgba(255, 255, 255, 0.5);
 	}
 
-	. .message .right .account {
+	.message .right .account {
 		width: 40rpx;
 		height: 40rpx;
 		line-height: 40rpx;
@@ -232,4 +378,38 @@
 		width: 50rpx;
 		height: 50rpx;
 	}
+	
+	.content-1 {
+			width: 100%;
+			overflow-x: hidden;
+			background-color: #f4f4f4;
+			border-radius: none;
+		}
+	
+		.container-1 {
+			position: relative;
+			margin-top: 26rpx;
+			margin-bottom: 20upx;
+			background-color: #fff;
+			// padding: 20upx;
+			height: 120rpx;
+			line-height: 120rpx;
+		}
+	
+		.delete-1 {
+			position: absolute;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			right: -107px;
+			width: 65px;
+			height: 120rpx;
+			line-height: 120rpx;
+			font-weight: 500;
+			font-size: 16px;
+			text-align: center;
+			color: #FFFFFF;
+			background: #FF1C1C;
+			width: 106px;
+		}
 </style>
