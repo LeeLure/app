@@ -3,12 +3,13 @@
 		<view class="bar"></view>
 		<view class="tab_nav">
 			<view class="navTitle" v-for="(item, index) in navList" :key="index">
-				<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.title }}</view>
+				<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.name }}</view>
 			</view>
 		</view>
+		<!-- <u-tabs :list="navList"></u-tabs> -->
 		<view class="nav_item" v-if="isActive == 0"><message /></view>
-		<view class="nav_item" v-if="isActive == 1">1</view>
-		<view class="nav_item" v-if="isActive == 2">2</view>
+		<view class="nav_item" v-if="isActive == 1"><message /></view>
+		<view class="nav_item" v-if="isActive == 2"><message /></view>
 	</view>
 </template>
 
@@ -24,15 +25,15 @@ export default {
 			navList: [
 				{
 					index: 0,
-					title: '消息'
+					name: '消息'
 				},
 				{
 					index: 1,
-					title: '好友动态'
+					name: '好友动态'
 				},
 				{
 					index: 2,
-					title: '我加入的房间'
+					name: '我加入的房间'
 				}
 			]
 		};
@@ -48,7 +49,8 @@ export default {
 <style>
 .tab_nav {
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
+	margin-left: 40rpx;
 	padding: 12rpx 0;
 }
 

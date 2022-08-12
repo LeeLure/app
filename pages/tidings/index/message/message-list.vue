@@ -25,7 +25,9 @@
 					</view>
 					<template v-slot:right>
 						<view class="slot-button" @tap="bindClick({position:'right',content:{text:'删除'}})">
-							<text class="slot-button-text">删除</text>
+							<view class="slot-button-text">
+								<image class="img" src="@/static/tidings/del.png"></image>
+							</view>
 						</view>
 					</template>
 				</uni-swipe-action-item>
@@ -120,6 +122,7 @@
 	.swipe .message-box {
 		width: 750rpx;
 		padding: 0 20rpx;
+		box-sizing: border-box;
 	}
 
 	.message {
@@ -170,7 +173,7 @@
 		color: rgba(255, 255, 255, 0.5);
 	}
 
-	.message .right .account {
+	. .message .right .account {
 		width: 40rpx;
 		height: 40rpx;
 		line-height: 40rpx;
@@ -201,5 +204,29 @@
 	.user-name {
 		font-size: 28rpx;
 		color: #FFF;
+	}
+
+	.message-list .slot-button {
+		width: 180rpx;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	.message-list .slot-button-text {
+		width: 140rpx;
+		height: 120rpx;
+		margin-left: 10rpx;
+		background-color: #12111A;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 20rpx;
+		position: relative;
+	}
+
+	.message-list .slot-button-text .img {
+		width: 50rpx;
+		height: 50rpx;
 	}
 </style>

@@ -48,11 +48,12 @@
 </script>
 
 <style>
+	.chat-details{
+		background-color: #29253C;
+	}
 	.chat-details .navigation{
-		position: fixed;
 		top: var(--status-bar-height);
 		z-index: 10;
-		background-color: #29253C;
 	}
 	.account {
 		padding: 0 20rpx;

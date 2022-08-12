@@ -51,11 +51,10 @@
 
 <style>
 	.chat-content-box {
-		height: 100%;
 		display: flex;
 		flex-direction: column;
-		padding-top: 120rpx;
 		padding-bottom: 160rpx;
+		background-color: #1E1A32;
 	}
 
 	.scroll-view-box {
@@ -63,7 +62,9 @@
 	}
 
 	.scroll-view_H {
-		height: 100%;
+		height:  calc(100vh - var(--status-bar-height) - 260rpx);
+		padding: 20rpx 0;
+		box-sizing: border-box;
 	}
 
 	.chat-box {
