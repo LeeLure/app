@@ -1,13 +1,11 @@
 <template>
-	<view class="box">
+	<view class="boxs">
 		<image src="@/static/home/chenggong.png" class="img"></image>
 		<view class="list">
 			<view class="phones">
-				手机号修改成功
+				意见反馈成功
 			</view>
-			<view class="text">
-				您修改的手机号为： 186****0846
-			</view>
+			
 		</view>
 		<view class="btn" @tap="complete">
 			完成
@@ -34,7 +32,7 @@
 </script>
 
 <style>
-	.box {
+	.boxs {
 		width: 704rpx;
 		margin-left: 22rpx;
 		height: 600rpx;
@@ -66,12 +64,7 @@
 		margin-top: 40rpx;
 	}
 
-	.text {
-		color: rgba(255, 255, 255, 0.5);
-		font-size: 28rpx;
-		text-align: center;
-		margin-top: 20rpx;
-	}
+	
 
 	.btn {
 		width: 168rpx;
