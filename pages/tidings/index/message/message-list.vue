@@ -72,7 +72,7 @@
 				}]
 			}
 		},
-		mounted() {
+		created() {
 			for (var i = 0; i < 10; i++) {
 				this.list.push({
 					title: '通知' + i,
@@ -80,6 +80,9 @@
 					id: i
 				})
 			}
+		},
+		mounted() {
+
 
 		},
 		methods: {
@@ -107,12 +110,12 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 24rpx;
-
 	}
 
 	.swipe {
 		width: 750rpx;
-		padding: 20rpx 0;
+		/* padding: 20rpx 0; */
+		margin: 20rpx 0;
 	}
 
 	.swipe /deep/ .u-swipe-action-item__content {

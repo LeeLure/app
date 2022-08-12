@@ -22,7 +22,7 @@
 					<!-- <u-button class="card-button" text="+申请加入"></u-button> -->
 					<button class="card-button"><view class="butText">+申请加入</view></button>
 					<!-- 小箭头 -->
-					<view class="card-desc-img"><image src="../../../static/square/youjiaotou.jpg" mode=""></image></view>
+					<view class="card-desc-img"><image src="../../../static/square/more.png" mode=""></image></view>
 				</view>
 			</view>
 

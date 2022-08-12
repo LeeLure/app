@@ -10,7 +10,13 @@
 		<!-- 发现圈子 -->
 		<view class="Interesting">
 			<view class="people">发现圈子</view>
-			<view class="more" @tap="toMoreCircles">更多圈子 ></view>
+			<view class="more" @tap="toMoreCircles">
+				更多圈子
+				<!-- 小箭头 -->
+				<view class="iconImg">
+					<image class="moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image>
+				</view>
+			</view>
 		</view>
 
 		<!-- 圈子 -->
@@ -96,6 +102,7 @@ export default {
 }
 
 .more {
+	display: flex;
 	font-size: 22rpx;
 	font-family: PingFang SC-Regular, PingFang SC;
 	color: rgba(255, 255, 255, 0.5);
@@ -112,6 +119,17 @@ export default {
 .gameImg image {
 	width: 100%;
 	height: 100%;
+}
+
+.iconImg {
+	width: 20rpx;
+	height: 20rpx;
+}
+
+.moreIcon {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
 }
 
 /* 圈子 */

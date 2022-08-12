@@ -22,10 +22,12 @@
 		<view class="list">
 			<!-- 左侧菜单栏 -->
 			<view class="leftCategory">
-				<view class="category" v-for="item in categoryList" :key="item.index">
-					<!-- 背景色 -->
-					<view :class="{ bgColor: isColor === item.index }"></view>
-					<view class="text">{{ item.title }}</view>
+				<view class="category" @tap="changeTab(index)" v-for="(item, index) in categoryList" :key="item.index">
+					<view class="categroyItem">
+						<!-- 背景色 -->
+						<view :class="{ bgColor: isColor === item.index }"></view>
+						<view class="text">{{ item.title }}</view>
+					</view>
 				</view>
 			</view>
 
@@ -87,6 +89,10 @@ export default {
 			uni.showToast({});
 		},
 
+		changeTab(index) {
+			this.isColor = index;
+		},
+
 		// 圈子主页
 		toCircleHomePage() {
 			uni.navigateTo({
@@ -133,11 +139,11 @@ export default {
 }
 
 .navigation3 {
-	width: 300rpx;
-	height: 70rpx;
-	line-height: 70rpx;
-	margin-top: 15rpx;
-	margin-right: 20rpx;
+	width: 164rpx;
+	height: 56rpx;
+	line-height: 56rpx;
+	margin-top: 20rpx;
+	margin-right: 22rpx;
 	color: #ffffff;
 	font-size: 24rpx;
 	/* border: 1rpx solid white; */
@@ -180,21 +186,26 @@ export default {
 
 .leftCategory {
 	width: 176rpx;
-	/* border: 1rpx solid #ffffff; */
+	/* border: 1rpx solid red; */
 }
 
 .category {
 	display: flex;
 	position: relative;
 	height: 100rpx;
+	background-color: #29253c;
 	/* margin-right: 16rpx; */
-	border-radius: 0 20rpx 20rpx 0;
 	/* border: 1rpx solid #ffffff; */
+	/* border-radius: 0 20rpx 20rpx 0; */
+}
+
+.categoryItem {
 }
 
 .bgColor {
 	width: 58rpx;
 	height: 100rpx;
+	background-color: #1e1a32;
 	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
 }
 
