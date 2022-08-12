@@ -8,11 +8,11 @@
 			</view>
 			<view class="butTextBox">
 				<view class="tagButText">活跃榜</view>
-				<view class="tagButTextImg"><image src="../../../static/square/youjiaotou.jpg" mode=""></image></view>
+				<view class="tagButTextImg"><image src="../../../static/square/more.png" mode=""></image></view>
 			</view>
 		</button>
 		<!-- 第二个 -->
-		<button class="tagBut">
+		<button class="tagBut" @tap="toTopicMain">
 			<view class="partake">
 				<image src="../../../static/home/lbt.png" class="partakeimage1"></image>
 				<!-- <image src="../../../static/home/lbt.png" class="partakeimage2"></image> -->
@@ -20,13 +20,25 @@
 			</view>
 			<view class="butTextBox">
 				<view class="tagButText">圈主</view>
-				<view class="tagButTextImg"><image src="../../../static/square/youjiaotou.jpg" mode=""></image></view>
+				<view class="tagButTextImg"><image src="../../../static/square/more.png" mode=""></image></view>
 			</view>
 		</button>
 	</view>
 </template>
 
-<script></script>
+<script>
+export default {
+	data() {
+		return {
+			toTopicMain() {
+				uni.navigateTo({
+					url: '/pages/square/circle/TopicMain'
+				});
+			}
+		};
+	}
+};
+</script>
 
 <style>
 /* 标签按钮 */

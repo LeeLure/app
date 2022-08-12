@@ -405,7 +405,6 @@
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
-					"bounce":"none",
 					"titleNView": false //去掉app+h5顶部导航
 				},
 				"navigationBarTextStyle": "white"
@@ -459,6 +458,14 @@
 			"path": "pages/tidings/chat-details/chat-details",
 
 			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+
+		}, {
+			"path": "pages/settings/cancellation/cancellation",
+			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
@@ -466,105 +473,72 @@
 				"navigationBarTextStyle": "white"
 			}
 
+		}, {
+			"path": "pages/settings/cancellation/determine/determine",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/help/help",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/help/feedback/feedback",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/settings/help/feedback/retroaction/retroaction",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		}
+
+
+		, {
+			"path": "pages/settings/help/feedback/retroaction/price",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/settings/help/feedback/popup/popup",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			// 话题主
+			"path": "pages/square/circle/TopicMain",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
 		}
-	    ,{
-            "path" : "pages/tidings/circle-details/index/index",
-            "style": {
-            	"navigationStyle": "custom",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	},
-            	"navigationBarTextStyle": "white"
-            }
-            
-        }
-        ,{
-            "path" : "pages/tidings/circle-details/edit/index",
-            "style": {
-            	"navigationStyle": "custom",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	},
-            	"navigationBarTextStyle": "white"
-            }
-            
-        }
-	    ,{
-            "path" : "pages/settings/cancellation/cancellation",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/cancellation/determine/determine",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/help/help",
-          "style": {
-          	"navigationStyle": "custom",
-          	"app-plus": {
-          		"titleNView": false //去掉app+h5顶部导航
-          	},
-          	"navigationBarTextStyle": "white"
-          }
-            
-        }
-        ,{
-            "path" : "pages/settings/help/feedback/feedback",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/help/feedback/retroaction/retroaction",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-        }
-        
-       
-        ,{
-            "path" : "pages/settings/help/feedback/retroaction/price",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/settings/help/feedback/popup/popup",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 
 
 	"globalStyle": {
