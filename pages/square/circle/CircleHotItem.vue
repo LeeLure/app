@@ -1,11 +1,11 @@
 <template>
 	<view class="circleHotItem">
 		<!-- 标签 -->
-		<view class="tags">
+		<scroll-view scroll-x class="scroll-view-X" scroll-left="0" @scroll="scroll">
 			<view class="tag" v-for="item in tags">
 				<view class="tagText">{{ item.name }}</view>
 			</view>
-		</view>
+		</scroll-view>
 
 		<!-- 热门 -->
 		<view class="tab">
@@ -67,19 +67,21 @@ export default {
 }
 
 /* 标签 */
-.tags {
-	display: flex;
-	height: 56rpx;
-	/* border: 1rpx solid red; */
-	margin: 0 20rpx 0 20rpx;
+.scroll-view-X {
+	/* border: 1rpx solid #ff0; */
+	white-space: nowrap;
+	/* margin: 0 20rpx; */
+	width: 100%;
 }
 
 .tag {
+	display: inline-block;
 	width: 214rpx;
 	height: 56rpx;
 	line-height: 56rpx;
 	font-size: 24rpx;
 	border-radius: 30rpx;
+	margin-left: 20rpx;
 	background-color: #403b51;
 	/* border: 1rpx solid red; */
 }
