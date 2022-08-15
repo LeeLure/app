@@ -4,14 +4,9 @@
 		</view>
 		<!-- 导航栏 -->
 		<navigation :title="title"></navigation>
-		<view class="empty">
-			<image src="@/static/user/shoucangkong.png" class="emptyimg"></image>
-			<view class="emptytitle">
-				你还没有收藏任何店铺，去 <text class="emptytext" @tap="home">首页</text>看看吧~
-			</view>
-		</view>
+		
 
-		<view class="">
+		<view v-for="(item,index)  in titles" :key="index" v-if="(titles.length>0)?true:false">
 			<view class="list">
 				<view class="collectleft">
 					<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="collectimg"></image>
@@ -20,7 +15,7 @@
 					<view class="collectname">
 						<view class="head">
 							<view class="headfist">
-								好来玩电竞网咖
+								{{item.text}}
 							</view>
 							<view class="headtow">
 								搭配I7显卡 高配置主机 畅玩无限
@@ -44,6 +39,13 @@
 				</view>
 			</view>
 		</view>
+		
+		<view class="empty" v-if="(titles.length==0)?true:false">
+			<image src="@/static/user/shoucangkong.png" class="emptyimg"></image>
+			<view class="emptytitle">
+				你还没有收藏任何店铺，去 <text class="emptytext" @tap="home">首页</text>看看吧~
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -53,6 +55,11 @@
 		data() {
 			return {
 				title: "我的收藏",
+				titles:[
+					{text:"好来玩电竞网咖"},
+					{text:"好来玩电竞网咖"},
+					{text:"好来玩电竞网咖"}
+				]
 			}
 		},
 		components: {
@@ -94,8 +101,7 @@
 		width: 750rpx;
 		height: 230rpx;
 		background-color: #29253C;
-		margin-right: 20rpx;
-		border: 1px solid red;
+		margin-top: 20rpx;		
 		display: flex;
 	}
 
@@ -115,11 +121,13 @@
 
 	.collectright {
 		margin:   auto 24rpx auto 24rpx;
+		width: 580rpx;
 	}
 
 	.collectname {
-		border: 1px solid red;
+		
 		display: flex;
+		justify-content: space-between;
 	}
 
 	.head {}
@@ -132,22 +140,28 @@
 	.headtow {
 		color: rgba(255, 255, 255, 0.8);
 		font-size: 24rpx;
+		margin-top: 24rpx;
 	}
 
-	.tail {}
+	.tail {
+	}
 
 	.tailimg {
+		display: block;
+		margin: 0 auto;
 		height: 41rpx;
 		width: 41rpx;
 	}
 	.tailtext {
 		color: #FFEE8C;
 		font-size: 24rpx;
+		margin-top: 16rpx;
 	}
 
 	.collectposition {
 		display: flex;
 		color: rgba(255, 255, 255, 0.5);
 		font-size: 24rpx;
+		margin-top: 26rpx;
 	}
 </style>

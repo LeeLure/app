@@ -425,7 +425,18 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/user/purchase/purchase",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            }
+            
+        }
+    ],
 
 
 	"globalStyle": {
