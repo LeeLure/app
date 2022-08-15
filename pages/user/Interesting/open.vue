@@ -30,7 +30,7 @@
 		<view class="determine">
 			确定
 		</view>
-		<upload @getFileUrl="getFileUrl" />
+		<upload :limit="limit" @getFileUrl="getFileUrl" />
 	</view>
 	</template>
 
@@ -50,7 +50,7 @@
 						text: "珍有趣"
 
 					},
-
+					limit: 1,
 					close: "开启",
 					value1: false,
 				}
