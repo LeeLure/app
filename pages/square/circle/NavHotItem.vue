@@ -230,7 +230,7 @@ export default {
 /* 悬浮按钮 */
 .suspensionBut {
 	position: absolute;
-	bottom: 54rpx;
+	bottom: 84rpx;
 	right: 20rpx;
 	width: 100rpx;
 	height: 100rpx;

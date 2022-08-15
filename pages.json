@@ -350,39 +350,25 @@
 				},
 				"navigationBarTextStyle": "white"
 			}
-		}, {
-			"path": "pages/tidings/circle-details/member-all-list/index",
+		},
+		{
+			// 活跃榜
+			"path": "pages/square/circle/ListActive",
 			"style": {
-				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				}
+				},
+				"navigationBarTextStyle": "white"
 			}
 
 		}
-	    
-        ,{
-            "path" : "pages/user/Interesting/Interesting",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-        }
-        ,{
-            "path" : "pages/user/Interesting/open",
-           "style": {
-           	"navigationStyle": "custom",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	},
-           	"navigationBarTextStyle": "white"
-           }
-            
-        }
-    ],
+
+
+	],
+
+
 
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
