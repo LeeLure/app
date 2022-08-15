@@ -42,7 +42,7 @@
 
 <script>
 	export default {
-		name: "pattern",
+		name: "patterns",
 		data() {
 			return {
 
