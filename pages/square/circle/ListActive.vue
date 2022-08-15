@@ -120,7 +120,7 @@ export default {
 .avataImg {
 	width: 184rpx;
 	height: 184rpx;
-	margin: 14rpx;
+	margin: 15rpx;
 	border-radius: 50%;
 	/* border: 1rpx solid darkblue; */
 	overflow: hidden;
@@ -227,6 +227,10 @@ export default {
 .second .icon image {
 	width: 30rpx;
 	height: 30rpx;
+}
+
+.third .icon {
+	margin-top: 60rpx;
 }
 
 .third .icon {

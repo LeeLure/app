@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
 	<view>
 		<view class="bar">
@@ -111,10 +112,165 @@ vertical-align: middle;
 	margin-left: 360rpx;
 }
 .text {
+=======
+<template>
+	<view>
+		<view class="bar">
+		</view>
+		<!-- 导航栏 -->
+		<navigation :title="title"></navigation>
+
+		<view class="choice">
+			<view class="choices">
+				<image src="@/static/user/weixiao.png" class="choiceimg"></image>
+				{{close}}有趣的人
+			</view>
+			<view class="open">
+				<u-switch v-model="value1" asyncChange @change="asyncChange" size="16" space="2" activeColor="#D53EDA "
+					inactiveColor="rgb(230, 230, 230)" class="btn"></u-switch>
+			</view>
+		</view>
+		<view class="text">
+			开启后，你的主页将在首页有趣的人中显示
+		</view>
+		<view class="text">
+			开启后，将会有更多的人发现你
+		</view>
+		<view class="text">
+			你可以随时在我的有趣的人中关闭授权
+		</view>
+
+		<!-- <patter /> -->
+		<uni-file-picker v-model="imageValue" limit=1 fileMediatype="image" mode="grid" @select="select" @progress="progress"
+			@success="success" @fail="fail" />
+	</view>
+</template>
+
+<script>
+	import navigation from "@/components/navigation.vue"
+	import patter from "@/components/pattern.vue"
+	export default {
+		data() {
+			return {
+				title: "有趣的人",
+				close: "开启",
+				value1: false,
+				imageValue: [],
+				tempFiles: {},
+				imgurl: ''
+			}
+		},
+		components: {
+			navigation,
+			patter
+		},
+		methods: {
+			asyncChange(e) {
+				console.log(e);
+				if (e == true) {
+					this.close = "关闭"
+					this.value1 = e
+				} else {
+					uni.showModal({
+						content: e ? '确定要打开吗' : '确定要关闭吗',
+						success: (res) => {
+							if (res.confirm) {
+								this.value1 = e
+								this.close = "开启"
+							}
+						}
+					})
+				}
+			},
+			// 获取上传状态
+			select(e) {
+				console.log('上传状态：', e)
+				this.tempFiles = e
+				this.getImgToken()
+			},
+			// 获取上传进度
+			progress(e) {
+				console.log('上传进度：', e)
+			},
+
+			// 上传成功
+			success(e) {
+				console.log('上传成功')
+			},
+
+			// 上传失败
+			fail(e) {
+				console.log('上传失败：', e)
+			},
+			getImgToken() {
+				console.log(uni)
+				const token = uni.getStorageSync('token')
+				uni.$u.http.post('/sdk/imageToken', {}).then(res => {
+						console.log(res)
+						this.uploadFilePromise(res)
+					})
+					.catch(() => {
+
+					})
+			},
+			uploadFilePromise(res) {
+				return new Promise((resolve, reject) => {
+					let a = uni.uploadFile({
+						url: 'https://up-z2.qiniup.com', // 仅为示例，非真实的接口地址
+						filePath: this.tempFiles.tempFilePaths[0],
+						key: this.tempFiles.tempFiles[0].name,
+						formData: {
+							token: res,
+						},
+						success: (res) => {
+							this.imgurl = `https://xiaiyuzhou.com/${res.key}`
+						}
+					});
+				})
+			},
+		}
+	}
+</script>
+
+<style>
+	.choice {
+		display: flex;
+
+		width: 710rpx;
+		height: 94rpx;
+		line-height: 94rpx;
+		border-radius: 30rpx;
+		background-color: #29253C;
+		margin-left: 20rpx;
+
+	}
+
+	.choices {
+		color: white;
+		font-size: 28rpx;
+		vertical-align: middle;
+	}
+
+	.choiceimg {
+		vertical-align: middle;
+		width: 32rpx;
+		height: 32rpx;
+		margin-right: 20rpx;
+		margin-left: 32rpx;
+	}
+
+	.open {
+		margin-top: 28rpx;
+		margin-left: 360rpx;
+	}
+
+	.text {
+>>>>>>> 0b3485785da92ef0fd2b90d1f06f88b64f72d78d
 		margin-top: 28rpx;
 		margin-left: 52rpx;
 		color: rgba(255, 255, 255, 0.6);
 		font-size: 24rpx;
+<<<<<<< HEAD
 	}
 	.determine{
 		background-color: #D53EDA ;
@@ -129,4 +285,7 @@ vertical-align: middle;
 		
 font-size: 32rpx;
 	}
+=======
+	}
+>>>>>>> 0b3485785da92ef0fd2b90d1f06f88b64f72d78d
 </style>
