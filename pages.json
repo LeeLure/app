@@ -383,36 +383,49 @@
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
 				}
-			
+
 			}
-		
+
 		},
 		{
 			// 有趣的人详情页
 			"path": "pages/user/Interesting/open",
 			"style": {
-				"navigationBarTitleText": "",				
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
 				}
-				
-			}
-		
-		}
-	    ,{
-			// 我收藏的收藏
-            "path" : "pages/user/collect/collect",
-           "style": {
-           	"navigationBarTitleText": "",           
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           }
-            
-        }
-    ],
 
+			}
+
+		}, {
+			// 更多房间
+			"path": "pages/square/Room/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+
+
+		{
+			// 我收藏的收藏
+			"path": "pages/user/collect/collect",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}
+	],
 
 
 	"globalStyle": {
