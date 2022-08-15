@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-file-picker v-model="imageValue" limit=3 fileMediatype="image" mode="grid" @select="select"
+		<uni-file-picker v-model="imageValue" :limit="limit" fileMediatype="image" mode="grid" @select="select"
 			@progress="progress" @success="success" @fail="fail" />
 	</view>
 </template>
@@ -8,9 +8,20 @@
 <script>
 	export default {
 		name: "",
+		props: {
+			limit: {
+				type: Number,
+				default: 1
+			},
+			imageValue: {
+				type: Array,
+				default: () => {
+					return []
+				}
+			},
+		},
 		data() {
 			return {
-				imageValue: [],
 				tempFiles: {},
 				imgurl: ''
 			}

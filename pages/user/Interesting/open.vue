@@ -31,12 +31,8 @@
 			确定
 		</view>
 
+		<upload :limit="limit" @getFileUrl="getFileUrl" />
 
-		<uni-file-picker v-model="imageValue" limit=1 fileMediatype="image" mode="grid" @select="select"
-			@progress="progress" @success="success" @fail="fail" />
-	
-
-		<upload @getFileUrl="getFileUrl" />
 	</view>
 
 	</template>
@@ -57,7 +53,7 @@
 						text: "珍有趣"
 
 					},
-
+					limit: 1,
 					close: "开启",
 					value1: false,
 				}
