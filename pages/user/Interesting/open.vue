@@ -25,24 +25,36 @@
 			你可以随时在我的有趣的人中关闭授权
 		</view>
 		
-		<pattern></pattern>
+		<patterns :picture="picture"></patterns>
+		
+		<view class="determine">
+			确定
+		</view>
 	</view>
 </template>
 
 <script>
 	import navigation from "@/components/navigation.vue"
-	import pattern from "@/components/pattern.vue"
+	import patterns from "@/components/pattern.vue"
 	export default {
 		data() {
 			return {
 				title: "有趣的人",
+				picture:{
+					img1:"@/static/user/weixiao.png",
+					img2:"@/static/user/weixiao.png",
+					img3:"@/static/user/weixiao.png",
+					text:"珍有趣"
+					
+				},
+				
 				close:"开启",
 				value1: false,
 			}
 		},
 		components: {
 			navigation,
-			pattern
+			patterns
 		},
 		methods: {
 			asyncChange(e) {
@@ -103,5 +115,18 @@ vertical-align: middle;
 		margin-left: 52rpx;
 		color: rgba(255, 255, 255, 0.6);
 		font-size: 24rpx;
+	}
+	.determine{
+		background-color: #D53EDA ;
+		width: 428rpx;
+		height: 106rpx;
+		line-height: 106rpx;
+		text-align: center;
+		border-radius: 54rpx ;
+		color: white;
+		margin-left: 174rpx;
+		margin-top: 54rpx;
+		
+font-size: 32rpx;
 	}
 </style>

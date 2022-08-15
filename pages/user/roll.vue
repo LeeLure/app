@@ -7,7 +7,7 @@
 				我发布的
 			</view>
 		</view>
-		<view class="lists">
+		<view class="lists" @tap="collect">
 			<image src="@/static/user/shoucang.png" class="listimgs"></image>
 			<view class="rolltext">
 				我的收藏
@@ -40,6 +40,11 @@
 			Interesting() {
 				uni.navigateTo({
 					url: '/pages/user/Interesting/Interesting'
+				})
+			},
+			collect(){
+				uni.navigateTo({
+					url:'/pages/user/collect/collect'
 				})
 			}
 		}
