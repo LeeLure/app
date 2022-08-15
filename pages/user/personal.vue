@@ -2,7 +2,7 @@
 	<view>
 		<view class="informa">
 			<view class="headportrait">
-				<image src="../../static/home/a.pic.jpg" mode="aspectFill" class="headportraitimg"></image>
+				<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="headportraitimg"></image>
 			</view>
 			<view class="spread">
 				<view class="spreadline">
@@ -87,6 +87,7 @@
 		width: 168rpx;
 		height: 168rpx;
 		border-radius: 84rpx;
+		border: 1rpx solid white;
 	}
 
 	.headportraitimg {

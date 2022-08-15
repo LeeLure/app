@@ -9,7 +9,7 @@
 			<template v-if="type==='2'">
 				<view class="info-details">
 					<view class="lable">圈子头像</view>
-					<view class="value">
+					<view class="value" @tap="editAvatar">
 						<image class="img" src="@/static/home/a.pic.jpg"></image>
 						<u-icon name="arrow-right" color='rgba(255,255,255,0.5)' size="26rpx"></u-icon>
 					</view>
@@ -87,6 +87,20 @@
 				// 	}
 				// })
 				this.value1 = e
+			},
+			editAvatar() {
+				uni.chooseImage({
+					count: 1, //默认9
+					// sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+					// sourceType: ['album'], //从相册选择
+					crop:{
+						width:'200px',
+						height:'200px'
+					},
+					success: function(res) {
+						console.log(JSON.stringify(res.tempFilePaths));
+					}
+				});
 			},
 		}
 	}

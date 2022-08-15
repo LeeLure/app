@@ -4,6 +4,14 @@ module.exports = (vm) => {
     uni.$u.http.setConfig((config) => {
         /* config 为默认全局配置*/
         config.baseURL = 'http://116.62.43.108:8001/user'
+		try {
+			const value = uni.getStorageSync('token');
+			if (value) {
+				config.header.token = value
+			}
+		} catch (e) {
+			// error
+		}
         return config
     })
 	
