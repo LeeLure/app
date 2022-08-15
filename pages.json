@@ -275,6 +275,16 @@
 			}
 		},
 		{
+			"path": "pages/tidings/circle-details/edit/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/settings/cancellation/cancellation",
 			"style": {
 				"navigationStyle": "custom",
@@ -363,6 +373,32 @@
 				"navigationBarTextStyle": "white"
 			}
 
+		},
+		{
+			// 有趣的人
+			"path": "pages/user/Interesting/Interesting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		
+		},
+		{
+			// 有趣的人详情页
+			"path": "pages/user/Interesting/open",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		
 		}
 
 
