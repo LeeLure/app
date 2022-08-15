@@ -1,35 +1,20 @@
 <template>
 	<view class="">
 		<view class="bar"></view>
-		<view class="more-circle">
-			<!-- 导航栏 -->
-			<view class="navigation">
-				<view class="navigation1" @tap="revert">
-					<image src="../../../static/home/fanhui.png" mode="aspectFill" class="fanhui"></image>
-				</view>
-				<view class="navigation2">{{ title }}</view>
-				<view class="navigation3"><view class="text">创建圈子</view></view>
-			</view>
-		</view>
+		<!-- 导航栏 -->
+		<Navigation :title="title">
+			<template #action>
+				<view class="create-circle"><view class="text">创建圈子</view></view>
+			</template>
+		</Navigation>
 
 		<!-- 搜索框 -->
-		<view class="input">
-			<image src="../../../static/home/sousuo.png" class="img1"></image>
-			<text class="text1">搜索您想搜索的人~</text>
-		</view>
+		<Search></Search>
 
 		<!-- 菜单 -->
 		<view class="list">
 			<!-- 左侧菜单栏 -->
-			<view class="leftCategory">
-				<view class="category" @tap="changeTab(index)" v-for="(item, index) in categoryList" :key="item.index">
-					<view class="categroyItem">
-						<!-- 背景色 -->
-						<view :class="{ bgColor: isColor === item.index }"></view>
-						<view class="text">{{ item.title }}</view>
-					</view>
-				</view>
-			</view>
+			<LeftCategory :List="List"></LeftCategory>
 
 			<!-- 右侧卡片 -->
 			<view class="rightCategory">
@@ -54,15 +39,20 @@
 </template>
 
 <script>
+import Navigation from '../../../components/navigation.vue';
+import Search from '../Components/Search.vue';
+import LeftCategory from '../Components/LeftCategory.vue';
 export default {
-	// components: {
-	// 	// navigation
-	// },
+	components: {
+		Navigation,
+		Search,
+		LeftCategory
+	},
+
 	data() {
 		return {
 			title: '发现圈子',
-			isColor: 0 || 2,
-			categoryList: [
+			List: [
 				{ title: '推荐圈子', index: 0 },
 				{ title: '推荐圈子', index: 1 },
 				{ title: '推荐圈子', index: 2 },
@@ -73,7 +63,12 @@ export default {
 				{ title: '推荐圈子', index: 7 },
 				{ title: '推荐圈子', index: 8 },
 				{ title: '推荐圈子', index: 9 },
-				{ title: '推荐圈子', index: 10 }
+				{ title: '推荐圈子', index: 10 },
+				{ title: '推荐圈子', index: 11 },
+				{ title: '推荐圈子', index: 12 },
+				{ title: '推荐圈子', index: 13 },
+				{ title: '推荐圈子', index: 14 },
+				{ title: '推荐圈子', index: 15 }
 			]
 		};
 	},
@@ -89,10 +84,6 @@ export default {
 			uni.showToast({});
 		},
 
-		changeTab(index) {
-			this.isColor = index;
-		},
-
 		// 圈子主页
 		toCircleHomePage() {
 			uni.navigateTo({
@@ -105,40 +96,7 @@ export default {
 
 <style>
 /* 导航栏 */
-.navigation {
-	width: 750rpx;
-	height: 100rpx;
-	line-height: 100rpx;
-	text-align: center;
-	display: flex;
-	justify-content: space-between;
-	/* border: 1rpx solid azure; */
-}
-
-.navigation1 {
-	margin-left: 20rpx;
-	margin-top: 8rpx;
-	color: #ffffff;
-}
-
-.fanhui {
-	width: 40rpx;
-	height: 40rpx;
-}
-
-.navigation2 {
-	width: 620rpx;
-	height: 100rpx;
-	line-height: 100rpx;
-	text-align: center;
-	font-size: 32rpx;
-	margin-left: 110rpx;
-	font-family: PingFang SC-Medium, PingFang SC;
-	font-weight: 500;
-	color: #ffffff;
-}
-
-.navigation3 {
+.create-circle {
 	width: 164rpx;
 	height: 56rpx;
 	line-height: 56rpx;
@@ -151,73 +109,11 @@ export default {
 	background-color: #343147;
 }
 
-/* 搜索框 */
-.input {
-	width: 710rpx;
-	height: 68rpx;
-	line-height: 68rpx;
-	margin-left: 20rpx;
-	border-radius: 30rpx;
-	background-color: #29253c;
-}
-
-.text1 {
-	color: rgba(255, 255, 255, 0.5);
-	font-size: 22rpx;
-	font-family: PingFang SC-Medium, PingFang SC;
-	vertical-align: middle;
-}
-
-.img1 {
-	width: 25rpx;
-	height: 25rpx;
-	vertical-align: middle;
-	margin-right: 15rpx;
-	margin-left: 36rpx;
-}
-
 /* 菜单 */
 .list {
 	display: flex;
 	margin-top: 20rpx;
 	/* border: 1rpx solid #ffffff; */
-}
-/* 左侧菜单 */
-
-.leftCategory {
-	width: 176rpx;
-	/* border: 1rpx solid red; */
-}
-
-.category {
-	display: flex;
-	position: relative;
-	height: 100rpx;
-	background-color: #29253c;
-	/* margin-right: 16rpx; */
-	/* border: 1rpx solid #ffffff; */
-	/* border-radius: 0 20rpx 20rpx 0; */
-}
-
-.categoryItem {
-}
-
-.bgColor {
-	width: 58rpx;
-	height: 100rpx;
-	background-color: #1e1a32;
-	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
-}
-
-.category .text {
-	width: 96rpx;
-	height: 34rpx;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: #ffffff;
-	font-size: 24rpx;
 }
 
 /* 右侧菜单 */
