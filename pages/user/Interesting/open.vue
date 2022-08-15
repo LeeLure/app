@@ -30,17 +30,15 @@
 		<view class="determine">
 			确定
 		</view>
-
-		<uni-file-picker v-model="imageValue" limit=1 fileMediatype="image" mode="grid" @select="select"
-			@progress="progress" @success="success" @fail="fail" />
+		<upload @getFileUrl="getFileUrl" />
 	</view>
 	</template>
 
 	<script>
 		import navigation from "@/components/navigation.vue"
 		import patterns from "@/components/pattern.vue"
-		
-		
+		import upload from "@/components/upload.vue"
+
 		export default {
 			data() {
 				return {
@@ -55,15 +53,13 @@
 
 					close: "开启",
 					value1: false,
-					imageValue: [],
-					tempFiles: {},
-					imgurl: ''
 				}
 			},
 			components: {
 				navigation,
 				patterns,
-				
+				upload
+
 			},
 			methods: {
 				asyncChange(e) {
@@ -81,59 +77,11 @@
 								}
 							}
 						})
-
-
 					}
-
-
 				},
-				// 获取上传状态
-				select(e) {
-					console.log('上传状态：', e)
-					this.tempFiles = e
-					this.getImgToken()
-				},
-				// 获取上传进度
-				progress(e) {
-					console.log('上传进度：', e)
-				},
-
-				// 上传成功
-				success(e) {
-					console.log('上传成功')
-				},
-				// 上传失败
-				fail(e) {
-					console.log('上传失败：', e)
-				},
-				getImgToken() {
-					console.log(uni)
-					const token = uni.getStorageSync('token')
-					uni.$u.http.post('/sdk/imageToken', {}).then(res => {
-							console.log(res)
-							this.uploadFilePromise(res)
-						})
-						.catch(() => {
-
-						})
-				},
-				uploadFilePromise(res) {
-					return new Promise((resolve, reject) => {
-						let a = uni.uploadFile({
-							url: 'https://up-z2.qiniup.com', // 仅为示例，非真实的接口地址
-							filePath: this.tempFiles.tempFilePaths[0],
-							key: this.tempFiles.tempFiles[0].name,
-							formData: {
-								token: res,
-							},
-							success: (res) => {
-								this.imgurl = `https://xiaiyuzhou.com/${res.key}`
-							}
-						});
-					})
-				},
-
-
+				getFileUrl(url) {
+					console.log(url)
+				}
 			}
 		}
 	</script>
@@ -141,7 +89,6 @@
 	<style>
 		.choice {
 			display: flex;
-
 			width: 710rpx;
 			height: 94rpx;
 			line-height: 94rpx;
@@ -196,7 +143,4 @@
 
 			font-size: 32rpx;
 		}
-
-
-		
 	</style>
