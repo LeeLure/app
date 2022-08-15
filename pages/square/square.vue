@@ -34,7 +34,7 @@
 			<view class="tab_nav">
 				<view class="nav">
 					<view class="navTitle" v-for="(item, index) in tabList" :key="index">
-						<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.title }}</view>
+						<view :class="{ active: isActive === index }" @tap="checked(index)">{{ item.title }}</view>
 					</view>
 				</view>
 

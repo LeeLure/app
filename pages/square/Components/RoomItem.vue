@@ -1,6 +1,6 @@
 <template>
 	<!-- 广场列表组件 -->
-	<view class="item">
+	<view class="item" @tap="toRoomDetail()">
 		<view class="">
 			<slot name="img"></slot>
 			<view class="info">
@@ -27,7 +27,15 @@ export default {
 	data() {
 		return {};
 	},
-	methods: {}
+	methods: {
+		// 跳转房间详情
+		toRoomDetail() {
+			uni.showToast({});
+			uni.navigateTo({
+				url: '/pages/square/Room/RoomDetail/index'
+			});
+		}
+	}
 };
 </script>
 

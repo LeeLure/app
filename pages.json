@@ -424,6 +424,18 @@
 
 			}
 
+		}, {
+			// 房间详情
+			"path": "pages/square/Room/RoomDetail/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
 		}
 	],
 
