@@ -34,6 +34,7 @@
 		<uni-file-picker v-model="imageValue" limit=1 fileMediatype="image" mode="grid" @select="select"
 			@progress="progress" @success="success" @fail="fail" />
 	</view>
+	
 	</template>
 
 	<script>
@@ -169,11 +170,6 @@
 			margin-top: 28rpx;
 			margin-left: 360rpx;
 		}
-
-
-
-
-
 
 		.text {
 			margin-top: 28rpx;
