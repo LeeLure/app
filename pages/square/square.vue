@@ -32,18 +32,37 @@
 		<!-- Tab 栏 -->
 		<view class="tab">
 			<view class="tab_nav">
-				<view class="navTitle" v-for="(item, index) in tabList" :key="index">
-					<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.title }}</view>
+				<view class="nav">
+					<view class="navTitle" v-for="(item, index) in tabList" :key="index">
+						<view :class="{ active: isActive === index }" @click="checked(index)">{{ item.title }}</view>
+					</view>
+				</view>
+
+				<!-- 更多房间 -->
+				<view class="moreRoom" @tap="toMoreRoom">
+					更多房间
+					<!-- 小箭头 -->
+					<view class="room-iconImg">
+						<image class="room-moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image>
+					</view>
 				</view>
 			</view>
 			<!-- 即将开始 -->
 			<view class="nav_item" v-if="isActive === 0">
-				<view class="itemnames"><item v-for="item in 4" /></view>
+				<view class="itemnames">
+					<!-- 房间列表组件 -->
+					<RoomItem v-for="item in 4">
+						<template #img>
+							<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
+						</template>
+						<template #title>
+							<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+						</template>
+					</RoomItem>
+				</view>
 			</view>
-			<!-- 比赛房间 -->
-			<view class="nav_item" v-if="isActive === 1">比赛房间</view>
 			<!-- 活动房间 -->
-			<view class="nav_item" v-if="isActive === 2">活动房间</view>
+			<view class="nav_item" v-if="isActive === 1">活动房间</view>
 		</view>
 	</view>
 </template>
@@ -51,20 +70,21 @@
 <script>
 // import tab from "@/components/tab.vue"
 import CirItem from './circle/CirItem.vue';
-import item from './item/item.vue';
+import RoomItem from './Components/RoomItem.vue';
 export default {
+	components: {
+		// tab
+		CirItem,
+		RoomItem
+	},
+
 	data() {
 		return {
 			// 控制小三角的变量
 			isTriangle2: false,
 			isActive: 0,
-			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '比赛房间' }, { index: 2, title: '活动房间' }]
+			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }]
 		};
-	},
-	components: {
-		// tab
-		CirItem,
-		item
 	},
 	methods: {
 		// 跳转到更多圈子
@@ -76,6 +96,12 @@ export default {
 
 		checked(index) {
 			this.isActive = index;
+		},
+
+		toMoreRoom() {
+			uni.navigateTo({
+				url: '/pages/square/Room/index'
+			});
 		}
 	}
 };
@@ -173,9 +199,13 @@ export default {
 
 .tab_nav {
 	display: flex;
-	justify-content: space-evenly;
-	/* padding: 12rpx 0; */
-	/* border: 1rpx solid lawngreen; */
+	justify-content: space-between;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 70rpx;
 }
 
 .tab_nav .navTitle {
@@ -184,11 +214,9 @@ export default {
 	font-size: 28rpx;
 	width: 164rpx;
 	height: 58rpx;
-	margin-bottom: 25rpx;
-	margin-top: 36rpx;
+	margin: 36rpx 60rpx 25rpx 0;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	color: #ffffff;
-	/* border: 1rpx solid lawngreen; */
 }
 
 .active {
@@ -211,11 +239,57 @@ export default {
 	border-right-color: transparent;
 }
 
-/* item */
+/* 房间列表组件 */
 .itemnames {
 	display: flex;
-	justify-content: space-evenly;
+
+	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-top: 28rpx;
+}
+
+.item {
+	display: flex;
+	width: 340rpx;
+	height: 479rpx;
+	margin: 32rpx 15rpx 0 15rpx;
+	border-radius: 30rpx 30rpx 30rpx 30rpx;
+	overflow: hidden;
+}
+
+.img {
+	width: 100%;
+	height: 284rpx;
+}
+
+.img-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 30rpx 30rpx 0 0;
+}
+
+.title {
+	height: 94rpx;
+	font-size: 28rpx;
+}
+
+/* 更多房间 */
+.moreRoom {
+	display: flex;
+	font-size: 22rpx;
+	color: #ffffff;
+	opacity: 0.5;
+	margin: 55rpx 18rpx 0 0;
+}
+
+.room-iconImg {
+	width: 20rpx;
+	height: 20rpx;
+}
+
+.room-iconImg .room-moreIcon {
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
 }
 </style>

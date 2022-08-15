@@ -2,17 +2,20 @@
 	<!-- 广场列表组件 -->
 	<view class="item">
 		<view class="">
-			<view class="img"><image class="img-image" src="../../../static/square/item-1.jpg" alt="" /></view>
+			<slot name="img"></slot>
 			<view class="info">
-				<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+				<slot name="title"></slot>
 				<view class="time">
-					<u-icon name="clock" color="#B043FA" size="15"></u-icon>
+					<!-- <u-icon name="clock" color="#B043FA" size="15"></u-icon> -->
+					<view class="timeIcon"><image src="../../../static/square/time.png" mode=""></image></view>
 					<view class="timeText">11-8 星期六 14：30</view>
 				</view>
 				<view class="add">
-					<u-icon name="map" color="#B043FA" size="15"></u-icon>
+					<!-- <u-icon name="map" color="#B043FA" size="15"></u-icon> -->
+					<view class="addIcon"><image src="../../../static/square/add.png" mode=""></image></view>
 					<view class="addText">余姚&nbsp;&nbsp;|&nbsp;&nbsp;距你</view>
 					<text class="text">568m</text>
+					<slot name="footer"></slot>
 				</view>
 			</view>
 		</view>
@@ -31,36 +34,17 @@ export default {
 <style>
 .item {
 	display: flex;
-	width: 340rpx;
-	height: 479rpx;
 	margin: 32rpx 15rpx 0 15rpx;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
-	/* border: 1rpx solid white; */
-}
-
-.img {
-	width: 100%;
-	height: 284rpx;
-}
-
-.img-image {
-	width: 100%;
-	height: 100%;
-	border-radius: 30rpx 30rpx 0 0;
 }
 
 .info {
-	height: 194rpx;
-	/* box-sizing: border-box; */
+	/* height: 194rpx; */
+	box-sizing: border-box;
 	padding: 10rpx;
 	background-color: #fff;
 	border-radius: 0 0 30rpx 30rpx;
-}
-
-.title {
-	height: 94rpx;
-	font-size: 28rpx;
 }
 
 .time {
@@ -86,5 +70,28 @@ export default {
 
 .text {
 	color: #b043fa;
+}
+
+.timeIcon {
+	width: 30rpx;
+	height: 30rpx;
+}
+
+.timeIcon image {
+	width: 100%;
+	height: 100%;
+	margin-top: -1rpx;
+	/* vertical-align: middle; */
+}
+
+.addIcon {
+	width: 30rpx;
+	height: 30rpx;
+}
+
+.addIcon image {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
 }
 </style>
