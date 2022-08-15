@@ -7,14 +7,14 @@
 				placeholder-class="index-list__input__placeholder" />
 		</view>
 		<view class="content">
-			<SortPickerList :listData="handleSearch?dataFiltered : listData" ref="sortPickerList" @clickData="clickData">
-			</SortPickerList>
+			<!-- <SortPickerList :listData="handleSearch?dataFiltered : listData" ref="sortPickerList" @clickData="clickData">
+			</SortPickerList> -->
 		</view>
 	</view>
 </template>
 
 <script>
-	import SortPickerList from "@/components/International-sortPickerList/index.vue";
+	// import SortPickerList from "@/components/International-sortPickerList/index.vue";
 	export default {
 		data() {
 			return {
