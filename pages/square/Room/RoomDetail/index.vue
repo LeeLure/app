@@ -15,6 +15,9 @@
 
 		<!-- 组件 -->
 		<RoomDetailItem></RoomDetailItem>
+
+		<!-- dialog -->
+		<RoomDetailDialog :isShow="isShowDialog"></RoomDetailDialog>
 	</view>
 </template>
 
@@ -22,15 +25,19 @@
 import Navigation from '@/components/navigation.vue';
 import Business from './Business.vue';
 import RoomDetailItem from './RoomDetailItem.vue';
+import RoomDetailDialog from './RoomDetailDialog.vue';
 export default {
 	components: {
 		Navigation,
 		Business,
-		RoomDetailItem
+		RoomDetailItem,
+		RoomDetailDialog
 	},
 
 	data() {
-		return {};
+		return {
+			isShowDialog: true
+		};
 	},
 	methods: {}
 };

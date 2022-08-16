@@ -1,14 +1,22 @@
 <template>
 	<view class="button">
 		<button class="share"><view class="share-text">分享</view></button>
-		<button class="join">
+		<button class="join" @tap="onClick">
 			<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
 			<view class="join-text">我要加入</view>
 		</button>
 	</view>
 </template>
 
-<script></script>
+<script>
+export default {
+	methods: {
+		onClick() {
+			uni.showToast({});
+		}
+	}
+};
+</script>
 
 <style>
 .button {
