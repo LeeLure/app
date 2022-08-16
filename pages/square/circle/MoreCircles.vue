@@ -17,22 +17,24 @@
 			<LeftCategory :List="List"></LeftCategory>
 
 			<!-- 右侧卡片 -->
-			<view class="rightCategory">
-				<view class="card" v-for="item in 10" @tap="toCircleHomePage(item)">
-					<view class="card-img"><image src="../../../static/home/a.pic.jpg" mode=""></image></view>
-					<view class="card-text">
-						<!-- 文字标题 -->
-						<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
-						<!-- 中间数据 -->
-						<view class="card-data">12345W圈友</view>
-						<!-- 下方文字 -->
-						<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联盟雄联盟英雄联盟英雄联盟英</view>
+			<scroll-view scroll-y>
+				<view class="rightCategory">
+					<view class="card" v-for="item in 10" @tap="toCircleHomePage(item)">
+						<view class="card-img"><image src="../../../static/home/a.pic.jpg" mode=""></image></view>
+						<view class="card-text">
+							<!-- 文字标题 -->
+							<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
+							<!-- 中间数据 -->
+							<view class="card-data">12345W圈友</view>
+							<!-- 下方文字 -->
+							<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联盟雄联盟英雄联盟英雄联盟英</view>
+						</view>
+						<!-- 按钮 -->
+						<button class="card-button" @tap.stop="joinCircle">加入</button>
+						<!-- <u-button size="small" class="card-button" text="+申请加入" ></u-button> -->
 					</view>
-					<!-- 按钮 -->
-					<button class="card-button" @tap.stop="joinCircle">加入</button>
-					<!-- <u-button size="small" class="card-button" text="+申请加入" ></u-button> -->
 				</view>
-			</view>
+			</scroll-view>
 		</view>
 		<!-- ------- -->
 	</view>
@@ -119,6 +121,7 @@ export default {
 /* 右侧菜单 */
 .rightCategory {
 	width: 554rpx;
+	height: 952rpx;
 	margin-left: 20rpx;
 }
 

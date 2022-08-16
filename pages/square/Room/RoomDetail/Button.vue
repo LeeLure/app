@@ -1,7 +1,7 @@
 <template>
 	<view class="button">
 		<button class="share"><view class="share-text">分享</view></button>
-		<button class="join" @tap="onClick">
+		<button class="join" @tap="toJoinRoom">
 			<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
 			<view class="join-text">我要加入</view>
 		</button>
@@ -11,8 +11,10 @@
 <script>
 export default {
 	methods: {
-		onClick() {
-			uni.showToast({});
+		toJoinRoom() {
+			uni.navigateTo({
+				url: '/pages/square/Room/JoinRoom/index'
+			});
 		}
 	}
 };

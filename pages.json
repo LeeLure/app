@@ -436,20 +436,30 @@
 				"navigationBarTextStyle": "white"
 			}
 
+		}, {
+			"path": "pages/user/purchase/purchase",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+
+		}, {
+			// 点击加入房间后跳转的页面
+			"path": "pages/square/Room/JoinRoom/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
 		}
-	    ,{
-            "path" : "pages/user/purchase/purchase",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            }
-			
-            
-        }
-    ],
+	],
 
 
 	"globalStyle": {
