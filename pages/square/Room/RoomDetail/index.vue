@@ -6,7 +6,9 @@
 		<!-- 导航栏 -->
 		<Navigation title="房间详情">
 			<template #action>
-				<view class="RoomDetailMore"><image src="../../../../static/square/det.png" mode=""></image></view>
+				<view @tap="onShare" class="RoomDetailMore">
+					<image src="../../../../static/square/det.png" mode=""></image>
+				</view>
 			</template>
 		</Navigation>
 
@@ -16,8 +18,11 @@
 		<!-- 组件 -->
 		<RoomDetailItem></RoomDetailItem>
 
-		<!-- dialog -->
+		<!--房间信息-1的dialog -->
 		<RoomDetailDialog :isShow="isShowDialog"></RoomDetailDialog>
+
+		<!-- 分享的组件 -->
+		<Share ref="toShare"></Share>
 	</view>
 </template>
 
@@ -26,12 +31,14 @@ import Navigation from '@/components/navigation.vue';
 import Business from './Business.vue';
 import RoomDetailItem from './RoomDetailItem.vue';
 import RoomDetailDialog from './RoomDetailDialog.vue';
+import Share from './Share.vue';
 export default {
 	components: {
 		Navigation,
 		Business,
 		RoomDetailItem,
-		RoomDetailDialog
+		RoomDetailDialog,
+		Share
 	},
 
 	data() {
@@ -39,7 +46,11 @@ export default {
 			isShowDialog: true
 		};
 	},
-	methods: {}
+	methods: {
+		onShare() {
+			this.$refs.toShare.open();
+		}
+	}
 };
 </script>
 

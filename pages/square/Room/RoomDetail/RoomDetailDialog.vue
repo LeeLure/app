@@ -1,4 +1,5 @@
 <template>
+	<!-- 房间信息-1的dialog -->
 	<u-popup
 		:show="isShowDialog"
 		bgColor="#29253C"
