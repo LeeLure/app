@@ -1,7 +1,7 @@
 <template>
 	<view class="list">
-		<view class="line">
-			<view class="column">
+		<view class="line" @tap="privacy">
+			<view class="column" >
 				<image src="@/static/user/yinsi.png" class="columnimg"></image>
 				<text class="columntext">隐私</text>
 			</view>
@@ -45,7 +45,13 @@
 				uni.navigateTo({
 					url: '/pages/settings/help/help'
 				})
+			},
+			privacy(){
+				uni.navigateTo({
+					url:'/pages/settings/privacy/privacy'
+				})
 			}
+			
 		}
 	}
 </script>

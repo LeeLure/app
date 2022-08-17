@@ -87,7 +87,7 @@
 		</view>
 
 
-		<view class="secede">
+		<view class="secede" @tap="login">
 			退出登陆
 		</view>
 	</view>
@@ -118,6 +118,11 @@
 			cancellation(){
 				uni.navigateTo({
 					url:'/pages/settings/cancellation/cancellation'
+				})
+			},
+			login(){
+				uni.navigateTo({
+					url:'/pages/login/login'
 				})
 			}
 		}

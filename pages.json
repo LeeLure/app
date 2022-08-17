@@ -4,6 +4,7 @@
 	},
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
 			"path": "pages/login/login",
 			"style": {
@@ -46,6 +47,7 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		
 		{
 			"path": "pages/user/my",
 			"style": {
@@ -459,7 +461,85 @@
 			}
 
 		}
-	],
+
+	    ,{
+            "path" : "pages/user/purchase/purchase",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+			
+            
+        }
+        ,{
+            "path" : "pages/settings/privacy/privacy",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/settings/privacy/choice/choice",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            }           
+        }
+        ,{
+            "path" : "pages/settings/privacy/blacklist/blacklist",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/user/footprint/footprint",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+       
+        ,{
+            "path" : "pages/user/purchase/order",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+            
+        }
+        ,{
+            "path" : "pages/user/follow/follow",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
+    ],
 
 
 	"globalStyle": {
