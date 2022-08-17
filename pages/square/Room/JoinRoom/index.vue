@@ -1,5 +1,6 @@
 <template>
-	<view>
+	<!-- 加入房间页面 -->
+	<view class="join-room">
 		<view class="bar"></view>
 
 		<!-- 导航栏 -->
@@ -10,6 +11,12 @@
 
 		<!-- tab -->
 		<NavTab></NavTab>
+
+		<!-- 商家信息 -->
+		<Business></Business>
+
+		<!-- 聊天输入框 -->
+		<ChatBottomBar></ChatBottomBar>
 	</view>
 </template>
 
@@ -17,11 +24,15 @@
 import Navigation from './Navigation.vue';
 import PeopleNumber from './PeopleNumber.vue';
 import NavTab from './NavTab.vue';
+import Business from './Business.vue';
+import ChatBottomBar from '../../../tidings/chat-details/bottom-bar.vue';
 export default {
 	components: {
 		Navigation,
 		PeopleNumber,
-		NavTab
+		NavTab,
+		Business,
+		ChatBottomBar
 	},
 
 	data() {
@@ -33,4 +44,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.join-room {
+	padding-bottom: 170rpx;
+}
+</style>

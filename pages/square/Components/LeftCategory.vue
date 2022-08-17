@@ -43,7 +43,7 @@ export default {
 .leftCategory {
 	width: 176rpx;
 	/* border: 1rpx solid red; */
-	height: 1200rpx;
+	height: 1130rpx;
 }
 
 .category {
