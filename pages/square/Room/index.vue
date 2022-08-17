@@ -103,7 +103,7 @@ export default {
 
 /* 左侧菜单组件 */
 .LeftCategory {
-	margin-top: 20rpx;
+	margin-top: 30rpx;
 }
 
 .RoomInfo {
@@ -158,10 +158,14 @@ export default {
 
 /* 右侧菜单 */
 .scroll-view {
-	margin-left: 18rpx;
+	margin-left: 40rpx;
 }
 
 .RightRoomItem {
-	height: 1200rpx;
+	height: 1130rpx;
+}
+
+.RoomItem {
+	margin-top: 30rpx;
 }
 </style>

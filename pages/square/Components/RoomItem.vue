@@ -1,5 +1,5 @@
 <template>
-	<!-- 广场列表组件 -->
+	<!-- 房间组件 -->
 	<view class="item" @tap="toRoomDetail()">
 		<view class="">
 			<slot name="img"></slot>
@@ -42,7 +42,7 @@ export default {
 <style>
 .item {
 	display: flex;
-	margin: 32rpx 15rpx 0 15rpx;
+	/* margin: 32rpx 15rpx 0 15rpx; */
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
 }

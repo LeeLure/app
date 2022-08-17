@@ -223,6 +223,8 @@ export default {
 	position: relative;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	background: #b043fa;
+	transition: translate 2s;
+	transform: translate 2s;
 }
 
 .active::after {
@@ -242,17 +244,18 @@ export default {
 /* 房间列表组件 */
 .itemnames {
 	display: flex;
-
 	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-top: 28rpx;
+	padding: 0 20rpx;
+	/* border: 1rpx solid #ffffff; */
 }
 
 .item {
 	display: flex;
 	width: 340rpx;
 	height: 479rpx;
-	margin: 32rpx 15rpx 0 15rpx;
+	margin-top: 32rpx;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
 }

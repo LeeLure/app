@@ -1,28 +1,30 @@
 <template>
 	<!-- 房间详情页面 -->
-	<view>
-		<view class="bar"></view>
+	<view class="bg-img" :style="{ backgroundImage: 'url(' + bgImgUrl + ')', backgroundSize: 'contain' }">
+		<view class="bgi-blur" style="backdrop-filter: blur(10rpx);">
+			<view class="bar"></view>
 
-		<!-- 导航栏 -->
-		<Navigation title="房间详情">
-			<template #action>
-				<view @tap="onShare" class="RoomDetailMore">
-					<image src="../../../../static/square/det.png" mode=""></image>
-				</view>
-			</template>
-		</Navigation>
+			<!-- 导航栏 -->
+			<Navigation title="房间详情">
+				<template #action>
+					<view @tap="onShare" class="RoomDetailMore">
+						<image src="../../../../static/square/det.png" mode=""></image>
+					</view>
+				</template>
+			</Navigation>
 
-		<!-- 商家信息 -->
-		<Business></Business>
+			<!-- 商家信息 -->
+			<Business></Business>
 
-		<!-- 组件 -->
-		<RoomDetailItem></RoomDetailItem>
+			<!-- 组件 -->
+			<RoomDetailItem></RoomDetailItem>
 
-		<!--房间信息-1的dialog -->
-		<RoomDetailDialog :isShow="isShowDialog"></RoomDetailDialog>
+			<!--房间信息-1的dialog -->
+			<RoomDetailDialog :isShow="isShowDialog"></RoomDetailDialog>
 
-		<!-- 分享的组件 -->
-		<Share ref="toShare"></Share>
+			<!-- 分享的组件 -->
+			<Share ref="toShare"></Share>
+		</view>
 	</view>
 </template>
 
@@ -43,7 +45,8 @@ export default {
 
 	data() {
 		return {
-			isShowDialog: true
+			isShowDialog: true,
+			bgImgUrl: '../../../../static/square/Business-img.jpg'
 		};
 	},
 	methods: {
@@ -65,5 +68,10 @@ export default {
 	width: 100%;
 	height: 100%;
 	/* background-color: #fff; */
+}
+
+.bg-img {
+	width: 100%;
+	height: 100%;
 }
 </style>
