@@ -13,8 +13,8 @@
 		</view>
 
 		<swiper class="swiper-box" @change="change" circular :autoplay="true" :interval="3000" indicator-dots>
-			<swiper-item v-for="(item, index) in info" :key="index">
-				<view class="swiper-item"><image :src="item.ima" class="swiper-item-image"></image></view>
+			<swiper-item v-for="(item, index) in info" :key="item.id">
+				<view class="swiper-item"><image :src="item.pic" class="swiper-item-image"></image></view>
 			</swiper-item>
 		</swiper>
 
@@ -133,21 +133,14 @@
 export default {
 	data() {
 		return {
-			info: [
-				{
-					ima: '../../static/home/lbt.png'
-				},
-				{
-					ima: '../../static/home/lbt.png'
-				},
-				{
-					ima: '../../static/home/lbt.png'
-				}
-			],
+			info: [],
 			current: 0,
 			mode: 'round',
 			show: false,
-			flag: true
+			flag: true,
+			// 广告id
+			adId: 100,
+			token: uni.getStorageSync('token')
 		};
 	},
 	// components:{
@@ -155,6 +148,7 @@ export default {
 	// },
 	onLoad() {
 		// uni.hideTabBar()
+		this.getAdList();
 	},
 	methods: {
 		change(e) {
@@ -173,6 +167,15 @@ export default {
 		// 开启定位
 		state() {
 			this.flag = false;
+		},
+
+		// 获取广告列表
+		async getAdList() {
+			// console.log(this.token);
+			const token = this.token;
+			const res = await uni.$u.http.get(`/ad/list/${this.adId}`, token);
+			// console.log(res);
+			this.info = res;
 		}
 	}
 };
