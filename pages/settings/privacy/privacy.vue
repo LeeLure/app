@@ -4,78 +4,91 @@
 		</view>
 		<!-- 导航栏 -->
 		<navigation :title="title"></navigation>
-
+		<view class="advises">
+			动态
+		</view>
 		<view class="fit">
 			<view class="fitlist  border">
 				<view class="kind">
-					清理缓存
-				</view>
-				<view class="goto">
-					2423mb  {{''}}
-					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
-				</view>
-			</view>
-			<view class="fitlist border" @tap="notice">
-				<view class="kind">
-					推送通知设置
-				</view>
-				<view class="goto">
-					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
-				</view>
-			</view>
-			<view class="fitlist border" @tap="security">
-				<view class="kind">
-					安全中心
+					不看Ta的动态
 				</view>
 				<view class="goto">
 
 					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
 				</view>
 			</view>
-			<view class="fitlist" @tap="cancellation">
+			<view class="fitlist" @tap="a">
 				<view class="kind">
-					注销账号
+					看到我全部动态的人
 				</view>
 				<view class="goto">
-
+					{{text}} {{''}}
 					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
 				</view>
 			</view>
-
 
 		</view>
-
+		<view class="advises">
+			互动
+		</view>
 		<view class="fit">
 			<view class="fitlist  border">
 				<view class="kind">
-					隐私政策
+					评论我的动态
 				</view>
 				<view class="goto">
-
-					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
-				</view>
-			</view>
-			<view class="fitlist border">
-				<view class="kind">
-					希艾奇遇公约
-				</view>
-				<view class="goto">
-
-					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
-				</view>
-			</view>
-			<view class="fitlist border">
-				<view class="kind">
-					用户服务协议
-				</view>
-				<view class="goto">
-
+					{{text}} {{''}}
 					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
 				</view>
 			</view>
 			<view class="fitlist">
 				<view class="kind">
-					关于
+					接受@消息
+				</view>
+				<view class="goto">
+					{{text}} {{''}}
+					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
+				</view>
+			</view>
+
+		</view>
+		<view class="advises">
+			私信
+		</view>
+		<view class="fit">
+
+			<view class="fitlist">
+				<view class="kind">
+					我可以收到哪些人的私信
+				</view>
+				<view class="goto">
+					{{text}} {{''}}
+					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
+				</view>
+			</view>
+
+		</view>
+		<view class="advises">
+			图片
+		</view>
+		<view class="fit">
+
+			<view class="fitlist">
+				<view class="kind">
+					谁可以保存我的图片
+				</view>
+				<view class="goto">
+					{{text}} {{''}}
+					<image src="@/static/settings/jinnru.png" class="gotoimage"></image>
+				</view>
+			</view>
+
+		</view>
+		<view class="fit">
+
+			<view class="fitlist" @tap="blacklist">
+				<view class="kind">
+					黑名单
 				</view>
 				<view class="goto">
 
@@ -83,12 +96,9 @@
 				</view>
 			</view>
 
-
 		</view>
+		<view class="kongbai">
 
-
-		<view class="secede" @tap="login">
-			退出登陆
 		</view>
 	</view>
 </template>
@@ -98,31 +108,23 @@
 	export default {
 		data() {
 			return {
-				title: "设置",
+				title: "隐私",
+				text: '所有人'
 			}
 		},
 		components: {
 			navigation
 		},
 		methods: {
-			notice() {
+			a() {
 				uni.navigateTo({
-					url: '/pages/settings/notice/notice'
+					url: '/pages/settings/privacy/choice/choice'
 				})
 			},
-			security(){
+			
+			blacklist() {
 				uni.navigateTo({
-					url:'/pages/settings/security/security'
-				})
-			},
-			cancellation(){
-				uni.navigateTo({
-					url:'/pages/settings/cancellation/cancellation'
-				})
-			},
-			login(){
-				uni.navigateTo({
-					url:'/pages/login/login'
+					url: '/pages/settings/privacy/blacklist/blacklist'
 				})
 			}
 		}
@@ -153,14 +155,14 @@
 	}
 
 	.goto {
-		
-		
+
+
 		font-size: 28rpx;
 		color: rgba(255, 255, 255, 0.5);
 	}
 
 	.gotoimage {
-		
+
 		width: 25rpx;
 		height: 25rpx;
 		vertical-align: middle;
@@ -170,13 +172,14 @@
 		border-bottom: 2rpx solid rgba(255, 255, 255, 0.05);
 	}
 
-	.secede {
-		background-color: #29253C;
-		height: 100rpx;
-		line-height: 100rpx;
-		text-align: center;
-		color: #F64D4D;
-		margin-top: 40rpx;
+	.advises {
+		margin-top: 20rpx;
+		margin-left: 34rpx;
 		font-size: 28rpx;
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.kongbai {
+		height: 50rpx;
 	}
 </style>

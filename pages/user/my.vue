@@ -3,7 +3,7 @@
 		<view class="background">
 			<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="backgroundimg"></image>
 			<view class="fod">
-				<view class="install">
+				<view class="install" @tap="footprint">
 					<image src="@/static/user/zuji.png" class="installimg"></image>
 				</view>
 				<view class="install" @tap="release">
@@ -44,6 +44,11 @@
 					url: '/pages/settings/settings'
 				})
 			},
+			footprint(){
+				uni.navigateTo({
+					url:'/pages/user/footprint/footprint'
+				})
+			}
 
 		}
 	}

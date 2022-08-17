@@ -20,7 +20,7 @@
 				有趣的人
 			</view>
 		</view>
-		<view class="lists">
+		<view class="lists" @tap="purchase">
 			<image src="@/static/user/goumai.png" class="listimgs"></image>
 			<view class="rolltext">
 				我购买的
@@ -45,6 +45,11 @@
 			collect(){
 				uni.navigateTo({
 					url:'/pages/user/collect/collect'
+				})
+			},
+			purchase(){
+				uni.navigateTo({
+					url:'/pages/user/purchase/purchase'
 				})
 			}
 		}

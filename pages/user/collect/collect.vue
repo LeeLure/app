@@ -1,4 +1,5 @@
 <template>
+	<!-- 我收藏的 -->
 	<view>
 		<view class="bar">
 		</view>

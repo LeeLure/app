@@ -5,7 +5,7 @@
 				<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="headportraitimg"></image>
 			</view>
 			<view class="spread">
-				<view class="spreadline">
+				<view class="spreadline" @tap="follow">
 					<view class="spreadtop">
 						36
 					</view>
@@ -70,7 +70,11 @@
 			}
 		},
 		methods: {
-
+follow(){
+	uni.navigateTo({
+		url:'/pages/user/follow/follow'
+	})
+}
 		}
 	}
 </script>

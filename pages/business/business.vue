@@ -7,10 +7,15 @@
 
 		<view class="classification">
 			<view class="icon" v-for="(item ,index) in  headline" :key="index">
+				<view class="iconbox">
 				<image :src="item.ima" class="image"></image>
+			
+					
+				</view>
 				<view class="icontext">
 					{{item.text}}
 				</view>
+				
 			</view>
 
 		</view>
@@ -128,43 +133,43 @@
 		data() {
 			return {
 				headline: [{
-						ima: "../../static/home/a.pic.jpg",
+						ima: require("@/static/business/zuliao.png"),
 						text: "按摩/足疗"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/ktv.png"),
+						text: "KTV"
 					}, {
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/xiyu.png"),
+						text: "洗浴/汗蒸"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/dianjing.png"),
+						text: "电竞/电玩"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/jiuba.png"),
+						text: "酒吧"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/remen.png"),
+						text: "热门商家"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/youyong.png"),
+						text: "游泳"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/langrensha.png"),
+						text: "狼人杀/剧本杀"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/sirenyingyuan.png"),
+						text: "私人影院"
 					},
 					{
-						ima: "../../static/home/a.pic.jpg",
-						text: "按摩/足疗"
+						ima: require("@/static/business/qiulei.png"),
+						text: "球类运动"
 					}
 				],
 				prices: [{
@@ -232,25 +237,30 @@
 
 <style>
 	.classification {
-
+	
 		display: flex;
 		flex-wrap: wrap;
-		margin-left: 15rpx;
+		margin-left: 20rpx;
 		width: 730rpx;
 	}
 
 	.icon {
-		/* border: 1px  solid red; */
+		
 		width: 140rpx;
 		margin-top: 38rpx;
 	}
-
-	.image {
-		width: 84rpx;
-		height: 84rpx;
-		border-radius: 42rpx;
-		display: block;
+.iconbox{
+	width: 82rpx;
+	height: 82rpx;
+	border-radius: 42rpx;
+	background-color: rgba(255, 255, 255, 0.2);
 		margin: 0 auto;
+}
+	.image {
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 42rpx;
+			margin: 0 auto;
 	}
 
 	.icontext {
