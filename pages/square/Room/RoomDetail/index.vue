@@ -1,7 +1,7 @@
 <template>
 	<!-- 房间详情页面 -->
 	<view class="bg-img" :style="{ backgroundImage: 'url(' + bgImgUrl + ')', backgroundSize: 'contain' }">
-		<view class="bgi-blur" style="backdrop-filter: blur(10rpx);">
+		<view class="bgi-blur" style="backdrop-filter: blur(20rpx);">
 			<view class="bar"></view>
 
 			<!-- 导航栏 -->

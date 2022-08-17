@@ -32,8 +32,8 @@
 			</view>
 		</view>
 		<view class="name">
-			胡SIRSIR777  {{' '}}
-			<image src="@/static/user/xiugai.png" class="modify"></image>
+			胡SIRSIR777 {{' '}}
+			<image src="@/static/user/xiugai.png" class="modify" @tap="edit"></image>
 		</view>
 		<view class="id">
 			ID：546546
@@ -70,11 +70,16 @@
 			}
 		},
 		methods: {
-follow(){
-	uni.navigateTo({
-		url:'/pages/user/follow/follow'
-	})
-}
+			follow() {
+				uni.navigateTo({
+					url: '/pages/user/follow/follow'
+				})
+			},
+			edit(){
+				uni.navigateTo({
+					url:'/pages/user/edit/edit'
+				})
+			}
 		}
 	}
 </script>
@@ -114,6 +119,7 @@ follow(){
 
 	.spreadtop {
 		font-size: 40rpx;
+		font-weight: 500;
 	}
 
 	.spreadbottom {
@@ -154,16 +160,19 @@ follow(){
 		display: flex;
 		font-size: 24rpx;
 		margin-left: 40rpx;
+		margin-top: 10rpx;
 	}
-.sex{
-	font-size: 24rpx;
-	margin-left: 40rpx;
-	padding:  10rpx 30rpx ;
-	border-radius: 26rpx;
-	background-color:#1A1824 ;
-	height: 30rpx;
-	
-}
+
+	.sex {
+		font-size: 24rpx;
+		margin-left: 40rpx;
+		padding: 10rpx 30rpx;
+		border-radius: 26rpx;
+		background-color: #1A1824;
+		height: 30rpx;
+
+	}
+
 	.seximg {
 		width: 30rpx;
 		height: 30rpx;

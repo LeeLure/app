@@ -34,24 +34,24 @@
 </script>
 
 <style>
-	.navigation {
+	/* .navigation {
 		width: 750rpx;
 		height: 100rpx;
 		line-height: 100rpx;
 		text-align: center;
 		display: flex;
-	}
+	} */
 
-	.navigation1 {
+	/* .navigation1 {
 		margin-left: 20rpx;
 		color: #ffffff;
-	}
+	} */
 
-	.fanhui {
+	/* .fanhui {
 		width: 40rpx;
 		height: 40rpx;
 	}
-
+ */
 	.navigation {
 		width: 750rpx;
 		height: 100rpx;

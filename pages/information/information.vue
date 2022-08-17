@@ -39,25 +39,54 @@
 
 		</view>
 		
-		<view class="nextstep" @click="label">
+		<view class="nextstep" @tap="label">
 			下一步
 		</view>
 	</view>
 </template>
 
 <script>
+	import { enrollEssential } from "@/config/api.js"
 	export default {
 		data() {
 			return {
-				sexIndex: 0
+				sexIndex: 0,
+				
 			}
 		},
 		methods: {
+			
+			
+			
 			// 选择性别
 			checkSex(e) {
 				this.sexIndex = e.currentTarget.dataset.index;
 			},
+			
+			
 			label(){
+				let query={
+					avatarUrl: "11",
+					  birthday: "2022-08-17T09:03:47.493Z",
+					  created: "2022-08-17T09:03:47.493Z",
+					  interest: "string",
+					  nickName: "string",
+					  phone: "string",
+					  sex: 0,
+					  updated: "2022-08-17T09:03:47.493Z",
+					  userId: 0
+				}
+				enrollEssential(
+					query
+				).then(() => {
+					
+				}).catch(() =>{
+					
+				})
+				
+				
+				
+				
 				uni.navigateTo({
 					url:"/pages/label/label"
 				})

@@ -539,6 +539,16 @@
            
            } 
         }
+        ,{
+            "path" : "pages/user/edit/edit",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
     ],
 
 
