@@ -1,13 +1,17 @@
 <template>
 	<!-- 左侧菜单栏 -->
-	<view class="leftCategory">
-		<view class="category" @tap="changeTab(index)" v-for="(item, index) in List" :key="item.index">
-			<view class="categroyItem">
-				<!-- 背景色 -->
-				<view :class="{ bgColor: isColor === item.index }"></view>
-				<view class="text">{{ item.title }}</view>
+	<view class="">
+		<scroll-view scroll-y>
+			<view class="leftCategory">
+				<view class="category" @tap="changeTab(index)" v-for="(item, index) in List" :key="item.index">
+					<view class="categroyItem">
+						<!-- 背景色 -->
+						<view :class="{ bgColor: isColor === item.index }"></view>
+						<view class="text">{{ item.title }}</view>
+					</view>
+				</view>
 			</view>
-		</view>
+		</scroll-view>
 	</view>
 </template>
 
@@ -39,6 +43,7 @@ export default {
 .leftCategory {
 	width: 176rpx;
 	/* border: 1rpx solid red; */
+	height: 1200rpx;
 }
 
 .category {

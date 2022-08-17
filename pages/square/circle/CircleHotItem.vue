@@ -53,6 +53,10 @@ export default {
 	methods: {
 		changeTab(index) {
 			this.isActive = index;
+		},
+
+		scroll(e) {
+			// console.log(e);
 		}
 	}
 };

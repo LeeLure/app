@@ -17,24 +17,26 @@
 			<LeftCategory class="LeftCategory" :List="List"></LeftCategory>
 
 			<!-- 右侧房间列表 -->
-			<view class="RightRoomItem">
-				<RoomItem class="RoomItem" v-for="item in 6">
-					<template #img>
-						<view class="roomImg"><image src="../../../static/square/item-1.jpg" mode=""></image></view>
-					</template>
-					<!-- <view class="RoomInfo"> -->
-					<template #title>
-						<view class="roomTitle">出发出发！出发西藏！西藏！我来啦！！</view>
-					</template>
-					<!-- 房间人数 -->
-					<template #footer>
-						<view class="people">
-							<view class="peopleIcon"><image src="../../../static/square/people.png" mode=""></image></view>
-							<view class="peopleText">现有6/8人</view>
-						</view>
-					</template>
-				</RoomItem>
-			</view>
+			<scroll-view class="scroll-view" scroll-y>
+				<view class="RightRoomItem">
+					<RoomItem class="RoomItem" v-for="item in 6">
+						<template #img>
+							<view class="roomImg"><image src="../../../static/square/item-1.jpg" mode=""></image></view>
+						</template>
+						<!-- <view class="RoomInfo"> -->
+						<template #title>
+							<view class="roomTitle">出发出发！出发西藏！西藏！我来啦！！</view>
+						</template>
+						<!-- 房间人数 -->
+						<template #footer>
+							<view class="people">
+								<view class="peopleIcon"><image src="../../../static/square/people.png" mode=""></image></view>
+								<view class="peopleText">现有6/8人</view>
+							</view>
+						</template>
+					</RoomItem>
+				</view>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -120,7 +122,7 @@ export default {
 }
 
 .roomTitle {
-	width: 504rpx;
+	width: 490rpx;
 	height: 54rpx;
 	line-height: 54rpx;
 	font-size: 28rpx;
@@ -152,5 +154,14 @@ export default {
 .peopleText {
 	font-size: 24rpx;
 	color: #999999;
+}
+
+/* 右侧菜单 */
+.scroll-view {
+	margin-left: 18rpx;
+}
+
+.RightRoomItem {
+	height: 1200rpx;
 }
 </style>
