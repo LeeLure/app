@@ -1,15 +1,13 @@
 <template>
-	<!-- 聊天界面 -->
+	<!-- 聊天组件 -->
 	<view class="Chat">
 		<view class="message">啦啦啦啦啦啦啦啦加入了房间</view>
 		<!-- 聊天区域 -->
-		<view class="chat-info">
+		<view class="chat-info" v-for="item in 2">
 			<view class="chat-avata"><image class="img" src="../../../../static/home/c.pic.jpg" /></view>
 			<view class="chat-text">
 				<view class="chat-name">啦啦啦啦啦啦啦啦</view>
-				<view class="content">
-					内容内容内容内容内容内容内容内容内内容内容内容内容内内容内容内容内容内内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内
-				</view>
+				<view class="content"><view class="chat-content-text">内内容内容内容内容内容内</view></view>
 			</view>
 		</view>
 	</view>
@@ -34,7 +32,7 @@
 
 .chat-info {
 	display: flex;
-	margin-right: 18rpx;
+	margin: 0 18rpx 36rpx 0;
 }
 
 .chat-avata {
@@ -50,7 +48,7 @@
 }
 
 .chat-text {
-	width: 500rpx;
+	max-width: 522rpx;
 	margin-left: 18rpx;
 }
 
@@ -65,10 +63,14 @@
 	color: #fff;
 	font-size: 28rpx;
 	border-radius: 20rpx;
-	min-height: 88rpx;
 	margin-top: 10rpx;
 	align-items: center;
-	padding: 10rpx 20rpx;
+	padding: 14rpx 20rpx;
 	line-height: 40rpx;
+	/* border: 1rpx solid #fff; */
+}
+
+.chat-content-text {
+	margin-left: 32rpx;
 }
 </style>

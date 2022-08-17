@@ -16,8 +16,20 @@
 				<view  class="user-name">{{item.name}}</view>
 			</view>
 			
-			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
+			<view v-for="item in (8-list.length)" class="user">
+				<view class="user-img">
+					<image  class="img" src="../../../../static/square/def-ava.png" alt="">
+				</view>
+				<view  class="user-name">等待加入...</view>
+			</view>
 			
+			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
+		</view>
+		
+		<view class="room-user">
+			
+			
+			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
 		</view>
 	</view>
 </template>
@@ -32,12 +44,12 @@
 					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
 					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
 					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
+					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
+					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
 				]
 			}
 		}
-		}
+	}
 </script> 
 
 <style>
