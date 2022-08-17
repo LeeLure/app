@@ -87,9 +87,9 @@
 				
 				
 				
-				// uni.navigateTo({
-				// 	url:"/pages/label/label"
-				// })
+				uni.navigateTo({
+					url:"/pages/label/label"
+				})
 			}
 		}
 
