@@ -139,8 +139,7 @@ export default {
 			show: false,
 			flag: true,
 			// 广告id
-			adId: 100,
-			token: uni.getStorageSync('token')
+			adId: 100
 		};
 	},
 	// components:{
@@ -171,10 +170,8 @@ export default {
 
 		// 获取广告列表
 		async getAdList() {
-			// console.log(this.token);
-			const token = this.token;
-			const res = await uni.$u.http.get(`/ad/list/${this.adId}`, token);
-			// console.log(res);
+			const res = await uni.$u.http.get(`/ad/list/${this.adId}`);
+			console.log(res);
 			this.info = res;
 		}
 	}

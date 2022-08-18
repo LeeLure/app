@@ -4,7 +4,7 @@
 			<view class="act-text">活动详情</view>
 			<view class="act-textarea">
 				在此输入活动详情~在此输入活动详情~ 在此输入活动详情~ 在此输入活动详情~ 在此输入活动详情~ 在此输入活动详情~
-				在此输入活动详情~ 在此输入活动详情~在此输入活动详情~在此输入活动详情~在此输入活动详情~
+				在此输入活动详情~
 			</view>
 		</view>
 	</view>
@@ -35,5 +35,6 @@
 	margin: 0 37rpx 24rpx 37rpx;
 	color: #fff;
 	opacity: 0.6;
+	font-size: 24rpx;
 }
 </style>

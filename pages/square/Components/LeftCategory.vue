@@ -1,18 +1,16 @@
 <template>
 	<!-- 左侧菜单栏 -->
-	<view class="">
-		<scroll-view scroll-y>
-			<view class="leftCategory">
-				<view class="category" @tap="changeTab(index)" v-for="(item, index) in List" :key="item.index">
-					<view class="categroyItem">
-						<!-- 背景色 -->
-						<view :class="{ bgColor: isColor === item.index }"></view>
-						<view class="text">{{ item.title }}</view>
-					</view>
+	<scroll-view :style="{ height: windowHeight - 10 + 'rpx' }" scroll-y>
+		<view class="leftCategory" :style="{ height: windowHeight + 'rpx' }">
+			<view class="category" @tap="changeTab(index)" v-for="(item, index) in List" :key="item.index">
+				<view class="categroyItem">
+					<!-- 背景色 -->
+					<view :class="{ bgColor: isColor === item.index }"></view>
+					<view class="text">{{ item.title }}</view>
 				</view>
 			</view>
-		</scroll-view>
-	</view>
+		</view>
+	</scroll-view>
 </template>
 
 <script>
@@ -21,7 +19,8 @@ export default {
 		List: {
 			type: Array,
 			require: true
-		}
+		},
+		windowHeight: Number
 	},
 
 	data() {
@@ -43,7 +42,7 @@ export default {
 .leftCategory {
 	width: 176rpx;
 	/* border: 1rpx solid red; */
-	height: 1130rpx;
+	/* height: 1130rpx; */
 }
 
 .category {
@@ -58,7 +57,7 @@ export default {
 .bgColor {
 	width: 58rpx;
 	height: 100rpx;
-	background-color: #1e1a32;
+	/* background-color: #1e1a32; */
 	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
 }
 

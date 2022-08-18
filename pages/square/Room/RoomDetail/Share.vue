@@ -113,7 +113,7 @@ export default {
 
 .user-img .img {
 	width: 98rpx;
-	height: 88rpx;
+	height: 98rpx;
 	border-radius: 50%;
 }
 
@@ -148,7 +148,7 @@ export default {
 
 .third-party-img .img {
 	width: 98rpx;
-	height: 88rpx;
+	height: 98rpx;
 	border-radius: 50%;
 }
 

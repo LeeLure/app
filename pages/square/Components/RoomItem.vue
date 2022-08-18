@@ -7,8 +7,8 @@
 				<slot name="title"></slot>
 				<view class="time">
 					<!-- <u-icon name="clock" color="#B043FA" size="15"></u-icon> -->
-					<view class="timeIcon"><image src="../../../static/square/time.png" mode=""></image></view>
-					<view class="timeText">11-8 星期六 14：30</view>
+					<image class="timeIcon" src="../../../static/square/time.png" mode=""></image>
+					11-8 星期六 14：30
 				</view>
 				<view class="add">
 					<!-- <u-icon name="map" color="#B043FA" size="15"></u-icon> -->
@@ -57,12 +57,17 @@ export default {
 
 .time {
 	display: flex;
-}
-
-.timeText {
-	margin-left: 4rpx;
 	font-size: 24rpx;
 	color: #999999;
+	vertical-align: middle;
+}
+
+.timeIcon {
+	vertical-align: middle;
+	width: 30rpx;
+	height: 30rpx;
+	margin: 4rpx 6rpx 0 0;
+	/* margin-top: 4rpx; */
 }
 
 .add {
@@ -80,21 +85,10 @@ export default {
 	color: #b043fa;
 }
 
-.timeIcon {
-	width: 30rpx;
-	height: 30rpx;
-}
-
-.timeIcon image {
-	width: 100%;
-	height: 100%;
-	margin-top: -1rpx;
-	/* vertical-align: middle; */
-}
-
 .addIcon {
 	width: 30rpx;
 	height: 30rpx;
+	margin-right: 6rpx;
 }
 
 .addIcon image {

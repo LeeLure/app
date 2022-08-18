@@ -17,11 +17,11 @@
 					<view class="text">{{ text }}</view>
 					<view class="remind">{{ remind }}</view>
 				</view>
-				<view class="bottom">
-					<button class="button but-top" @tap="cancelJoin">取消</button>
-					<button class="button but-bot" @tap="confirmJoin">确认入局</button>
-				</view>
 			</view>
+		</view>
+		<view class="bottom">
+			<view class="button but-top" @tap="cancelJoin">取消</view>
+			<view class="button but-bot" @tap="confirmJoin">确认入局</view>
 		</view>
 	</u-popup>
 </template>
@@ -65,8 +65,8 @@ export default {
 
 <style>
 .dialog {
-	width: 646rpx;
-	height: 486rpx;
+	width: 630rpx;
+	/* height: 486rpx; */
 	padding: 0 28rpx;
 	/* margin: 0 52rpx 0 52rpx; */
 	/* border: 1rpx solid #666; */
@@ -85,6 +85,7 @@ export default {
 	font-size: 28rpx;
 	color: #fff;
 	margin-top: 36rpx;
+	/* border: 1rpx solid seagreen; */
 }
 
 .remind {
@@ -95,18 +96,23 @@ export default {
 
 .bottom {
 	display: flex;
-	justify-content: space-evenly;
-	margin-top: 64rpx;
+	justify-content: space-between;
+	padding: 0 30rpx;
 }
 
 .button {
-	width: 295rpx;
+	width: 230rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+	text-align: center;
 	background-color: transparent;
 	font-size: 32rpx;
 	color: #d53eda;
+	/* border: 1rpx solid seagreen; */
 }
 
 .but-top {
-	color: #000000;
+	color: #ffffff;
+	opacity: 0.2;
 }
 </style>
