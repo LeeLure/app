@@ -270,13 +270,14 @@ export default {
 	content: '';
 	flex-grow: 1;
 	width: 22rpx;
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	
 	border-radius: 8rpx;
 }
 .swiper-box .uni-swiper-dot-active {
-	width: 32upx !important;
-	height: 8upx !important;
-	background-color: rgba(255, 255, 255, 1);
+	width: 32rpx !important;
+	height: 8rpx !important;
+	background-color: rgba(255, 255, 255, 1)  !important;
 	border-radius: 4rpx;
 }
 
