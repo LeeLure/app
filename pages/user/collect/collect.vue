@@ -109,9 +109,9 @@
 	.collectleft {
 		width: 160rpx;
 		height: 160rpx;
-		margin-left: 20rpx;
+		
 		border-radius: 20rpx;
-		margin: auto 0;
+		margin: auto 20rpx;
 	}
 
 	.collectimg {
@@ -121,8 +121,8 @@
 	}
 
 	.collectright {
-		margin:   auto 24rpx auto 24rpx;
-		width: 580rpx;
+		margin:   auto 0rpx auto 0rpx;
+		width: 530rpx;
 	}
 
 	.collectname {

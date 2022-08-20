@@ -25,13 +25,27 @@
 			你可以随时在我的有趣的人中关闭授权
 		</view>
 
-		<patterns :picture="picture"></patterns>
+		<become :patterns="patterns">
+			<template #a>
+				<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="aspectFillimg"></image>
+			</template>
+			<template #b>
+				<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="aspectFillimg"></image>
+				
+			</template>
+			<template #c>
+				<image src="@/static/home/c.pic.jpg" mode="aspectFill" class="aspectFillimg"></image>
+			</template>
+			<template #d>
+				<image src="@/static/user/xihuan.png" class="likeimg"></image>
+			</template>
+		</become>
 
 		<view class="determine">
 			确定
 		</view>
 
-		<upload :limit="limit" @getFileUrl="getFileUrl" />
+	
 
 	</view>
 
@@ -39,29 +53,26 @@
 
 	<script>
 		import navigation from "@/components/navigation.vue"
-		import patterns from "@/components/pattern.vue"
-		import upload from "@/components/upload.vue"
+		import become from "@/components/become.vue"
+		
 
 		export default {
 			data() {
 				return {
-					title: "有趣的人",
-					picture: {
-						img1: "@/static/user/weixiao.png",
-						img2: "@/static/user/weixiao.png",
-						img3: "@/static/user/weixiao.png",
-						text: "珍有趣"
-
-					},
-					limit: 1,
+					title: "有趣的人",					
+					
 					close: "开启",
 					value1: false,
+					patterns:[
+						{name:"www",
+						}
+					]
 				}
 			},
 			components: {
 				navigation,
-				patterns,
-				upload
+				become,
+				
 
 			},
 			methods: {
@@ -82,9 +93,7 @@
 						})
 					}
 				},
-				getFileUrl(url) {
-					console.log(url)
-				}
+				
 			}
 		}
 	</script>
@@ -140,5 +149,16 @@
 			margin-top: 54rpx;
 
 			font-size: 32rpx;
+		}
+		.aspectFillimg {
+			width: 100%;
+			height: 100%;
+		}
+		.likeimg{
+			width: 60rpx;
+			height: 60rpx;
+			display: block;
+			margin-top: 33rpx;
+			margin-left:33rpx;
 		}
 	</style>

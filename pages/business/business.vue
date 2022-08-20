@@ -215,6 +215,7 @@
 				}
 			},
 			showTag(index) {
+				console.log(index);
 				const activeArr = this.activeArr
 				if (activeArr.includes(index)) {
 					this.remove(activeArr,index)

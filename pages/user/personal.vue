@@ -42,7 +42,7 @@
 			怀揣梦想，心系远方~
 		</view>
 		<view class="autograph">
-			<view class="sexs">
+			<view class="sex">
 				<image src="@/static/user/nan.png" v-if="sex==='男'" class="seximg"></image>
 				<image src="@/static/user/nv.png" v-else class="seximg"></image>
 				{{sex}}
@@ -96,7 +96,7 @@
 		width: 168rpx;
 		height: 168rpx;
 		border-radius: 84rpx;
-		border: 1rpx solid white;
+		border: 4rpx solid white;
 	}
 
 	.headportraitimg {
@@ -156,14 +156,15 @@
 		margin-top: 28rpx;
 	}
 
-	.sexs {
-		display: flex;
+	/* .sexs {
+		
 		font-size: 24rpx;
 		margin-left: 40rpx;
 		margin-top: 10rpx;
-	}
+	} */
 
 	.sex {
+		display: flex;
 		font-size: 24rpx;
 		margin-left: 40rpx;
 		padding: 10rpx 30rpx;

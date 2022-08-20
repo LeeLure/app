@@ -549,6 +549,60 @@
            
            } 
         }
+        ,{
+            "path" : "pages/user/release/release",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
+        
+        ,{
+            "path" : "pages/home/moredynamic/moredynamic",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+            
+        }
+        ,{
+            "path" : "pages/home/moreinteresting/moreinteresting",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/home/moredynamic/tendencies/tendencies",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/home/homepage/homepage",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+        }
     ],
 
 

@@ -8,7 +8,7 @@
 			{{title}}
 		</view>
 		<view class="action">
-			<slot name="action"></slot>
+			<slot></slot>
 		</view>
 	</view>
 </template>
@@ -60,6 +60,7 @@
 		display: flex;
 		position: relative;
 		justify-content: space-between;
+		background-color: #1E1A32 ;
 	}
 
 	.navigation1 {
@@ -91,6 +92,9 @@
 	}
 
 	.action {
+		
 		z-index: 10;
+		
+		
 	}
 </style>
