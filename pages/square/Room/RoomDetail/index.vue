@@ -7,7 +7,7 @@
 			<!-- 导航栏 -->
 			<Navigation title="房间详情">
 				<template #action>
-					<view @tap="onShare" class="RoomDetailMore">
+					<view @tap="openShare" class="RoomDetailMore">
 						<image src="../../../../static/square/det.png" mode=""></image>
 					</view>
 				</template>
@@ -22,8 +22,12 @@
 			<!--房间信息-1的dialog -->
 			<RoomDetailDialog :isShow="isShowDialog"></RoomDetailDialog>
 
+			<!-- 按钮 -->
+			<view class="button-bgc">
+				<view class="bgc-button"><Button @toShare="openShare"></Button></view>
+			</view>
 			<!-- 分享的组件 -->
-			<Share ref="toShare"></Share>
+			<Share ref="Share"></Share>
 		</view>
 	</view>
 </template>
@@ -33,6 +37,7 @@ import Navigation from '@/components/navigation.vue';
 import Business from './Business.vue';
 import RoomDetailItem from './RoomDetailItem.vue';
 import RoomDetailDialog from './RoomDetailDialog.vue';
+import Button from './Button.vue';
 import Share from './Share.vue';
 export default {
 	components: {
@@ -40,6 +45,7 @@ export default {
 		Business,
 		RoomDetailItem,
 		RoomDetailDialog,
+		Button,
 		Share
 	},
 
@@ -50,8 +56,12 @@ export default {
 		};
 	},
 	methods: {
-		onShare() {
-			this.$refs.toShare.open();
+		toShare() {
+			this.$refs.Share.open();
+		},
+
+		openShare() {
+			this.toShare();
 		}
 	}
 };
@@ -73,5 +83,14 @@ export default {
 .bg-img {
 	width: 100%;
 	height: 100%;
+}
+
+.button-bgc {
+	background-color: #1e1a32;
+	padding: 30rpx 0 10rpx 0;
+}
+
+.bgc-button {
+	margin: 0 20rpx;
 }
 </style>

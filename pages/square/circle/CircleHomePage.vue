@@ -2,7 +2,7 @@
 	<!-- 话题圈主页 -->
 	<view>
 		<view class="bar"></view>
-		<view class="circleHomePage">
+		<view class="circleHomePage" :style="{ height: windowHeight + 'rpx' }">
 			<!-- 导航栏 -->
 			<Navigation class="navigation"></Navigation>
 
@@ -14,13 +14,22 @@
 						<!-- 文字标题 -->
 						<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
 						<!-- 中间数据 -->
-						<view class="card-data">2564w条动态|1744w浏览过</view>
+						<view class="card-data">
+							<view class="active">2564w条动态</view>
+							|
+							<view class="wacth">1744w浏览过</view>
+						</view>
 						<!-- 下方文字 -->
 						<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联英雄联盟英雄联盟英雄联盟</view>
 					</view>
 					<!-- 按钮 -->
 					<!-- <u-button class="card-button" text="+申请加入"></u-button> -->
-					<button class="card-button"><view class="butText">+申请加入</view></button>
+					<view class="card-button">
+						<view class="butText">
+							<image class="card-button-img" src="../../../static/square/jiahao.png" mode=""></image>
+							申请加入
+						</view>
+					</view>
 					<!-- 小箭头 -->
 					<view class="card-desc-img"><image src="../../../static/square/more.png" mode=""></image></view>
 				</view>
@@ -34,9 +43,12 @@
 
 			<!-- 圈子热门组件 -->
 			<CircleHotItem class="CircleHotItemBox"></CircleHotItem>
-			<!-- ======= -->
 		</view>
 		<!-- ------- -->
+		<!-- 悬浮按钮 -->
+		<view class="suspensionBut">
+			<image class="butImg" src="../../../static/square/xuanfuanniu.jpg" mode=""></image>
+		</view>
 	</view>
 </template>
 
@@ -55,12 +67,26 @@ export default {
 			// 文本文字
 			value3:
 				'英雄联盟玩家的聚集地~英英雄联盟玩家的聚集地~英雄联盟玩家的聚集地~英雄联盟玩家的聚集地~英雄联盟玩家的聚集地~雄联盟玩家的聚集地~英雄联盟玩家的聚集地~英雄联盟玩家的聚集地~',
-			tagButText: [{ name: '活跃榜', index: 0 }, { name: '圈主', index: 1 }]
+			tagButText: [{ name: '活跃榜', index: 0 }, { name: '圈主', index: 1 }],
+			windowHeight: 0
 		};
 	},
+
+	onLoad() {
+		this.getWindowHeight();
+	},
+
 	methods: {
 		revert() {
 			uni.navigateBack({});
+		},
+
+		// 获取屏幕高度
+		getWindowHeight() {
+			const res = uni.getSystemInfoSync();
+			// console.log(res);
+			this.windowHeight = res.windowHeight * 2;
+			// console.log(this.windowHeight);
 		}
 	}
 };
@@ -68,9 +94,7 @@ export default {
 
 <style>
 .circleHomePage {
-	background-image: linear-gradient(90deg, #747187 0%, #7b7890 100%);
-	/* background-color: #848098; */
-	height: 1500rpx;
+	background-image: linear-gradient(180deg, #848098 0%, #1e1a32 100%);
 }
 
 /* 卡片 */
@@ -118,8 +142,8 @@ export default {
 }
 
 .card-data {
+	display: flex;
 	width: 320rpx;
-	height: 34rpx;
 	height: 34rpx;
 	margin-top: 14rpx;
 	font-size: 24rpx;
@@ -130,8 +154,16 @@ export default {
 	text-overflow: ellipsis;
 }
 
+.active {
+	margin-right: 20rpx;
+}
+
+.wacth {
+	margin-left: 20rpx;
+}
+
 .card-desc {
-	width: 490rpx;
+	width: 470rpx;
 	height: 34rpx;
 	line-height: 34rpx;
 	margin-top: 22rpx;
@@ -146,10 +178,17 @@ export default {
 	position: absolute;
 	width: 174rpx;
 	height: 68rpx;
+	line-height: 68rpx;
 	right: 0;
 	border-radius: 20rpx;
 	background-color: #848098;
 	padding: 0;
+}
+
+.card-button-img {
+	width: 30rpx;
+	height: 30rpx;
+	vertical-align: middle;
 }
 
 .butText {
@@ -163,7 +202,7 @@ export default {
 	width: 34rpx;
 	height: 34rpx;
 	position: absolute;
-	bottom: 20rpx;
+	bottom: 25rpx;
 	right: 20rpx;
 }
 
@@ -178,10 +217,30 @@ export default {
 	margin: 20rpx 20rpx 0 20rpx;
 	font-size: 24rpx;
 	background-color: transparent;
+	color: #fff;
+	opacity: 0.5;
 }
 
 /* 热门圈子 */
 .CircleHotItemBox {
 	margin-top: 40rpx;
+}
+
+/* 悬浮按钮 */
+.suspensionBut {
+	position: fixed;
+	bottom: 154rpx;
+	right: 30rpx;
+	width: 100rpx;
+	height: 100rpx;
+	/* border: 1rpx solid #fff; */
+	border-radius: 50%;
+	background-color: #433c59;
+	overflow: hidden;
+}
+
+.butImg {
+	width: 100%;
+	height: 100%;
 }
 </style>

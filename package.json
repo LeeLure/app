@@ -12,7 +12,7 @@
             "通用组件"
         ]
     },
-	"dependencies": {
-	  "uview-ui": "^2.0.33"
-	}
+    "dependencies": {
+        "uview-ui": "^2.0.33"
+    }
 }

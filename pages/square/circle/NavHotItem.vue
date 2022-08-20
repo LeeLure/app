@@ -7,7 +7,7 @@
 				<view class="user-name">{{ username }}</view>
 				<view class="time">{{ time }}前发布</view>
 			</view>
-			<view class="moreIcon"><image class="iconImg" src="../../../static/square/shudian.jpg" mode=""></image></view>
+			<view class="moreIcon"><image class="iconImg" src="../../../static/square/shudian.png" mode=""></image></view>
 		</view>
 
 		<!-- 图片位置 -->
@@ -38,10 +38,6 @@
 					<text class="praisetext">999</text>
 				</view>
 			</view>
-		</view>
-		<!-- 悬浮按钮 -->
-		<view class="suspensionBut">
-			<image class="butImg" src="../../../static/square/xuanfuanniu.jpg" mode=""></image>
 		</view>
 	</view>
 </template>
@@ -225,23 +221,5 @@ export default {
 	font-size: 22rpx;
 	vertical-align: middle;
 	margin-left: 10rpx;
-}
-
-/* 悬浮按钮 */
-.suspensionBut {
-	position: absolute;
-	bottom: 84rpx;
-	right: 20rpx;
-	width: 100rpx;
-	height: 100rpx;
-	/* border: 1rpx solid #fff; */
-	border-radius: 50%;
-	background-color: #433c59;
-	overflow: hidden;
-}
-
-.butImg {
-	width: 100%;
-	height: 100%;
 }
 </style>

@@ -2,13 +2,23 @@
 	<!-- 左侧菜单栏 -->
 	<scroll-view :style="{ height: windowHeight - 10 + 'rpx' }" scroll-y>
 		<view class="leftCategory" :style="{ height: windowHeight + 'rpx' }">
-			<view class="category" @tap="changeTab(index)" v-for="(item, index) in List" :key="item.index">
-				<view class="categroyItem">
-					<!-- 背景色 -->
-					<view :class="{ bgColor: isColor === item.index }"></view>
-					<view class="text">{{ item.title }}</view>
+			<template v-for="(item, index) in List">
+				<view
+					class="category"
+					@tap="changeTab(index)"
+					:class="[
+						{ itemBgcolor: isColor === item.index },
+						isColor === index - 1 ? 'borderBottom ' : isColor === index + 1 ? 'borderTop' : ''
+					]"
+					:key="item.index"
+				>
+					<view class="categroyItem">
+						<!-- 背景色 -->
+						<view :class="{ bgColor: isColor === item.index }"></view>
+						<view class="text">{{ item.title }}</view>
+					</view>
 				</view>
-			</view>
+			</template>
 		</view>
 	</scroll-view>
 </template>
@@ -49,7 +59,7 @@ export default {
 	display: flex;
 	position: relative;
 	height: 100rpx;
-	background-color: #29253c;
+	/* background-color: #29253c; */
 	/* border: 1rpx solid #ffffff; */
 	/* border-radius: 0 20rpx 20rpx 0; */
 }
@@ -59,6 +69,22 @@ export default {
 	height: 100rpx;
 	/* background-color: #1e1a32; */
 	background-image: linear-gradient(90deg, #7221ea 0%, #221c40 100%);
+}
+
+.category {
+	background-color: #29253c;
+}
+
+.itemBgcolor {
+	background-color: transparent;
+}
+
+.borderTop {
+	border-radius: 0 0 30rpx;
+}
+
+.borderBottom {
+	border-radius: 0 30rpx 0 0;
 }
 
 .category .text {
