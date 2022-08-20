@@ -13,13 +13,13 @@
 			开启有趣的人需要你的授权
 		</view>
 		<view class="text">
-			开启后，你的主页将在首页有趣的人中显示
+			 开启后，你的主页将在首页有趣的人中显示
 		</view>
 		<view class="text">
-			开启后，将会有更多的人发现你
+		 开启后，将会有更多的人发现你
 		</view>
 		<view class="text">
-			你可以随时在我的有趣的人中关闭授权
+		 你可以随时在我的有趣的人中关闭授权
 		</view>
 		<view class="open" @tap="open">
 			开启有趣的人
@@ -75,7 +75,7 @@
 
 	.text {
 		margin-top: 28rpx;
-		text-align: center;
+		margin-left: 148rpx;
 		color: rgba(255, 255, 255, 0.6);
 		font-size: 24rpx;
 	}

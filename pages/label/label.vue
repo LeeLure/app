@@ -28,8 +28,8 @@
 				</view>
 			</view>
 			<view class="category">
-				<view class="ac" :class="{ kun: checkedArrey.indexOf(i) != -1 }" v-for="(item,i) of items" :key="i"
-					@click="appointment(i)">
+				<view class="ac" :class="{ kun: checkedArrey.indexOf(item) != -1 }" v-for="(item,i) of items" :key="i"
+					@tap="appointment(item)">
 					<view class="">{{item.val}}</view>
 				</view>
 
@@ -46,15 +46,15 @@
 				</view>
 			</view>
 			<view class="category">
-				<view class="ac" :class="{ kun: checkedArrey1.indexOf(i) != -1 }" v-for="(item,i) of items1" :key="i"
-					@click="appointments(i)">
+				<view class="ac" :class="{ kun: checkedArrey1.indexOf(item) != -1 }" v-for="(item,i) of items1" :key="i"
+					@click="appointments(item)">
 					<view class="">{{item.val}}</view>
 				</view>
 
 			</view>
 
 		</view>
-		<view class="complete" @click="switchtab">
+		<view class="complete" @tap="switchtab">
 			完成
 		</view>
 
@@ -62,59 +62,62 @@
 </template>
 
 <script>
+	import {
+		enrollEssential,
+		infoTag
+	} from "@/config/api.js"
 	export default {
 		data() {
 			return {
 				items: [{
-						val: '情感'
-					},
-					{
-						val: '婚姻'
-					},
-					{
-						val: '亲子'
-					},
-					{
-						val: '个人'
+						val: '感性'
 					},
 					{
 						val: '心理'
 					},
 					{
-						val: '职场'
+						val: '倾诉'
 					},
-					{
-						val: '人际'
-					},
-					{
-						val: '情绪'
-					},
-					{
-						val: '两性'
-					}
+
 				],
 				items1: [{
-						val: '情感'
+						val: '电影'
 					},
 					{
-						val: '婚姻'
+						val: '游戏'
 					},
 					{
-						val: '亲子'
+						val: '旅行'
 					},
 					{
-						val: '婚姻'
+						val: '唱歌 '
 					},
 					{
-						val: '亲子'
+						val: '动漫'
 					},
 				],
 				checkedArrey: [],
 				checkedArrey1: [],
 				number: 0,
 				number1: 0,
+				val: "",
+				sexs: 0,
+				birthday: "",
+				nickName: "",
+				avatarUrl: "",
+				tagList: []
 
 			}
+		},
+		onLoad(options) {
+
+			const query = JSON.parse(options.query)
+			this.sexs = 0 + query.sex
+			this.birthday = query.birthday
+			this.nickName = query.nickName
+			this.avatarUrl = query.avatarUrl
+
+
 		},
 		methods: {
 			revert() {
@@ -123,6 +126,7 @@
 				})
 			},
 			appointment(index) {
+
 				let that = this;
 				if (that.checkedArrey.indexOf(index) == -1 && that.checkedArrey.length < 1) {
 					// console.log(index); //打印下标
@@ -137,8 +141,10 @@
 					that.checkedArrey.splice(that.checkedArrey.indexOf(index), 1); //取消
 				}
 				that.number = that.checkedArrey.length
-				console.log(that.number);
+				console.log("jjj", that.checkedArrey);
 			},
+
+
 			appointments(index) {
 				let that = this;
 				if (that.checkedArrey1.indexOf(index) == -1 && that.checkedArrey1.length < 3) {
@@ -157,12 +163,41 @@
 
 			},
 			switchtab() {
-				uni.reLaunch({
-					url: "/pages/home/home",
-					success:function(res){
-						console.log(res);
-					}
+
+				let query = {
+
+					birthday: this.birthday,
+					nickName: this.nickName,
+					avatarUrl: this.avatarUrl,
+					sex: 0
+				}
+				this.checkedArrey1.forEach((item, index) => { //js遍历数组
+					console.log("将00", item.val);
+					this.val = item.val
+					this.tagList.push(this.val)
+				});
+
+				console.log(this.tagList, "jj");
+				enrollEssential(
+					query
+				).then(() => {
+					infoTag({
+						tagList: this.tagList
+					}).then(res => {
+						uni.reLaunch({
+							url: "/pages/home/home",
+							success: function(res) {
+
+							}
+						})
+					})
 				})
+
+
+
+
+
+
 			}
 		}
 	}

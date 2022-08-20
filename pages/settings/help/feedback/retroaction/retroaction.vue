@@ -92,7 +92,7 @@
 		font-size: 24rpx;
 		color: rgba(255, 255, 255, 0.5);
 		position: absolute;
-		right: 30rpx;
+		right: 50rpx;
 		bottom: 26rpx;
 
 	}

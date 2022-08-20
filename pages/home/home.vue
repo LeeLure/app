@@ -22,7 +22,7 @@
 		<image src="@/static/home/youhui.png" class="favourableimage" @tap="business"></image>
 		<view class="Interesting">
 			<view class="people">有趣的人</view>
-			<view class="more">寻找更多有趣的人 ></view>
+			<view class="more" @tap="moreinteresting">寻找更多有趣的人 ></view>
 		</view>
 
 		<view class="jurisdiction" v-if="flag">
@@ -58,89 +58,72 @@
 								<view class="detailstext3">天蝎座</view>
 							</view>
 						</view>
-						<view class="collect"></view>
+						<view class="collect" @tap="collect(index)">
+							<image src="@/static/home/xihuan.png" class="likeimg"  v-if="activeArr.includes(index)"></image>
+							<image src="@/static/home/buxihhuan.png" class="likeimg" v-else></image>
+						</view>
 					</view>
 				</view>
 			</swiper-item>
 		</swiper>
-
 		<view class="Interesting">
 			<view class="people">动态</view>
-			<view class="more">更多动态 ></view>
+			<view class="more" @tap="moredynamic">更多动态 ></view>
 		</view>
-		<view class="particulars">
-			<view class="batten">
-				<view class="sculpture"><image src="@/static/home/lbt.png" class="sculptureimage"></image></view>
-				<view class="nickname">
-					<view class="nicknamename">想咋想</view>
-					<view class="nicknametime">3分钟前发布</view>
-				</view>
-			</view>
-			<view class="copywriting">海浪肯随山俯仰，风帆长共客飘摇</view>
-			<view class="flash"><image src="@/static/home/lbt.png" class="flashimage"></image></view>
-			<view class="crumbs"><view class="crumbsview">#治愈系风景</view></view>
-
-			<view class="partake">
-				<view class="partake1"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake2"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake3"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="conversation">1539人等参与了此话题</view>
-				<view class="praise" @tap="click">
-					<image src="@/static/home/dianzan.png" class="fabulous" v-if="!show"></image>
-					<image src="@/static/home/dianjishow.png" class="fabulous" v-if="show"></image>
-					<text class="praisetext">999</text>
-				</view>
-				<view class="praise">
-					<image src="@/static/home/pinglun.png" class="fabulous"></image>
-					<text class="praisetext">999</text>
-				</view>
-			</view>
-		</view>
-		<view class="particulars">
-			<view class="batten">
-				<view class="sculpture"><image src="@/static/home/lbt.png" class="sculptureimage"></image></view>
-				<view class="nickname">
-					<view class="nicknamename">想咋想</view>
-					<view class="nicknametime">3分钟前发布</view>
-				</view>
-			</view>
-			<view class="copywriting">海浪肯随山俯仰，风帆长共客飘摇</view>
-			<view class="flash"><image src="@/static/home/lbt.png" class="flashimage"></image></view>
-			<view class="crumbs"><view class="crumbsview">#治愈系风景</view></view>
-
-			<view class="partake">
-				<view class="partake1"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake2"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="partake3"><image src="@/static/home/lbt.png" class="partakeimage"></image></view>
-				<view class="conversation">1539人等参与了此话题</view>
-				<view class="praise">
-					<image src="@/static/login/qq.png" class="fabulous"></image>
-					<text class="praisetext">999</text>
-				</view>
-				<view class="praise">
-					<image src="@/static/login/qq.png" class="fabulous"></image>
-					<text class="praisetext">999</text>
-				</view>
-			</view>
-		</view>
-
+     <dynamic :imgUrl="imgUrl" :exhibit="exhibit"></dynamic>
 		<view class="kongbai"></view>
 	</view>
 </template>
 
 <script>
-// import tab from "@/components/tab.vue"
+	
+	import dynamic from "@/components/dynamic.vue"
 export default {
 	data() {
 		return {
-			info: [],
+
+			info: [
+				{
+					ima: '../../static/home/lbt.png'
+				},
+				{
+					ima: '../../static/home/lbt.png'
+				},
+				{
+					ima: '../../static/home/lbt.png'
+				}
+			],
+			imgUrl: [{
+					img: require("@/static/home/a.pic.jpg")
+				},
+				{
+					img: require("@/static/home/b.pic.jpg")
+				},
+				{
+					img: require("@/static/home/c.pic.jpg")
+				},
+				
+			
+			],
+			exhibit:true,
 			current: 0,
 			mode: 'round',
-			show: false,
+			isShow:false,
 			flag: true,
+			activeArr: [],
+			index: 0,
+
+			info: [],			
 			// 广告id
 			adId: 100
+
 		};
+	},
+	components: {
+		
+		
+		dynamic
+	
 	},
 	// components:{
 	// 	tab
@@ -153,9 +136,24 @@ export default {
 		change(e) {
 			this.current = e.detail.current;
 		},
-		click() {
-			const isShow = this.show ? false : true;
-			this.show = isShow;
+		
+		remove(arr, val) {
+			var index = arr.indexOf(val);
+			if (index > -1) {
+				arr.splice(index, 1);
+			}
+		},
+		collect(index) {
+			console.log(index);
+			
+			const activeArr = this.activeArr
+			if (activeArr.includes(index)) {
+				this.remove(activeArr,index)
+			} else {
+				activeArr.push(index)
+			}
+			this.activeArr = activeArr
+		
 		},
 		// 跳转商家优惠页面
 		business() {
@@ -168,21 +166,33 @@ export default {
 			this.flag = false;
 		},
 
+		// 跳转更多动态
+		moredynamic(){
+			uni.navigateTo({
+				url:'/pages/home/moredynamic/moredynamic'
+			})
+		},
+		moreinteresting(){
+			uni.navigateTo({
+				url:'/pages/home/moreinteresting/moreinteresting'
+			})
+},
 		// 获取广告列表
 		async getAdList() {
 			const res = await uni.$u.http.get(`/ad/list/${this.adId}`);
 			console.log(res);
 			this.info = res;
+
 		}
 	}
-};
+
+}
 </script>
 
 <style>
-.a {
+.a{
 	color: white;
 }
-
 .head {
 	display: flex;
 	/* margin-top: 10rpx;s */
@@ -260,13 +270,13 @@ export default {
 	content: '';
 	flex-grow: 1;
 	width: 22rpx;
-	background: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 8rpx;
 }
 .swiper-box .uni-swiper-dot-active {
 	width: 32upx !important;
 	height: 8upx !important;
-	background: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 1);
 	border-radius: 4rpx;
 }
 
@@ -291,7 +301,6 @@ export default {
 	margin-left: 22rpx;
 	/* margin-top: 22rpx; */
 }
-
 .Interesting {
 	display: flex;
 	justify-content: space-between;
@@ -313,7 +322,6 @@ export default {
 	color: rgba(255, 255, 255, 0.5);
 	margin-top: 10rpx;
 }
-
 .swiperbox {
 	/* border: 1px  solid red; */
 
@@ -347,7 +355,6 @@ export default {
 	width: 328rpx;
 	height: 460rpx;
 }
-
 .synopsis2 {
 	width: 328rpx;
 	height: 460rpx;
@@ -414,151 +421,23 @@ export default {
 	margin-left: 15rpx;
 	margin-right: 15rpx;
 }
-
 .collect {
 	width: 126rpx;
 	height: 126rpx;
+	
 	background: linear-gradient(180deg, #b043fa 0%, #7222eb 100%);
 	border-radius: 65rpx;
 	margin-top: 30rpx;
 	margin-left: 70rpx;
 }
-
-.particulars {
-	width: 706rpx;
-	margin-left: 22rpx;
-	margin-top: 28rpx;
+.likeimg{
+	width: 60rpx;
+	height: 60rpx;
+	display: block;
+	margin-top: 33rpx;
+	margin-left:33rpx;
 }
 
-.batten {
-	display: flex;
-}
-
-.sculpture {
-	width: 84rpx;
-	height: 84rpx;
-	border-radius: 41rpx;
-	overflow: hidden;
-}
-
-.sculptureimage {
-	width: 84rpx;
-	height: 84rpx;
-}
-
-.nickname {
-	margin-top: 10rpx;
-	margin-left: 20rpx;
-}
-
-.nicknamename {
-	font-size: 28rpx;
-	font-family: PingFang SC-Regular, PingFang SC;
-}
-
-.nicknametime {
-	font-size: 24rpx;
-	color: rgba(255, 255, 255, 0.5);
-}
-
-.copywriting {
-	margin-top: 22rpx;
-	font-size: 32rpx;
-	font-family: PingFang SC-Regular, PingFang SC;
-}
-
-.flash {
-	/* width:706rpx; */
-	height: 412rpx;
-	margin-top: 22rpx;
-	border-radius: 30rpx;
-}
-
-.flashimage {
-	width: 706rpx;
-	height: 412rpx;
-	border-radius: 30rpx;
-}
-
-.crumbs {
-	margin-top: 34rpx;
-}
-
-.crumbsview {
-	display: inline-block;
-	padding: 10rpx 25rpx;
-	height: 30rpx;
-	line-height: 30rpx;
-	border-radius: 20rpx;
-	background-color: #403b5b;
-	font-size: 28rpx;
-	margin-right: 20rpx;
-}
-
-.partake {
-	display: flex;
-	position: relative;
-	margin-top: 20rpx;
-}
-
-.partake1 {
-	width: 40rpx;
-	height: 40rpx;
-	border-radius: 30rpx;
-	border: 1rpx solid white;
-}
-
-.partake2 {
-	width: 40rpx;
-	height: 40rpx;
-	border-radius: 30rpx;
-	position: absolute;
-	left: 25rpx;
-	border: 1rpx solid white;
-}
-
-.partake3 {
-	width: 40rpx;
-	height: 40rpx;
-	border-radius: 30rpx;
-	position: absolute;
-	left: 45rpx;
-	border: 1rpx solid white;
-}
-
-.partakeimage {
-	width: 40rpx;
-	height: 40rpx;
-	border-radius: 30rpx;
-}
-
-.conversation {
-	font-size: 22rpx;
-	color: rgba(255, 255, 255, 0.5);
-	margin-left: 60rpx;
-	margin-top: 10rpx;
-}
-
-.praise {
-	margin-left: 90rpx;
-	width: 100rpx;
-}
-
-.fabulous {
-	width: 32rpx;
-	height: 30rpx;
-	vertical-align: middle;
-}
-
-.praisetext {
-	font-size: 22rpx;
-	vertical-align: middle;
-	margin-left: 10rpx;
-}
-
-.kongbai {
-	height: 50rpx;
-}
 .jurisdiction {
 	width: 706rpx;
 	height: 650rpx;
@@ -593,5 +472,8 @@ export default {
 	border-radius: 54rpx;
 	margin-left: 140rpx;
 	margin-top: 64rpx;
+}
+.kongbai {
+	height: 80rpx;
 }
 </style>

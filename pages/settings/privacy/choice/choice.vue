@@ -13,7 +13,7 @@
 					<image src="@/static/settings/duigou.png" class="gotoimage"></image>
 				</view>
 			</view>
-			<view class="fitlist  border" @tap="flag2(true)">
+			<view class="fitlist" @tap="flag2(true)">
 				<view class="kind">
 					我
 				</view>

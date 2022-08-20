@@ -1,7 +1,7 @@
 <template>
 
 	<scroll-view scroll-x="true" class="scroll">
-		<view class="lists">
+		<view class="lists" @tap="release">
 			<image src="@/static/user/fabu.png" class="listimgs"></image>
 			<view class="rolltext">
 				我发布的
@@ -37,6 +37,11 @@
 			}
 		},
 		methods: {
+			release(){
+				uni.navigateTo({
+					url:'/pages/user/release/release'
+				})
+			},
 			Interesting() {
 				uni.navigateTo({
 					url: '/pages/user/Interesting/Interesting'

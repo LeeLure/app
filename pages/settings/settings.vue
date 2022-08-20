@@ -178,5 +178,6 @@
 		color: #F64D4D;
 		margin-top: 40rpx;
 		font-size: 28rpx;
+		border-radius: 30rpx;
 	}
 </style>

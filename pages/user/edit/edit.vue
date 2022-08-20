@@ -15,14 +15,29 @@
 				{{item.text}}
 			</view>
 			<view class="modifyname">
-			<input type="text"  v-model="value" maxlength="10"  class="modifyinput" v-if="index==0?true:false">
+			<input type="text"  v-model="value" maxlength="10"  class="modifyinput" v-if="index==0?true:false" @input="modifyname">
 			<view class="modifyinput" v-else>
 				546546g
 			</view>
 			<image src="@/static/settings/jinnru.png" class="getintoimg"></image>		
 			</view>			
+		</view>			
 		</view>
 		
+		<view class="entering" >
+			<view class="number">
+				个性签名:
+			</view>
+			<textarea v-model="detail.value" placeholder="" placeholder-class="placeholder" maxlength="50"
+				class="textarea" @input="texts"></textarea>
+			
+		</view>
+		
+		<view class="complete" v-if="show">
+			完成
+		</view>
+		<view class="completes"  v-else @tap="complete">
+			完成
 		</view>
 	</view>
 </template>
@@ -48,17 +63,44 @@
 					}, 
 				
 				],
+				detail: {
+					value: '',
+				
+				},
+				show:true
 				
 				
 			}
+		},
+		computed: {
+			
 		},
 		components: {
 			navigation,
 			
 		},
 		methods: {
-			a(){
-				console.log("as",this.text);
+			
+			texts() {
+				
+				if (this.detail.value.length == 50||this.detail.value.length >50) {
+					console.log(1);
+					uni.showToast({
+						title: '最多输入50字',
+						duration: 1500,
+						icon: 'none'
+					});
+					
+				}
+				this.show=false
+				return this.detail.value.length
+				
+			},
+			modifyname(){
+				this.show=false
+			},
+			complete(){
+				console.log("完成");
 			}
 		}
 	}
@@ -99,7 +141,7 @@
 	
 	font-size: 28rpx;
 	color: rgba(255, 255, 255, 0.5);
-}
+} 
 .modifyinput{
 	
 	font-size: 28rpx;
@@ -113,4 +155,68 @@
 	margin-top: 10rpx;
 	margin-left: 20rpx;
 }
+
+.entering {
+	position: relative;
+		font-size: 28rpx;
+		color: rgba(255, 255, 255, 0.8);
+		/* border: 1px solid red; */
+		margin-top: 100rpx;
+	}
+
+	.textarea {
+		text-indent: 130rpx;
+		
+	   text-align: left;
+		font-size: 28rpx;
+		width: 680rpx;
+		height: 120rpx;
+		
+		border-radius: 20rpx;
+		margin-left: 20rpx;
+		padding-top: 10rpx;
+		
+		padding-right: 18rpx;
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.placeholder {
+		font-size: 24rpx;
+		color: rgba(255, 255, 255, 0.5);
+
+	}
+.number {
+		font-size: 28rpx;
+		color: rgba(255, 255, 255, 0.8);
+		position: absolute;
+		left: 20rpx;
+		top: 10rpx;
+
+	}
+	.complete{
+		margin-top: 100rpx;
+		width: 428rpx;
+		height: 106rpx;
+		line-height: 106rpx;
+		background-color:#99999938;
+		border-radius: 54rpx;
+		margin-left: 162rpx;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.2);
+		font-size: 32rpx;
+		font-weight: 500;
+	}
+	.completes{
+		margin-top: 100rpx;
+		width: 428rpx;
+		height: 106rpx;
+		line-height: 106rpx;
+		text-align: center;
+		background-color: #D53EDA;
+		border-radius: 54rpx;
+		margin-left: 162rpx;
+		color: white;
+		font-size: 32rpx;
+		font-weight: 500;
+	}
 </style>

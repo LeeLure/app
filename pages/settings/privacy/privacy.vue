@@ -3,7 +3,7 @@
 		<view class="bar">
 		</view>
 		<!-- 导航栏 -->
-		<navigation :title="title"></navigation>
+		<navigation :title="title" ></navigation>
 		<view class="advises">
 			动态
 		</view>
@@ -97,6 +97,9 @@
 			</view>
 
 		</view>
+		
+		
+		
 		<view class="kongbai">
 
 		</view>
@@ -132,11 +135,12 @@
 </script>
 
 <style>
+	
 	.fit {
 		color: white;
 		border-radius: 30rpx;
 		background-color: #29253C;
-		margin-top: 40rpx;
+		margin-top: 30rpx;
 	}
 
 	.fitlist {
@@ -173,7 +177,7 @@
 	}
 
 	.advises {
-		margin-top: 20rpx;
+		margin-top: 30rpx;
 		margin-left: 34rpx;
 		font-size: 28rpx;
 		color: rgba(255, 255, 255, 0.5);
