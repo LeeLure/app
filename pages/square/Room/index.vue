@@ -12,13 +12,13 @@
 		<!-- 搜索框 -->
 		<Search></Search>
 
-		<view class="item-list">
+		<view class="item-list" :style="{ height: windowHeight - 10 + 'rpx' }">
 			<!-- 左侧菜单 -->
-			<LeftCategory class="LeftCategory" :List="List"></LeftCategory>
+			<LeftCategory class="LeftCategory" :windowHeight="windowHeight" :List="List"></LeftCategory>
 
 			<!-- 右侧房间列表 -->
-			<scroll-view class="scroll-view" scroll-y>
-				<view class="RightRoomItem">
+			<view class="RightRoomItem">
+				<scroll-view class="scroll-view" scroll-y :style="{ height: windowHeight - 10 + 'rpx' }">
 					<RoomItem class="RoomItem" v-for="item in 6">
 						<template #img>
 							<view class="roomImg"><image src="../../../static/square/item-1.jpg" mode=""></image></view>
@@ -35,8 +35,8 @@
 							</view>
 						</template>
 					</RoomItem>
-				</view>
-			</scroll-view>
+				</scroll-view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -57,6 +57,7 @@ export default {
 	data() {
 		return {
 			title: '更多房间',
+			windowHeight: 0,
 			List: [
 				{ title: '推荐房间', index: 0 },
 				{ title: '推荐房间', index: 1 },
@@ -77,7 +78,20 @@ export default {
 			]
 		};
 	},
-	methods: {}
+
+	onLoad() {
+		this.getWindowHeight();
+	},
+
+	methods: {
+		// 获取屏幕高度
+		getWindowHeight() {
+			const res = uni.getSystemInfoSync();
+			// console.log(res);
+			this.windowHeight = res.windowHeight * 2 - 176;
+			// console.log(this.windowHeight);
+		}
+	}
 };
 </script>
 
@@ -99,6 +113,7 @@ export default {
 .item-list {
 	display: flex;
 	justify-content: space-between;
+	/* overflow: hidden; */
 }
 
 /* 左侧菜单组件 */
@@ -158,14 +173,18 @@ export default {
 
 /* 右侧菜单 */
 .scroll-view {
-	margin-left: 40rpx;
+	/* margin-left: 20rpx; */
 }
 
 .RightRoomItem {
-	height: 1130rpx;
+	/* height: 1130rpx; */
+
+	padding-right: 30rpx;
+	margin-top: 30rpx;
+	padding-bottom: 30rpx;
 }
 
 .RoomItem {
-	margin-top: 30rpx;
+	margin-bottom: 30rpx;
 }
 </style>

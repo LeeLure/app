@@ -1,6 +1,6 @@
 <template>
 	<!-- 广场页面 -->
-	<view class="square">
+	<view>
 		<view class="bar"></view>
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
@@ -8,24 +8,24 @@
 		<view class="gameImg"><image src="../../../make_friends/static/square/saishi.jpg.jpg" alt="" /></view>
 
 		<!-- 发现圈子 -->
-		<view class="Interesting">
+		<view class="Interesting2">
 			<view class="people">发现圈子</view>
 			<view class="more" @tap="toMoreCircles">
-				更多圈子
+				更多圈子 &nbsp;>
 				<!-- 小箭头 -->
-				<view class="iconImg">
-					<image class="moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image>
-				</view>
+				<!-- <view class="iconImg"> -->
+				<!-- <image class="moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image> -->
+				<!-- </view> -->
 			</view>
 		</view>
 
 		<!-- 圈子 -->
 		<view class="cirTop">
-			<CirItem class="itemTop" />
+			<CirItem class="itemTop" v-for="item in 10" />
 			<CirItem class="itemBot" />
 		</view>
 		<view class="cirBot">
-			<CirItem class="itemTop" />
+			<CirItem class="itemTop" v-for="item in 10" />
 			<CirItem class="itemBot" />
 		</view>
 
@@ -40,29 +40,48 @@
 
 				<!-- 更多房间 -->
 				<view class="moreRoom" @tap="toMoreRoom">
-					更多房间
+					更多房间 &nbsp;>
 					<!-- 小箭头 -->
-					<view class="room-iconImg">
-						<image class="room-moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image>
-					</view>
+					<!-- <view class="room-iconImg"> -->
+					<!-- <image class="room-moreIcon" src="../../../make_friends/static/square/more.png" mode=""></image> -->
+					<!-- </view> -->
 				</view>
 			</view>
 			<!-- 即将开始 -->
-			<view class="nav_item" v-if="isActive === 0">
-				<view class="itemnames">
+			<!-- <view class="nav-bgcolor"> -->
+			<swiper :style="{ height: windowHeight + 'rpx' }" class="swiper" @change="checkedSwiper" :current="isActive">
+				<swiper-item>
 					<!-- 房间列表组件 -->
-					<RoomItem v-for="item in 4">
-						<template #img>
-							<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
-						</template>
-						<template #title>
-							<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
-						</template>
-					</RoomItem>
-				</view>
-			</view>
-			<!-- 活动房间 -->
-			<view class="nav_item" v-if="isActive === 1">活动房间</view>
+					<scroll-view :style="{ height: windowHeight + 'rpx' }" scroll-y>
+						<view class="RoomItem">
+							<RoomItem v-for="item in 6">
+								<template #img>
+									<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
+								</template>
+								<template #title>
+									<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+								</template>
+							</RoomItem>
+						</view>
+					</scroll-view>
+				</swiper-item>
+				<!-- 活动房间 -->
+				<swiper-item>
+					<scroll-view :style="{ height: windowHeight + 'rpx' }" scroll-y>
+						<view class="RoomItem">
+							<RoomItem v-for="item in 6">
+								<template #img>
+									<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
+								</template>
+								<template #title>
+									<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+								</template>
+							</RoomItem>
+						</view>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
+			<!-- </view> -->
 		</view>
 	</view>
 </template>
@@ -83,15 +102,25 @@ export default {
 			// 控制小三角的变量
 			isTriangle2: false,
 			isActive: 0,
+			windowHeight: 0,
 			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }]
 		};
 	},
+
+	onLoad() {
+		this.getWindowHeight();
+	},
+
 	methods: {
 		// 跳转到更多圈子
 		toMoreCircles() {
 			uni.navigateTo({
 				url: '/pages/square/circle/MoreCircles'
 			});
+		},
+
+		checkedSwiper(e) {
+			this.isActive = e.detail.current;
 		},
 
 		checked(index) {
@@ -102,17 +131,29 @@ export default {
 			uni.navigateTo({
 				url: '/pages/square/Room/index'
 			});
+		},
+
+		// 获取屏幕高度
+		getWindowHeight() {
+			const res = uni.getSystemInfoSync();
+			// console.log(res);
+			this.windowHeight = res.windowHeight * 2 - 760;
+			// console.log(this.windowHeight);
 		}
 	}
 };
 </script>
 
 <style>
-.square {
-	padding-bottom: 20rpx;
+.Interesting {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 22rpx;
+	margin-right: 22rpx;
+	/* margin-top: 34rpx; */
 }
 
-.Interesting {
+.Interesting2 {
 	display: flex;
 	justify-content: space-between;
 	margin-left: 22rpx;
@@ -138,7 +179,9 @@ export default {
 .gameImg {
 	width: 710rpx;
 	height: 178rpx;
-	margin-left: 20rpx;
+	margin: 18rpx 0 0 20rpx;
+	border-radius: 30rpx;
+	overflow: hidden;
 	/* margin: 18rpx 20rpx 0 20rpx; */
 }
 
@@ -152,12 +195,6 @@ export default {
 	height: 20rpx;
 }
 
-.moreIcon {
-	width: 100%;
-	height: 100%;
-	background-color: transparent;
-}
-
 /* 圈子 */
 
 .cirTop,
@@ -166,11 +203,28 @@ export default {
 }
 
 .cirTop {
+	width: 100%;
 	margin-top: 40rpx;
+	animation: move 10s infinite linear;
+	animation-fill-mode: backwards;
+}
+
+@keyframes move {
+	to {
+		transform: translateX(-1820rpx);
+	}
+}
+
+@keyframes move-bot {
+	to {
+		transform: translateX(-1820rpx);
+	}
 }
 
 .cirBot {
 	margin-top: 12rpx;
+	animation: move-bot 10s infinite linear;
+	/* animation-delay: -100rpx; */
 }
 
 .itemTop {
@@ -192,6 +246,7 @@ export default {
 /* Tab */
 .tab {
 	margin-top: 40rpx;
+	/* min-height: 1000rpx; */
 	background-color: #29253c;
 	border-radius: 30rpx 30rpx 0 0;
 	/* border: 1px solid red; */
@@ -214,7 +269,7 @@ export default {
 	font-size: 28rpx;
 	width: 164rpx;
 	height: 58rpx;
-	margin: 36rpx 60rpx 25rpx 0;
+	margin: 36rpx 60rpx 35rpx 0;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	color: #ffffff;
 }
@@ -242,20 +297,25 @@ export default {
 }
 
 /* 房间列表组件 */
-.itemnames {
+
+.swiper {
+	height: 470rpx;
+	/* margin-bottom: 10rpx; */
+}
+
+.RoomItem {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin-top: 28rpx;
 	padding: 0 20rpx;
-	/* border: 1rpx solid #ffffff; */
 }
 
 .item {
 	display: flex;
 	width: 340rpx;
 	height: 479rpx;
-	margin-top: 32rpx;
+	/* margin-top: 28rpx; */
+	margin-bottom: 28rpx;
 	border-radius: 30rpx 30rpx 30rpx 30rpx;
 	overflow: hidden;
 }
@@ -282,7 +342,7 @@ export default {
 	font-size: 22rpx;
 	color: #ffffff;
 	opacity: 0.5;
-	margin: 55rpx 18rpx 0 0;
+	margin: 48rpx 18rpx 0 0;
 }
 
 .room-iconImg {

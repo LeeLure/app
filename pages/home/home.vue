@@ -13,8 +13,8 @@
 		</view>
 
 		<swiper class="swiper-box" @change="change" circular :autoplay="true" :interval="3000" indicator-dots>
-			<swiper-item v-for="(item, index) in info" :key="index">
-				<view class="swiper-item"><image :src="item.ima" class="swiper-item-image"></image></view>
+			<swiper-item v-for="(item, index) in info" :key="item.id">
+				<view class="swiper-item"><image :src="item.pic" class="swiper-item-image"></image></view>
 			</swiper-item>
 		</swiper>
 
@@ -81,6 +81,7 @@
 export default {
 	data() {
 		return {
+
 			info: [
 				{
 					ima: '../../static/home/lbt.png'
@@ -111,6 +112,11 @@ export default {
 			flag: true,
 			activeArr: [],
 			index: 0,
+
+			info: [],			
+			// 广告id
+			adId: 100
+
 		};
 	},
 	components: {
@@ -124,6 +130,7 @@ export default {
 	// },
 	onLoad() {
 		// uni.hideTabBar()
+		this.getAdList();
 	},
 	methods: {
 		change(e) {
@@ -158,6 +165,7 @@ export default {
 		state() {
 			this.flag = false;
 		},
+
 		// 跳转更多动态
 		moredynamic(){
 			uni.navigateTo({
@@ -168,9 +176,17 @@ export default {
 			uni.navigateTo({
 				url:'/pages/home/moreinteresting/moreinteresting'
 			})
+},
+		// 获取广告列表
+		async getAdList() {
+			const res = await uni.$u.http.get(`/ad/list/${this.adId}`);
+			console.log(res);
+			this.info = res;
+
 		}
 	}
-};
+
+}
 </script>
 
 <style>
@@ -254,13 +270,13 @@ export default {
 	content: '';
 	flex-grow: 1;
 	width: 22rpx;
-	background: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 8rpx;
 }
 .swiper-box .uni-swiper-dot-active {
 	width: 32upx !important;
 	height: 8upx !important;
-	background: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 1);
 	border-radius: 4rpx;
 }
 

@@ -51,7 +51,7 @@ export default {
 	width: 50rpx;
 	height: 50rpx;
 	line-height: 50rpx;
-	margin: 28rpx 0 0 100rpx;
+	margin: 30rpx 0 0 100rpx;
 	overflow: hidden;
 }
 

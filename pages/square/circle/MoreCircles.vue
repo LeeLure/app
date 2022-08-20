@@ -12,18 +12,18 @@
 		<Search></Search>
 
 		<!-- 菜单 -->
-		<view class="list">
+		<view class="list" :style="{ height: windowHeight - 10 + 'rpx' }">
 			<!-- 左侧菜单栏 -->
-			<LeftCategory :List="List"></LeftCategory>
+			<LeftCategory :windowHeight="windowHeight" :List="List"></LeftCategory>
 
 			<!-- 右侧卡片 -->
 			<scroll-view scroll-y>
 				<view class="rightCategory">
-					<view class="card" v-for="item in 10" @tap="toCircleHomePage(item)">
+					<view class="card" v-for="item in 15" @tap="toCircleHomePage(item)">
 						<view class="card-img"><image src="../../../static/home/a.pic.jpg" mode=""></image></view>
 						<view class="card-text">
 							<!-- 文字标题 -->
-							<view class="card-title">英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟</view>
+							<view class="card-title">英雄联盟英雄联盟英雄英雄联盟英雄联盟英雄联盟英雄联盟</view>
 							<!-- 中间数据 -->
 							<view class="card-data">12345W圈友</view>
 							<!-- 下方文字 -->
@@ -36,7 +36,6 @@
 				</view>
 			</scroll-view>
 		</view>
-		<!-- ------- -->
 	</view>
 </template>
 
@@ -54,6 +53,7 @@ export default {
 	data() {
 		return {
 			title: '发现圈子',
+			windowHeight: 0,
 			List: [
 				{ title: '推荐圈子', index: 0 },
 				{ title: '推荐圈子', index: 1 },
@@ -70,9 +70,16 @@ export default {
 				{ title: '推荐圈子', index: 12 },
 				{ title: '推荐圈子', index: 13 },
 				{ title: '推荐圈子', index: 14 },
-				{ title: '推荐圈子', index: 15 }
+				{ title: '推荐圈子', index: 15 },
+				{ title: '推荐圈子', index: 16 },
+				{ title: '推荐圈子', index: 17 },
+				{ title: '推荐圈子', index: 18 }
 			]
 		};
+	},
+
+	onLoad() {
+		this.getWindowHeight();
 	},
 
 	methods: {
@@ -91,6 +98,14 @@ export default {
 			uni.navigateTo({
 				url: '/pages/square/circle/CircleHomePage'
 			});
+		},
+
+		// 获取屏幕高度
+		getWindowHeight() {
+			const res = uni.getSystemInfoSync();
+			// console.log(res);
+			this.windowHeight = res.windowHeight * 2 - 176;
+			// console.log(this.windowHeight);
 		}
 	}
 };
@@ -121,7 +136,7 @@ export default {
 /* 右侧菜单 */
 .rightCategory {
 	width: 554rpx;
-	height: 952rpx;
+	/* height: 952rpx; */
 	margin-left: 20rpx;
 }
 
@@ -129,7 +144,7 @@ export default {
 	display: flex;
 	width: 100%;
 	position: relative;
-	margin-top: 30rpx;
+	margin-top: 20rpx;
 	height: 136rpx;
 	/* border: 1rpx solid #fffff; */
 }
