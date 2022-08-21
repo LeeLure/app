@@ -2,7 +2,7 @@
 	<!-- 活跃榜第四名后的排名 -->
 	<view class="">
 		<view class="lastRanking">
-			<view class="rank" v-for="(item, index) in 6" :key="index">
+			<view class="rank" v-for="(item, index) in 20" :key="index">
 				<view class="rankLeft">
 					<view class="rankNum">{{ index + 4 }}</view>
 					<view class="user">
@@ -37,7 +37,7 @@
 .rank {
 	display: flex;
 	justify-content: space-between;
-	margin: 38rpx 24rpx 38rpx 40rpx;
+	margin: 38rpx 20rpx 38rpx 20rpx;
 }
 
 .rankLeft {
@@ -48,9 +48,12 @@
 }
 
 .rankNum {
+	width: 30rpx;
 	font-size: 32rpx;
 	color: #ffffff;
-	margin-right: 24rpx;
+	margin-right: 34rpx;
+	text-align: center;
+	/* border: 1rpx solid seagreen; */
 }
 
 .user {
@@ -102,14 +105,18 @@
 }
 
 .user-icon-img {
-	width: 16rpx;
-	height: 16rpx;
+	position: relative;
+	width: 20rpx;
+	height: 20rpx;
 }
 
 .user-icon-img image {
-	width: 100%;
-	height: 100%;
-	margin: 0 34rpx 0 15rpx;
+	position: absolute;
+	left: 10rpx;
+	top: 5rpx;
+	width: 150%;
+	height: 150%;
+	/* margin: 0 34rpx 0 15rpx; */
 }
 
 .rankRight .text {
