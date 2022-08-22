@@ -30,7 +30,7 @@ export default {
 	methods: {
 		// 跳转房间详情
 		toRoomDetail() {
-			uni.showToast({});
+			// uni.showToast({});
 			uni.navigateTo({
 				url: '/pages/square/Room/RoomDetail/index'
 			});

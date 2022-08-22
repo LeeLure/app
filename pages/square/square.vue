@@ -147,7 +147,7 @@ export default {
 
 		setTimeout(() => {
 			this.isAnimation = true;
-		}, 300);
+		}, 450);
 	},
 
 	methods: {

@@ -12,13 +12,13 @@
 		<!-- 搜索框 -->
 		<Search></Search>
 
-		<view class="item-list" :style="{ height: windowHeight - 10 + 'rpx' }">
+		<view class="item-list" :style="{ height: windowHeight + 2 + 'rpx' }">
 			<!-- 左侧菜单 -->
 			<LeftCategory class="LeftCategory" :windowHeight="windowHeight" :List="List"></LeftCategory>
 
 			<!-- 右侧房间列表 -->
 			<view class="RightRoomItem">
-				<scroll-view class="scroll-view" scroll-y :style="{ height: windowHeight - 10 + 'rpx' }">
+				<scroll-view class="scroll-view" scroll-y :style="{ height: windowHeight - 8 + 'rpx' }">
 					<RoomItem class="RoomItem" v-for="item in 6">
 						<template #img>
 							<view class="roomImg"><image src="../../../static/square/item-1.jpg" mode=""></image></view>
@@ -88,7 +88,7 @@ export default {
 		getWindowHeight() {
 			const res = uni.getSystemInfoSync();
 			// console.log(res);
-			this.windowHeight = res.windowHeight * 2 - 176;
+			this.windowHeight = res.windowHeight * 2 - 188;
 			// console.log(this.windowHeight);
 		}
 	}
