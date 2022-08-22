@@ -1,28 +1,28 @@
 <template>
 	<view class="tagButBox">
-		<button class="tagBut" @tap="toListActive">
+		<view class="tagBut" @tap="toListActive">
 			<view class="partake">
 				<image src="../../../static/home/lbt.png" class="partakeimage1"></image>
 				<image src="../../../static/home/lbt.png" class="partakeimage2"></image>
 				<image src="../../../static/home/lbt.png" class="partakeimage3"></image>
 			</view>
 			<view class="butTextBox">
-				<view class="tagButText">活跃榜</view>
-				<view class="tagButTextImg"><image src="../../../static/square/more.png" mode=""></image></view>
+				<view class="ButText">活跃榜</view>
+				<view class="ButTextImg"><image src="../../../static/square/more-right.png" mode=""></image></view>
 			</view>
-		</button>
+		</view>
 		<!-- 第二个 -->
-		<button class="tagBut" @tap="toTopicMain">
+		<view class="tagBut" @tap="toTopicMain">
 			<view class="partake">
 				<image src="../../../static/home/lbt.png" class="partakeimage1"></image>
 				<!-- <image src="../../../static/home/lbt.png" class="partakeimage2"></image> -->
 				<!-- <image src="../../../static/home/lbt.png" class="partakeimage3"></image> -->
 			</view>
 			<view class="butTextBox">
-				<view class="tagButText">圈主</view>
-				<view class="tagButTextImg"><image src="../../../static/square/more.png" mode=""></image></view>
+				<view class="ButText">圈主</view>
+				<view class="ButTextImg"><image src="../../../static/square/more-right.png" mode=""></image></view>
 			</view>
-		</button>
+		</view>
 	</view>
 </template>
 
@@ -52,7 +52,7 @@ export default {
 .tagButBox {
 	display: flex;
 	/* justify-content: space-between; */
-	margin: 30rpx 10rpx 0 10rpx;
+	margin: 30rpx 20rpx 0 20rpx;
 }
 
 .tagBut {
@@ -65,6 +65,10 @@ export default {
 	border-radius: 20rpx;
 	background-color: #706a81;
 	/* border: 1rpx solid #fff; */
+}
+
+.tagBut:first-child {
+	margin-right: 16rpx;
 }
 
 .partake {
@@ -81,7 +85,7 @@ export default {
 	height: 40rpx;
 	border-radius: 30rpx;
 	position: absolute;
-	/* border: 1rpx solid #fff; */
+	border: 1rpx solid #fff;
 }
 
 .partakeimage2 {
@@ -90,7 +94,7 @@ export default {
 	border-radius: 30rpx;
 	position: absolute;
 	left: 20rpx;
-	/* border: 1rpx solid #fff; */
+	border: 1rpx solid #fff;
 }
 
 .partakeimage3 {
@@ -99,32 +103,33 @@ export default {
 	border-radius: 30rpx;
 	position: absolute;
 	left: 40rpx;
+	border: 1rpx solid #fff;
 }
 
-.tagButText {
-	width: 72rpx;
-	/* height: 34rpx; */
-	position: relative;
-	padding-right: 8rpx;
-	color: white;
-	margin-top: 20rpx;
+.butTextBox {
+	display: flex;
+	/* border: 1rpx solid #fff; */
+}
+
+.ButText {
+	color: #fff;
 	font-size: 24rpx;
-	border-radius: 30rpx;
-	overflow: hidden;
+	margin-right: 24rpx;
 	/* border: 1rpx solid #fff; */
 }
 
-.tagButTextImg {
+.ButTextImg {
 	width: 20rpx;
 	height: 20rpx;
+	/* border: 1rpx solid #f0f; */
+	vertical-align: middle;
 }
 
-.tagButTextImg image {
-	position: absolute;
-	width: 20rpx;
-	height: 20rpx;
-	right: 20rpx;
-	bottom: 35rpx;
-	/* border: 1rpx solid #fff; */
+.ButTextImg image {
+	width: 100%;
+	height: 100%;
+	/* background-color: #fff; */
+	margin-bottom: 12rpx;
+	/* border: 1rpx solid #ff0; */
 }
 </style>

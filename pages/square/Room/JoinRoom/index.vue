@@ -10,13 +10,7 @@
 		<PeopleNumber></PeopleNumber>
 
 		<!-- tab -->
-		<NavTab></NavTab>
-
-		<!-- 商家信息 -->
-		<Business></Business>
-
-		<!-- 聊天输入框 -->
-		<ChatBottomBar></ChatBottomBar>
+		<NavTab :swiperheight="swiperheight"></NavTab>
 	</view>
 </template>
 
@@ -24,28 +18,31 @@
 import Navigation from './Navigation.vue';
 import PeopleNumber from './PeopleNumber.vue';
 import NavTab from './NavTab.vue';
-import Business from './Business.vue';
-import ChatBottomBar from '../../../tidings/chat-details/bottom-bar.vue';
 export default {
 	components: {
 		Navigation,
 		PeopleNumber,
-		NavTab,
-		Business,
-		ChatBottomBar
+		NavTab
 	},
 
 	data() {
 		return {
-			title: '无剧本杀不狂欢！一起来寻找真相...'
+			title: '无剧本杀不狂欢！一起来寻找真相...',
+			swiperheight: 0
 		};
 	},
+
+	onLoad() {
+		this.swiperheight = uni.getSystemInfoSync().windowHeight * 2;
+		console.log(this.swiperheight);
+	},
+
 	methods: {}
 };
 </script>
 
 <style>
 .join-room {
-	padding-bottom: 170rpx;
+	/* padding-bottom: 170rpx; */
 }
 </style>

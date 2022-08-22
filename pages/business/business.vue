@@ -223,11 +223,12 @@
 					activeArr.push(index)
 				}
 				this.activeArr = activeArr
+				console.log(this.activeArr);
 
 			},
 			details() {
 				uni.navigateTo({
-					url: "/pages/business/details"
+					url: "/pages/business/detalis/detalis"
 				})
 			},
 		

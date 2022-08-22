@@ -9,3 +9,7 @@ export const getMenu = (data) => http.get('/ebapi/public_api/index', data)
 
 export const enrollEssential=(params, config = {}) => http.post('/info/add', params, config)
 export const infoTag=(params, config = {}) => http.post('/info/tag', params, config)
+export const configInterestList=(params, config = {}) => http.get('/config/interest/list', params, config)
+
+
+// export const configInterestList= (data) => http.get('/config/interest/list', data)

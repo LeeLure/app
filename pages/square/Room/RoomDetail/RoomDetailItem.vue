@@ -26,20 +26,20 @@
 		<Activity></Activity>
 
 		<!-- 按钮 -->
-		<Button></Button>
+		<!-- <Button></Button> -->
 	</view>
 </template>
 
 <script>
 import Address from './Address.vue';
 import Activity from './Activity.vue';
-import Button from './Button.vue';
+// import Button from './Button.vue';
 import TeamNumber from './TeamNumber.vue';
 export default {
 	components: {
 		Address,
 		Activity,
-		Button,
+		// Button,
 		TeamNumber
 	},
 
@@ -117,6 +117,7 @@ export default {
 
 .RoomDetailItem .user-time {
 	font-size: 24rpx;
+	margin-top: 20rpx;
 	opacity: 0.6;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
-	<view class="button">
-		<button class="share"><view class="share-text">分享</view></button>
-		<button class="join" @tap="toJoinRoom">
-			<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
-			<view class="join-text">我要加入</view>
-		</button>
+	<view class="button-bgc">
+		<view class="button">
+			<button class="share"><view class="share-text" @click="onShare">分享</view></button>
+			<button class="join" @tap="toJoinRoom">
+				<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
+				<view class="join-text">我要加入</view>
+			</button>
+		</view>
 	</view>
 </template>
 
@@ -15,16 +17,24 @@ export default {
 			uni.navigateTo({
 				url: '/pages/square/Room/JoinRoom/index'
 			});
+		},
+
+		onShare() {
+			this.$emit('toShare');
 		}
 	}
 };
 </script>
 
 <style>
+.button-bgc {
+	background-color: transparent;
+}
+
 .button {
 	display: flex;
 	justify-content: space-between;
-	margin: 30rpx 0 10rpx 0;
+	/* margin: 30rpx 0 10rpx 0; */
 }
 
 .share {

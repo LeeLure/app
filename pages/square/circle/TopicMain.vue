@@ -1,6 +1,6 @@
 <template>
 	<!-- 话题主 -->
-	<view class="TopicMain">
+	<view class="TopicMain" :style="{ height: swiperheight + 'rpx' }">
 		<view class="bar"></view>
 		<view class="bgColor">
 			<!-- 导航栏 -->
@@ -8,20 +8,24 @@
 
 			<!-- 展示用户信息 -->
 			<view class="userInfo">
-				<!-- 放动画和头像的大盒子 -->
-				<view class="ani-ava">
-					<!-- 动画盒子 -->
-					<view class="ani">
-						<view class="bowen">
-							<view class="span2"></view>
-							<view class="span1"></view>
-							<view class="span"></view>
-						</view>
+				<!-- 动画盒子 -->
+				<view class="container ">
+					<view class="animationBox">
+						<view class="span" style="--i:1"></view>
+						<view class="span" style="--i:2"></view>
+						<view class="span" style="--i:3"></view>
+						<view class="span" style="--i:4"></view>
+						<view class="span" style="--i:5"></view>
+						<!-- <view class="span" style="--i:6"></view> -->
+						<!-- <view class="span" style="--i:7"></view> -->
+						<!-- <view class="span" style="--i:8"></view> -->
+						<!-- <view class="span" style="--i:9"></view> -->
+						<!-- <view class="span" style="--i:10"></view> -->
 					</view>
-
-					<!-- 头像盒子 -->
-					<view class="avata"><image class="avataImg" src="../../../static/home/b.pic.jpg" mode=""></image></view>
 				</view>
+
+				<!-- 头像盒子 -->
+				<view class="avata"><image class="avataImg" src="../../../static/home/b.pic.jpg" mode=""></image></view>
 
 				<!-- 标签盒子 -->
 				<view class="tags">
@@ -47,8 +51,22 @@ export default {
 	},
 
 	data() {
-		return {};
+		return {
+			swiperheight: 0
+		};
 	},
+
+	onLoad() {
+		var _this = this;
+		uni.getSystemInfo({
+			success(res) {
+				// console.log('屏幕高度 HH = ' + res.windowHeight);
+				// console.log('屏幕高度 HH222 = ' + res.windowHeight * 2);
+				_this.swiperheight = res.windowHeight * 2;
+			}
+		});
+	},
+
 	methods: {}
 };
 </script>
@@ -58,43 +76,68 @@ export default {
 	background-image: url(@/static/square/Topicmain.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 1500rpx;
+	/* height: 1500rpx; */
 }
 
 .userInfo {
 	position: relative;
+	/* border: 1rpx solid white; */
 }
 
 /* 大盒子 */
-.ani-ava {
+.container {
 	position: relative;
-	margin: 60rpx 90rpx 0 90rpx;
-	width: 568rpx;
-	height: 568rpx;
-	/* border: 1rpx solid #f0f; */
+	/* border: 1rpx solid pink; */
 }
 
-.ani {
+.animationBox {
+	width: 500rpx;
+	height: 500rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50rpx auto;
+	/* border: 1rpx solid brown; */
+}
+
+.container .animationBox .span {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: rgba(198, 227, 242, 0.25);
+	animation: animate 5s linear infinite;
+	animation-delay: calc(1s * var(--i));
+}
+
+@keyframes animate {
+	0% {
+		width: 370rpx;
+		height: 370rpx;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		width: 650rpx;
+		height: 650rpx;
+		opacity: 0;
+	}
 }
 
 .avata {
 	position: absolute;
-	width: 372rpx;
-	height: 372rpx;
-	background-color: #fff;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	overflow: hidden;
+	/* border: 1rpx solid seagreen; */
 }
 
 .avataImg {
-	width: 100%;
-	height: 100%;
+	width: 372rpx;
+	height: 372rpx;
+	border-radius: 50%;
 }
 
 /* 标签 */
@@ -119,6 +162,7 @@ export default {
 	height: 54rpx;
 	line-height: 54rpx;
 	border-radius: 26rpx;
+	background-color: #94cced;
 	/* border: 1rpx solid blue; */
 }
 
@@ -128,6 +172,7 @@ export default {
 	line-height: 54rpx;
 	margin-left: 362rpx;
 	border-radius: 26rpx;
+	background-color: #94cced;
 	/* border: 1rpx solid blue; */
 }
 
@@ -140,6 +185,7 @@ export default {
 	bottom: -415rpx;
 	/* margin-top: 338rpx; */
 	border-radius: 26rpx;
+	background-color: #94cced;
 	/* border: 1rpx solid blue; */
 }
 
@@ -154,95 +200,5 @@ export default {
 	text-align: center;
 	color: #fff;
 	font-size: 44rpx;
-}
-
-.bowen {
-	position: relative;
-	/* width: 100%; */
-	/* height: 100%; */
-	/* background-color: lawngreen; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.span {
-	position: absolute;
-	background-color: #cae2f5;
-	width: 372rpx;
-	height: 372rpx;
-	border: 1px solid #cae2f5;
-	box-sizing: border-box;
-	border-radius: 50%;
-	animation: animate 2s linear infinite;
-}
-
-.span1 {
-	position: absolute;
-	background-color: #b8dbf1;
-	width: 446rpx;
-	height: 446rpx;
-	border: 1px solid #b8dbf1;
-	box-sizing: border-box;
-	border-radius: 50%;
-	animation: animate1 2s linear infinite;
-}
-
-.span2 {
-	position: absolute;
-	background-color: #a3d0ee;
-	width: 476rpx;
-	height: 476rpx;
-	border: 1px solid #a3d0ee;
-	box-sizing: border-box;
-	border-radius: 50%;
-	animation: animate2 2s linear infinite;
-}
-
-@keyframes animate {
-	0% {
-		width: 372rpx;
-		height: 372rpx;
-		opacity: 1;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		width: 436rpx;
-		height: 436rpx;
-		opacity: 0;
-	}
-}
-
-@keyframes animate1 {
-	0% {
-		width: 436rpx;
-		height: 436rpx;
-		opacity: 1;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		width: 568rpx;
-		height: 568rpx;
-		opacity: 0;
-	}
-}
-
-@keyframes animate2 {
-	0% {
-		width: 568rpx;
-		height: 568rpx;
-		opacity: 1;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		width: 614rpx;
-		height: 614rpx;
-		opacity: 0;
-	}
 }
 </style>

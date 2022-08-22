@@ -5,7 +5,7 @@
 		<!-- 赛事活动 -->
 		<view class="Interesting"><view class="people">赛事活动</view></view>
 		<!-- 赛事活动的图片 -->
-		<view class="gameImg"><image src="../../../make_friends/static/square/saishi.jpg.jpg" alt="" /></view>
+		<view class="gameImg"><image src="../../static/square/activity.png" alt="" /></view>
 
 		<!-- 发现圈子 -->
 		<view class="Interesting2">
@@ -20,13 +20,21 @@
 		</view>
 
 		<!-- 圈子 -->
-		<view class="cirTop">
-			<CirItem class="itemTop" v-for="item in 10" />
-			<CirItem class="itemBot" />
+		<view class="circleSwiper">
+			<view class="circle">
+				<view class="circle-ul">
+					<CirItem class="circle-li" v-for="item in newCircleList" :circleList="item"></CirItem>
+				</view>
+			</view>
 		</view>
-		<view class="cirBot">
-			<CirItem class="itemTop" v-for="item in 10" />
-			<CirItem class="itemBot" />
+
+		<!-- 第二个 -->
+		<view class="circleSwiper2">
+			<view class="circle">
+				<view class="circle-ul-two">
+					<CirItem class="circle-li-two" v-for="item in newCircleList" :circleList="item"></CirItem>
+				</view>
+			</view>
 		</view>
 
 		<!-- Tab 栏 -->
@@ -47,6 +55,7 @@
 					<!-- </view> -->
 				</view>
 			</view>
+
 			<!-- 即将开始 -->
 			<!-- <view class="nav-bgcolor"> -->
 			<swiper :style="{ height: windowHeight + 'rpx' }" class="swiper" @change="checkedSwiper" :current="isActive">
@@ -54,7 +63,7 @@
 					<!-- 房间列表组件 -->
 					<scroll-view :style="{ height: windowHeight + 'rpx' }" scroll-y>
 						<view class="RoomItem">
-							<RoomItem v-for="item in 6">
+							<RoomItem v-for="item in 20">
 								<template #img>
 									<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
 								</template>
@@ -90,6 +99,7 @@
 // import tab from "@/components/tab.vue"
 import CirItem from './circle/CirItem.vue';
 import RoomItem from './Components/RoomItem.vue';
+
 export default {
 	components: {
 		// tab
@@ -103,12 +113,36 @@ export default {
 			isTriangle2: false,
 			isActive: 0,
 			windowHeight: 0,
-			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }]
+			windowWidth: 0,
+			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }],
+			// animationData: {},
+			circleList: [
+				{ id: 1, img: '../../../static/square/circle-1.jpg', title: '1150', info: '给你不一样音乐音乐的音乐' },
+				{ id: 2, img: '../../../static/square/circle-1.jpg', title: '1151', info: '给你不一样音乐音乐的音乐' },
+				{ id: 3, img: '../../../static/square/circle-1.jpg', title: '1152', info: '给你不一样音乐音乐的音乐' },
+				{ id: 4, img: '../../../static/square/circle-1.jpg', title: '1153', info: '给你不一样音乐音乐的音乐' },
+				{ id: 5, img: '../../../static/square/circle-1.jpg', title: '1154', info: '给你不一样音乐音乐的音乐' },
+				{ id: 6, img: '../../../static/square/circle-1.jpg', title: '1155', info: '给你不一样音乐音乐的音乐' },
+				{ id: 7, img: '../../../static/square/circle-1.jpg', title: '1156', info: '给你不一样音乐音乐的音乐' },
+				{ id: 8, img: '../../../static/square/circle-1.jpg', title: '1157', info: '给你不一样音乐音乐的音乐' },
+				{ id: 9, img: '../../../static/square/circle-1.jpg', title: '1158', info: '给你不一样音乐音乐的音乐' },
+				{ id: 10, img: '../../../static/square/circle-1.jpg', title: '1159', info: '给你不一样音乐音乐的音乐' }
+			],
+			newCircleList: []
 		};
 	},
 
 	onLoad() {
 		this.getWindowHeight();
+		// this.initCircleList();
+		// console.log(this.animationData);
+		// this.animation = uni.createAnimation();
+		// 创建动画实例
+		// this.running();
+
+		const list = JSON.parse(JSON.stringify(this.circleList));
+		this.newCircleList = [...list, ...list];
+		// console.log(this.newCircleList);
 	},
 
 	methods: {
@@ -139,6 +173,9 @@ export default {
 			// console.log(res);
 			this.windowHeight = res.windowHeight * 2 - 760;
 			// console.log(this.windowHeight);
+
+			// 宽度
+			// this.windowWidth = res.windowWidth;
 		}
 	}
 };
@@ -196,51 +233,59 @@ export default {
 }
 
 /* 圈子 */
-
-.cirTop,
-.cirBot {
-	display: flex;
-}
-
-.cirTop {
+.circleSwiper {
 	width: 100%;
+	/* height: 100rpx; */
 	margin-top: 40rpx;
-	animation: move 10s infinite linear;
-	animation-fill-mode: backwards;
+	/* border: 1rpx solid #ffffff; */
 }
 
-@keyframes move {
-	to {
-		transform: translateX(-1820rpx);
-	}
-}
-
-@keyframes move-bot {
-	to {
-		transform: translateX(-1820rpx);
-	}
-}
-
-.cirBot {
+.circleSwiper2 {
+	width: 100%;
 	margin-top: 12rpx;
-	animation: move-bot 10s infinite linear;
-	/* animation-delay: -100rpx; */
 }
 
-.itemTop {
+.circle {
+	display: flex;
+	overflow: hidden;
+}
+
+.circle-ul {
+	display: flex;
 	margin-right: 8rpx;
+	animation: scroll-circle 10s linear infinite;
 }
 
-.itemBot {
-	background-color: #feeceb;
+.circle-ul-two {
+	display: flex;
+	margin-right: 8rpx;
+	animation: scroll-circle-two 8s linear infinite;
 }
 
-.cirTop .itemTop {
-	background-color: #fceced;
+.circle-li:nth-child(even) {
+	background-color: #fdebeb;
 }
 
-.cirBot .itemBot {
-	background-color: #fceced;
+.circle-li-two:nth-child(odd) {
+	background-color: #fdebeb;
+}
+
+@keyframes scroll-circle {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes scroll-circle-two {
+	0% {
+		transform: translateX(-15%);
+	}
+	100% {
+		transform: translateX(-65%);
+	}
 }
 
 /* Tab */

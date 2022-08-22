@@ -3,8 +3,16 @@
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [
-		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		
+ // {
+ //            "path" : "pages/home/down/down",
+ //            "style" :                                                                                    
+ //            {
+ //                "navigationBarTitleText": "",
+ //                "enablePullDownRefresh": false
+ //            }
+            
+ //        },
+
 		{
 			"path": "pages/login/login",
 			"style": {
@@ -47,7 +55,7 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		
+
 		{
 			"path": "pages/user/my",
 			"style": {
@@ -99,18 +107,18 @@
 				},
 				"navigationBarTextStyle": "white"
 			}
-		},
-
-		{
-			"path": "pages/business/details",
+		}, {
+			"path": "pages/business/detalis/detalis",
 			"style": {
-				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
+				}
+
 			}
+
 		},
+
 		{
 			"path": "pages/business/purchase",
 			"style": {
@@ -462,147 +470,139 @@
 
 		}
 
-	    ,{
-            "path" : "pages/user/purchase/purchase",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           }
-			
-            
-        }
-        ,{
-            "path" : "pages/settings/privacy/privacy",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           }
-            
-        }
-        ,{
-            "path" : "pages/settings/privacy/choice/choice",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            }           
-        }
-        ,{
-            "path" : "pages/settings/privacy/blacklist/blacklist",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            } 
-            
-        }
-        ,{
-            "path" : "pages/user/footprint/footprint",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            } 
-            
-        }
+		, {
+			"path": "pages/user/purchase/purchase",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+
+		}, {
+			"path": "pages/settings/privacy/privacy",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/settings/privacy/choice/choice",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}, {
+			"path": "pages/settings/privacy/blacklist/blacklist",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/user/footprint/footprint",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}
+
+		, {
+			"path": "pages/user/purchase/order",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/user/follow/follow",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}, {
+			"path": "pages/user/edit/edit",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}, {
+			"path": "pages/user/release/release",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}
+
+		, {
+			"path": "pages/home/moredynamic/moredynamic",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/home/moreinteresting/moreinteresting",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/home/moredynamic/tendencies/tendencies",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/home/homepage/homepage",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}
+	   
        
-        ,{
-            "path" : "pages/user/purchase/order",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           } 
-            
-        }
-        ,{
-            "path" : "pages/user/follow/follow",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           } 
-        }
-        ,{
-            "path" : "pages/user/edit/edit",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           } 
-        }
-        ,{
-            "path" : "pages/user/release/release",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           } 
-        }
-        
-        ,{
-            "path" : "pages/home/moredynamic/moredynamic",
-           "style": {
-           	"navigationBarTitleText": "",
-           	"app-plus": {
-           		"titleNView": false //去掉app+h5顶部导航
-           	}
-           
-           } 
-            
-        }
-        ,{
-            "path" : "pages/home/moreinteresting/moreinteresting",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            } 
-            
-        }
-        ,{
-            "path" : "pages/home/moredynamic/tendencies/tendencies",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            } 
-            
-        }
-        ,{
-            "path" : "pages/home/homepage/homepage",
-            "style": {
-            	"navigationBarTitleText": "",
-            	"app-plus": {
-            		"titleNView": false //去掉app+h5顶部导航
-            	}
-            
-            } 
-        }
     ],
 
 

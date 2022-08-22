@@ -71,7 +71,13 @@
 			<view class="more" @tap="moredynamic">更多动态 ></view>
 		</view>
      <dynamic :imgUrl="imgUrl" :exhibit="exhibit"></dynamic>
-		<view class="kongbai"></view>
+		<view class="kongbai">
+			
+		</view>
+		
+		
+		
+		
 	</view>
 </template>
 
@@ -81,7 +87,7 @@
 export default {
 	data() {
 		return {
-
+ 
 			info: [
 				{
 					ima: '../../static/home/lbt.png'
@@ -131,8 +137,15 @@ export default {
 	onLoad() {
 		// uni.hideTabBar()
 		this.getAdList();
+		
 	},
+	
 	methods: {
+	
+	
+	
+	
+	
 		change(e) {
 			this.current = e.detail.current;
 		},
@@ -476,5 +489,6 @@ export default {
 }
 .kongbai {
 	height: 80rpx;
+	color: white;
 }
 </style>

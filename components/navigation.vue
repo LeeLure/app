@@ -60,7 +60,7 @@
 		display: flex;
 		position: relative;
 		justify-content: space-between;
-		background-color: #1E1A32 ;
+		
 	}
 
 	.navigation1 {

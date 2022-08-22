@@ -1,23 +1,32 @@
 <template>
 	<!-- 聊天组件 -->
-	<view class="Chat">
-		<view class="message">啦啦啦啦啦啦啦啦加入了房间</view>
-		<!-- 聊天区域 -->
-		<view class="chat-info" v-for="item in 2">
-			<view class="chat-avata"><image class="img" src="../../../../static/home/c.pic.jpg" /></view>
-			<view class="chat-text">
-				<view class="chat-name">啦啦啦啦啦啦啦啦</view>
-				<view class="content"><view class="chat-content-text">内内容内容内容内容内容内</view></view>
+	<view class="">
+		<view class="Chat">
+			<view class="message">啦啦啦啦啦啦啦啦加入了房间</view>
+			<!-- 聊天区域 -->
+			<view class="chat-info" v-for="item in 10">
+				<view class="chat-avata"><image class="img" src="../../../../static/home/c.pic.jpg" /></view>
+				<view class="chat-text">
+					<view class="chat-name">啦啦啦啦啦啦啦啦</view>
+					<view class="content"><view class="chat-content-text">内内容内容内容内容内容内内内容</view></view>
+				</view>
 			</view>
 		</view>
 	</view>
 </template>
 
-<script></script>
+<script>
+// import ChatBottomBar from '../../../tidings/chat-details/bottom-bar.vue';
+export default {
+	components: {
+		// ChatBottomBar
+	}
+};
+</script>
 
 <style>
 .Chat {
-	margin-top: 30rpx;
+	margin: 15rpx 0;
 }
 
 .message {
@@ -32,7 +41,7 @@
 
 .chat-info {
 	display: flex;
-	margin: 0 18rpx 36rpx 0;
+	margin: 20rpx 20rpx 20rpx 20rpx;
 }
 
 .chat-avata {
@@ -71,6 +80,6 @@
 }
 
 .chat-content-text {
-	margin-left: 32rpx;
+	/* margin-left: 32rpx; */
 }
 </style>
