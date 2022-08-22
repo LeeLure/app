@@ -30,9 +30,9 @@
 				<!-- 标签盒子 -->
 				<view class="tags">
 					<view class="tagItem">
-						<view class="tagLeft">练琴</view>
-						<view class="tagRight">绘画</view>
-						<view class="tagBot">音乐</view>
+						<view class="tagLeft"><view class="tag-text">练琴</view></view>
+						<view class="tagRight"><view class="tag-text">绘画</view></view>
+						<view class="tagBot"><view class="tag-text">音乐</view></view>
 					</view>
 				</view>
 			</view>
@@ -162,7 +162,8 @@ export default {
 	height: 54rpx;
 	line-height: 54rpx;
 	border-radius: 26rpx;
-	background-color: #94cced;
+	border: 1rpx solid #94cced;
+	background-color: transparent;
 	/* border: 1rpx solid blue; */
 }
 
@@ -172,7 +173,8 @@ export default {
 	line-height: 54rpx;
 	margin-left: 362rpx;
 	border-radius: 26rpx;
-	background-color: #94cced;
+	border: 1rpx solid #94cced;
+	background-color: transparent;
 	/* border: 1rpx solid blue; */
 }
 
@@ -185,8 +187,13 @@ export default {
 	bottom: -415rpx;
 	/* margin-top: 338rpx; */
 	border-radius: 26rpx;
-	background-color: #94cced;
+	border: 1rpx solid #94cced;
+	background-color: transparent;
 	/* border: 1rpx solid blue; */
+}
+
+.tag-text {
+	color: #fff;
 }
 
 /* 用户名 */

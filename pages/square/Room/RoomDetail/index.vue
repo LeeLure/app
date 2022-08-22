@@ -24,7 +24,10 @@
 
 			<!-- 按钮 -->
 			<view class="button-bgc">
-				<view class="bgc-button"><Button @toShare="openShare"></Button></view>
+				<view class="bgc-button">
+					<!-- 按钮组件 -->
+					<Button></Button>
+				</view>
 			</view>
 			<!-- 分享的组件 -->
 			<Share ref="Share"></Share>

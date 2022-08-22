@@ -1,7 +1,7 @@
 <template>
 	<view class="button-bgc">
 		<view class="button">
-			<button class="share"><view class="share-text" @click="onShare">分享</view></button>
+			<button class="share"><view class="share-text" @tap="onShare">分享</view></button>
 			<button class="join" @tap="toJoinRoom">
 				<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
 				<view class="join-text">我要加入</view>
@@ -20,6 +20,7 @@ export default {
 		},
 
 		onShare() {
+			uni.showToast({});
 			this.$emit('toShare');
 		}
 	}

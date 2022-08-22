@@ -31,7 +31,7 @@
 		<!-- 第二个 -->
 		<view class="circleSwiper2">
 			<view class="circle">
-				<view class="circle-ul-two">
+				<view class="circle-ul-two" :class="{ animation: isAnimation }">
 					<CirItem class="circle-li-two" v-for="item in newCircleList" :circleList="item"></CirItem>
 				</view>
 			</view>
@@ -115,6 +115,7 @@ export default {
 			windowHeight: 0,
 			windowWidth: 0,
 			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }],
+			isAnimation: false,
 			// animationData: {},
 			circleList: [
 				{ id: 1, img: '../../../static/square/circle-1.jpg', title: '1150', info: '给你不一样音乐音乐的音乐' },
@@ -143,6 +144,10 @@ export default {
 		const list = JSON.parse(JSON.stringify(this.circleList));
 		this.newCircleList = [...list, ...list];
 		// console.log(this.newCircleList);
+
+		setTimeout(() => {
+			this.isAnimation = true;
+		}, 450);
 	},
 
 	methods: {
@@ -259,7 +264,10 @@ export default {
 .circle-ul-two {
 	display: flex;
 	margin-right: 8rpx;
-	animation: scroll-circle-two 8s linear infinite;
+}
+
+.animation {
+	animation: scroll-circle-two 10s linear infinite;
 }
 
 .circle-li:nth-child(even) {
@@ -281,10 +289,10 @@ export default {
 
 @keyframes scroll-circle-two {
 	0% {
-		transform: translateX(-15%);
+		transform: translateX(0);
 	}
 	100% {
-		transform: translateX(-65%);
+		transform: translateX(-50%);
 	}
 }
 
