@@ -28,7 +28,7 @@
 				</view>
 			</view>
 			<view class="category">
-				<view class="ac" :class="{ kun: checkedArrey.indexOf(items) != -1 }" v-for="(items,i) of item.value"
+				<view class="ac" :class="{ kun: labels[index].checked.indexOf(items.name) != -1 }" v-for="(items,i) of item.value"
 					:key="i" @tap="appointment(items,index)">
 					<view class="">{{items.name}}</view>
 				</view>
@@ -40,7 +40,7 @@
 
 
 
-<!-- 
+		<!-- 
 		<view class="labellist">
 			<view class="header">
 				<view class="header1">
@@ -59,7 +59,8 @@
 			</view>
 
 		</view>
-	 -->	<view class="complete" @tap="switchtab">
+	 -->
+		<view class="complete" @tap="switchtab">
 			完成
 		</view>
 		<view class="kongbai">
@@ -105,7 +106,7 @@
 					},
 				],
 				labels: [
-					
+
 				],
 				long: 3,
 				checkedArrey: [],
@@ -145,30 +146,50 @@
 				})
 			},
 			appointment(items, index) {
-				debugger
-				console.log("8902u", index);
-				
 				let that = this;
-				if (that.labels[index].checked.indexOf(items) == -1 && that.labels[index].checked.length < 3) {const  { checked }  = this.labels
-					// console.log(index); //打印下标
-					that.labels[index].checked =  [...checked,item.name]  //选中添加到数组里
-
-				} else if (that.labels[index].checked.length == this.long || that.labels[index].checked.indexOf(items), 3) {
-					if (that.labels[index].checked.length == 3) {
+				console.log(that.labels[index].checked.indexOf(items.name))
+				if (that.labels[index].checked.indexOf(items.name) !== -1) {
+					that.labels[index].checked.splice(that.labels[index].checked.indexOf(items.name), 1); //取消
+				} else {
+					if (that.labels[index].checked.length < (index ===1? 1 : 3)) {
+						const {
+							checked
+						} = this.labels[index]
+						// console.log(index); //打印下标
+						that.labels[index].checked = [...checked, items.name] //选中添加到数组里
+					}else {
 						uni.showToast({
-							title: '最多只能选3个',
+							title: '已超出可选个数',
 							duration: 1000,
 							icon: 'none'
 						})
-						that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
-					
-					} else {
-						that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
-					
 					}
-						}
-				that.number = that.checkedArrey.length
-				console.log("jjj", that.checkedArrey);
+				}
+
+				// if (that.labels[index].checked.indexOf(items) == -1 && that.labels[index].checked.length < 3) {
+				// 	const {
+				// 		checked
+				// 	} = this.labels[index]
+				// 	// console.log(index); //打印下标
+				// 	that.labels[index].checked = [...checked, items.name] //选中添加到数组里
+
+				// } else if (that.labels[index].checked.length == this.long || that.labels[index].checked.indexOf(items),
+				// 	3) {
+				// 	if (that.labels[index].checked.length == 3) {
+				// 		uni.showToast({
+				// 			title: '最多只能选3个',
+				// 			duration: 1000,
+				// 			icon: 'none'
+				// 		})
+				// 		that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
+
+				// 	} else {
+				// 		that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
+
+				// 	}
+				// }
+				// that.number = that.checkedArrey.length
+				// console.log("jjj", that.checkedArrey);
 			},
 
 
@@ -198,8 +219,8 @@
 			// 	console.log(that.checkedArrey1,"pp");
 
 			// },
-			
-			
+
+
 			switchtab() {
 
 
