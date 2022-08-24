@@ -1,0 +1,653 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			"path": "pages/information/information",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/label/label",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		
+		{
+			"path": "pages/user/my",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/square/square",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/tidings/tidings",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false, //去掉app+h5顶部导航
+					"background": "#1E1A32"
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			"path": "pages/tab/tab",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+
+		{
+			"path": "pages/business/business",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			"path": "pages/business/details",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/business/purchase",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/business/success",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/release/release",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/notice/notice",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/tidings/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/tidings/circle-details/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/notice/election/election",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/security/security",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			"path": "pages/settings/security/modify",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/security/cellphone",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/security/replace",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/security/popup/popup",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			// 圈子
+			"path": "pages/square/circle/MoreCircles",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			// 圈子主页
+			"path": "pages/square/circle/CircleHomePage",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/tidings/chat-details/chat-details",
+
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/tidings/circle-details/edit/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/cancellation/cancellation",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/cancellation/determine/determine",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/help/help",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/help/feedback/feedback",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/settings/help/feedback/retroaction/retroaction",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+
+		{
+			"path": "pages/settings/help/feedback/retroaction/price",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/settings/help/feedback/popup/popup",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			// 话题主
+			"path": "pages/square/circle/TopicMain",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			// 活跃榜
+			"path": "pages/square/circle/ListActive",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+		{
+			// 有趣的人
+			"path": "pages/user/Interesting/Interesting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		},
+		{
+			// 有趣的人详情页
+			"path": "pages/user/Interesting/open",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			// 更多房间
+			"path": "pages/square/Room/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		},
+
+
+		{
+			// 我收藏的收藏
+			"path": "pages/user/collect/collect",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			// 房间详情
+			"path": "pages/square/Room/RoomDetail/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				},
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/user/purchase/purchase",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+
+		}, {
+			// 点击加入房间后跳转的页面
+			"path": "pages/square/Room/JoinRoom/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		}
+
+	    ,{
+            "path" : "pages/user/purchase/purchase",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+			
+            
+        }
+        ,{
+            "path" : "pages/settings/privacy/privacy",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/settings/privacy/choice/choice",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            }           
+        }
+        ,{
+            "path" : "pages/settings/privacy/blacklist/blacklist",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/user/footprint/footprint",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+       
+        ,{
+            "path" : "pages/user/purchase/order",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+            
+        }
+        ,{
+            "path" : "pages/user/follow/follow",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
+        ,{
+            "path" : "pages/user/edit/edit",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
+        ,{
+            "path" : "pages/user/release/release",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+        }
+        
+        ,{
+            "path" : "pages/home/moredynamic/moredynamic",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           } 
+            
+        }
+        ,{
+            "path" : "pages/home/moreinteresting/moreinteresting",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/home/moredynamic/tendencies/tendencies",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+            
+        }
+        ,{
+            "path" : "pages/home/homepage/homepage",
+            "style": {
+            	"navigationBarTitleText": "",
+            	"app-plus": {
+            		"titleNView": false //去掉app+h5顶部导航
+            	}
+            
+            } 
+        }
+    ],
+
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"rpxCalcMaxDeviceWidth": 2000
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"selectedColor": "#FFFFFF ",
+		"color": "rgba(255, 255, 255, 0.2)",
+		"backgroundColor": "#343146 ",
+
+		"list": [{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "/static/tab/homes.png",
+				"selectedIconPath": "/static/tab/home.png"
+			},
+			{
+				"pagePath": "pages/square/square",
+				"text": "广场",
+				"iconPath": "/static/tab/squares.png",
+				"selectedIconPath": "/static/tab/square.png"
+			},
+			{
+				"pagePath": "pages/tidings/index/index",
+				"text": "消息",
+				"iconPath": "/static/tab/tidingss.png",
+				"selectedIconPath": "/static/tab/tidings.png"
+			},
+			{
+				"pagePath": "pages/user/my",
+				"text": "我的",
+				"iconPath": "/static/tab/mys.png",
+				"selectedIconPath": "/static/tab/my.png"
+			}
+		],
+		"midButton": {
+			"height": "93px",
+			"iconPath": "/static/tab/abc.png",
+			"iconWidth": "101px"
+		}
+	}
+}
