@@ -1,52 +1,81 @@
 <template>
 	<view class="list">
 
-		<view class="likeness">
-			<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="likenessimg"></image>
-		</view>
-		<view class="right">
-			<view class="reputationtop">
-				<view class="reputation">
-					<view class="reputationname">
-						苏妲己苏妲己苏妲己
+		<view class="lists">
+
+			<view class="likeness">
+				<image :src="namelist.avatarUrl" mode="aspectFill" class="likenessimg"></image>
+			</view>
+			<view class="right">
+				<view class="reputationtop">
+					<view class="reputation">
+						<view class="reputationname">
+							{{namelist.nickName}}
+						</view>
+						<view class="reputationsex"  v-if="namelist.sex==0">
+							<image src="@/static/user/nv.png" class="reputationimg"></image>
+							女
+						</view>
+						<view class="reputationsex"  v-else>
+							<image src="@/static/user/nan.png" class="reputationimg"></image>
+							男
+						</view>
 					</view>
-					<view class="reputationsex">
-						<image src="@/static/user/nv.png" class="reputationimg"></image>
-						女
+					<view class="followlist">
+						<view class="follow">
+							<view class="follownumber">
+								{{namelist.signature}}
+							</view>
+							<view class="followtext">
+								关注
+							</view>
+						</view>
+						<view class="follow">
+							<view class="follownumber">
+								{{namelist.vermicelli}}
+							</view>
+							<view class="followtext">
+								粉丝
+							</view>
+						</view>
+						<view class="follow">
+							<view class="follownumber">
+								{{namelist.like}}
+							</view>
+							<view class="followtext">
+								受到喜欢
+							</view>
+						</view>
+
+
+
 					</view>
 				</view>
-				<view class="followlist">
-					<view class="follow">
-						<view class="follownumber">
-							788
-						</view>
-						<view class="followtext">
-							关注
-						</view>
-					</view>
-					<view class="follow">
-						<view class="follownumber">
-							787667
-						</view>
-						<view class="followtext">
-							关注
-						</view>
-					</view>
-					<view class="follow">
-						<view class="follownumber">
-							799000
-						</view>
-						<view class="followtext">
-							关注
-						</view>
-					</view>
-
-
-
+				<view class="reputationbottom">
+					{{namelist.signature}}
 				</view>
 			</view>
-			<view class="reputationbottom">
-				真正内心的强大，才是真正的强大
+		</view>
+		
+		<view class="countermark">
+			<view class="countermarktop">
+				<view class="countermarktext">
+					{{namelist.constellation}}
+				</view>
+				<view class="countermarktext" v-for="item  in namelist.label">
+					{{item}}
+				</view>
+				
+			</view>
+			<view class="countermarkbottom">
+				<view class="countermarktitle">
+					<image src="@/static/home/guanzhu.png" mode=""  class="countermarkimg"></image>
+					<!-- <image src="@/static/home/yiguanzhu.png" mode=""></image> -->
+					关注
+				</view>
+				<view class="countermarktitle">					
+					私信
+				</view>
 			</view>
 		</view>
 	</view>
@@ -60,6 +89,9 @@
 
 			}
 		},
+		props:{
+			namelist:{}
+		},
 		methods: {
 
 		}
@@ -69,9 +101,14 @@
 <style>
 	.list {
 		margin-top: 48rpx;
+		margin-bottom: 50rpx;
+
+	}
+
+	.lists {
 		color: white;
 		display: flex;
-		
+
 	}
 
 	.likeness {
@@ -88,7 +125,7 @@
 	}
 
 	.right {
-		
+
 		margin-left: 22rpx;
 	}
 
@@ -97,7 +134,7 @@
 	}
 
 	.reputation {
-		
+
 		width: 130rpx;
 
 
@@ -127,10 +164,10 @@
 		line-height: 50rpx;
 		text-align: center;
 		background: #1A1824;
-		border-radius: 26rpx ;
-		padding: 0 20rpx ;
-		
-		
+		border-radius: 26rpx;
+		padding: 0 20rpx;
+
+
 	}
 
 	.reputationimg {
@@ -141,17 +178,17 @@
 	}
 
 	.followlist {
-		
+
 		width: 380rpx;
 		display: flex;
 		justify-content: space-between;
 	}
 
 	.follow {
-		
+
 		text-align: center;
-		
-		
+
+
 	}
 
 	.follownumber {
@@ -180,6 +217,49 @@
 		-webkit-box-orient: vertical;
 		/** 设置或检索伸缩盒对象的子元素的排列方式 **/
 		-webkit-line-clamp: 1;
-		
+
+	}
+	.countermark{
+		margin-left: 20rpx;
+		margin-top: 40rpx;
+	}
+	.countermarktop{
+		display: flex;
+	}
+	
+	.countermarktext{
+		font-size: 24rpx;
+		color: white;
+		width: 72rpx;
+		height: 50rpx;
+		line-height: 50rpx;
+		text-align: center;
+		background-color: #1A1824;
+		border-radius: 26rpx ;
+		padding: 0 26rpx;
+		margin-right: 20rpx;
+	}
+	.countermarkbottom{
+		display: flex;
+		margin-top: 20rpx;
+	}
+	.countermarktitle{
+		font-size: 32rpx;
+		color: white;
+		vertical-align: middle;
+		padding: 0 56rpx;
+		width: 122rpx;
+		height: 94rpx;
+		line-height: 94rpx;
+		text-align: center;
+		background-color: #403B5Bcc;
+		border-radius: 48rpx ;
+		margin-right: 20rpx;
+	}
+	.countermarkimg{
+		vertical-align: middle;
+		width: 40rpx;
+		height: 40rpx;
+		margin-right: 10rpx;
 	}
 </style>

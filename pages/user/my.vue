@@ -34,6 +34,15 @@
 					<conceal></conceal>
 				</view>
 </view>
+
+
+
+<view class="establish1">
+	<image src="@/static/tab/chusngjianhoome.png"  class="establish"  @tap="room"></image>
+	<image src="@/static/tab/fabudongtai.png" class="establish"  @tap="release"></image>
+	<image src="@/static/tab/chuangjianhuati.png" class="establish" @tap="establishcircle"></image>
+	
+</view>
 	</view>
 </template>
 
@@ -102,6 +111,21 @@ coverTransform: "scale(1)", //放大倍数
 				uni.navigateTo({
 					url:'/pages/user/footprint/footprint'
 				})
+			},
+			release(){
+				uni.navigateTo({
+					url:'/pages/release/release'
+				})
+			},
+			room(){
+				uni.navigateTo({
+					url:'/pages/release/room/room'
+				})
+			},
+			establishcircle(){
+				uni.navigateTo({
+					url:'/pages/release/establishcircle/establishcircle'
+				})
 			}
 
 		}
@@ -165,12 +189,21 @@ coverTransform: "scale(1)", //放大倍数
 		border-radius: 60rpx 60rpx 0rpx 0rpx;		
 		color: white;
 		width: 100%;
-			padding-top: 20rpx;
-		
+		padding-top: 20rpx;		
 		position: relative;
 		top: -70rpx;
 		
 		
 
+	}
+	.establish1{
+		width: 92rpx;
+		
+		background: linear-gradient(172deg, #D53EDA 0%, #7E21E2 100%);
+	}
+	.establish{
+		width: 50rpx;
+		height: 50rpx;
+		margin-top: 30rpx;
 	}
 </style>

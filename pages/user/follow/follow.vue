@@ -179,7 +179,7 @@
 		width: 750rpx;
 		height: 100rpx;		
 		display: flex;
-		justify-content: space-between;
+		
 		/* border: 1px solid  red; */
 	}
 
@@ -196,11 +196,12 @@
 	}
 
 	.navigation2 {
-		width: 100%;
+		width: 500rpx;
 		margin: auto 0;
 		font-weight: 500;
 		color: #FFFFFF;
-	/* border: 1px solid  red; */
+		margin-left: 50rpx;
+	
 	}
 	.search{
 		width: 708rpx;

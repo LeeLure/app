@@ -33,12 +33,7 @@
 				<view class="assembly">
 					<picturearray :imgUrl="imgUrl" ></picturearray>
 				</view>
-				<!-- <view class="private">
-					<image src="@/static/user/private.png" class="privateimg"></image>
-					<view class="privatetext">
-						私密动态
-					</view>
-				</view> -->
+				
 				<view class="label">
 	
 	
@@ -115,12 +110,7 @@
 		
 				},
 				onLoad() {
-					// this.imgUrl.forEach((item,index)=>{
-					// 	if(index==3){
-					// 		console.log("11");
-					// 		this.margins=0
-					// 	}
-					// })
+					
 				},
 				methods: {
 					click() {
@@ -193,25 +183,7 @@
 		margin-top: 18rpx;
 	}
 
-	/* .private {
-		
-		display: flex;
-		margin-top: 16rpx;
-	}
-
-	.privateimg {
-		width: 30rpx;
-		height: 30rpx;
-		vertical-align: middle;
-	}
-
-	.privatetext {
-		margin-left: 10rpx;
-		vertical-align: middle;
-		font-size: 24rpx;
-		color: rgba(255, 255, 255, 0.5);
-	} */
-
+	
 	.label {
 		margin-top: 16rpx;
 		display: flex;

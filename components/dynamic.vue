@@ -1,56 +1,65 @@
 <template>
 	<view>
 
-		<view class="particulars">
+		<view class="particulars" v-for="(item,index) in list">
 			<view class="batten">
-				<view class="sculpture" @tap="homepage">
-					<image src="@/static/home/lbt.png" class="sculptureimage"></image>
+				<view class="sculpture" @tap="homepage(item.uid)">
+					<image :src="item.face" class="sculptureimage"></image>
 				</view>
 				<view class="nickname">
-					<view class="nicknamename">想咋想</view>
-					<view class="nicknametime">3分钟前发布</view>
+					<view class="nicknamename">{{item.nikeName}}</view>
+					<view class="nicknametime">{{item.time}}</view>
 				</view>
 				<view class="copywritingright">
 					<image src="@/static/user/simi.png" class="copywritingimg" @tap="copywritingimg"></image>
 				</view>
 			</view>
 
-			<view @tap="tendencies">
+			<view @tap="tendencies(item.id)">
 
 
 				<view class="copywritingtext">
-					海浪肯随山俯仰，风帆长共客飘摇
+					{{item.content}}
 
 				</view>
 
 
 				<view class="flash">
-					<picturearray :imgUrl="imgUrl"></picturearray>
+					<picturearray :imgUrl="item.medias"></picturearray>
 				</view>
 				<view class="crumbs">
-					<view class="crumbsview">#治愈系风景</view>
-			
+					<view class="crumbsview" v-if="item.topicName">#{{item.topicName}}</view>
+
+				</view>
 			</view>
-</view>
 			<view class="partake">
-				<view class="partake1">
-					<image src="@/static/home/lbt.png" class="partakeimage"></image>
+
+				<view class="partakeportrait">
+					<view class="partakeportraits" v-if="item.userTopicVo">
+						<block >
+							<view class="partake1">
+								<image :src="item.userTopicVo.userFaceTopicVoList[0].face" class="partakeimage"></image>
+							</view>
+							<view class="partake2"  v-if="item.userTopicVo.userFaceTopicVoList[1]">
+								<image :src="item.userTopicVo.userFaceTopicVoList[1].face" class="partakeimage"></image>
+							</view>
+							<view class="partake3" v-if="item.userTopicVo.userFaceTopicVoList[2]">
+								<image :src="item.userTopicVo.userFaceTopicVoList[2].face" class="partakeimage"></image>
+							</view>
+							<view class="conversation">{{item.userTopicVo.num}}人等参与了此话题</view>
+						</block>
+					</view>
 				</view>
-				<view class="partake2">
-					<image src="@/static/home/lbt.png" class="partakeimage"></image>
-				</view>
-				<view class="partake3">
-					<image src="@/static/home/lbt.png" class="partakeimage"></image>
-				</view>
-				<view class="conversation">1539人等参与了此话题</view>
+
+
 				<view class="praise" @tap="click">
 					<image src="@/static/home/dianzan.png" class="fabulous" v-if="!show"></image>
 					<image src="@/static/home/dianjishow.png" class="fabulous" v-if="show"></image>
-					<text class="praisetext">999</text>
+					<text class="praisetext">{{item.zanCount}}</text>
 				</view>
 				<view class="praise">
 					<image src="@/static/home/pinglun.png" class="fabulous"></image>
-					<text class="praisetext">999</text>
+					<text class="praisetext">{{item.commitCount}}</text>
 				</view>
 			</view>
 		</view>
@@ -63,8 +72,8 @@
 	import picturearray from "@/components/picturearray.vue"
 	export default {
 		props: {
-			imgUrl: {},
-			exhibit: ""
+			exhibit: "",
+			list: {}
 
 		},
 		data() {
@@ -87,19 +96,22 @@
 			copywritingimg() {
 				console.log("jh");
 			},
-			tendencies() {
-
+			tendencies(id) {
 				if (this.exhibit == true) {
+					 console.log(id,"poiu");
 					uni.navigateTo({
-						url: '/pages/home/moredynamic/tendencies/tendencies'
+						url: '/pages/home/moredynamic/tendencies/tendencies?id='+JSON.stringify(id)
 					})
 				}
 
 			},
-			homepage() {
+			homepage(uid) {
+				
+				
 				uni.navigateTo({
-					url: '/pages/home/homepage/homepage'
+					url: '/pages/home/homepage/homepage?uid='+JSON.stringify(uid)
 				})
+
 			}
 
 		}
@@ -188,13 +200,23 @@
 		background-color: #403b5b;
 		font-size: 28rpx;
 		margin-right: 20rpx;
-		color: white;
+		color: #2B7FDE;
 	}
 
 	.partake {
 		display: flex;
 		position: relative;
 		margin-top: 20rpx;
+		
+	}
+
+	.partakeportrait {
+		width: 430rpx;
+		
+	}
+
+	.partakeportraits {
+		display: flex;
 	}
 
 	.partake1 {

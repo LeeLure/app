@@ -73,7 +73,7 @@
 			<view class="people">动态</view>
 			<view class="more" @tap="moredynamic">更多动态 ></view>
 		</view>
-		<dynamic :imgUrl="imgUrl" :exhibit="exhibit"></dynamic>
+		<dynamic  :exhibit="exhibit"  :list="list"></dynamic>
 		<view class="kongbai">
 
 		</view>
@@ -93,30 +93,12 @@
 		data() {
 			return {
 
-				info: [{
-						ima: '../../static/home/lbt.png'
-					},
-					{
-						ima: '../../static/home/lbt.png'
-					},
-					{
-						ima: '../../static/home/lbt.png'
-					}
-				],
-				imgUrl: [{
-						img: require("@/static/home/a.pic.jpg")
-					},
-					{
-						img: require("@/static/home/b.pic.jpg")
-					},
-					{
-						img: require("@/static/home/c.pic.jpg")
-					},
-
+				imgUrl: [
 
 				],
 				page: 1,
 				limit: 10,
+				list:[],
 				exhibit: true,
 				current: 0,
 				mode: 'round',
@@ -149,10 +131,6 @@
 
 		methods: {
 
-
-
-
-
 			change(e) {
 				this.current = e.detail.current;
 			},
@@ -165,7 +143,6 @@
 			},
 			collect(index) {
 				console.log(index);
-
 				const activeArr = this.activeArr
 				if (activeArr.includes(index)) {
 					this.remove(activeArr, index)
@@ -188,8 +165,9 @@
 
 			// 跳转更多动态
 			moredynamic() {
+				let  query=this.list
 				uni.navigateTo({
-					url: '/pages/home/moredynamic/moredynamic'
+					url: '/pages/home/moredynamic/moredynamic?query='+JSON.stringify(query)
 				})
 			},
 			moreinteresting() {
@@ -209,11 +187,10 @@
 					page: this.page,
 					limit: this.limit,
 					uid:"",
-					lat:0,
-					lng:0
 					
-
 				}).then(res => {
+					this.list=res.rows
+					
 					console.log(res, "hh");
 				})
 

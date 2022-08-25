@@ -1,7 +1,14 @@
 <template>
 	<view>
-		<uni-file-picker v-model="imageValue" :limit="limit" fileMediatype="image" mode="grid" @select="select"
-			@progress="progress" @success="success" @fail="fail" />
+		<uni-file-picker v-model="imageValue" :image-styles="imageStyles" :limit="limit" fileMediatype="image"
+			mode="grid" @select="select" @progress="progress" @success="success" @fail="fail">
+			<slot></slot>
+		</uni-file-picker>
+
+
+
+
+
 	</view>
 </template>
 
@@ -23,7 +30,18 @@
 		data() {
 			return {
 				tempFiles: {},
-				imgurl: ''
+				imgurl: '',
+				imageStyles: {
+					width: 90,
+					height: 90,
+					backgroundColor: "#fff",
+					border: {						
+						radius: '4px'
+					},
+					border: false,
+				},
+
+
 			}
 		},
 		methods: {
@@ -78,6 +96,9 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
+	.a {
+		width: 300rpx;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
 </style>

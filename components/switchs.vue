@@ -52,8 +52,8 @@
 		/* white-space: nowrap; */
 	}
 .uni-swiper-tabs{
-	width: 500rpx;
-	/* border: 1px solid red; */
+	width:100%;
+	
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;

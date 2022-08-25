@@ -4,12 +4,12 @@
 		<view class="bar">
 		</view>
 		<!-- 导航栏 -->
-		<navigation :title="title" ></navigation>
+		<navigation :title="title"></navigation>
 
-		<view >
+		<view>
 			<scroll-view scroll-y="true" class="scrollview">
-				<view class="" :style="{height:swiperheight+'rpx'}">
-					<dynamic :imgUrl="imgUrl" :exhibit="exhibit"></dynamic>
+				<view class="" >
+					<!-- <dynamic :list="list" :exhibit="exhibit"></dynamic> -->
 					<view class="comment">
 
 						<view class="commentlist">
@@ -29,14 +29,14 @@
 								</view>
 							</view>
 						</view>
-						
-						
-						
+
+
+
 						<view class="commentlists">
 							<view class="commentlefts">
 								<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="commentimgs"></image>
 							</view>
-						
+
 							<view class="commentright">
 								<view class="commentname">
 									胡乎乎
@@ -49,7 +49,7 @@
 								</view>
 							</view>
 						</view>
-						
+
 
 					</view>
 				</view>
@@ -74,23 +74,15 @@
 
 <script>
 	import navigation from "@/components/navigation.vue"
-	import dynamic from "@/components/dynamic.vue"
+	// import dynamic from "@/components/dynamic.vue"
+	import {
+		homeDesc
+	} from "@/config/home.js"
 	export default {
 		data() {
 			return {
 				title: "动态详情",
-				imgUrl: [{
-						img: require("@/static/home/a.pic.jpg")
-					},
-					{
-						img: require("@/static/home/a.pic.jpg")
-					},
-					{
-						img: require("@/static/home/a.pic.jpg")
-					}, {
-						img: require("@/static/home/a.pic.jpg")
-					},
-				],
+				list: [],
 				exhibit: false,
 				detail: {
 					value: '',
@@ -101,20 +93,27 @@
 		},
 		components: {
 			navigation,
-			dynamic
+			// dynamic
 		},
-		onLoad() {
-			var _this = this
-			uni.getSystemInfo({
-				success(res) {
-					console.log("屏幕高度 HH = " + res.windowHeight)
-					console.log("屏幕高度 HH222 = " + res.windowHeight * 2)
-					_this.swiperheight = res.windowHeight * 2 - 270
-				}
-			})
+		onLoad(options) {
+			const id = JSON.parse(options.id)
+			this.getlist(id)
+			
 		},
 
 		methods: {
+			getlist(id){
+				console.log(id,"oiuy");
+				
+				homeDesc(
+					{id}
+				).then(res => {
+					
+				
+					console.log(res, "hh");
+				})
+
+			}
 
 		}
 	}
@@ -126,7 +125,7 @@
 		left: 0;
 
 	} */
-	
+
 
 	.comment {
 		margin-top: 20rpx;
@@ -195,7 +194,7 @@
 		border-radius: 40rpx;
 	}
 
-	
+
 
 
 

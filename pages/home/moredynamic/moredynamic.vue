@@ -11,7 +11,7 @@
 			</view>
 		</navigation>
 
-		<dynamic :imgUrl="imgUrl" :exhibit="exhibit"></dynamic>
+		<dynamic :list="list" :exhibit="exhibit"></dynamic>
 	</view>
 </template>
 
@@ -22,19 +22,21 @@
 		data() {
 			return {
 				title: "动态",
-				imgUrl: [{
-						img: require("@/static/home/a.pic.jpg")
-					},
-					{
-						img: require("@/static/home/a.pic.jpg")
-					},
-				],
+				list:[],
 				exhibit:true
 			}
 		},
 		components: {
 			navigation,
 			dynamic
+		},
+		onLoad(options) {
+			const query = JSON.parse(options.query)
+			this.list = query
+			console.log(11111,this.list);
+		
+			
+		
 		},
 		methods: {
 			release() {

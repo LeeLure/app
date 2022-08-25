@@ -13,6 +13,7 @@
             
  //        },
 
+
 		{
 			"path": "pages/login/login",
 			"style": {
@@ -155,8 +156,8 @@
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
+				}
+				
 			}
 		},
 		{
@@ -600,9 +601,85 @@
 				}
 
 			}
+		},
+		{
+		    "path" : "pages/home/conversation/conversation",
+		   "style": {
+		   	"navigationBarTitleText": "",
+		   	"app-plus": {
+		   		"titleNView": false //去掉app+h5顶部导航
+		   	}
+		   
+		   }
 		}
 	   
        
+        
+        
+        ,{
+            "path" : "pages/release/label/label",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/release/circle/circle",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/release/room/room",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/release/establishcircle/establishcircle",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+            
+        }
+        ,{
+            "path" : "pages/release/establishcircle/foundcircle/foundcircle",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+        }
+        ,{
+            "path" : "pages/release/establishcircle/foundcircle/type/type",
+           "style": {
+           	"navigationBarTitleText": "",
+           	"app-plus": {
+           		"titleNView": false //去掉app+h5顶部导航
+           	}
+           
+           }
+        }
     ],
 
 

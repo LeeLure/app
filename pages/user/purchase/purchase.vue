@@ -9,8 +9,11 @@
 		 <view class="content">
 			        
 			<!-- toolbar -->
+			<view class="switchs1">
+				
+			
 			        <switchs :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></switchs>
-			        
+			        </view>
 			<!-- 页面-->
 			        <swiper class="swiper-content" :style="{height:swiperheight+'rpx'}" :current="tabIndex"
 				@change="swiperChange">
@@ -187,7 +190,11 @@
 		height: 100%;
 
 	}
-
+.switchs1{
+		width: 500rpx;
+		
+		margin: 0 auto;
+	}
 	.content {
 
 		display: flex;

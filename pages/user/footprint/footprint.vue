@@ -9,8 +9,9 @@
 		 <view class="content"v-if="(titles.length>0)?true:false">
 			        
 			<!-- toolbar -->
-			        <switchs :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></switchs>
-			        
+			<view class="switchs1">			
+			        <switchs :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap" ></switchs>
+			       </view> 
 			<!-- 页面-->
 			        <swiper class="swiper-content" :style="{height:swiperheight+'rpx'}" :current="tabIndex"
 				@change="swiperChange">
@@ -202,11 +203,16 @@
 
 <style>
 	.content {
-		/* border: 1px solid red; */
+	
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
+	}
+	.switchs1{
+		width: 500rpx;
+		
+		margin: 0 auto;
 	}
 	.swiper-scroll{
 		height: 100%;

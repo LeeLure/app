@@ -28,8 +28,8 @@
 				</view>
 			</view>
 			<view class="category">
-				<view class="ac" :class="{ kun: checkedArrey.indexOf(items) != -1 }" v-for="(items,i) of item.value"
-					:key="i" @tap="appointment(items,index)">
+				<view class="ac" :class="{ kun: labels[index].checked.indexOf(items.name) != -1 }"
+					v-for="(items,i) of item.value" :key="i" @tap="appointment(items,index)">
 					<view class="">{{items.name}}</view>
 				</view>
 
@@ -38,28 +38,7 @@
 		</view>
 
 
-
-
-<!-- 
-		<view class="labellist">
-			<view class="header">
-				<view class="header1">
-					情感
-				</view>
-				<view class="header2">
-					可选{{number1}}/{{long}}
-				</view>
-			</view>
-			<view class="category">
-				<view class="ac" :class="{ kun: checkedArrey1.indexOf(item) != -1 }" v-for="(item,i) of items1" :key="i"
-					@click="appointments(item)">
-					<view class="">{{item.val}}</view>
-				</view>
-
-			</view>
-
-		</view>
-	 -->	<view class="complete" @tap="switchtab">
+		<view class="complete" @tap="switchtab">
 			完成
 		</view>
 		<view class="kongbai">
@@ -77,42 +56,11 @@
 	export default {
 		data() {
 			return {
-				// items: [{
-				// 		val: '感性'
-				// 	},
-				// 	{
-				// 		val: '心理'
-				// 	},
-				// 	{
-				// 		val: '倾诉'
-				// 	},
-
-				// ],
-				items1: [{
-						val: '电影'
-					},
-					{
-						val: '游戏'
-					},
-					{
-						val: '旅行'
-					},
-					{
-						val: '唱歌 '
-					},
-					{
-						val: '动漫'
-					},
-				],
+				
 				labels: [
-					
+
 				],
-				long: 3,
-				checkedArrey: [],
-				checkedArrey1: [],
-				number: 0,
-				number1: 0,
-				val: "",
+			
 				sexs: 0,
 				birthday: "",
 				nickName: "",
@@ -144,78 +92,50 @@
 					delta: 1
 				})
 			},
-			appointment(items, index) {
-				debugger
-				console.log("8902u", index);
-				
+			appointment(items,index) {
 				let that = this;
-				if (that.labels[index].checked.indexOf(items) == -1 && that.labels[index].checked.length < 3) {const  { checked }  = this.labels
-					// console.log(index); //打印下标
-					that.labels[index].checked =  [...checked,item.name]  //选中添加到数组里
-
-				} else if (that.labels[index].checked.length == this.long || that.labels[index].checked.indexOf(items), 3) {
-					if (that.labels[index].checked.length == 3) {
+				console.log(that.labels[index].checked.indexOf(items.name))
+				if (that.labels[index].checked.indexOf(items.name) !== -1) {
+					that.labels[index].checked.splice(that.labels[index].checked.indexOf(items.name), 1); //取消
+				} else {
+					if (that.labels[index].checked.length < (index === 1 ? 1 : 3)) {
+						const {
+							checked
+						} = this.labels[index]
+						// console.log(index); //打印下标
+						that.labels[index].checked = [...checked, items.name] //选中添加到数组里
+					} else {
 						uni.showToast({
-							title: '最多只能选3个',
+							title: '已超出可选个数',
 							duration: 1000,
 							icon: 'none'
 						})
-						that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
-					
-					} else {
-						that.labels[index].checked.splice(that.labels[index].checked.indexOf(items), 1); //取消
-					
 					}
-						}
-				that.number = that.checkedArrey.length
-				console.log("jjj", that.checkedArrey);
+				}
+				console.log(that.labels[index].checked, "jjj");
+
 			},
 
-
-			// appointments(index) {
-			// 	console.log("wqeqf", index);
-			// 	let that = this;
-			// 	if (that.checkedArrey1.indexOf(index) == -1 && that.checkedArrey1.length < 3) {
-			// 		// console.log(index); //打印下标
-			// 		that.checkedArrey1.push(index); //选中添加到数组里
-
-			// 	} else if (that.checkedArrey1.length == 3 || that.checkedArrey1.indexOf(index), 3) {
-
-			// 		if (that.checkedArrey1.length == 3) {
-			// 			uni.showToast({
-			// 				title: '最多只能选3个',
-			// 				duration: 1000,
-			// 				icon: 'none'
-			// 			})
-			// 			that.checkedArrey1.splice(that.checkedArrey1.indexOf(index), 1); //取消
-
-			// 		} else {
-			// 			that.checkedArrey1.splice(that.checkedArrey1.indexOf(index), 1); //取消
-
-			// 		}
-			// 	}
-			// 	that.number1 = that.checkedArrey1.length
-			// 	console.log(that.checkedArrey1,"pp");
-
-			// },
-			
-			
 			switchtab() {
-
-
-
+				console.log(3456);
 				let query = {
-
 					birthday: this.birthday,
 					nickName: this.nickName,
 					avatarUrl: this.avatarUrl,
 					sex: 0
 				}
-				this.checkedArrey1.forEach((item, index) => { //js遍历数组
-					console.log("将00", item.val);
-					this.val = item.val
-					this.tagList.push(this.val)
-				});
+				console.log(this.labels);
+				this.labels.forEach((item) => { //js遍历数组
+					// console.log("将00", item.checked.length);
+					if(item.checked.length===0){					
+						return 						
+					}
+						item.checked.forEach((items)=>{
+							console.log(items,"00098");
+							
+					this.tagList.push(items)
+						})
+		    	});
 
 				console.log(this.tagList, "jj");
 				enrollEssential(
@@ -233,11 +153,6 @@
 					})
 				})
 
-
-
-
-
-
 			},
 			label() {
 				// get请求
@@ -250,17 +165,13 @@
 					for (let item in res) {
 						const obj = {
 							key: '',
-
 							value: []
 						}
-
 						console.log(a);
 						obj.key = item
 						obj.value = res[item]
 						obj.checked = []
-
 						arr.push(obj)
-
 					}
 
 					console.log(arr, "ndweoih")

@@ -2,16 +2,18 @@
 	<!-- 他人主页 -->
 	<view>
 
-		<view class="head">
-			<view class="headleft" @tap="revert">
-				<image src="@/static/home/myfanhui.png" class="headimg"></image>
-			</view>
-			<view class="headright">
-				<image src="@/static/home/dian.png" class="headimg"></image>
-			</view>
-		</view>
+
 
 		<view class="box">
+			<view class="head">
+				<view class="headleft" @tap="revert">
+					<image src="@/static/home/myfanhui.png" class="headimg"></image>
+				</view>
+				<view class="headright">
+					<image src="@/static/home/dian.png" class="headimg"></image>
+				</view>
+			</view>
+
 			<view class="background" :style="{
         height: sheight + 'rpx',
 		transition: coverTransition,
@@ -25,8 +27,8 @@
 
 
 			<view class="information">
-				<information></information>
-				<release></release>
+				<information :namelist="namelist"></information>
+				<!-- <release></release> -->
 				<view class="kongbai">
 
 				</view>
@@ -38,6 +40,10 @@
 <script>
 	import information from '@/pages/home/homepage/information.vue'
 	import release from "@/pages/home/homepage/release.vue"
+	import {
+		otherHomepage,
+		homeList
+	} from "@/config/home.js"
 	let startY = 0, //手指按下时屏幕的位置
 		moveY = 0, //手指当前在屏幕中的位置
 		pageAtTop = true; //是否到顶
@@ -49,11 +55,22 @@
 				moving: false,
 				form: {},
 				sheight: 588, //高
+				uid: 0,
+				namelist:{},
+				list:[],
+				page:1,
+				limit:10
 			}
 		},
 		components: {
 			information,
 			release
+		},
+		onLoad(options) {
+			const uid = JSON.parse(options.uid)
+
+			console.log(uid, "00000");
+			this.getlist(uid)
 		},
 		methods: {
 			coverTouchstart(e) {
@@ -89,6 +106,27 @@
 			},
 			revert() {
 				uni.navigateBack({});
+			},
+			getlist(uid) {
+				let id = uid
+				console.log("wer", id);
+				otherHomepage(
+					{id}
+				).then(res => {
+					this.namelist = res
+
+					console.log(this.namelist, "hh");
+				}),
+				homeList({
+					page: this.page,
+					limit: this.limit,
+					uid:id,
+					
+				}).then(res => {
+					this.list=res.rows
+					
+					console.log(res, "hh");
+				})
 			}
 		}
 	}
@@ -106,7 +144,7 @@
 
 		display: flex;
 		justify-content: space-between;
-		position: fixed;
+		position: absolute;
 		left: 20rpx;
 		top: var(--status-bar-height);
 		z-index: 2;
@@ -148,7 +186,7 @@
 	}
 
 	.information {
-padding-top: 30rpx;
+		padding-top: 30rpx;
 		width: 750rpx;
 		border-radius: 60rpx 60rpx 0 0;
 		position: relative;
