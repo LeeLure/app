@@ -20,7 +20,7 @@
 							<view class="wacth">1744w浏览过</view>
 						</view>
 						<!-- 下方文字 -->
-						<view class="card-desc">英雄联盟英雄联盟英雄联盟英雄联英雄联盟英雄联盟英雄联盟</view>
+						<view class="card-desc" @tap="toCircleDetail">英雄联盟英雄联盟英雄联盟英雄联英雄联盟英雄联盟英雄联盟</view>
 					</view>
 					<!-- 按钮 -->
 					<!-- <u-button class="card-button" text="+申请加入"></u-button> -->
@@ -87,6 +87,12 @@ export default {
 			// console.log(res);
 			this.windowHeight = res.windowHeight * 2;
 			// console.log(this.windowHeight);
+		},
+
+		toCircleDetail() {
+			uni.navigateTo({
+				url: '/pages/tidings/circle-details/index/index'
+			});
 		}
 	}
 };

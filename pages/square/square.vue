@@ -188,9 +188,12 @@ export default {
 
 		async getRoomList() {
 			const res = await squareRoomList({
-				limit: this.limit,
-				page: this.page,
-				state: this.state
+				categoryId: '',
+				detail: '',
+				id: '',
+				limit: 10,
+				page: 1,
+				state: 2
 			}).catch(e => {
 				console.log(e);
 			});

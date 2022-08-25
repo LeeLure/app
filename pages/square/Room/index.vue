@@ -4,8 +4,8 @@
 		<view class="bar"></view>
 		<!-- 导航栏 -->
 		<Navigation :title="title">
-			<template #action>
-				<view class="create-room"><view class="text">创建房间</view></view>
+			<template>
+				<view class="create-room" @tap="toCreateRoom"><view class="text">创建房间</view></view>
 			</template>
 		</Navigation>
 
@@ -90,6 +90,12 @@ export default {
 			// console.log(res);
 			this.windowHeight = res.windowHeight * 2 - 188;
 			// console.log(this.windowHeight);
+		},
+
+		toCreateRoom() {
+			uni.navigateTo({
+				url: '/pages/release/room/room'
+			});
 		}
 	}
 };
@@ -108,6 +114,11 @@ export default {
 	border-radius: 25rpx;
 	background-color: #343147;
 }
+
+/* .create-room .text { */
+/* color: #ffffff; */
+/* z-index: 20; */
+/* } */
 
 /* 菜单 */
 .item-list {
