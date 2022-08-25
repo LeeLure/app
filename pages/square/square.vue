@@ -99,6 +99,7 @@
 // import tab from "@/components/tab.vue"
 import CirItem from './circle/CirItem.vue';
 import RoomItem from './Components/RoomItem.vue';
+import { squareRoomList } from '../../config/square.js';
 
 export default {
 	components: {
@@ -116,7 +117,9 @@ export default {
 			windowWidth: 0,
 			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }],
 			isAnimation: false,
-			// animationData: {},
+			limit: 10,
+			page: 1,
+			state: 1,
 			circleList: [
 				{ id: 1, img: '../../../static/square/circle-1.jpg', title: '1150', info: '给你不一样音乐音乐的音乐' },
 				{ id: 2, img: '../../../static/square/circle-1.jpg', title: '1151', info: '给你不一样音乐音乐的音乐' },
@@ -135,19 +138,19 @@ export default {
 
 	onLoad() {
 		this.getWindowHeight();
-		// this.initCircleList();
-		// console.log(this.animationData);
-		// this.animation = uni.createAnimation();
-		// 创建动画实例
-		// this.running();
 
+		// 动画组件
 		const list = JSON.parse(JSON.stringify(this.circleList));
 		this.newCircleList = [...list, ...list];
 		// console.log(this.newCircleList);
 
+		// 动画
 		setTimeout(() => {
 			this.isAnimation = true;
 		}, 450);
+
+		// 房间列表
+		this.getRoomList();
 	},
 
 	methods: {
@@ -181,6 +184,17 @@ export default {
 
 			// 宽度
 			// this.windowWidth = res.windowWidth;
+		},
+
+		async getRoomList() {
+			const res = await squareRoomList({
+				limit: this.limit,
+				page: this.page,
+				state: this.state
+			}).catch(e => {
+				console.log(e);
+			});
+			console.log(res);
 		}
 	}
 };
