@@ -695,6 +695,40 @@
 				}
 			}
 
+		}, {
+			// 聊天用户详情
+			"path": "pages/tidings/chat-details/chat-user-detail/chat-user-detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		}, {
+			// 申请通知页面
+			"path": "pages/tidings/index/message/message-apply/message-apply",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		},
+		{
+			// 更多申请详情页面
+			"path": "pages/tidings/index/message/message-apply/apply-detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
 		}
 	],
 

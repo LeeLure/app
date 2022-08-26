@@ -20,7 +20,9 @@
 		<view class="report" v-if="reportList && isSecondary !== ''">
 			<view class="report-item" @tap="toReportDetail(item.index)" v-for="item in reportSecondaryList" :key="item.index">
 				{{ item.title }}
-				<u-icon name="arrow-right" color="#FFFFFF" size="16"></u-icon>
+				<u-checkbox-group iconPlacement="right" placement="row" shape="circle" @change="checkboxChange(item.index)">
+					<u-checkbox activeColor="#d43ed7"></u-checkbox>
+				</u-checkbox-group>
 			</view>
 		</view>
 	</view>
@@ -36,6 +38,10 @@ export default {
 	data() {
 		return {
 			isSecondary: '',
+			checkboxValue1: [],
+			userName: '',
+			userAvata: '',
+			userId: 0,
 			reportList: [
 				{ title: '色情暴力', index: 1 },
 				{ title: '政治不实信息', index: 2 },
@@ -62,17 +68,31 @@ export default {
 			]
 		};
 	},
+
+	onLoad(option) {
+		this.userName = option.userName;
+		this.userAvata = option.userAvata;
+		this.userId = option.userId;
+		console.log(option.isSecondary, option.userName, option.userAvata, option.userId);
+	},
+
 	methods: {
 		// 二级分类
 		toReportWay(index) {
 			this.isSecondary = index;
 		},
 
+		checkboxChange(n) {
+			console.log('change', n);
+		},
+
 		// 举报详情页面
 		toReportDetail() {
 			// console.log(this.isSecondary);
 			uni.navigateTo({
-				url: `/pages/tidings/circle-details/report/report-detail?isSecondary=${this.isSecondary}`
+				url: `/pages/tidings/circle-details/report/report-detail?isSecondary=${this.isSecondary} + &userName= ${
+					this.userName
+				} + &userId= ${this.userId}`
 			});
 		}
 	}

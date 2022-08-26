@@ -21,17 +21,22 @@
 			<view class="report-item">举报描述</view>
 		</view>
 		<view class="repost-detail">
-			<view v-if="value === ''" class="placeholder">在此输入举报详情~</view>
-			<textarea class="textarea" v-model="value"></textarea>
+			<textarea
+				v-model="value"
+				placeholder="在此输入举报详情~"
+				placeholder-class="placeholder"
+				maxlength="100"
+				class="textarea"
+			></textarea>
 			<view class="text-count">{{ value.length }}/100</view>
 		</view>
 
 		<view class="report"><view class="report-item">上传图片</view></view>
 		<!-- 上传图片 -->
-		<view class="upload">
+		<Upload class="upload" :limit="4">
 			<view class="img"><image src="../../../../static/tidings/zhaopian.png" mode=""></image></view>
 			<view class="count">0/4</view>
-		</view>
+		</Upload>
 
 		<view class="submit">提交</view>
 
@@ -41,21 +46,28 @@
 
 <script>
 import Navigation from '@/components/navigation.vue';
+import Upload from '@/components/upload.vue';
 export default {
 	components: {
-		Navigation
+		Navigation,
+		Upload
 	},
 
 	data() {
 		return {
 			isSecondary: '',
-			value: ''
+			value: '',
+			userName: '',
+			userId: 0
 		};
 	},
 
 	onLoad(option) {
-		// console.log(option.isSecondary);
 		this.isSecondary = option.isSecondary;
+		this.userName = option.userName;
+		this.userId = option.userId;
+		console.log(option.isSecondary);
+		console.log(option.userName, option.userId);
 	},
 
 	methods: {}
@@ -110,12 +122,6 @@ export default {
 	background-color: #29253c;
 	margin: 0 20rpx;
 	padding: 18rpx;
-
-	.placeholder {
-		color: #fff;
-		font-size: 24rpx;
-		opacity: 0.5;
-	}
 
 	.textarea {
 		width: 660rpx;
