@@ -4,7 +4,7 @@
 		<view class="bar">
 		</view>
 		<navigation :title="title">
-			<view class="release"  @tap="release">
+			<view class="release" @tap="release">
 				发布
 			</view>
 		</navigation>
@@ -17,7 +17,7 @@
 			</view>
 		</view>
 		<view class="uploads">
-			<upload :limit="limit" @getFileUrl="getFileUrl">
+			<upload :limit="limit" @getFileUrl="getFileUrl" ref="upload">
 				<view class="plus">
 					+
 				</view>
@@ -31,7 +31,7 @@
 					选择话题
 				</view>
 				<view class="particularstext">
-					选择合适的话题会有更多赞噢~
+					{{item==""?"选择合适的话题会有更多赞噢~":item.name}}
 					<image src="@/static/settings/jinnru.png" class="particularsimgs"></image>
 				</view>
 			</view>
@@ -53,7 +53,9 @@
 <script>
 	import upload from "@/components/upload.vue"
 	import navigation from "@/components/navigation.vue"
-	import { homePush } from "@/config/home.js"
+	import {
+		homePush
+	} from "@/config/home.js"
 	export default {
 		data() {
 			return {
@@ -62,16 +64,27 @@
 					value: '',
 
 				},
-				medias:[],
-				limit: 9
+				medias: [],
+				circleIp: "",
+				topicIp: "",
+				limit: 9,
+				item: '',
 			}
 		},
 		components: {
 			navigation,
-			upload
+			'upload': upload
 
 		},
 		computed: {
+
+		},
+		onLoad() {
+			let that = this
+			uni.$on('updateData', function(data) {
+				that.item = data
+				console.log(that.item);
+			})
 
 		},
 		methods: {
@@ -79,29 +92,35 @@
 				console.log(url)
 				this.medias.push(url)
 			},
-			label(){
+			label() {
 				uni.navigateTo({
-					url:'/pages/release/label/label'
+					url: '/pages/release/label/label'
 				})
 			},
-			circle(){
+			circle() {
 				uni.navigateTo({
-					url:'/pages/release/room/room'
+					url: '/pages/release/circle/circle'
 				})
 			},
-			release(){
-				console.log(this.detail.value,"789",this.medias);
-				homePush(
-				{
-					content:this.detail.value,
-					medias:this.medias
-					
+			release() {
+				if(this.item!==''){
+					this.topicIp=this.item.id
 				}
-				).then(res=>{
-					
+				homePush({
+					content: this.detail.value,
+					medias: this.medias,
+					circleIp: this.circleIp,
+					topicIp: this.topicIp
+
+				}).then(res => {
+					this.detail.value = ""
+					this.$refs.upload.eliminate()
+					this.item=''
 				})
-			}
 			
+			},
+
+
 		}
 	}
 </script>
@@ -129,7 +148,7 @@
 		font-size: 24rpx;
 		width: 680rpx;
 		height: 280rpx;
-		
+
 		border-radius: 20rpx;
 		margin-left: 20rpx;
 		padding-top: 32rpx;
@@ -170,35 +189,41 @@
 		font-size: 60rpx;
 		font-weight: 900;
 	}
-	.list{
+
+	.list {
 		color: white;
 		margin-top: 20rpx;
 	}
-	.conversation{
+
+	.conversation {
 		width: 710rpx;
 		margin-left: 20rpx;
 		height: 80rpx;
 		line-height: 80rpx;
 		display: flex;
 		justify-content: space-between;
-		
+
 	}
-	.particulars{
+
+	.particulars {
 		font-size: 28rpx;
 		vertical-align: middle;
 	}
-	.particularsimg{
+
+	.particularsimg {
 		width: 30rpx;
 		height: 30rpx;
 		vertical-align: middle;
 		margin-right: 10rpx;
 	}
-	.particularstext{
+
+	.particularstext {
 		font-size: 24rpx;
 		color: rgba(255, 255, 255, 0.5);
 		vertical-align: middle;
 	}
-	.particularsimgs{
+
+	.particularsimgs {
 		width: 20rpx;
 		height: 20rpx;
 		vertical-align: middle;

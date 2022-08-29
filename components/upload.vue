@@ -74,8 +74,9 @@ export default {
 				.then(res => {
 					console.log(res);
 					this.uploadFilePromise(res);
-				})
-				.catch(() => {});
+				}).catch(() => {});
+
+			
 		},
 		uploadFilePromise(res) {
 			return new Promise((resolve, reject) => {
@@ -93,6 +94,7 @@ export default {
 					}
 				});
 			});
+
 		}
 	}
 };

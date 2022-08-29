@@ -11,7 +11,7 @@
 		<view class="head">
 			<image src="@/static/home/sousuo.png" class="headimg"></image>
 		
-		<input type="text" maxlength="15" placeholder="请输入您想要查找的圈子" placeholder-class="placeholder" class="input">
+		<input type="text" maxlength="15" placeholder="请输入您想要查找的圈子" placeholder-class="placeholder"  v-model="name" class="input"  @blur="a">
 		</view>
 		
 		<view class="list">
@@ -53,6 +53,7 @@
 
 <script>
 	import navigation from "@/components/navigation.vue"
+	import { CircleTopicSelectCirclename } from "@/config/home.js"
 	export default {
 		data() {
 			return {
@@ -62,6 +63,7 @@
 					{text:"11"},
 					{text:"11"},
 				],
+				name:'',
 				number:-1
 			}
 		},
@@ -70,6 +72,11 @@
 				this.number=index
 			
 			},
+			a(){
+				CircleTopicSelectCirclename({name:this.name}).then(res=>{
+					console.log(res);
+									})
+			}
 		}
 	}
 </script>

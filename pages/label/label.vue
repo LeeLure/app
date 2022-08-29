@@ -24,7 +24,7 @@
 					{{item.key}}
 				</view>
 				<view class="header2">
-					可选{{labels[index].checked.length }}/ {{index==1? 1:3}}
+					可选{{labels[index].checked.length }}/ {{index==1? 1:2}}
 				</view>
 			</view>
 			<view class="category">
@@ -98,7 +98,7 @@
 				if (that.labels[index].checked.indexOf(items.name) !== -1) {
 					that.labels[index].checked.splice(that.labels[index].checked.indexOf(items.name), 1); //取消
 				} else {
-					if (that.labels[index].checked.length < (index === 1 ? 1 : 3)) {
+					if (that.labels[index].checked.length < (index === 1 ? 1 : 2)) {
 						const {
 							checked
 						} = this.labels[index]
