@@ -12,11 +12,11 @@
 						<view class="reputationname">
 							{{namelist.nickName}}
 						</view>
-						<view class="reputationsex"  v-if="namelist.sex==0">
+						<view class="reputationsex" v-if="namelist.sex==0">
 							<image src="@/static/user/nv.png" class="reputationimg"></image>
 							女
 						</view>
-						<view class="reputationsex"  v-else>
+						<view class="reputationsex" v-else>
 							<image src="@/static/user/nan.png" class="reputationimg"></image>
 							男
 						</view>
@@ -24,7 +24,7 @@
 					<view class="followlist">
 						<view class="follow">
 							<view class="follownumber">
-								{{namelist.signature}}
+								{{namelist.concern}}
 							</view>
 							<view class="followtext">
 								关注
@@ -56,7 +56,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<view class="countermark">
 			<view class="countermarktop">
 				<view class="countermarktext">
@@ -65,15 +65,15 @@
 				<view class="countermarktext" v-for="item  in namelist.label">
 					{{item}}
 				</view>
-				
+
 			</view>
 			<view class="countermarkbottom">
-				<view class="countermarktitle">
-					<image src="@/static/home/guanzhu.png" mode=""  class="countermarkimg"></image>
-					<!-- <image src="@/static/home/yiguanzhu.png" mode=""></image> -->
-					关注
+				<view class="countermarktitle" @tap="follow(namelist.whether)">
+					<image src="@/static/home/guanzhu.png" v-if="!namelist.whether" class="countermarkimg"></image>
+					<image src="@/static/home/yiguanzhu.png" v-else class="countermarkimg"></image>
+					{{namelist.whether?"已关注":"关注"}}
 				</view>
-				<view class="countermarktitle">					
+				<view class="countermarktitle">
 					私信
 				</view>
 			</view>
@@ -82,17 +82,41 @@
 </template>
 
 <script>
+	import {
+		otherConcern,
+		otherNoConcern
+	} from "@/config/home.js"
 	export default {
 		name: "information",
 		data() {
 			return {
-
+		
 			}
 		},
-		props:{
-			namelist:{}
+		props: {
+			namelist: {},
+			uid: 0
 		},
 		methods: {
+			follow(whether) {
+				
+				if (whether == false) {
+					otherConcern({
+						id: this.uid
+					}).then(res => {
+						this.$emit("backHome");
+
+
+					})
+				} else {
+					otherNoConcern({
+						id: this.uid
+					}).then(res => {
+
+				this.$emit("backHome");
+					})
+				}
+			},
 
 		}
 	}
@@ -136,7 +160,7 @@
 	.reputation {
 
 		width: 130rpx;
-
+		margin-top: 3rpx;
 
 	}
 
@@ -153,6 +177,8 @@
 		-webkit-line-clamp: 1;
 		margin-bottom: 20rpx;
 
+		padding-left: 10rpx;
+
 	}
 
 	.reputationsex {
@@ -165,7 +191,7 @@
 		text-align: center;
 		background: #1A1824;
 		border-radius: 26rpx;
-		padding: 0 20rpx;
+		padding: 0 10rpx;
 
 
 	}
@@ -219,15 +245,17 @@
 		-webkit-line-clamp: 1;
 
 	}
-	.countermark{
+
+	.countermark {
 		margin-left: 20rpx;
 		margin-top: 40rpx;
 	}
-	.countermarktop{
+
+	.countermarktop {
 		display: flex;
 	}
-	
-	.countermarktext{
+
+	.countermarktext {
 		font-size: 24rpx;
 		color: white;
 		width: 72rpx;
@@ -235,28 +263,31 @@
 		line-height: 50rpx;
 		text-align: center;
 		background-color: #1A1824;
-		border-radius: 26rpx ;
+		border-radius: 26rpx;
 		padding: 0 26rpx;
 		margin-right: 20rpx;
 	}
-	.countermarkbottom{
+
+	.countermarkbottom {
 		display: flex;
 		margin-top: 20rpx;
 	}
-	.countermarktitle{
+
+	.countermarktitle {
 		font-size: 32rpx;
 		color: white;
 		vertical-align: middle;
 		padding: 0 56rpx;
-		width: 122rpx;
+		
 		height: 94rpx;
 		line-height: 94rpx;
 		text-align: center;
 		background-color: #403B5Bcc;
-		border-radius: 48rpx ;
+		border-radius: 48rpx;
 		margin-right: 20rpx;
 	}
-	.countermarkimg{
+
+	.countermarkimg {
 		vertical-align: middle;
 		width: 40rpx;
 		height: 40rpx;

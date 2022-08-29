@@ -92,6 +92,10 @@
 					});
 				})
 			},
+			
+			eliminate(){
+				this.imageValue=''
+			}
 		}
 	}
 </script>

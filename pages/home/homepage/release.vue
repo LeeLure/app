@@ -7,21 +7,17 @@
 			<view class="month">
 				28 <text class="monthtext">3月</text>
 			</view>
-			<view >
+			<view v-for="(item,index) in list">
 	
 	
-				<view class="copywriting">
+				<view class="copywriting" @tap="tendencies(item.id)">
 					<view class="copywritingtext">
-						
-							海浪肯随山俯仰，风帆长共客飘摇
-							海浪肯随山俯仰，风帆长共客飘摇
-							海浪肯随山俯仰，风帆长共客飘摇
-							海浪肯随山俯仰，风帆长共客飘摇
+						{{item.content}}
 	
 						
 						<template>
-							<text class="labeltext">
-								#治愈系风景
+							<text class="labeltext"  v-if="item.topicName">
+									#{{item.topicName}}
 							</text>
 	
 						</template>
@@ -31,7 +27,7 @@
 					</view>
 				</view>
 				<view class="assembly">
-					<picturearray :imgUrl="imgUrl" ></picturearray>
+					<picturearray :imgUrl="item.medias" ></picturearray>
 				</view>
 				
 				<view class="label">
@@ -40,14 +36,14 @@
 	
 	
 					<view class="praiseright">
-						<view class="praise" @tap="click">
+						<view class="praise" @tap="click(item.id)">
 							<image src="@/static/home/dianzan.png" class="fabulous" v-if="!show"></image>
 							<image src="@/static/home/dianjishow.png" class="fabulous" v-if="show"></image>
-							<text class="praisetext">999</text>
+							<text class="praisetext">{{item.zanCount}}</text>
 						</view>
 						<view class="praise">
 							<image src="@/static/home/pinglun.png" class="fabulous"></image>
-							<text class="praisetext">999</text>
+							<text class="praisetext">{{item.commitCount}}</text>
 						</view>
 					</view>
 	
@@ -69,54 +65,60 @@
 
 <script>
 		import picturearray from "@/components/picturearray.vue"
+		import {
+			
+			commentsLike,commentsDislike
+		} from "@/config/home.js"
 		export default {
 					name:"release",
 				data() {
 					return {
 						title: "我发布的",
 						show: false,
-						titles: [
-							{
-								text: "好来玩电竞网咖"
-							},
-							{
-								text: "好来玩电竞网咖"
-							},
-							{
-								text: "好来玩电竞网咖"
-							}
-						],
-						imgUrl: [{
-								img: require("@/static/home/a.pic.jpg")
-							},
-							{
-								img: require("@/static/home/b.pic.jpg")
-							},
-							{
-								img: require("@/static/home/c.pic.jpg")
-							},
-							{
-								img: require("@/static/home/a.pic.jpg")
-							},
-		
-						],
-						show: false,
-						
+												
 					}
+				},
+				props:{
+					list:{}
 				},
 				components: {
 					
 					picturearray
 		
 				},
-				onLoad() {
-					
-				},
+				
 				methods: {
-					click() {
+					click(id) {
+						
 						const isShow = this.show ? false : true;
 						this.show = isShow;
+						
+						if(this.show==true){
+							commentsLike({id:id}).then(res=>{						
+						this.$emit("backHome"); 
+								
+							})
+						}else{
+							commentsDislike({id:id}).then(res=>{
+								this.$emit("backHome"); 
+								
+							})
+						}				
 					},
+					tendencies(id) {
+						let query={
+							id:id,
+							faceshow:false
+							
+						}
+						console.log(query,"000");
+							uni.navigateTo({
+								url: '/pages/home/moredynamic/tendencies/tendencies?query='+JSON.stringify(query)
+							})
+						
+					
+					},
+					
 				}
 			}
 		

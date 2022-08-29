@@ -13,74 +13,83 @@
 					发布动态数
 					<text class="conditiontext"> >5 </text>
 				</view>
-				<view class="conditionright">
+				<view class="conditionright" v-if="list.dynamicQuantity">
 					<view class="headingright">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
 					已满足
 				</view>
-				<!-- <view class="conditionright">
-					<view class="headingright">
+				<view class="conditionright1" v-else>
+					<view class="headingright1">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
-				未满足					
-				</view> -->
+					未满足
+				</view>
 			</view>
 			<view class="conditionlist">
 				<view class="conditionleft">
 					发布动态累计获得1000赞
 					<text class="conditiontext"> 已获得0/1000 </text>
 				</view>
-				<view class="conditionright">
+				<view class="conditionright" v-if="list.likes">
 					<view class="headingright">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
 					已满足
 				</view>
-				<!-- <view class="conditionright">
-					<view class="headingright">
+				<view class="conditionright1" v-else>
+					<view class="headingright1">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
 				未满足					
-				</view> -->
+				</view>
 			</view>
 			<view class="conditionlist">
 				<view class="conditionleft">
 					创建圈子数
 					<text class="conditiontext"> >5 </text>
 				</view>
-				<view class="conditionright">
+				<view class="conditionright" v-if="list.circleConditions">
 					<view class="headingright">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
 					已满足
 				</view>
-				<!-- <view class="conditionright">
-					<view class="headingright">
+				<view class="conditionright1" v-else>
+					<view class="headingright1">
 						<image src="@/static/release/duigou.png" class="headingrightimg">
 						</image>
 					</view>
-				未满足					
-				</view> -->
+					未满足
+				</view>
 			</view>
-<view class="apply" @tap="establishcircle">
-	申请创建
-</view>
+			<view class="apply applys" @tap="establishcircle"  v-if="show">
+				申请创建
+			</view>
+			<view class="apply" v-else>
+				申请创建
+			</view>
+			
 		</view>
 	</view>
 </template>
 
 <script>
 	import navigation from "@/components/navigation.vue"
+	import {
+		CircleTopicCondition
+	} from "@/config/home.js"
 	export default {
 		data() {
 			return {
 				title: "创建圈子",
+				list: {},
+				show:false
 			}
 		},
 		components: {
@@ -89,6 +98,7 @@
 
 		},
 		onLoad() {
+			this.getlist()
 			var _this = this
 			uni.getSystemInfo({
 				success(res) {
@@ -99,9 +109,18 @@
 			})
 		},
 		methods: {
-			establishcircle(){
+			getlist() {
+				CircleTopicCondition().then(res => {
+					if(res.dynamicQuantity==true&&res.circleConditions==true&&res.likes==true){
+						this.show=true
+					}
+					this.list = res
+				})
+
+			},
+			establishcircle() {
 				uni.navigateTo({
-					url:'/pages/release/establishcircle/foundcircle/foundcircle'
+					url: '/pages/release/establishcircle/foundcircle/foundcircle'
 				})
 			}
 
@@ -153,6 +172,23 @@
 		font-size: 24rpx;
 	}
 
+	.conditionright1 {
+		margin-right: 30rpx;
+		display: flex;
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 24rpx;
+	}
+
+	.headingright1 {
+		width: 36rpx;
+		height: 36rpx;
+		border-radius: 30rpx;
+		background-color: rgba(255, 255, 255, 0.6);
+		margin-right: 10rpx;
+
+
+	}
+
 	.headingright {
 		width: 36rpx;
 		height: 36rpx;
@@ -168,7 +204,8 @@
 		height: 20rpx;
 		margin: 8rpx;
 	}
-	.apply{
+
+	.apply {
 		width: 544rpx;
 		height: 106rpx;
 		line-height: 106rpx;
@@ -179,6 +216,11 @@
 		color: rgba(255, 255, 255, 0.2);
 		margin-left: 104rpx;
 		margin-top: 70%;
-		 
+
+	}
+	.applys {
+		background-color: #D53EDA;
+		color: white;
+	
 	}
 </style>

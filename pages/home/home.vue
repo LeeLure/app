@@ -73,7 +73,7 @@
 			<view class="people">动态</view>
 			<view class="more" @tap="moredynamic">更多动态 ></view>
 		</view>
-		<dynamic  :exhibit="exhibit"  :list="list"></dynamic>
+		<dynamic  :exhibit="exhibit"  :list="list"  @backHome='back'></dynamic>
 		<view class="kongbai">
 
 		</view>
@@ -194,6 +194,9 @@
 					console.log(res, "hh");
 				})
 
+			},
+			back(){
+			  this.trends() //e是传过来的参数val
 			}
 		}
 

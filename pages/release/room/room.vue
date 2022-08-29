@@ -10,7 +10,7 @@
 					活动主题
 				</view>
 				<view class="activityinto">
-					<input type="text" maxlength="10" class="activityinput">
+					<input type="text" maxlength="10" class="activityinput" v-model="name">
 					<image src="@/static/release/jiantou.png" mode="" class="activityimg"></image>
 				</view>
 			</view>
@@ -70,7 +70,7 @@
 			封面头像
 		</view>
 		<view class="uploads">
-			<upload :limit="limit" @getFileUrl="getFileUrl">
+			<upload :limit="limit" @getFileUrl="getFileUrl"  ref="upload">
 				<view class="plus">
 					+
 				</view>
@@ -79,7 +79,7 @@
 		<view class="tips">
 			（最多上传一张图片噢~）
 		</view>
-		<view class="establish">
+		<view class="establish" @tap="room">
 			<image src="@/static/release/chuhangjian.png" class="establishimg"></image>
 			创建房间
 		</view>
@@ -89,6 +89,7 @@
 <script>
 	import upload from "@/components/upload.vue"
 	import navigation from "@/components/navigation.vue"
+	import { roomCreate } from "@/config/home.js"
 	export default {
 		data() {
 			return {
@@ -98,7 +99,10 @@
 
 				},
 				number: 0,
-				limit: 1
+				limit: 1,
+				image:"",
+				name:"",
+				time:"2022-08-29T20:50:00.017Z"
 			}
 		},
 		components: {
@@ -132,6 +136,30 @@
 					return
 				}
 				this.number--
+			},
+			getFileUrl(url) {
+				console.log(url,"000")
+				this.image=url
+				console.log(this.image,"111");
+			},
+			room(){
+				roomCreate({
+					
+					detail:this.detail.value,
+					image:this.image,
+					lat: 0,
+					lng: 0,
+				     name:this.name,
+					peopleNum:this.number,
+					  time:this.time
+				}).then(res=>{
+				this.detail.value=""
+					this.$refs.upload.eliminate()
+					
+					this.name=''
+					this.number=0
+					this.time=''
+				})
 			}
 		}
 	}

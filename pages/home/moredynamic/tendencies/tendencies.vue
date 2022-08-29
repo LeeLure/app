@@ -8,50 +8,52 @@
 
 		<view>
 			<scroll-view scroll-y="true" class="scrollview">
-				<view class="" >
-					<!-- <dynamic :list="list" :exhibit="exhibit"></dynamic> -->
-					<view class="comment">
+				<view>
+					<dynamic :list="list" :exhibit="exhibit" :faceshow='faceshow'></dynamic>
+					<block v-for="(item,index) in comments" :key="index">
 
-						<view class="commentlist">
-							<view class="commentleft">
-								<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="commentimg"></image>
+						<view class="comment" v-if="item">
+
+							<view class="commentlist">
+								<view class="commentleft">
+									<image :src="item.face" mode="aspectFill" class="commentimg"></image>
+								</view>
+
+								<view class="commentright">
+									<view class="commentname">
+										{{item.nikeName}}
+									</view>
+									<view class="commenttext" @longtap="reply(item)">
+										{{item.content}}
+									</view>
+									<view class="commenttime">
+										{{item.time}}
+									</view>
+								</view>
+							</view>
+							<view>
+								<view class="commentlists" v-for="(items,index) in item.checked">
+									<view class="commentlefts">
+										<image :src="items.face" mode="aspectFill" class="commentimgs"></image>
+									</view>
+
+									<view class="commentright">
+										<view class="commentname">
+											{{items.nikeName}}
+										</view>
+										<view class="commenttext">
+											{{items.content}}
+										</view>
+										<view class="commenttime">
+											{{items.time}}
+										</view>
+									</view>
+								</view>
 							</view>
 
-							<view class="commentright">
-								<view class="commentname">
-									胡乎乎
-								</view>
-								<view class="commenttext">
-									真漂亮！真漂亮！真漂亮！
-								</view>
-								<view class="commenttime">
-									昨天20：50
-								</view>
-							</view>
 						</view>
 
-
-
-						<view class="commentlists">
-							<view class="commentlefts">
-								<image src="@/static/home/b.pic.jpg" mode="aspectFill" class="commentimgs"></image>
-							</view>
-
-							<view class="commentright">
-								<view class="commentname">
-									胡乎乎
-								</view>
-								<view class="commenttext">
-									真漂亮！真漂亮！真漂亮！
-								</view>
-								<view class="commenttime">
-									昨天20：50
-								</view>
-							</view>
-						</view>
-
-
-					</view>
+					</block>
 				</view>
 
 
@@ -61,59 +63,161 @@
 		<view class="release">
 
 
-			<textarea v-model="detail.value" placeholder="来都来了 不评论点什么吗" placeholder-class="releaseplaceholder"
+			<textarea v-model="detail.value" :placeholder="placeholder" placeholder-class="releaseplaceholder"
 				maxlength="300" class="releaseinput"></textarea>
-			<view class="releasetext">
+			<view class="releasetext" @tap="publish">
 				确认
 			</view>
 
 		</view>
+		<view class="kongbai">
 
+		</view>
 	</view>
 </template>
 
 <script>
 	import navigation from "@/components/navigation.vue"
-	// import dynamic from "@/components/dynamic.vue"
+	import dynamic from "@/components/dynamic.vue"
 	import {
-		homeDesc
+		homeDesc,
+		commentsComment,
+		concernId,
+		concernList
 	} from "@/config/home.js"
 	export default {
 		data() {
 			return {
 				title: "动态详情",
-				list: [],
+				list: [
+
+				],
 				exhibit: false,
+				faceshow: "",
 				detail: {
 					value: '',
 
-				}
+				},
+				id: '',
+				publishId: "",
+				pub: "",
+
+				page: 1,
+				limit: 10,
+				comments: [
+
+				],
+				placeholder: "来都来了 不评论点什么吗",
+
+
+
 
 			}
 		},
 		components: {
 			navigation,
-			// dynamic
+			dynamic
 		},
 		onLoad(options) {
-			const id = JSON.parse(options.id)
+			console.log(options, "po");
+			const query = JSON.parse(options.query)
+			const id = query.id
+			this.id = id
+			this.faceshow = query.faceshow
 			this.getlist(id)
-			
-		},
 
+
+		},
+		onReady() {
+			this.concernlists()
+		},
 		methods: {
-			getlist(id){
-				console.log(id,"oiuy");
-				
-				homeDesc(
-					{id}
-				).then(res => {
-					
-				
-					console.log(res, "hh");
+			getlist(id) {
+				console.log(id, "oiuy");
+				homeDesc({
+					id: id
+				}).then(res => {
+
+					this.list.push(res)
+					console.log(this.list, "hh");
 				})
 
-			}
+			},
+			// 回复别人的评论
+			reply(item) {
+				console.log("ppp");
+				this.placeholder = "回复" + item.nikeName
+				this.publishId = item.id
+
+			},
+
+			// 发表评论
+			publish() {
+				const content = this.detail.value
+				if (this.publishId.length > 0) {
+					this.pub = this.publishId
+					console.log("this.pub", this.pub);
+				} else {
+					this.pub = this.id
+					console.log("this.pub", this.pub);
+				}
+				console.log("poi", this.pub);
+				commentsComment({
+					content: content,
+					publishId: this.pub
+
+				}).then(res => {
+					this.detail.value = ""
+					this.placeholder = "来都来了 不评论点什么吗"
+					this.publishId = ''
+					this.concernlist()
+				})
+			},
+			// 评论列表
+			concernlists() {
+				var i = 0
+				concernList({
+					page: this.page,
+					limit: this.limit,
+					publishId: this.id
+				}).then(res => {
+					this.comments = res.rows
+					this.comments.forEach((item, index) => {
+						concernList({
+							page: this.page,
+							limit: this.limit,
+							publishId: item.id
+						}).then(res => {
+							console.log("mnbvc", res,i++);
+							
+							// const {
+							// 	checked
+							// } = this.comments[index]
+							if (res == null) return
+							this.comments[index].checked = res.rows
+
+						})
+					})
+
+				})
+			},
+			// concernlists() {
+			// 	var i = 0;
+			// 	if (i >= louceng_arr.length) {
+			// 									return;
+			// 								}
+			// 	concernList({
+			// 		page: this.page,
+			// 		limit: this.limit,
+			// 		publishId: this.id
+			// 	}).then(res => {
+			// 		this.comments = res.rows
+
+
+
+			// 	})
+			// },
+
 
 		}
 	}
@@ -201,6 +305,7 @@
 	.release {
 		width: 100%;
 		height: 140rpx;
+		background-color: #1E1A32;
 
 		position: fixed;
 		bottom: 0;
@@ -242,5 +347,9 @@
 		font-family: PingFang SC-Medium, PingFang SC;
 		font-weight: 500;
 		color: #A28F21;
+	}
+
+	.kongbai {
+		height: 140rpx;
 	}
 </style>

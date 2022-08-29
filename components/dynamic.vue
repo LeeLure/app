@@ -4,11 +4,12 @@
 		<view class="particulars" v-for="(item,index) in list">
 			<view class="batten">
 				<view class="sculpture" @tap="homepage(item.uid)">
-					<image :src="item.face" class="sculptureimage"></image>
+					<image :src="item.face" class="sculptureimage" v-if="item.face"></image>
+					<image :src="item.avatarUrl" class="sculptureimage" v-else></image>
 				</view>
 				<view class="nickname">
-					<view class="nicknamename">{{item.nikeName}}</view>
-					<view class="nicknametime">{{item.time}}</view>
+					<view class="nicknamename">{{item.nikeName ||item.nickName}}</view>
+					<view class="nicknametime">{{item.time ||item.descTime}}</view>
 				</view>
 				<view class="copywritingright">
 					<image src="@/static/user/simi.png" class="copywritingimg" @tap="copywritingimg"></image>
@@ -52,9 +53,9 @@
 				</view>
 
 
-				<view class="praise" @tap="click">
-					<image src="@/static/home/dianzan.png" class="fabulous" v-if="!show"></image>
-					<image src="@/static/home/dianjishow.png" class="fabulous" v-if="show"></image>
+				<view class="praise" @tap="click(item)">
+					<image src="@/static/home/dianzan.png" class="fabulous" v-if="!item.zan"></image>
+					<image src="@/static/home/dianjishow.png" class="fabulous" v-else></image>
 					<text class="praisetext">{{item.zanCount}}</text>
 				</view>
 				<view class="praise">
@@ -70,15 +71,18 @@
 
 <script>
 	import picturearray from "@/components/picturearray.vue"
+	import { commentsLike,commentsDislike } from "@/config/home.js"
 	export default {
 		props: {
 			exhibit: "",
-			list: {}
+			list: {},
+			faceshow:''
 
 		},
 		data() {
 			return {
-				show: false,
+				
+				
 			}
 		},
 
@@ -89,25 +93,42 @@
 
 		},
 		methods: {
-			click() {
-				const isShow = this.show ? false : true;
-				this.show = isShow;
+			click(item) {
+				
+				const id = item.id;
+				
+				const zan=item.zan
+				
+				if(zan==false){
+					commentsLike({id:id}).then(res=>{						
+				this.$emit("backHome"); 
+						
+					})
+				}else{
+					commentsDislike({id:id}).then(res=>{
+						this.$emit("backHome"); 
+						
+					})
+				}				
 			},
 			copywritingimg() {
 				console.log("jh");
 			},
 			tendencies(id) {
+				let query={
+					id:id,
+					show:''
+				}
 				if (this.exhibit == true) {
 					 console.log(id,"poiu");
 					uni.navigateTo({
-						url: '/pages/home/moredynamic/tendencies/tendencies?id='+JSON.stringify(id)
+						url: '/pages/home/moredynamic/tendencies/tendencies?query='+JSON.stringify(query)
 					})
 				}
 
 			},
-			homepage(uid) {
-				
-				
+			homepage(uid) {	
+				if(this.faceshow==false) return
 				uni.navigateTo({
 					url: '/pages/home/homepage/homepage?uid='+JSON.stringify(uid)
 				})
@@ -217,6 +238,7 @@
 
 	.partakeportraits {
 		display: flex;
+		
 	}
 
 	.partake1 {
@@ -248,14 +270,15 @@
 		width: 40rpx;
 		height: 40rpx;
 		border-radius: 30rpx;
+		
 	}
 
 	.conversation {
-
+		line-height: 40rpx;
 		font-size: 22rpx;
 		color: rgba(255, 255, 255, 0.5);
 		margin-left: 60rpx;
-		margin-top: 10rpx;
+	
 		margin-right: 80rpx;
 	}
 

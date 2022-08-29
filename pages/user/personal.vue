@@ -2,12 +2,13 @@
 	<view>
 		<view class="informa">
 			<view class="headportrait">
-				<image src="@/static/home/a.pic.jpg" mode="aspectFill" class="headportraitimg"></image>
+				<image :src="personal.avatarUrl" mode="aspectFill" class="headportraitimg"></image>
+				
 			</view>
 			<view class="spread">
 				<view class="spreadline" @tap="follow">
 					<view class="spreadtop">
-						36
+						{{personal.concern}}
 					</view>
 					<view class="spreadbottom">
 						关注
@@ -15,7 +16,7 @@
 				</view>
 				<view class="spreadline">
 					<view class="spreadtop">
-						36
+						{{personal.vermicelli}}
 					</view>
 					<view class="spreadbottom">
 						粉丝
@@ -23,7 +24,7 @@
 				</view>
 				<view class="spreadline">
 					<view class="spreadtop">
-						36
+						{{personal.like}}
 					</view>
 					<view class="spreadbottom">
 						受到喜欢
@@ -32,30 +33,29 @@
 			</view>
 		</view>
 		<view class="name">
-			胡SIRSIR777 {{' '}}
+			{{personal.nickName}} {{' '}}
 			<image src="@/static/user/xiugai.png" class="modify" @tap="edit"></image>
 		</view>
 		<view class="id">
-			ID：546546
+			ID：{{personal.userId}}
 		</view>
 		<view class="id">
-			怀揣梦想，心系远方~
+			{{personal.signature}}
 		</view>
 		<view class="autograph">
 			<view class="sex">
-				<image src="@/static/user/nan.png" v-if="sex==='男'" class="seximg"></image>
+				<image src="@/static/user/nan.png" v-if="personal.sex===1" class="seximg"></image>
 				<image src="@/static/user/nv.png" v-else class="seximg"></image>
-				{{sex}}
+				{{personal.sex==0?"女":"男"}}
 			</view>
-			<view class="sex">
-				绘画
+			<view class="sex" v-for="item  in personal.label">
+				{{item}}
 			</view>
-
-			<view class="sex">
-				绘画
-			</view>
-			<view class="sex">
-				天蝎座
+			
+			
+			<view class="sex" >
+				{{personal.constellation}}
+				
 			</view>
 
 		</view>
@@ -66,8 +66,11 @@
 	export default {
 		data() {
 			return {
-				sex: "男"
+				
 			}
+		},
+		props:{
+		personal:{}	
 		},
 		methods: {
 			follow() {
@@ -96,13 +99,15 @@
 		width: 168rpx;
 		height: 168rpx;
 		border-radius: 84rpx;
-		border: 4rpx solid white;
+		
 	}
 
 	.headportraitimg {
-		width: 168rpx;
-		height: 168rpx;
+		width: 100%;
+		height: 100%;
 		border-radius: 84rpx;
+		border: 4rpx solid white;
+		
 	}
 
 	.spread {

@@ -27,8 +27,8 @@
 
 
 			<view class="information">
-				<information :namelist="namelist"></information>
-				<!-- <release></release> -->
+				<information :namelist="namelist" :uid="uid" @backHome='back'></information>
+				<release :list="list" ></release>
 				<view class="kongbai">
 
 				</view>
@@ -56,10 +56,10 @@
 				form: {},
 				sheight: 588, //高
 				uid: 0,
-				namelist:{},
-				list:[],
-				page:1,
-				limit:10
+				namelist: {},
+				list: [],
+				page: 1,
+				limit: 10
 			}
 		},
 		components: {
@@ -68,9 +68,10 @@
 		},
 		onLoad(options) {
 			const uid = JSON.parse(options.uid)
-
+			this.uid = uid
 			console.log(uid, "00000");
 			this.getlist(uid)
+			this.dynamiclist(uid)
 		},
 		methods: {
 			coverTouchstart(e) {
@@ -110,24 +111,35 @@
 			getlist(uid) {
 				let id = uid
 				console.log("wer", id);
-				otherHomepage(
-					{id}
-				).then(res => {
+				otherHomepage({
+					id: id
+				}).then(res => {
 					this.namelist = res
 
 					console.log(this.namelist, "hh");
-				}),
+				})
+
+			},
+			dynamiclist(uid) {
 				homeList({
 					page: this.page,
 					limit: this.limit,
-					uid:id,
+					uid: uid,
+
+				}).then(res => {				
+					this.list = res.rows
 					
-				}).then(res => {
-					this.list=res.rows
-					
-					console.log(res, "hh");
+					console.log(this.list, "hh00ss");
 				})
+
+
+			},
+			back() {
+				this.dynamiclist(this.uid)
+				this.getlist(this.uid)
+				console.log("poi");
 			}
+
 		}
 	}
 </script>

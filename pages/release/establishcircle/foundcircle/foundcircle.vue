@@ -4,12 +4,13 @@
 		</view>
 		<navigation :title="title"> </navigation>
 		<view class="activity">
+			
 			<view class="activitylist border">
 				<view class="activitytext">
 					圈子名称
 				</view>
 				<view class="activityinto">
-					<input type="text" maxlength="10" class="activityinput">
+					<input type="text" maxlength="10" class="activityinput" v-model="name">
 
 				</view>
 			</view>
@@ -29,7 +30,7 @@
 			</view>
 
 			<view class="uploads">
-				<upload :limit="limit" @getFileUrl="getFileUrl">
+				<upload :limit="limit" @getFileUrl="getFileUrl" ref="upload">
 					<view class="plus">
 						+
 					</view>
@@ -45,14 +46,14 @@
 				</view>
 				<view class="activityinto" @tap="type">
 					<view class="activityinput">
-						请选择圈子类型
+						{{item==""?"请选择圈子类型":item.name}}
 					</view>
 					<image src="@/static/release/jiantou.png" mode="" class="activityimg"></image>
 				</view>
 			</view>
 		</view>
 
-		<view class="establish">
+		<view class="establish" @tap="establist">
 			<image src="@/static/release/chhhuangjianquanzi.png" class="establishimg"></image>
 			创建圈子
 		</view>
@@ -62,6 +63,7 @@
 <script>
 	import upload from "@/components/upload.vue"
 	import navigation from "@/components/navigation.vue"
+	import { CircleTopicAndCircle } from "@/config/home.js"
 	export default {
 		data() {
 			return {
@@ -70,8 +72,12 @@
 					value: '',
 
 				},
-				limit:1
-			}
+				limit: 1,
+				item:'',
+				circleUrl:"",
+				
+				name:""
+				}
 		},
 		computed: {
 			text() {
@@ -92,12 +98,38 @@
 			upload
 
 		},
+		onLoad() {
+			let that = this
+						uni.$on('updateData',function(data){
+							that.item = data
+							console.log(that.item);
+						})
+		
+		},
 		methods: {
-type(){
-	uni.navigateTo({
-		url:'/pages/release/establishcircle/foundcircle/type/type'
-	})
-}
+			type() {
+				uni.navigateTo({
+					url: '/pages/release/establishcircle/foundcircle/type/type'
+				})
+			},
+			getFileUrl(url) {
+				console.log(url,"000")
+				this.circleUrl=url
+				
+			},
+			establist(){
+				CircleTopicAndCircle({
+					categoryId: this.item.id,
+					circleUrl:this.circleUrl,
+					introduce: this.detail.value,
+					name: this.name
+				}).then(res=>{
+					this.item=""
+					this.$refs.upload.eliminate()
+					this.detail.value=""
+					this.name=""
+				})
+			}
 		}
 	}
 </script>
@@ -110,6 +142,7 @@ type(){
 		border-radius: 20rpx;
 		background-color: #29253C;
 		margin-top: 40rpx;
+		color: white;
 	}
 
 	.activitylist {
