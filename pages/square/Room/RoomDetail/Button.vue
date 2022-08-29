@@ -2,7 +2,7 @@
 	<view class="button-bgc">
 		<view class="button">
 			<button class="share"><view class="share-text" @tap="onShare">分享</view></button>
-			<button class="join" @tap="toJoinRoom">
+			<button class="join" @tap="toJoinRoom(roomId)">
 				<view class="join-img"><image src="../../../../static/square/join.png" mode=""></image></view>
 				<view class="join-text">我要加入</view>
 			</button>
@@ -12,10 +12,19 @@
 
 <script>
 export default {
+	props: {
+		roomId: {
+			type: String,
+			required: true
+		}
+	},
+
 	methods: {
-		toJoinRoom() {
+		toJoinRoom(id) {
+			// roomId = id
+			// console.log(id);
 			uni.navigateTo({
-				url: '/pages/square/Room/JoinRoom/index'
+				url: '/pages/square/Room/JoinRoom/index?roomId=' + id
 			});
 		},
 

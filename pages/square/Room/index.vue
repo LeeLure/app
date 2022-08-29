@@ -19,13 +19,24 @@
 			<!-- 右侧房间列表 -->
 			<view class="RightRoomItem">
 				<scroll-view class="scroll-view" scroll-y :style="{ height: windowHeight - 8 + 'rpx' }">
-					<RoomItem class="RoomItem" v-for="item in 6">
+					<RoomItem class="RoomItem" v-for="item in roomList" :key="item.id" :id="item.id">
 						<template #img>
-							<view class="roomImg"><image src="../../../static/square/item-1.jpg" mode=""></image></view>
+							<view class="roomImg"><image :src="item.images" mode=""></image></view>
 						</template>
 						<!-- <view class="RoomInfo"> -->
 						<template #title>
-							<view class="roomTitle">出发出发！出发西藏！西藏！我来啦！！</view>
+							<view class="roomTitle">{{ item.title }}</view>
+						</template>
+						<template #time>
+							<view class="time">
+								<image class="timeIcon" src="../../../static/square/time.png" mode=""></image>
+								{{ item.date }} {{ item.week }} {{ item.hdate }}
+							</view>
+						</template>
+						<template #add>
+							<view class="addIcon"><image src="../../../static/square/add.png" mode=""></image></view>
+							<view class="addText">余姚&nbsp;&nbsp;|&nbsp;&nbsp;距你</view>
+							<text class="juli">568m</text>
 						</template>
 						<!-- 房间人数 -->
 						<template #footer>
@@ -46,6 +57,7 @@ import Navigation from '../../../components/navigation.vue';
 import Search from '../Components/Search.vue';
 import LeftCategory from '../Components/LeftCategory.vue';
 import RoomItem from '../Components/RoomItem.vue';
+import { squareRoomList } from '@/config/square.js';
 export default {
 	components: {
 		Navigation,
@@ -58,6 +70,25 @@ export default {
 		return {
 			title: '更多房间',
 			windowHeight: 0,
+			roomList: [],
+			config: {
+				categoryId: '',
+				detail: '',
+				id: '',
+				limit: 10,
+				page: 1,
+				state: 1
+			},
+			loes: {
+				categoryId: 1,
+				detail: '创建房间',
+				image: 'http://baidu.com',
+				lat: 10.1,
+				lng: 14.4,
+				name: '啊啊啊啊',
+				peopleNum: 6,
+				time: '2022-08-25T05:27:33.729Z'
+			},
 			List: [
 				{ title: '推荐房间', index: 0 },
 				{ title: '推荐房间', index: 1 },
@@ -81,6 +112,8 @@ export default {
 
 	onLoad() {
 		this.getWindowHeight();
+
+		this.getRoomList();
 	},
 
 	methods: {
@@ -90,6 +123,17 @@ export default {
 			// console.log(res);
 			this.windowHeight = res.windowHeight * 2 - 188;
 			// console.log(this.windowHeight);
+		},
+
+		async getRoomList() {
+			const res = await squareRoomList({ config: this.config }).catch(e => {
+				console.log(e);
+			});
+
+			// console.log(res);
+
+			this.roomList = res.rows;
+			// console.log(this.roomList);
 		},
 
 		toCreateRoom() {
@@ -197,5 +241,40 @@ export default {
 
 .RoomItem {
 	margin-bottom: 30rpx;
+}
+
+.time {
+	display: flex;
+	font-size: 24rpx;
+	color: #999999;
+	vertical-align: middle;
+}
+
+.timeIcon {
+	vertical-align: middle;
+	width: 30rpx;
+	height: 30rpx;
+	margin: 4rpx 6rpx 0 0;
+	/* margin-top: 4rpx; */
+}
+
+.addText {
+	margin-left: 4rpx;
+}
+
+.juli {
+	color: #b043fa;
+}
+
+.addIcon {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 6rpx;
+}
+
+.addIcon image {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
 }
 </style>

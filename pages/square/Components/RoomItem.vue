@@ -1,20 +1,13 @@
 <template>
 	<!-- 房间组件 -->
-	<view class="item" @tap="toRoomDetail()">
+	<view class="item" @tap="toRoomDetail(id)">
 		<view class="">
 			<slot name="img"></slot>
 			<view class="info">
 				<slot name="title"></slot>
-				<view class="time">
-					<!-- <u-icon name="clock" color="#B043FA" size="15"></u-icon> -->
-					<image class="timeIcon" src="../../../static/square/time.png" mode=""></image>
-					11-8 星期六 14：30
-				</view>
+				<view class="time"><slot name="time"></slot></view>
 				<view class="add">
-					<!-- <u-icon name="map" color="#B043FA" size="15"></u-icon> -->
-					<view class="addIcon"><image src="../../../static/square/add.png" mode=""></image></view>
-					<view class="addText">余姚&nbsp;&nbsp;|&nbsp;&nbsp;距你</view>
-					<text class="text">568m</text>
+					<slot name="add"></slot>
 					<slot name="footer"></slot>
 				</view>
 			</view>
@@ -24,15 +17,26 @@
 
 <script>
 export default {
+	props: {
+		id: {
+			type: Number,
+			required: true
+		}
+	},
 	data() {
-		return {};
+		return {
+			roomId: 0
+		};
 	},
 	methods: {
 		// 跳转房间详情
-		toRoomDetail() {
+		toRoomDetail(id) {
+			// console.log(id);
+			this.roomId = id;
+			// console.log(this.roomId);
 			// uni.showToast({});
 			uni.navigateTo({
-				url: '/pages/square/Room/RoomDetail/index'
+				url: `/pages/square/Room/RoomDetail/index?roomId=${this.roomId}`
 			});
 		}
 	}
@@ -49,6 +53,7 @@ export default {
 
 .info {
 	/* height: 194rpx; */
+	min-width: 340rpx;
 	box-sizing: border-box;
 	padding: 10rpx;
 	background-color: #fff;
@@ -75,25 +80,5 @@ export default {
 	font-size: 24rpx;
 	color: #999999;
 	margin-top: 12rpx;
-}
-
-.addText {
-	margin-left: 4rpx;
-}
-
-.text {
-	color: #b043fa;
-}
-
-.addIcon {
-	width: 30rpx;
-	height: 30rpx;
-	margin-right: 6rpx;
-}
-
-.addIcon image {
-	width: 100%;
-	height: 100%;
-	vertical-align: middle;
 }
 </style>
