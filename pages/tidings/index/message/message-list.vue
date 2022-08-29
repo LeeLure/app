@@ -2,12 +2,18 @@
 	<view class="main">
 		<view class="message-list">
 			<view class="swipe">
+				<!-- 申请通知的入口 -->
+				<view class="message-apply" @tap="toMessageApply"  style="height: 158rpx; line-height: 158rpx; text-align: center; color: #FFF; font-size: 28rpx; background-color: #29253C;">
+					申请通知的静态页面入口
+				</view>
 				<view class="container" @touchstart="touchS" @touchmove="touchM" @touchend="touchE"
 					:style="{'left':act_touch==index?leftStyle + 'upx':0}" :data-index="index"
 					v-for="(item,index) in list" :key='index'>
+					
 					<view class="message-box">
-						<view @tap="toDetails(item)" class="message">
-							<view class="left">
+						
+						<view @tap="toDetails(item)"  class="message">
+							<view class="left" >
 								<image class="img" src="../../../../static/home/a.pic.jpg" alt="">
 							</view>
 							<view class="center">
@@ -120,6 +126,13 @@
 
 		},
 		methods: {
+			// 跳转申请通知页面
+			toMessageApply() {
+				uni.navigateTo({
+					url:'/pages/tidings/index/message/message-apply/message-apply'
+				})
+			},
+			
 			scroll(e) {
 				// console.log(e)
 			},
@@ -243,7 +256,7 @@
 						}
 					}
 				});
-			},
+			}
 		}
 	}
 </script>

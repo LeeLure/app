@@ -3,15 +3,15 @@
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [
- // {
- //            "path" : "pages/home/down/down",
- //            "style" :                                                                                    
- //            {
- //                "navigationBarTitleText": "",
- //                "enablePullDownRefresh": false
- //            }
-            
- //        },
+		// {
+		//            "path" : "pages/home/down/down",
+		//            "style" :                                                                                    
+		//            {
+		//                "navigationBarTitleText": "",
+		//                "enablePullDownRefresh": false
+		//            }
+
+		//        },
 
 
 		{
@@ -157,7 +157,7 @@
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
 				}
-				
+
 			}
 		},
 		{
@@ -603,15 +603,134 @@
 			}
 		},
 		{
-		    "path" : "pages/home/conversation/conversation",
-		   "style": {
-		   	"navigationBarTitleText": "",
-		   	"app-plus": {
-		   		"titleNView": false //去掉app+h5顶部导航
-		   	}
-		   
-		   }
+			"path": "pages/home/conversation/conversation",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
 		}
+
+
+
+
+		, {
+			"path": "pages/release/label/label",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/release/circle/circle",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/release/room/room",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/release/establishcircle/establishcircle",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+
+		}, {
+			"path": "pages/release/establishcircle/foundcircle/foundcircle",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}, {
+			"path": "pages/release/establishcircle/foundcircle/type/type",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+
+			}
+		}, {
+			// 举报
+			"path": "pages/tidings/circle-details/report/report",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+		}, {
+			// 举报详情页面
+			"path": "pages/tidings/circle-details/report/report-detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		}, {
+			// 聊天用户详情
+			"path": "pages/tidings/chat-details/chat-user-detail/chat-user-detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		}, {
+			// 申请通知页面
+			"path": "pages/tidings/index/message/message-apply/message-apply",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		},
+		{
+			// 更多申请详情页面
+			"path": "pages/tidings/index/message/message-apply/apply-detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false //去掉app+h5顶部导航
+				}
+			}
+
+		}
+
 	   
        
         
