@@ -146,8 +146,8 @@ export default {
 				detail: '',
 				id: '',
 				limit: 20,
-				page: 2,
-				state: 1
+				page: 1,
+				state: 2
 			},
 			circleList: [
 				{ id: 1, img: '../../../static/square/circle-1.jpg', title: '1150', info: '给你不一样音乐音乐的音乐' },
