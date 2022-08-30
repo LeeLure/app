@@ -8,3 +8,6 @@ export const createRoom = (params, config = {}) => http.post('/room/create', par
 
 // 加入房间
 export const joinRoom = (params, config = {}) => http.post('/room/user', params, config)
+
+// 房间列表
+export const roomList = (params, config = {}) => http.get(`/room/room/${params.id}`)

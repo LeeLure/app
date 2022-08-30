@@ -3,34 +3,44 @@
 		<!-- 房间信息 -->
 		<view class="room">
 			<view class="room-img"><image src="../../../../static/square/people-1.png" mode=""></image></view>
-			<view class="room-people">6/8人</view>
+			<view class="room-people">{{roomInfo.current}}/{{roomInfo.peopleNum}}人</view>
 			<view class="room-id">房间号：{{roomId}}</view>
 		</view>
 
 		<!-- 用户信息 -->
 		<view class="room-user">
-			<view v-for="item in list" class="user">
+			<view v-for="(item, index) in roomInfo.userList" class="user" @tap="checkDetail(item,index)">
 				<view class="user-img">
-					<image  class="img" :src="item.src" alt="">
+					<image   class="img" :src="item.avatarUrl" alt="">
 				</view>
-				<view  class="user-name">{{item.name}}</view>
+				<view  class="user-name">{{item.nikeName}}</view>
 			</view>
+				<view class="show-detail" v-if="showDialog">
+					<view class="category">
+						查看资料
+					</view>
+					<view class="category">
+						踢出房间	
+					</view>
+					<view class="category">
+						举报
+					</view>
+				</view>
+				
+				<template v-if="roomInfo.userList && roomInfo.userList.length > 0">
+					<view  v-for="item in (8-  roomInfo.userList.length)" class="user">
+						<view class="user-img">
+						<image  class="img" src="../../../../static/square/def-ava.png" alt="">
+						</view>
+						<view  class="user-name">等待加入...</view>
+					</view>
+				</template>
 			
-			<view v-for="item in (8-list.length)" class="user">
-				<view class="user-img">
-					<image  class="img" src="../../../../static/square/def-ava.png" alt="">
-				</view>
-				<view  class="user-name">等待加入...</view>
-			</view>
 			
 			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
 		</view>
 		
-		<view class="room-user">
-			
-			
-			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
-		</view>
+		
 	</view>
 </template>
 
@@ -42,25 +52,36 @@
 			roomId:{
 				type:String,
 				required:true
+			},
+			
+			roomInfo:{
+				type:Object,
+				required:true
 			}
+			
 		},
 		
 		data() {
 			return {
-				list: [
-					{name:'李嘉伟李嘉伟李嘉伟李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-				],
-				
+				showDialog:false
 			}
 		},
 		
-		onLoad(option) {
+		onLoad() {
+			// console.log(this.userList);
+		},
+		
+		
+		methods:{
+			checkDetail(item,index) {
+				console.log(item , index);
+				this.showDialog = true
+				
+			},
 			
+			close() {
+				this.showDialog = false
+			}
 		}
 	}
 </script> 
@@ -100,18 +121,17 @@
 }
 
 /* 用户信息 */
-
 .room-user {
 	margin: 34rpx 0 0 30rpx;
 }
 
 .user {
 		display: inline-block;
+		position: relative;
 		width: 132rpx;
 		height: auto;
 		text-align: center;
 		margin: 30rpx 20rpx 0 20rpx;
-		position: relative;
 	}
 
 	.user-img {
@@ -133,4 +153,34 @@
 		text-overflow: ellipsis;
 	}
 
+
+.show-detail {
+	position: absolute;
+	width: 202rpx;
+	height: 280rpx;
+	top: 0;
+	left: 0;
+	background-color: #29253C;
+	border-radius: 20rpx;
+	border: 1rpx solid rgba(15, 13, 25,0.5);
+	padding: 0 14rpx;
+}
+
+.category {
+	height: 82rpx;
+	line-height: 82rpx;
+	font-size: 24rpx;
+	color: #FFF;
+	text-align: center;
+	border-bottom: 1rpx solid ;
+}
+
+.category:nth-child(2) {
+	height: 112rpx;
+	line-height: 112rpx;
+}
+
+.category:nth-child(3) {
+	border: 0;
+}
 </style>
