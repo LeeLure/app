@@ -5,7 +5,8 @@
 			<image src="../../../../static/home/fanhui.png" mode="aspectFill" class="back"></image>
 		</view>
 		<view class="navigation-text">{{ title }}</view>
-		<view class="navigation-detail"><image src="../../../../static/square/det.png" mode=""></image></view>
+
+		<slot></slot>
 	</view>
 </template>
 
@@ -22,6 +23,10 @@ export default {
 	methods: {
 		revert() {
 			uni.navigateBack({});
+		},
+
+		aa() {
+			this.$emit('type');
 		}
 	}
 };

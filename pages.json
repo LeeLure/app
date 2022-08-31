@@ -552,13 +552,14 @@
 		}, {
 			"path": "pages/user/follow/follow",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
 				},
 				"navigationBarTextStyle": "white"
 
 			}
+
 		}, {
 			"path": "pages/user/edit/edit",
 			"style": {
@@ -762,88 +763,104 @@
 					"titleNView": false //去掉app+h5顶部导航
 				},
 				"navigationBarTextStyle": "white"
+
 			}
 
 		}
 
-
-
-
-
-		, {
+		,
+		{
 			"path": "pages/release/label/label",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
 
+				},
+
+				"navigationBarTextStyle": "white"
 			}
 
-		}, {
+		}
+
+		, {
 			"path": "pages/release/circle/circle",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
+
 				},
 				"navigationBarTextStyle": "white"
-
 			}
 
-		}, {
+
+		},
+		{
 			"path": "pages/release/room/room",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
 
+				},
+
+				"navigationBarTextStyle": "white"
 			}
 
-		}, {
+
+		},
+		{
 			"path": "pages/release/establishcircle/establishcircle",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
+
 				},
 				"navigationBarTextStyle": "white"
 
 			}
 
-		}, {
+
+		},
+		{
 			"path": "pages/release/establishcircle/foundcircle/foundcircle",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
 
+				},
+
+				"navigationBarTextStyle": "white"
 			}
-		}, {
+
+		},
+		{
 			"path": "pages/release/establishcircle/foundcircle/type/type",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
 
+				},
+
+				"navigationBarTextStyle": "white"
 			}
+
 		}, {
 			"path": "pages/home/search/search",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false //去掉app+h5顶部导航
-				},
-				"navigationBarTextStyle": "white"
 
+				},
+
+				"navigationBarTextStyle": "white"
 			}
+
 
 		}
 	],

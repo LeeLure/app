@@ -23,7 +23,7 @@
 									<view class="commentname">
 										{{item.nikeName}}
 									</view>
-									<view class="commenttext" @longtap="reply(item)">
+									<view class="commenttext" @tap="reply(item)" @longtap="deletes(item)">
 										{{item.content}}
 									</view>
 									<view class="commenttime">
@@ -41,7 +41,7 @@
 										<view class="commentname">
 											{{items.nikeName}}
 										</view>
-										<view class="commenttext">
+										<view class="commenttext" @tap="reply(items)" @longtap="deletes(items)">
 											{{items.content}}
 										</view>
 										<view class="commenttime">
@@ -73,12 +73,33 @@
 		<view class="kongbai">
 
 		</view>
+
+		<view class="frame" v-if="flag">
+			<view class="frametop">
+				<view class="frametext  border">
+					删除该评论
+				</view>
+				<view class="frametext border" @tap="reproduce(item.content)">
+					复制
+				</view>
+				<view class="frametext">
+					举报
+				</view>
+			</view>
+			<view class="framebottom">
+				取消
+			</view>
+		</view>
+		<view :class="flag==true? 'active': 'shelter' " @tap="del">
+
+		</view>
 	</view>
 </template>
 
 <script>
 	import navigation from "@/components/navigation.vue"
 	import dynamic from "@/components/dynamic.vue"
+	import uniCopy from '@/js_sdk/xb-copy/uni-copy.js'
 	import {
 		homeDesc,
 		commentsComment,
@@ -86,12 +107,13 @@
 		concernList
 	} from "@/config/home.js"
 	export default {
+
+
 		data() {
 			return {
 				title: "动态详情",
-				list: [
-
-				],
+				flag: false,
+				list: [],
 				exhibit: false,
 				faceshow: "",
 				detail: {
@@ -101,14 +123,12 @@
 				id: '',
 				publishId: "",
 				pub: "",
-
 				page: 1,
 				limit: 10,
-				comments: [
-
-				],
+				comments: [],				
+				item:"",
 				placeholder: "来都来了 不评论点什么吗",
-
+publishUserId:""
 
 
 
@@ -139,6 +159,7 @@
 				}).then(res => {
 
 					this.list.push(res)
+					this.publishUserId=res.uid
 					console.log(this.list, "hh");
 				})
 
@@ -149,6 +170,28 @@
 				this.placeholder = "回复" + item.nikeName
 				this.publishId = item.id
 
+			},
+			// 删除评论
+			deletes(item) {
+				this.flag = true
+				console.log(item);
+				this.item=item
+			},
+			del() {
+				this.flag = false
+
+			},
+			reproduce(copy) {
+				console.log("lpj");
+				uniCopy({
+					content: copy,
+					success: (res) => {
+						this.flag=false
+					},
+					error: (e) => {
+						
+					}
+				})
 			},
 
 			// 发表评论
@@ -162,15 +205,17 @@
 					console.log("this.pub", this.pub);
 				}
 				console.log("poi", this.pub);
+				const  publishUserId=this.id
 				commentsComment({
 					content: content,
-					publishId: this.pub
+					publishId: this.pub,
+					publishUserId:this.publishUserId
 
 				}).then(res => {
 					this.detail.value = ""
 					this.placeholder = "来都来了 不评论点什么吗"
 					this.publishId = ''
-					this.concernlist()
+					this.concernlists()
 				})
 			},
 			// 评论列表
@@ -188,8 +233,8 @@
 							limit: this.limit,
 							publishId: item.id
 						}).then(res => {
-							console.log("mnbvc", res,i++);
-							
+							console.log("mnbvc", res, i++);
+
 							// const {
 							// 	checked
 							// } = this.comments[index]
@@ -347,6 +392,67 @@
 		font-family: PingFang SC-Medium, PingFang SC;
 		font-weight: 500;
 		color: #A28F21;
+	}
+
+	.frame {
+		color: white;
+		font-size: 28rpx;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		height: 450rpx;
+		z-index: 3;
+	}
+
+	.frametop {
+		width: 710rpx;
+		border-radius: 20rpx;
+		background-color: #29253C;
+		margin-left: 20rpx;
+
+	}
+
+	.framebottom {
+		margin-top: 20rpx;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		width: 710rpx;
+		border-radius: 20rpx;
+		margin-left: 20rpx;
+		background-color: #29253C;
+	}
+
+	.frametext {
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		width: 640rpx;
+		margin-left: 35rpx;
+
+
+	}
+
+	.border {
+		border-bottom: #1e1a327c 2rpx solid;
+	}
+
+	.active {
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+
+	.shelter {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -2;
+
 	}
 
 	.kongbai {

@@ -21,7 +21,7 @@
 				<!-- 弹出层 -->
 				<view class="show-detail" v-if="number === index">
 					<view class="category" @tap="toOtherHomePage(item)">查看资料</view>
-					<view class="category" >踢出房间</view>
+					<view class="category">踢出房间</view>
 					<view class="category" @tap="toReport(item)">举报</view>
 				</view>
 			</view>

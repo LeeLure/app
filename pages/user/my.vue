@@ -25,7 +25,7 @@
 
 			<view class="information">
 				<personal :personal="personal"></personal>
-				<roll></roll>
+				<roll :personal="personal"></roll>
 				<conceal></conceal>
 			</view>
 		</view>

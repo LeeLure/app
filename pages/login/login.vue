@@ -115,11 +115,25 @@
 
 			},
 
-
 			btn() {
+				const value = uni.getStorageSync('token');
+				console.log(value,"快捷键");
+				if(value!==''){
+				uni.removeStorage({
+					key: 'token',
+					success: function (res) {
+						
+						
+						
+					}
+				});
+					
+				}
 				this.login()
 			},
 			login() {
+				
+			
 				uni.$u.http.post('/login/mobile/login', {
 					code: this.code,
 					phone: this.phone

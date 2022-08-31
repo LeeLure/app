@@ -11,7 +11,11 @@
 		<view class="head">
 			<image src="@/static/home/sousuo.png" class="headimg"></image>
 		
-		<input type="text" maxlength="15" placeholder="请输入您想要查找的圈子" placeholder-class="placeholder"  v-model="name" class="input"  @blur="a">
+		<input type="text" maxlength="15" placeholder="请输入您想要查找的圈子" placeholder-class="placeholder"  v-model="name" class="input"  >
+		
+		<view class="releasetext" @tap="publish">
+						确认
+					</view>
 		</view>
 		
 		<view class="list">
@@ -72,7 +76,7 @@
 				this.number=index
 			
 			},
-			a(){
+			publish(){
 				CircleTopicSelectCirclename({name:this.name}).then(res=>{
 					console.log(res);
 									})
@@ -97,9 +101,9 @@
 	}
 	.head{
 		padding-left: 20rpx;
-		width: 710rpx;
-		
+		width: 710rpx;		
 		position: relative;
+		display: flex;
 	}
 	.headimg{
 		width: 30rpx;
@@ -113,12 +117,27 @@
 		color: rgba(255, 255, 255, 0.6);
 	}
 	.input{
+		font-size: 28rpx;
 		color: white;
 		background-color:#29253C ;
 		padding-left: 50rpx;
 		height: 68rpx;
-		width: 660rpx;
+		width: 550rpx;
 		border-radius: 20rpx;
+	}
+	.releasetext {
+		margin-left: 10rpx;
+		
+		width: 100rpx;
+		height: 68rpx;
+		line-height: 68rpx;
+		text-align: center;
+		background-color: #FFEE8C;
+		border-radius: 20rpx;
+		font-size: 24rpx;
+		font-family: PingFang SC-Medium, PingFang SC;
+		font-weight: 500;
+		color: #A28F21;
 	}
 	.list{
 		width: 700rpx;

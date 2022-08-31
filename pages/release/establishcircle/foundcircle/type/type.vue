@@ -3,9 +3,13 @@
 		<view class="bar">
 		</view>
 		<navigation :title="title"> </navigation>
+		<!-- <view class="position">
+				
 		<input type="text" maxlength="15" placeholder="请选择类型" placeholder-class="placeholder" class="input">
-
-
+<view class="releasetext" @tap="publish">
+				确认
+			</view>
+</view> -->
 
 		<view class="list">
 			<view :class="[number==index?'active':'listtext']" v-for="(item,index) in list" :key="index"
@@ -60,7 +64,8 @@
 				uni.navigateBack({
 					delta: 1
 				})
-			}
+			},
+			
 		}
 	}
 </script>
@@ -71,18 +76,10 @@
 		color: rgba(255, 255, 255, 0.6);
 	}
 
-	.input {
-		color: #2B7FDE;
-		background-color: #29253C;
-		padding-left: 20rpx;
-		margin-left: 20rpx;
-		width: 690rpx;
-		height: 68rpx;
-		border-radius: 20rpx;
-		margin-top: 20rpx;
-	}
+	
 
 	.list {
+		margin-top: 50rpx;
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -127,4 +124,33 @@
 		vertical-align: middle;
 		margin: 180rpx auto;
 	}
+	/* .position{
+		position: relative;
+		display: flex;
+	}
+	.input {
+		color: white;
+		background-color: #29253C;
+		padding-left: 20rpx;
+		margin-left: 20rpx;
+		width: 590rpx;
+		height: 68rpx;
+		border-radius: 20rpx;
+		font-size: 28rpx;
+		
+	}
+	.releasetext {
+		margin-left: 10rpx;
+		
+		width: 100rpx;
+		height: 68rpx;
+		line-height: 68rpx;
+		text-align: center;
+		background-color: #FFEE8C;
+		border-radius: 20rpx;
+		font-size: 24rpx;
+		font-family: PingFang SC-Medium, PingFang SC;
+		font-weight: 500;
+		color: #A28F21;
+	} */
 </style>

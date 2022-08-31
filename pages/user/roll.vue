@@ -31,15 +31,21 @@
 
 <script>
 	export default {
+		props:{
+			personal:{}
+		},
 		data() {
 			return {
 
 			}
 		},
 		methods: {
+			
 			release(){
+				let  uid=this.personal.userId
+				console.log(uid);
 				uni.navigateTo({
-					url:'/pages/user/release/release'
+					url:'/pages/user/release/release?uid=' + JSON.stringify(uid)
 				})
 			},
 			Interesting() {
