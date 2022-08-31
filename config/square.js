@@ -5,3 +5,6 @@ export const squareRoomList = (params, config = {}) => http.post('/square/Coming
 
 // 创建房间
 export const createRoom = (params, config = {}) => http.post('/room/create', params, config)
+
+// 加入房间
+export const joinRoom = (params, config = {}) => http.post('/room/user', params, config)

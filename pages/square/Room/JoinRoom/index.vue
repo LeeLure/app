@@ -7,7 +7,7 @@
 		<Navigation :title="title"></Navigation>
 
 		<!-- 人数 -->
-		<PeopleNumber></PeopleNumber>
+		<PeopleNumber :roomId="roomId"></PeopleNumber>
 
 		<!-- tab -->
 		<NavTab :swiperheight="swiperheight"></NavTab>
@@ -28,13 +28,16 @@ export default {
 	data() {
 		return {
 			title: '无剧本杀不狂欢！一起来寻找真相...',
-			swiperheight: 0
+			swiperheight: 0,
+			roomId: ''
 		};
 	},
 
-	onLoad() {
+	onLoad(option) {
 		this.swiperheight = uni.getSystemInfoSync().windowHeight * 2;
-		console.log(this.swiperheight);
+		// console.log(this.swiperheight);
+		// console.log(option.roomId);
+		this.roomId = option.roomId;
 	},
 
 	methods: {}

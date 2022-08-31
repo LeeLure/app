@@ -26,7 +26,7 @@
 			<view class="button-bgc">
 				<view class="bgc-button">
 					<!-- 按钮组件 -->
-					<Button></Button>
+					<Button :roomId="roomId"></Button>
 				</view>
 			</view>
 			<!-- 分享的组件 -->
@@ -55,9 +55,16 @@ export default {
 	data() {
 		return {
 			isShowDialog: true,
-			bgImgUrl: '../../../../static/square/Business-img.jpg'
+			bgImgUrl: '../../../../static/square/Business-img.jpg',
+			roomId: 0
 		};
 	},
+
+	onLoad(option) {
+		// console.log(option.roomId);
+		this.roomId = option.roomId;
+	},
+
 	methods: {
 		toShare() {
 			this.$refs.Share.open();

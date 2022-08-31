@@ -4,7 +4,7 @@
 		<view class="room">
 			<view class="room-img"><image src="../../../../static/square/people-1.png" mode=""></image></view>
 			<view class="room-people">6/8人</view>
-			<view class="room-id">房间号：3567486</view>
+			<view class="room-id">房间号：{{roomId}}</view>
 		</view>
 
 		<!-- 用户信息 -->
@@ -37,6 +37,14 @@
 <script>
 	export default {
 		name: 'user-list',
+		
+		props: {
+			roomId:{
+				type:String,
+				required:true
+			}
+		},
+		
 		data() {
 			return {
 				list: [
@@ -46,8 +54,13 @@
 					{name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
 					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
 					// {name:'李嘉伟', src:'../../../../static/home/a.pic.jpg'},
-				]
+				],
+				
 			}
+		},
+		
+		onLoad(option) {
+			
 		}
 	}
 </script> 

@@ -63,12 +63,26 @@
 					<!-- 房间列表组件 -->
 					<scroll-view :style="{ height: windowHeight + 'rpx' }" scroll-y>
 						<view class="RoomItem">
-							<RoomItem v-for="item in 20">
+							<RoomItem v-for="item in roomList" :key="item.id" :roomList="roomList" :id="item.id">
 								<template #img>
-									<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
+									<view class="img"><image class="img-image" :src="item.images" alt="" /></view>
 								</template>
+
 								<template #title>
-									<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+									<view class="title">{{ item.title }}</view>
+								</template>
+
+								<template #time>
+									<view class="time">
+										<image class="timeIcon" src="../../static/square/time.png" mode=""></image>
+										{{ item.date }} {{ item.week }} {{ item.hdate }}
+									</view>
+								</template>
+
+								<template #add>
+									<view class="addIcon"><image src="../../static/square/add.png" mode=""></image></view>
+									<view class="addText">余姚&nbsp;&nbsp;|&nbsp;&nbsp;距你</view>
+									<text class="text">568m</text>
 								</template>
 							</RoomItem>
 						</view>
@@ -78,12 +92,23 @@
 				<swiper-item>
 					<scroll-view :style="{ height: windowHeight + 'rpx' }" scroll-y>
 						<view class="RoomItem">
-							<RoomItem v-for="item in 6">
+							<RoomItem v-for="item in roomList" :key="item.id" :roomList="roomList" :id="item.id">
 								<template #img>
-									<view class="img"><image class="img-image" src="../../static/square/item-1.jpg" alt="" /></view>
+									<view class="img"><image class="img-image" :src="item.images" alt="" /></view>
+								</template>
+								<template #time>
+									<view class="time">
+										<image class="timeIcon" src="../../static/square/time.png" mode=""></image>
+										{{ item.date }} {{ item.week }} {{ item.hdate }}
+									</view>
+								</template>
+								<template #add>
+									<view class="addIcon"><image src="../../static/square/add.png" mode=""></image></view>
+									<view class="addText">余姚&nbsp;&nbsp;|&nbsp;&nbsp;距你</view>
+									<text class="juli">568m</text>
 								</template>
 								<template #title>
-									<view class="title">无剧本杀不狂欢！一起来寻找真相吧！！！</view>
+									<view class="title">{{ item.title }}</view>
 								</template>
 							</RoomItem>
 						</view>
@@ -99,7 +124,7 @@
 // import tab from "@/components/tab.vue"
 import CirItem from './circle/CirItem.vue';
 import RoomItem from './Components/RoomItem.vue';
-import { squareRoomList } from '../../config/square.js';
+import { squareRoomList } from '@/config/square.js';
 
 export default {
 	components: {
@@ -114,12 +139,16 @@ export default {
 			isTriangle2: false,
 			isActive: 0,
 			windowHeight: 0,
-			windowWidth: 0,
 			tabList: [{ index: 0, title: '即将开始' }, { index: 1, title: '活动房间' }],
 			isAnimation: false,
-			limit: 10,
-			page: 1,
-			state: 1,
+			config: {
+				categoryId: '',
+				detail: '',
+				id: '',
+				limit: 20,
+				page: 1,
+				state: 2
+			},
 			circleList: [
 				{ id: 1, img: '../../../static/square/circle-1.jpg', title: '1150', info: '给你不一样音乐音乐的音乐' },
 				{ id: 2, img: '../../../static/square/circle-1.jpg', title: '1151', info: '给你不一样音乐音乐的音乐' },
@@ -132,7 +161,8 @@ export default {
 				{ id: 9, img: '../../../static/square/circle-1.jpg', title: '1158', info: '给你不一样音乐音乐的音乐' },
 				{ id: 10, img: '../../../static/square/circle-1.jpg', title: '1159', info: '给你不一样音乐音乐的音乐' }
 			],
-			newCircleList: []
+			newCircleList: [],
+			roomList: []
 		};
 	},
 
@@ -163,10 +193,19 @@ export default {
 
 		checkedSwiper(e) {
 			this.isActive = e.detail.current;
+
+			this.config.state = e.detail.current + 1;
+			// console.log(this.config.state);
+			// 房间列表
+			this.getRoomList();
 		},
 
 		checked(index) {
 			this.isActive = index;
+			this.config.state = index + 1;
+			// console.log(this.config.state);
+			// 房间列表
+			this.getRoomList();
 		},
 
 		toMoreRoom() {
@@ -187,17 +226,12 @@ export default {
 		},
 
 		async getRoomList() {
-			const res = await squareRoomList({
-				categoryId: '',
-				detail: '',
-				id: '',
-				limit: 10,
-				page: 1,
-				state: 2
-			}).catch(e => {
+			const res = await squareRoomList({ config: this.config }).catch(e => {
 				console.log(e);
 			});
 			console.log(res);
+
+			this.roomList = res.rows;
 		}
 	}
 };
@@ -399,6 +433,41 @@ export default {
 	width: 100%;
 	height: 100%;
 	border-radius: 30rpx 30rpx 0 0;
+}
+
+.time {
+	display: flex;
+	font-size: 24rpx;
+	color: #999999;
+	vertical-align: middle;
+}
+
+.timeIcon {
+	vertical-align: middle;
+	width: 30rpx;
+	height: 30rpx;
+	margin: 4rpx 6rpx 0 0;
+	/* margin-top: 4rpx; */
+}
+
+.addText {
+	margin-left: 4rpx;
+}
+
+.juli {
+	color: #b043fa;
+}
+
+.addIcon {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 6rpx;
+}
+
+.addIcon image {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
 }
 
 .title {
