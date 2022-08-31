@@ -7,7 +7,7 @@
 		<Navigation :title="title"></Navigation>
 
 		<!-- 人数 -->
-		<PeopleNumber :roomId="roomId" :roomInfo="roomInfo"></PeopleNumber>
+		<PeopleNumber :roomId="roomId" :roomInfo="roomInfo" :homeownerId="homeownerId"></PeopleNumber>
 
 		<!-- tab -->
 		<NavTab :swiperheight="swiperheight"></NavTab>
@@ -34,7 +34,8 @@ export default {
 			roomId: '',
 			Type: 1,
 			userId: '',
-			roomInfo: {}
+			roomInfo: {},
+			homeownerId: ''
 			// userList: [
 			// 	{ nickName: '李嘉伟李嘉伟李嘉伟李嘉伟', src: '../../../../static/home/a.pic.jpg' },
 			// 	{ nickName: '李嘉伟', src: '../../../../static/home/a.pic.jpg' },
@@ -74,6 +75,8 @@ export default {
 			this.userId = res.userId;
 
 			this.tojoinRoom(res.userId);
+
+			this.$store.commit('user/keepUid', res.userId);
 		},
 
 		// 加入房间
@@ -87,15 +90,18 @@ export default {
 			});
 		},
 
-		// 房间列表
+		// 房间
 		async getRoomList(id) {
 			// console.log(id);
 			const res = await roomList({ id: id }).catch(e => {
 				console.log(e);
 			});
-			console.log(res);
+
 			this.roomInfo = res;
+
 			console.log(this.roomInfo);
+
+			this.homeownerId = JSON.stringify(res.homeownerId);
 		}
 	}
 };

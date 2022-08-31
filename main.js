@@ -7,11 +7,16 @@ Vue.config.productionTip = false
 
 import uView from "uview-ui";
 import navigation from "@/components/navigation.vue"
+
+import store from '@/store/index.js'
+Vue.prototype.$store = store
+
 Vue.use(uView);
 Vue.component('navigation', navigation);
 App.mpType = 'app'
 const app = new Vue({
-    ...App
+	store,
+	...App
 })
 //获取页面元素大小和位置
 import Tool from './util/Tool.js'
@@ -22,11 +27,13 @@ app.$mount()
 // #endif
 
 // #ifdef VUE3
-import { createSSRApp } from 'vue'
+import {
+	createSSRApp
+} from 'vue'
 export function createApp() {
-  const app = createSSRApp(App)
-  return {
-    app
-  }
+	const app = createSSRApp(App)
+	return {
+		app
+	}
 }
 // #endif

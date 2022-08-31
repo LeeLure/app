@@ -9,7 +9,7 @@
 		<view class="message">请选择违规类型，帮助我们准确处理</view>
 
 		<!-- 举报 -->
-		<view class="report" v-if="reportList && isSecondary === ''">
+		<view class="report" v-if="isSecondary === 0">
 			<view class="report-item" @tap="toReportWay(item.title)" v-for="item in reportList" :key="item.index">
 				{{ item.title }}
 				<u-icon name="arrow-right" color="#FFFFFF" size="16"></u-icon>
@@ -17,7 +17,7 @@
 		</view>
 
 		<!-- 举报的二级分类 -->
-		<view class="report" v-if="reportList && isSecondary !== ''">
+		<view class="report" v-if="isSecondary !== 0">
 			<view class="report-item" @tap="toReportDetail(item.index)" v-for="item in reportSecondaryList" :key="item.index">
 				{{ item.title }}
 				<u-checkbox-group iconPlacement="right" placement="row" shape="circle" @change="checkboxChange(item.index)">
@@ -37,7 +37,7 @@ export default {
 
 	data() {
 		return {
-			isSecondary: '',
+			isSecondary: 0,
 			checkboxValue1: [],
 			userName: '',
 			userAvata: '',
@@ -73,6 +73,7 @@ export default {
 		this.userName = option.userName;
 		this.userAvata = option.userAvata;
 		this.userId = option.userId;
+		// this.isSecondary = 0;
 		console.log(option.isSecondary, option.userName, option.userAvata, option.userId);
 	},
 
@@ -94,6 +95,9 @@ export default {
 					this.userName
 				} + &userId= ${this.userId}`
 			});
+
+			this.isSecondary = 0;
+			this.toReportWay();
 		}
 	}
 };

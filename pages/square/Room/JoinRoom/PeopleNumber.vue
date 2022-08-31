@@ -9,24 +9,24 @@
 
 		<!-- 用户信息 -->
 		<view class="room-user">
-			<view v-for="(item, index) in roomInfo.userList" class="user" @tap="checkDetail(item,index)">
-				<view class="user-img">
-					<image   class="img" :src="item.avatarUrl" alt="">
-				</view>
-				<view  class="user-name">{{item.nikeName}}</view>
-			</view>
-				<view class="show-detail" v-if="showDialog">
-					<view class="category">
-						查看资料
+			
+			<view v-for="(item, index) in roomInfo.userList" class="user" >
+				<view class="user-info" @tap="checkDetail(item.uid,index)">
+					<view class="user-img">
+						<image  class="img" :src="item.avatarUrl" alt="">
 					</view>
-					<view class="category">
-						踢出房间	
-					</view>
-					<view class="category">
-						举报
-					</view>
+					<view  class="user-name">{{item.nikeName}}</view>
 				</view>
 				
+				<!-- 弹出层 -->
+				<view class="show-detail" v-if="number === index">
+					<view class="category" @tap="toOtherHomePage(item)">查看资料</view>
+					<view class="category" >踢出房间</view>
+					<view class="category" @tap="toReport(item)">举报</view>
+				</view>
+			</view>
+				
+				<!-- 等待用户加入的默认位置 -->
 				<template v-if="roomInfo.userList && roomInfo.userList.length > 0">
 					<view  v-for="item in (8-  roomInfo.userList.length)" class="user">
 						<view class="user-img">
@@ -35,12 +35,11 @@
 						<view  class="user-name">等待加入...</view>
 					</view>
 				</template>
-			
-			
-			<!-- <image v-else class="img" src="../../../../static/square/def-ava.png" alt=""> -->
 		</view>
 		
 		
+		<!-- 遮罩层 -->
+		<view :class="flag==true? 'active': 'shelter' " @tap="close"></view>
 	</view>
 </template>
 
@@ -57,30 +56,68 @@
 			roomInfo:{
 				type:Object,
 				required:true
+			},
+			
+			homeownerId:{
+				type:String,
+				required:true
 			}
 			
 		},
 		
 		data() {
 			return {
-				showDialog:false
+				number:-1,
+				flag: false,
+				uid:'',
+				// 举报需要的参数
+				userName:'',
+				userId:''
 			}
 		},
-		
-		onLoad() {
-			// console.log(this.userList);
-		},
-		
-		
+	
 		methods:{
-			checkDetail(item,index) {
-				console.log(item , index);
-				this.showDialog = true
+			checkDetail(id,index) {
+				if(this.$store.state.user.uid === id) return
 				
+				this.number=index
+				
+				this.flag = true
 			},
 			
-			close() {
-				this.showDialog = false
+			close(){
+				this.flag = false
+				
+				this.number=-1
+			},
+			
+			// 查看他人详情
+			toOtherHomePage(item){
+				
+				this.uid = item.uid
+				// console.log(this.uid);
+				
+				uni.navigateTo({
+					url:`/pages/home/homepage/homepage?uid=${JSON.stringify(this.uid)}`
+				})
+				
+				this.close()
+			},
+			
+			// 举报
+			toReport(item) {
+				// console.log(item);
+				this.userName = item.nikeName
+				
+				this.userId = item.userId
+				
+				uni.navigateTo({
+					url: `/pages/tidings/circle-details/report/report?userName= ${
+						this.userName
+					} + &userId= ${this.userId}`
+				});
+				
+				this.close()
 			}
 		}
 	}
@@ -129,7 +166,7 @@
 		display: inline-block;
 		position: relative;
 		width: 132rpx;
-		height: auto;
+		height: 182rpx;
 		text-align: center;
 		margin: 30rpx 20rpx 0 20rpx;
 	}
@@ -157,9 +194,11 @@
 .show-detail {
 	position: absolute;
 	width: 202rpx;
-	height: 280rpx;
-	top: 0;
-	left: 0;
+	/* height: 280rpx; */
+	top: 65%;
+	left: -25%;
+	
+	z-index: 3;
 	background-color: #29253C;
 	border-radius: 20rpx;
 	border: 1rpx solid rgba(15, 13, 25,0.5);
@@ -183,4 +222,21 @@
 .category:nth-child(3) {
 	border: 0;
 }
+/* 遮罩层 */
+.active {
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		z-index: 2;
+	}
+
+	.shelter {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		z-index: -2;
+	}
 </style>

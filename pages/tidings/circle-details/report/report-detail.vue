@@ -66,8 +66,8 @@ export default {
 		this.isSecondary = option.isSecondary;
 		this.userName = option.userName;
 		this.userId = option.userId;
-		console.log(option.isSecondary);
-		console.log(option.userName, option.userId);
+		// console.log(option.isSecondary);
+		// console.log(option.userName, option.userId);
 	},
 
 	methods: {}

@@ -3,8 +3,8 @@
 		<view class="bar"></view>
 		<!-- 导航栏 -->
 		<Navigation :title="title">
-			<template #action>
-				<view class="create-circle"><view class="text">创建圈子</view></view>
+			<template>
+				<view class="create-circle" @tap="createCircle"><view class="text">创建圈子</view></view>
 			</template>
 		</Navigation>
 
@@ -43,6 +43,7 @@
 import Navigation from '../../../components/navigation.vue';
 import Search from '../Components/Search.vue';
 import LeftCategory from '../Components/LeftCategory.vue';
+import { SelectCircleType } from '@/config/square.js';
 export default {
 	components: {
 		Navigation,
@@ -80,9 +81,24 @@ export default {
 
 	onLoad() {
 		this.getWindowHeight();
+
+		this.gitSelectCircleType();
 	},
 
 	methods: {
+		// 创建圈子
+		createCircle() {
+			console.log(111);
+		},
+
+		// 圈子类型列表
+		async gitSelectCircleType() {
+			const res = await SelectCircleType().catch(e => {
+				console.log(e);
+			});
+			console.log(res);
+		},
+
 		// 返回按键
 		revert() {
 			uni.navigateBack();
@@ -117,8 +133,9 @@ export default {
 	width: 164rpx;
 	height: 56rpx;
 	line-height: 56rpx;
-	margin-top: 20rpx;
+	margin-top: 25rpx;
 	margin-right: 22rpx;
+	text-align: center;
 	color: #ffffff;
 	font-size: 24rpx;
 	/* border: 1rpx solid white; */
