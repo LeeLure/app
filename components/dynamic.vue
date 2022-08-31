@@ -218,7 +218,7 @@
 		height: 30rpx;
 		line-height: 30rpx;
 		border-radius: 20rpx;
-		background-color: #403b5b;
+		background-color: #29253C;
 		font-size: 28rpx;
 		margin-right: 20rpx;
 		color: #2B7FDE;

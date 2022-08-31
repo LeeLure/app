@@ -11,7 +11,9 @@
 			<view class="conditionlist">
 				<view class="conditionleft">
 					发布动态数
-					<text class="conditiontext"> >5 </text>
+					<text class="conditiontext">
+						<image src="@/static/release/dayudengyu.png" class="bigimg"></image>5
+					</text>
 				</view>
 				<view class="conditionright" v-if="list.dynamicQuantity">
 					<view class="headingright">
@@ -22,7 +24,7 @@
 				</view>
 				<view class="conditionright1" v-else>
 					<view class="headingright1">
-						<image src="@/static/release/duigou.png" class="headingrightimg">
+						<image src="@/static/settings/gantahao.png" class="headingrightimg">
 						</image>
 					</view>
 					未满足
@@ -42,16 +44,18 @@
 				</view>
 				<view class="conditionright1" v-else>
 					<view class="headingright1">
-						<image src="@/static/release/duigou.png" class="headingrightimg">
+						<image src="@/static/settings/gantahao.png" class="headingrightimg">
 						</image>
 					</view>
-				未满足					
+					未满足
 				</view>
 			</view>
 			<view class="conditionlist">
 				<view class="conditionleft">
 					创建圈子数
-					<text class="conditiontext"> >5 </text>
+					<text class="conditiontext">
+						<image src="@/static/release/xiaoyudengyu.png" class="bigimg"></image>5
+					</text>
 				</view>
 				<view class="conditionright" v-if="list.circleConditions">
 					<view class="headingright">
@@ -62,19 +66,19 @@
 				</view>
 				<view class="conditionright1" v-else>
 					<view class="headingright1">
-						<image src="@/static/release/duigou.png" class="headingrightimg">
+						<image src="@/static/settings/gantahao.png" class="headingrightimg">
 						</image>
 					</view>
 					未满足
 				</view>
 			</view>
-			<view class="apply applys" @tap="establishcircle"  v-if="show">
+			<view class="apply applys" @tap="establishcircle" v-if="show">
 				申请创建
 			</view>
 			<view class="apply" v-else>
 				申请创建
 			</view>
-			
+
 		</view>
 	</view>
 </template>
@@ -89,7 +93,7 @@
 			return {
 				title: "创建圈子",
 				list: {},
-				show:false
+				show: false
 			}
 		},
 		components: {
@@ -111,8 +115,8 @@
 		methods: {
 			getlist() {
 				CircleTopicCondition().then(res => {
-					if(res.dynamicQuantity==true&&res.circleConditions==true&&res.likes==true){
-						this.show=true
+					if (res.dynamicQuantity == true && res.circleConditions == true && res.likes == true) {
+						this.show = true
 					}
 					this.list = res
 				})
@@ -163,6 +167,14 @@
 		font-size: 24rpx;
 		color: rgba(255, 255, 255, 0.6);
 		margin-left: 20rpx;
+		vertical-align: middle;
+	}
+
+	.bigimg {
+		width: 25rpx;
+		height: 25rpx;
+		vertical-align: middle;
+		
 	}
 
 	.conditionright {
@@ -201,8 +213,9 @@
 
 	.headingrightimg {
 		width: 20rpx;
-		height: 20rpx;
-		margin: 8rpx;
+		height: 25rpx;
+		margin-top: 5rpx;
+		margin-left: 10rpx;
 	}
 
 	.apply {
@@ -218,9 +231,10 @@
 		margin-top: 70%;
 
 	}
+
 	.applys {
 		background-color: #D53EDA;
 		color: white;
-	
+
 	}
 </style>

@@ -6,7 +6,7 @@
 				<text class="text">余姚</text>
 				<image src="@/static/home/weizhi.png" class="img"></image>
 			</view>
-			<view class="input">
+			<view class="input" @tap="search">
 				<image src="@/static/home/sousuo.png" class="img1"></image>
 				<text class="text1">搜索您想搜索的人~</text>
 			</view>
@@ -73,7 +73,7 @@
 			<view class="people">动态</view>
 			<view class="more" @tap="moredynamic">更多动态 ></view>
 		</view>
-		<dynamic  :exhibit="exhibit"  :list="list"  @backHome='back'></dynamic>
+		<dynamic :exhibit="exhibit" :list="list" @backHome='back'></dynamic>
 		<view class="kongbai">
 
 		</view>
@@ -98,7 +98,7 @@
 				],
 				page: 1,
 				limit: 10,
-				list:[],
+				list: [],
 				exhibit: true,
 				current: 0,
 				mode: 'round',
@@ -109,7 +109,9 @@
 
 				info: [],
 				// 广告id
-				adId: 100
+				adId: 100,
+				total: 0
+
 
 			};
 		},
@@ -128,7 +130,16 @@
 			this.trends()
 
 		},
+		// 触底回调函数
+		onReachBottom() {
 
+			let a = this.limit + 10
+			this.limit = a
+			if (this.total > this.limit) {
+
+				this.trends()
+			}
+		},
 		methods: {
 
 			change(e) {
@@ -162,12 +173,17 @@
 			state() {
 				this.flag = false;
 			},
-
+			// 跳转搜索
+			search() {
+				uni.navigateTo({
+					url: '/pages/home/search/search'
+				})
+			},
 			// 跳转更多动态
 			moredynamic() {
-				let  query=this.list
+				let query = this.list
 				uni.navigateTo({
-					url: '/pages/home/moredynamic/moredynamic?query='+JSON.stringify(query)
+					url: '/pages/home/moredynamic/moredynamic?query=' + JSON.stringify(query)
 				})
 			},
 			moreinteresting() {
@@ -186,17 +202,17 @@
 				homeList({
 					page: this.page,
 					limit: this.limit,
-					uid:"",
-					
+					uid: "",
+
 				}).then(res => {
-					this.list=res.rows
-					
+					this.list = res.rows
+					this.total = res.total
 					console.log(res, "hh");
 				})
 
 			},
-			back(){
-			  this.trends() //e是传过来的参数val
+			back() {
+				this.trends() //e是传过来的参数val
 			}
 		}
 

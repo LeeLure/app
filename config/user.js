@@ -5,3 +5,5 @@ export const LtsMineMyHome=(params, config = {}) => http.get('/LtsMine/myHome', 
 export const homeDelete=(params, config = {}) => http.get(`/home/delete/${params.id}`, params, config)
 //开启有趣的人
 export const infoInterestingPeople=(params, config = {}) => http.post(`/info/interestingPeople`, params, config)
+//有趣的人
+export const infoEcho=(params, config = {}) => http.get(`/info/echo`, params, config)

@@ -25,53 +25,60 @@
 			你可以随时在我的有趣的人中关闭授权
 		</view>
 
-		<become :patterns="patterns">
+		<myopen :patterns="open">
 			<template #a>
-				<upload :limit="limit" @getFileUrl="getFileUrl1">
-					<view class="plus">
-						<image src="@/static/user/paizhao.png" class="plusimg1"></image>
+				<upload :limit="limit" @getFileUrl="getFileUrl1" ref="upload1">
+					<view class="plus">						<image :src="open.firstImage" class="plusimgimg" v-if="open.firstImage"></image>
+	
+						<image src="@/static/user/paizhao.png" v-else class="plusimg1"></image>					
 					</view>
 				</upload>
 			</template>
 			<template #b>
-				<upload :limit="limit" @getFileUrl="getFileUrl2">
+				<upload :limit="limit" @getFileUrl="getFileUrl2" ref="upload2">
 					<view class="plus">
-						<image src="@/static/user/paizhao.png" class="plusimg"></image>
+						<image :src="open.secondImage" class="plusimgimg" v-if="open.secondImage"></image>
+							
+						<image src="@/static/user/paizhao.png" v-else class="plusimg"></image>
 					</view>
 				</upload>
 
 			</template>
 			<template #c>
-				<upload :limit="limit" @getFileUrl="getFileUrl3">
+				<upload :limit="limit" @getFileUrl="getFileUrl3"  ref="upload3">
 					<view class="plus">
-						<image src="@/static/user/paizhao.png" class="plusimg"></image>
+							<image :src="open.thirdImage" class="plusimgimg" v-if="open.thirdImage"></image>
+						<image src="@/static/user/paizhao.png"  v-else class="plusimg"></image>
 					</view>
 				</upload>
 			</template>
 			<template #d>
 				<image src="@/static/user/xihuan.png" class="likeimg"></image>
 			</template>
-		</become>
+		</myopen>
 
 		<view class="determine" @tap="determine">
-			确定
-			{{a,b}}
+			确定		
 		</view>
 
-<view class="a" @tap="bcd">
-	nhjm
-</view>
+		<view class="a" @tap="list">
+			nhjm
 
+		</view>
+		<view class="a">
+			111{{b}}
+		</view>
 	</view>
 
 </template>
 
 <script>
 	import navigation from "@/components/navigation.vue"
-	import become from "@/components/become.vue"
+	import myopen from "@/pages/user/Interesting/myopen.vue"
 	import upload from "@/components/upload.vue"
 	import {
-		infoInterestingPeople
+		infoInterestingPeople,
+		infoEcho
 	} from "@/config/user.js"
 
 	export default {
@@ -88,19 +95,21 @@
 				firstImage: "",
 				secondImage: "",
 				thirdImage: '',
-				a:"",
-				b:"",
+				open: "",
+				a: "",
+				b: "",
 			}
 		},
 		components: {
 			navigation,
-			become,
+			myopen,
 			upload
 
 
 		},
 		onLoad() {
-			
+			this.list()
+			this.getlist()
 		},
 		methods: {
 			asyncChange(e) {
@@ -136,14 +145,14 @@
 			},
 			determine() {
 
-				if (this.value1 == false) {
-					uni.showToast({
-						title: '请开启有趣的人',
-						duration: 1500,
-						icon: 'none'
-					});
-					return
-				}
+				// if (this.value1 == false) {
+				// 	uni.showToast({
+				// 		title: '请开启有趣的人',
+				// 		duration: 1500,
+				// 		icon: 'none'
+				// 	});
+				// 	return
+				// }
 				if (this.firstImage == '' && this.secondImage == '' && this.thirdImage == '') {
 					uni.showToast({
 						title: '请上传图片1',
@@ -160,20 +169,58 @@
 					secondImage: this.secondImage,
 					thirdImage: this.thirdImage
 				}).then(res => {
-					console.log(res);
+					this.$refs.upload1.eliminate()
+					this.$refs.upload2.eliminate()
+					this.$refs.upload3.eliminate()
+					this.getlist()
 				})
 			},
-			bcd(){
+			getlist() {
+				infoEcho().then(res => {
+					this.open = res
+					this.firstImage=res.firstImage
+					this.secondImage=res.secondImage
+					this.thirdImage=res.thirdImage
+					this.value1=res.status
+				})
+			},
+			list() {
 				console.log("098s");
+
 				uni.getLocation({
 					type: 'wgs84',
+					geocode: true, //设置该参数为true可直接获取经纬度及城市信息
 					success: function(res) {
-						console.log('当前位置的经度：' + res.longitude);
-						console.log('当前位置的纬度：' + res.latitude);
-						this.a=res.longitude
-						this.b=res.latitude
+						console.log('获取定位信息', res);
+
+						// 创建地图坐标对象
+						var point = new plus.maps.Point(res.longitude, res.latitude);
+						//静态方法，反向地理编码
+						plus.maps.Map.reverseGeocode(point, {}, (event) => {
+								var address = event.address; // 转换后的地理位置
+								var point = event.coord; // 转换后的坐标信息
+								var coordType = event.coordType; // 转换后的坐标系类型
+								var reg = /.+?(省|市|自治区|自治州|县|区)/g;
+								var addressList = address.match(reg).toString().split(",");
+								//注意 因为存在直辖市， 当所在地区为普通省市时，addressList.length == 3，city = addressList[1];当所在地区为直辖市时addressList.length == 2，city = addressList[0];
+								let city = addressList.length == 3 ? addressList[1] : addressList[0];
+								this.b = addressList
+								console.log("addressList", this.b);
+							},
+							function(e) {
+								console.log("失败回调", e);
+							}
+						);
+					},
+					fail: function(err) {
+						console.log("获取定位失败", err);
+						uni.showToast({
+							title: '获取定位失败',
+							icon: 'none'
+						});
 					}
 				});
+
 			}
 
 		}
@@ -266,8 +313,11 @@
 		margin: 50%;
 
 	}
-	.a{
+.plusimgimg{
+	width: 100%;
+	height: 100%;
+}
+	.a {
 		color: white;
 	}
 </style>
-

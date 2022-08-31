@@ -5,8 +5,7 @@
 		<view class="box" >
 			<view>			
 			<view class="boxtop" >
-				<view class="picture">
-					
+				<view class="picture">					
 					<slot name="a"></slot>
 				</view>
 				<view class="photograph">

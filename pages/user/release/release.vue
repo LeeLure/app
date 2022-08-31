@@ -29,10 +29,10 @@
 
 							</template>
 						</view>
-						<view class="copywritingright" @tap="deletes">
+						<view class="copywritingright" @tap="deletes(index)">
 							<image src="@/static/user/simi.png" class="copywritingimg"></image>
 						</view>
-						<view class="deletechoice" :class="isshow?'active':''">
+						<view class="deletechoice" :class="isshow?'active':''" v-if="number==index">
 							<view class="deletechoicetext" @tap="remove(item.id)">
 								删除
 							</view>
@@ -102,6 +102,8 @@
 				limit: 10,
 				id: 0,
 				list: [],
+				number:'',
+				uid:""
 
 
 
@@ -112,7 +114,16 @@
 			picturearray
 
 		},
-		onLoad() {
+		onLoad(options) {
+			 this.uid = JSON.parse(options.uid)
+			console.log(this.uid,"pppp");
+			this.dynamiclist()
+		},
+		// 触底回调函数
+		onReachBottom() {
+			
+			let a =this.limit+10	
+			this.limit=	a		
 			this.dynamiclist()
 		},
 		methods: {
@@ -125,16 +136,17 @@
 				const isShow = this.show ? false : true;
 				this.show = isShow;
 			},
-			deletes() {
+			deletes(index) {
 				const isShow = this.isshow ? false : true;
 				this.isshow = isShow;
+				this.number=index
 			},
 
 			dynamiclist() {
 				homeList({
 					page: this.page,
 					limit: this.limit,
-					uid: "",
+					uid: this.uid,
 
 				}).then(res => {
 					if (res == null) {
@@ -154,6 +166,8 @@
 					id: id
 				}).then(res => {
 					this.dynamiclist()
+					this.number=''
+					this.isshow=false
 				})
 				if (this.list == null) {
 					this.display = true
@@ -267,7 +281,7 @@
 		text-align: center;
 		font-size: 28rpx;
 		color: white;
-		background-color: rgba(255, 255, 255, 0.2);
+		background-color: #29253C;
 		border-radius: 26rpx;
 		margin-top: 20rpx;
 		display: inline-block;
